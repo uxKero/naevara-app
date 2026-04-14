@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* Forzar modo claro siempre */
+:root {
+  color-scheme: light;
+  --bg-page: #f0eee9;
+  --bg-card: #ffffff;
+  --bg-subtle: #f8f7f4;
+  --border: #e5e3dc;
+  --text-main: #1a1a1a;
+  --text-muted: #555;
+  --text-faint: #999;
+  --accent: #7F77DD;
+  --accent-deep: #3C3489;
+  --accent-bg: #EEEDFE;
+  --hero-bg: #1a1830;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d3d1c7; border-radius: 3px; }
+
+/* Grillas responsivas */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.spell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* Input fix — texto siempre legible */
+input, textarea, select {
+  color: #1a1a1a !important;
+  background-color: #ffffff !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #aaa !important;
+}
+
+/* Animación guardado */
+@keyframes fadeOutAnim {
+  0%   { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+.save-flash { animation: fadeOutAnim 2.5s forwards; }
+
+/* Floating profile variants */
+.floating-profile-mobile  { display: none; }   /* hidden on desktop */
+.floating-profile-desktop { display: flex; }   /* visible on desktop */
+
+@media (max-width: 1280px) {
+  .floating-profile-desktop { display: none !important; }
+  .floating-profile-mobile  { display: block !important; }
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 640px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+  }
+  .grid-3col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .spell-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-image-wrap {
+    display: none;
+  }
+  .hero-inner {
+    padding: 14px 16px 0 !important;
+    gap: 10px !important;
+  }
+  .hero-name {
+    font-size: 26px !important;
+  }
+  .hero-stats-row {
+    gap: 14px !important;
+    flex-wrap: wrap;
+  }
+  .tabs-inner {
+    padding: 0 8px !important;
+  }
+  .tab-btn {
+    padding: 12px 12px !important;
+    font-size: 12px !important;
+  }
+  .page-content {
+    padding: 1rem 1rem 3rem !important;
+  }
+  .combat-grid-3 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
