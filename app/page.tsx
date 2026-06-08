@@ -10,6 +10,15 @@ import ImageLightbox from "@/components/ImageLightbox";
 import AddSessionModal from "@/components/AddSessionModal";
 import FloatingProfile from "@/components/FloatingProfile";
 import SpellDiceRoller from "@/components/SpellDiceRoller";
+import { Sparkles, Swords } from "lucide-react";
+
+// Galería de Naevara (imagen 0 = principal). Para sumar imágenes, agregá el
+// archivo a /public y su ruta acá, en orden.
+const GALLERY = [
+  "/naevara-0.png", "/naevara-1.png", "/naevara-3.png", "/naevara-4.png",
+  "/naevara-5.png", "/naevara-6.png", "/naevara-7.png", "/naevara-8.png",
+  "/naevara-9.png", "/naevara-10.png",
+];
 
 const TABS = [
   { id: "perfil",    label: "Perfil" },
@@ -25,8 +34,9 @@ export default function Home() {
   const [activeTab, setActiveTab]   = useState("perfil");
   const [saving, setSaving]         = useState(false);
   const [savedMsg, setSavedMsg]     = useState("");
-  const [lightbox, setLightbox]         = useState(false);
+  const [galleryIdx, setGalleryIdx]     = useState<number | null>(null);
   const [floatVisible, setFloatVisible] = useState(false);
+  const [historiaModal, setHistoriaModal] = useState(false);
   const [aiModal, setAiModal]           = useState<{
     open: boolean; title: string; currentText: string; onApply: (t: string) => void;
   }>({ open: false, title: "", currentText: "", onApply: () => {} });
@@ -79,16 +89,28 @@ export default function Home() {
     []
   );
 
+  // Guardar entrada de historia — disparable desde el botón flotante (cualquier tab)
+  const saveSessionGlobal = useCallback((entry: SessionEntry) => {
+    update((d) => {
+      const current = d.historia.sesiones ?? [];
+      const idx = current.findIndex((s) => s.id === entry.id);
+      const updated = idx >= 0
+        ? current.map((s, i) => (i === idx ? entry : s))
+        : [entry, ...current];
+      return { ...d, historia: { ...d.historia, sesiones: updated } };
+    });
+  }, [update]);
+
   if (!data) {
     return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
-        <p style={{ color: "#aaa", fontSize: 14 }}>Cargando perfil...</p>
+        <p style={{ color: "var(--text-faint)", fontSize: 14 }}>Cargando perfil...</p>
       </div>
     );
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f0eee9" }}>
+    <div style={{ minHeight: "100vh", background: "transparent" }}>
 
       {/* ── Modales globales ─────────────────── */}
       <AIModal
@@ -99,9 +121,15 @@ export default function Home() {
         currentText={aiModal.currentText}
         context={`Personaje: ${data.meta.firstName} ${data.meta.lastName}, ${data.meta.eyebrow}`}
       />
-      {lightbox && (
-        <ImageLightbox src="/naevara.png" alt="Naevara Tirael" onClose={() => setLightbox(false)} />
+      {galleryIdx !== null && (
+        <ImageLightbox images={GALLERY} startIndex={galleryIdx} alt="Naevara Tirael" onClose={() => setGalleryIdx(null)} />
       )}
+      <AddSessionModal
+        isOpen={historiaModal}
+        onClose={() => setHistoriaModal(false)}
+        onSave={saveSessionGlobal}
+        openAI={openAI}
+      />
 
       {/* ══ HERO (scrolls away) ══════════════════ */}
       <div>
@@ -110,7 +138,7 @@ export default function Home() {
         <div style={{ background: "#1a1830", position: "relative", overflow: "hidden" }}>
           <div style={{
             position: "absolute", inset: 0,
-            background: "radial-gradient(ellipse at 70% 0%, #3C3489 0%, transparent 60%), radial-gradient(ellipse at 10% 100%, #26215C 0%, transparent 50%)",
+            background: "radial-gradient(ellipse at 70% 0%, rgba(76,66,160,0.55) 0%, transparent 60%), radial-gradient(ellipse at 10% 100%, rgba(38,33,92,0.6) 0%, transparent 50%)",
             opacity: 0.6, pointerEvents: "none",
           }} />
           <div
@@ -125,12 +153,12 @@ export default function Home() {
             {/* Imagen (clickeable) */}
             <div className="hero-image-wrap" style={{ flexShrink: 0 }}>
               <div
-                onClick={() => setLightbox(true)}
-                title="Ver imagen completa"
+                onClick={() => setGalleryIdx(0)}
+                title="Ver galería"
                 style={{ cursor: "zoom-in", position: "relative" }}
               >
                 <Image
-                  src="/naevara.png"
+                  src={GALLERY[0]}
                   alt="Naevara Tirael"
                   width={190}
                   height={240}
@@ -161,7 +189,7 @@ export default function Home() {
             </div>
 
             {/* Info */}
-            <div style={{ flex: 1, paddingBottom: "1rem" }}>
+            <div className="hero-info" style={{ flex: 1, paddingBottom: "1rem" }}>
               {/* Eyebrow */}
               <p style={{ fontSize: 10, fontWeight: 500, color: "#AFA9EC", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
                 <EditableText value={data.meta.eyebrow} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, eyebrow: v } }))} className="text-[#AFA9EC]" />
@@ -180,7 +208,7 @@ export default function Home() {
                 <EditableText value={data.meta.subsubtitle} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, subsubtitle: v } }))} className="text-[#AFA9EC]" />
               </div>
               {/* Tags */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 12 }}>
+              <div className="hero-tags" style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 12 }}>
                 {data.meta.tags.map((tag, i) => (
                   <span key={i} style={{ fontSize: 10, padding: "2px 9px", borderRadius: 20, fontWeight: 500, background: "rgba(255,255,255,0.08)", color: "#ccc", border: "1px solid rgba(255,255,255,0.15)" }}>
                     {tag}
@@ -223,7 +251,7 @@ export default function Home() {
                   onClick={() => setActiveTab(tab.id)}
                   style={{
                     padding: "12px 16px", fontSize: 12, fontWeight: 500,
-                    color: activeTab === tab.id ? "#CECBF6" : "#666",
+                    color: activeTab === tab.id ? "#CECBF6" : "var(--text-muted)",
                     background: "transparent", border: "none", cursor: "pointer",
                     borderBottom: activeTab === tab.id ? "2px solid #7F77DD" : "2px solid transparent",
                     whiteSpace: "nowrap", transition: "color 0.15s, border-color 0.15s",
@@ -264,14 +292,15 @@ export default function Home() {
           // Scroll just below sticky header (~230px)
           window.scrollTo({ top: 235, behavior: "smooth" });
         }}
-        imageSrc="/naevara.png"
+        onAddHistoria={() => { setActiveTab("historia"); setHistoriaModal(true); }}
+        imageSrc={GALLERY[0]}
         firstName={data.meta.firstName}
         lastName={data.meta.lastName}
       />
 
       {/* Contenido */}
       <div className="page-content" style={{ maxWidth: 980, margin: "0 auto", padding: "1.5rem 2rem 4rem" }}>
-        {activeTab === "perfil"   && <TabPerfil   data={data} update={update} openAI={openAI} />}
+        {activeTab === "perfil"   && <TabPerfil   data={data} update={update} openAI={openAI} openGallery={(i) => setGalleryIdx(i)} />}
         {activeTab === "stats"    && <TabStats    data={data} update={update} />}
         {activeTab === "hechizos" && <TabHechizos data={data} update={update} openAI={openAI} />}
         {activeTab === "historia" && <TabHistoria data={data} update={update} openAI={openAI} />}
@@ -289,8 +318,8 @@ function Card({ children, featured = false, style: extraStyle }: {
 }) {
   return (
     <div style={{
-      background: "#fff", borderRadius: 12, padding: "16px 20px", marginBottom: 14,
-      border: featured ? "2px solid #7F77DD" : "1px solid #e5e3dc",
+      background: "var(--bg-card)", borderRadius: 12, padding: "16px 20px", marginBottom: 14,
+      border: featured ? "2px solid #7F77DD" : "1px solid var(--border)",
       ...extraStyle,
     }}>
       {children}
@@ -300,7 +329,7 @@ function Card({ children, featured = false, style: extraStyle }: {
 
 function CardTitle({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontSize: 11, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.07em", margin: "0 0 12px" }}>
+    <p style={{ fontSize: 11, fontWeight: 500, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.07em", margin: "0 0 12px" }}>
       {children}
     </p>
   );
@@ -308,7 +337,7 @@ function CardTitle({ children }: { children: React.ReactNode }) {
 
 function SecLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontSize: 11, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.09em", margin: "22px 0 10px", paddingBottom: 6, borderBottom: "1px solid #e8e5de" }}>
+    <p className="sec-label" style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.18em", margin: "26px 0 12px", paddingBottom: 8, borderBottom: "1px solid var(--border)" }}>
       {children}
     </p>
   );
@@ -316,11 +345,11 @@ function SecLabel({ children }: { children: React.ReactNode }) {
 
 function VRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: "1px solid #f0ede6", alignItems: "flex-start" }}>
+    <div style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: "1px solid var(--border-soft)", alignItems: "flex-start" }}>
       <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#AFA9EC", flexShrink: 0, marginTop: 5 }} />
       <div style={{ minWidth: 0, flex: 1 }}>
-        <p style={{ fontSize: 11, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.05em", margin: "0 0 2px" }}>{label}</p>
-        <div style={{ fontSize: 13, color: "#555", lineHeight: 1.55 }}>{children}</div>
+        <p style={{ fontSize: 11, fontWeight: 500, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.05em", margin: "0 0 2px" }}>{label}</p>
+        <div style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.55 }}>{children}</div>
       </div>
     </div>
   );
@@ -328,16 +357,16 @@ function VRow({ label, children }: { label: string; children: React.ReactNode })
 
 function TRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ padding: "8px 0", borderBottom: "1px solid #f0ede6" }}>
-      <p style={{ fontSize: 11, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.05em", margin: "0 0 3px" }}>{label}</p>
-      <div style={{ fontSize: 13, color: "#555", lineHeight: 1.55 }}>{children}</div>
+    <div style={{ padding: "8px 0", borderBottom: "1px solid var(--border-soft)" }}>
+      <p style={{ fontSize: 11, fontWeight: 500, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.05em", margin: "0 0 3px" }}>{label}</p>
+      <div style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.55 }}>{children}</div>
     </div>
   );
 }
 
 function Tip({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ background: "#f8f7f4", borderRadius: 8, padding: "10px 13px", marginTop: 10, fontSize: 12, color: "#555", lineHeight: 1.6, border: "1px solid #e5e3dc" }}>
+    <div style={{ background: "var(--bg-subtle)", borderRadius: 8, padding: "10px 13px", marginTop: 10, fontSize: 12, color: "var(--text-muted)", lineHeight: 1.6, border: "1px solid var(--border)" }}>
       {children}
     </div>
   );
@@ -345,15 +374,15 @@ function Tip({ children }: { children: React.ReactNode }) {
 
 function Quote({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ borderLeft: "2px solid #7F77DD", padding: "10px 14px", borderRadius: "0 8px 8px 0", background: "#EEEDFE", marginTop: 12 }}>
-      <p style={{ fontSize: 13, color: "#3C3489", fontStyle: "italic", lineHeight: 1.65, margin: 0 }}>{children}</p>
+    <div style={{ borderLeft: "2px solid #7F77DD", padding: "10px 14px", borderRadius: "0 8px 8px 0", background: "var(--accent-bg)", marginTop: 12 }}>
+      <p style={{ fontSize: 13, color: "var(--accent-strong)", fontStyle: "italic", lineHeight: 1.65, margin: 0 }}>{children}</p>
     </div>
   );
 }
 
 function AIButton({ onClick, label = "✦ IA" }: { onClick: () => void; label?: string }) {
   return (
-    <button onClick={onClick} style={{ fontSize: 11, padding: "3px 9px", borderRadius: 8, background: "#EEEDFE", color: "#534AB7", border: "1px solid #C8C5F6", cursor: "pointer", fontWeight: 500, marginLeft: 8, whiteSpace: "nowrap", flexShrink: 0 }}>
+    <button onClick={onClick} style={{ fontSize: 11, padding: "3px 9px", borderRadius: 8, background: "var(--accent-bg)", color: "var(--accent-strong)", border: "1px solid var(--accent-border)", cursor: "pointer", fontWeight: 500, marginLeft: 8, whiteSpace: "nowrap", flexShrink: 0 }}>
       {label}
     </button>
   );
@@ -364,16 +393,16 @@ function SpellCard({ spell }: { spell: Spell }) {
   return (
     <>
       <div style={{
-        background: "#f8f7f4", borderRadius: 8, padding: "10px 12px",
-        border: spell.destacado ? "1.5px solid #7F77DD" : "1px solid #e8e4dc",
+        background: "var(--bg-subtle)", borderRadius: 8, padding: "10px 12px",
+        border: spell.destacado ? "1.5px solid #7F77DD" : "1px solid var(--border)",
       }}>
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ fontSize: 10, padding: "2px 7px", borderRadius: 8, background: "#EEEDFE", color: "#534AB7", fontWeight: 500, display: "inline-block", marginBottom: 5 }}>
+            <span style={{ fontSize: 10, padding: "2px 7px", borderRadius: 8, background: "var(--accent-bg)", color: "var(--accent-strong)", fontWeight: 500, display: "inline-block", marginBottom: 5 }}>
               {spell.badge}
             </span>
-            <p style={{ fontSize: 13, fontWeight: 500, color: "#1a1a1a", margin: "0 0 3px" }}>{spell.nombre}</p>
-            <p style={{ fontSize: 11, color: "#999", lineHeight: 1.45, margin: 0 }}>{spell.descripcion}</p>
+            <p style={{ fontSize: 13, fontWeight: 500, color: "var(--text-main)", margin: "0 0 3px" }}>{spell.nombre}</p>
+            <p style={{ fontSize: 11, color: "var(--text-faint)", lineHeight: 1.45, margin: 0 }}>{spell.descripcion}</p>
           </div>
           {spell.dado && (
             <button
@@ -385,15 +414,15 @@ function SpellCard({ spell }: { spell: Spell }) {
                 borderRadius: 8,
                 fontSize: 11,
                 fontWeight: 600,
-                background: "#EEEDFE",
-                color: "#534AB7",
-                border: "1px solid #C8C5F6",
+                background: "var(--accent-bg)",
+                color: "var(--accent-strong)",
+                border: "1px solid var(--accent-border)",
                 cursor: "pointer",
                 whiteSpace: "nowrap",
                 transition: "all 0.15s",
               }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "#1a1830"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "transparent"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "#EEEDFE"; e.currentTarget.style.color = "#534AB7"; e.currentTarget.style.borderColor = "#C8C5F6"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "var(--accent-bg)"; e.currentTarget.style.color = "var(--accent-strong)"; e.currentTarget.style.borderColor = "var(--accent-border)"; }}
             >
               🎲 Usar
             </button>
@@ -418,24 +447,47 @@ function SpellCard({ spell }: { spell: Spell }) {
 type UpdateFn = (fn: (d: CharacterData) => CharacterData) => void;
 type OpenAIFn = (title: string, currentText: string, onApply: (t: string) => void) => void;
 
-function TabPerfil({ data, update, openAI }: { data: CharacterData; update: UpdateFn; openAI: OpenAIFn }) {
+function TabPerfil({ data, update, openAI, openGallery }: { data: CharacterData; update: UpdateFn; openAI: OpenAIFn; openGallery: (i: number) => void }) {
   const p = data.perfil;
   return (
     <div>
+      <SecLabel>Galería</SecLabel>
+      <div className="gallery-grid">
+        {GALLERY.map((src, i) => (
+          <button
+            key={i}
+            onClick={() => openGallery(i)}
+            title={i === 0 ? "Imagen principal" : `Imagen ${i}`}
+            style={{
+              position: "relative", padding: 0, cursor: "pointer", overflow: "hidden",
+              borderRadius: 10, aspectRatio: "4 / 5", background: "var(--bg-subtle)",
+              border: i === 0 ? "1.5px solid var(--accent)" : "1px solid var(--border)",
+            }}
+          >
+            <Image src={src} alt={`Naevara ${i}`} width={220} height={275} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            {i === 0 && (
+              <span style={{ position: "absolute", top: 6, left: 6, fontSize: 9, fontWeight: 700, padding: "2px 7px", borderRadius: 20, background: "rgba(142,133,242,0.92)", color: "#fff", letterSpacing: "0.05em" }}>
+                Principal
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
+
       <SecLabel>Identidad y nombre</SecLabel>
       <Card>
         {[
           { word: p.nombre.naevara.palabra, etim: p.nombre.naevara.etimologia, key: "naevara" as const },
           { word: p.nombre.tirael.palabra,  etim: p.nombre.tirael.etimologia,  key: "tirael"  as const },
         ].map(({ word, etim, key }) => (
-          <div key={key} style={{ borderBottom: "1px solid #f0ede6", paddingBottom: 10, marginBottom: 10 }}>
-            <p style={{ fontSize: 15, fontWeight: 500, color: "#1a1a1a", marginBottom: 3 }}>{word}</p>
+          <div key={key} style={{ borderBottom: "1px solid var(--border-soft)", paddingBottom: 10, marginBottom: 10 }}>
+            <p style={{ fontSize: 15, fontWeight: 500, color: "var(--text-main)", marginBottom: 3 }}>{word}</p>
             <EditableText value={etim} onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, nombre: { ...d.perfil.nombre, [key]: { ...d.perfil.nombre[key], etimologia: v } } } }))} multiline className="text-sm text-gray-500" />
           </div>
         ))}
         <div>
-          <p style={{ fontSize: 13, fontWeight: 500, color: "#534AB7", fontStyle: "italic", marginBottom: 6 }}>
-            &ldquo;<EditableText value={p.nombre.combinado} onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, nombre: { ...d.perfil.nombre, combinado: v } } }))} className="text-[#534AB7]" />&rdquo;
+          <p style={{ fontSize: 13, fontWeight: 500, color: "var(--accent-strong)", fontStyle: "italic", marginBottom: 6 }}>
+            &ldquo;<EditableText value={p.nombre.combinado} onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, nombre: { ...d.perfil.nombre, combinado: v } } }))} className="text-[var(--accent-strong)]" />&rdquo;
           </p>
           <div style={{ display: "flex", alignItems: "flex-start", gap: 6 }}>
             <EditableText value={p.nombre.descripcion} onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, nombre: { ...d.perfil.nombre, descripcion: v } } }))} multiline className="text-sm text-gray-500 flex-1" />
@@ -490,11 +542,11 @@ function TabPerfil({ data, update, openAI }: { data: CharacterData; update: Upda
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <tbody>
             {p.equipamiento.map((e, i) => (
-              <tr key={i} style={{ borderBottom: "1px solid #f0ede6" }}>
-                <td style={{ padding: "7px 12px 7px 0", fontWeight: 500, color: "#1a1a1a", whiteSpace: "nowrap", verticalAlign: "top" }}>
+              <tr key={i} style={{ borderBottom: "1px solid var(--border-soft)" }}>
+                <td style={{ padding: "7px 12px 7px 0", fontWeight: 500, color: "var(--text-main)", whiteSpace: "nowrap", verticalAlign: "top" }}>
                   <EditableText value={e.nombre} onChange={(v) => update((d) => { const arr = [...d.perfil.equipamiento]; arr[i] = { ...arr[i], nombre: v }; return { ...d, perfil: { ...d.perfil, equipamiento: arr } }; })} />
                 </td>
-                <td style={{ padding: "7px 0 7px 12px", color: "#555" }}>
+                <td style={{ padding: "7px 0 7px 12px", color: "var(--text-muted)" }}>
                   <EditableText value={e.descripcion} onChange={(v) => update((d) => { const arr = [...d.perfil.equipamiento]; arr[i] = { ...arr[i], descripcion: v }; return { ...d, perfil: { ...d.perfil, equipamiento: arr } }; })} multiline />
                 </td>
               </tr>
@@ -505,7 +557,7 @@ function TabPerfil({ data, update, openAI }: { data: CharacterData; update: Upda
       </Card>
 
       <Quote>
-        <EditableText value={p.quote} onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, quote: v } }))} multiline className="italic text-[#3C3489]" />
+        <EditableText value={p.quote} onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, quote: v } }))} multiline className="italic text-[var(--accent-strong)]" />
       </Quote>
     </div>
   );
@@ -520,12 +572,12 @@ function TabStats({ data, update }: { data: CharacterData; update: UpdateFn }) {
       <SecLabel>Estadísticas base</SecLabel>
       <div className="grid-3col">
         {s.base.map((stat, i) => (
-          <div key={i} style={{ background: "#f8f7f4", borderRadius: 8, padding: 10, textAlign: "center", border: stat.principal ? "1.5px solid #7F77DD" : "1px solid transparent" }}>
-            <p style={{ fontSize: 10, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 3px" }}>{stat.nombre}</p>
-            <p style={{ fontSize: 22, fontWeight: 500, color: "#1a1a1a", margin: "0 0 1px" }}>
+          <div key={i} style={{ background: "var(--bg-subtle)", borderRadius: 8, padding: 10, textAlign: "center", border: stat.principal ? "1.5px solid #7F77DD" : "1px solid transparent" }}>
+            <p style={{ fontSize: 10, fontWeight: 500, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 3px" }}>{stat.nombre}</p>
+            <p style={{ fontSize: 22, fontWeight: 500, color: "var(--text-main)", margin: "0 0 1px" }}>
               <EditableNumber value={stat.valor} onChange={(v) => update((d) => { const arr = [...d.stats.base]; arr[i] = { ...arr[i], valor: parseInt(v) || 0 }; return { ...d, stats: { ...d.stats, base: arr } }; })} />
             </p>
-            <p style={{ fontSize: 10, color: "#999", lineHeight: 1.4, margin: 0 }}>
+            <p style={{ fontSize: 10, color: "var(--text-faint)", lineHeight: 1.4, margin: 0 }}>
               <EditableText value={stat.nota} onChange={(v) => update((d) => { const arr = [...d.stats.base]; arr[i] = { ...arr[i], nota: v }; return { ...d, stats: { ...d.stats, base: arr } }; })} className="text-xs text-gray-400" />
             </p>
           </div>
@@ -535,11 +587,11 @@ function TabStats({ data, update }: { data: CharacterData; update: UpdateFn }) {
       <SecLabel>Datos de combate</SecLabel>
       <div className="grid-3col combat-grid-3">
         {s.combate.map((c, i) => (
-          <div key={i} style={{ background: "#f8f7f4", borderRadius: 8, padding: 10, textAlign: "center" }}>
-            <p style={{ fontSize: 20, fontWeight: 500, color: "#1a1a1a", margin: "0 0 2px" }}>
+          <div key={i} style={{ background: "var(--bg-subtle)", borderRadius: 8, padding: 10, textAlign: "center" }}>
+            <p style={{ fontSize: 20, fontWeight: 500, color: "var(--text-main)", margin: "0 0 2px" }}>
               <EditableText value={c.valor} onChange={(v) => update((d) => { const arr = [...d.stats.combate]; arr[i] = { ...arr[i], valor: v }; return { ...d, stats: { ...d.stats, combate: arr } }; })} className="font-medium" />
             </p>
-            <p style={{ fontSize: 10, color: "#999", textTransform: "uppercase", letterSpacing: "0.06em", margin: 0 }}>{c.label}</p>
+            <p style={{ fontSize: 10, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.06em", margin: 0 }}>{c.label}</p>
           </div>
         ))}
       </div>
@@ -551,7 +603,7 @@ function TabStats({ data, update }: { data: CharacterData; update: UpdateFn }) {
           {s.salvacion.conComp.map((sv, i) => (
             <TRow key={i} label={sv.stat}>
               <strong><EditableText value={sv.valor} onChange={(v) => update((d) => { const arr = [...d.stats.salvacion.conComp]; arr[i] = { ...arr[i], valor: v }; return { ...d, stats: { ...d.stats, salvacion: { ...d.stats.salvacion, conComp: arr } } }; })} /></strong>
-              {sv.nota && <span style={{ color: "#999", fontSize: 12 }}> {sv.nota}</span>}
+              {sv.nota && <span style={{ color: "var(--text-faint)", fontSize: 12 }}> {sv.nota}</span>}
             </TRow>
           ))}
         </Card>
@@ -571,23 +623,23 @@ function TabStats({ data, update }: { data: CharacterData; update: UpdateFn }) {
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, minWidth: 360 }}>
             <thead>
-              <tr style={{ background: "#f8f7f4", borderBottom: "1px solid #e5e3dc" }}>
+              <tr style={{ background: "var(--bg-subtle)", borderBottom: "1px solid var(--border)" }}>
                 {["Habilidad", "Círculo", "Núm.", "Origen"].map((h, i) => (
-                  <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "7px 12px", fontWeight: 500, color: "#999", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em", width: i === 0 ? "auto" : 60 }}>{h}</th>
+                  <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "7px 12px", fontWeight: 500, color: "var(--text-faint)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em", width: i === 0 ? "auto" : 60 }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {s.habilidades.map((h, i) => (
-                <tr key={i} style={{ borderBottom: "1px solid #f0ede6", color: h.circulo ? "#3C3489" : "#555", fontWeight: h.circulo ? 500 : 400 }}>
+                <tr key={i} style={{ borderBottom: "1px solid var(--border-soft)", color: h.circulo ? "var(--accent-strong)" : "var(--text-muted)", fontWeight: h.circulo ? 500 : 400 }}>
                   <td style={{ padding: "7px 12px" }}>{h.nombre}</td>
                   <td style={{ textAlign: "center", padding: "7px 12px" }}>
-                    {h.circulo ? <span style={{ color: "#7F77DD", fontWeight: 500 }}>●</span> : <span style={{ color: "#bbb" }}>—</span>}
+                    {h.circulo ? <span style={{ color: "#7F77DD", fontWeight: 500 }}>●</span> : <span style={{ color: "var(--text-faint)" }}>—</span>}
                   </td>
-                  <td style={{ textAlign: "center", padding: "7px 12px", fontWeight: 500, color: h.circulo ? "#3C3489" : "#1a1a1a" }}>
+                  <td style={{ textAlign: "center", padding: "7px 12px", fontWeight: 500, color: h.circulo ? "var(--accent-strong)" : "var(--text-main)" }}>
                     <EditableText value={h.numero} onChange={(v) => update((d) => { const arr = [...d.stats.habilidades]; arr[i] = { ...arr[i], numero: v }; return { ...d, stats: { ...d.stats, habilidades: arr } }; })} />
                   </td>
-                  <td style={{ padding: "7px 12px", fontSize: 11, color: h.circulo ? "#7F77DD" : "#bbb" }}>{h.origen}</td>
+                  <td style={{ padding: "7px 12px", fontSize: 11, color: h.circulo ? "#7F77DD" : "var(--text-faint)" }}>{h.origen}</td>
                 </tr>
               ))}
             </tbody>
@@ -623,12 +675,12 @@ function TabHechizos({ data, update, openAI }: { data: CharacterData; update: Up
         </div>
       ))}
 
-      <div style={{ background: "#EEEDFE", borderRadius: 8, padding: "12px 14px", marginTop: 10 }}>
+      <div style={{ background: "var(--accent-bg)", borderRadius: 8, padding: "12px 14px", marginTop: 10 }}>
         <div style={{ display: "flex", alignItems: "center", marginBottom: 5 }}>
-          <p style={{ fontSize: 11, fontWeight: 500, color: "#534AB7", textTransform: "uppercase", letterSpacing: "0.06em", margin: 0 }}>Loop de combate</p>
+          <p style={{ fontSize: 11, fontWeight: 500, color: "var(--accent-strong)", textTransform: "uppercase", letterSpacing: "0.06em", margin: 0 }}>Loop de combate</p>
           <AIButton onClick={() => openAI("Loop de combate", h.loopCombate, (t) => update((d) => ({ ...d, hechizos: { ...d.hechizos, loopCombate: t } })))} />
         </div>
-        <EditableText value={h.loopCombate} onChange={(v) => update((d) => ({ ...d, hechizos: { ...d.hechizos, loopCombate: v } }))} multiline className="text-sm text-[#3C3489] italic" />
+        <EditableText value={h.loopCombate} onChange={(v) => update((d) => ({ ...d, hechizos: { ...d.hechizos, loopCombate: v } }))} multiline className="text-sm text-[var(--accent-strong)] italic" />
       </div>
     </div>
   );
@@ -684,12 +736,12 @@ function TabHistoria({ data, update, openAI }: { data: CharacterData; update: Up
             <EditableText value={p} onChange={(v) => update((d) => { const arr = [...d.historia.origen.parrafos]; arr[i] = v; return { ...d, historia: { ...d.historia, origen: { ...d.historia.origen, parrafos: arr } } }; })} multiline className="text-sm text-gray-600 leading-relaxed" />
           </div>
         ))}
-        <div style={{ background: "#EEEDFE", borderRadius: 8, padding: "12px 14px", marginTop: 10 }}>
+        <div style={{ background: "var(--accent-bg)", borderRadius: 8, padding: "12px 14px", marginTop: 10 }}>
           <div style={{ display: "flex", alignItems: "center", marginBottom: 5 }}>
-            <p style={{ fontSize: 11, fontWeight: 500, color: "#534AB7", textTransform: "uppercase", letterSpacing: "0.06em", margin: 0 }}>Contexto actual</p>
+            <p style={{ fontSize: 11, fontWeight: 500, color: "var(--accent-strong)", textTransform: "uppercase", letterSpacing: "0.06em", margin: 0 }}>Contexto actual</p>
             <AIButton onClick={() => openAI("Contexto actual", h.origen.contextoActual, (t) => update((d) => ({ ...d, historia: { ...d.historia, origen: { ...d.historia.origen, contextoActual: t } } })))} />
           </div>
-          <EditableText value={h.origen.contextoActual} onChange={(v) => update((d) => ({ ...d, historia: { ...d.historia, origen: { ...d.historia.origen, contextoActual: v } } }))} multiline className="text-sm text-[#3C3489] italic" />
+          <EditableText value={h.origen.contextoActual} onChange={(v) => update((d) => ({ ...d, historia: { ...d.historia, origen: { ...d.historia.origen, contextoActual: v } } }))} multiline className="text-sm text-[var(--accent-strong)] italic" />
         </div>
       </Card>
 
@@ -718,13 +770,13 @@ function TabHistoria({ data, update, openAI }: { data: CharacterData; update: Up
           <div key={i} style={{ display: "flex", marginBottom: i < h.arco.length - 1 ? 18 : 0 }}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: 28, flexShrink: 0 }}>
               <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#7F77DD", marginTop: 4 }} />
-              {i < h.arco.length - 1 && <div style={{ width: 1, background: "#D3D1C7", flex: 1, minHeight: 20 }} />}
+              {i < h.arco.length - 1 && <div style={{ width: 1, background: "var(--border)", flex: 1, minHeight: 20 }} />}
             </div>
             <div style={{ paddingLeft: 6, flex: 1 }}>
               <p style={{ fontSize: 10, fontWeight: 500, color: "#7F77DD", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 2 }}>
                 <EditableText value={step.fase} onChange={(v) => update((d) => { const arr = [...d.historia.arco]; arr[i] = { ...arr[i], fase: v }; return { ...d, historia: { ...d.historia, arco: arr } }; })} className="text-[#7F77DD]" />
               </p>
-              <p style={{ fontSize: 14, fontWeight: 500, color: "#1a1a1a", marginBottom: 3 }}>
+              <p style={{ fontSize: 14, fontWeight: 500, color: "var(--text-main)", marginBottom: 3 }}>
                 <EditableText value={step.titulo} onChange={(v) => update((d) => { const arr = [...d.historia.arco]; arr[i] = { ...arr[i], titulo: v }; return { ...d, historia: { ...d.historia, arco: arr } }; })} />
               </p>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 6 }}>
@@ -737,8 +789,8 @@ function TabHistoria({ data, update, openAI }: { data: CharacterData; update: Up
       </Card>
 
       {/* ── Registro de sesiones / historia ── */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", margin: "22px 0 10px", paddingBottom: 6, borderBottom: "1px solid #e8e5de" }}>
-        <p style={{ fontSize: 11, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.09em", margin: 0 }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", margin: "22px 0 10px", paddingBottom: 6, borderBottom: "1px solid var(--border)" }}>
+        <p style={{ fontSize: 11, fontWeight: 500, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.09em", margin: 0 }}>
           Registro de historia
         </p>
         <button
@@ -755,8 +807,8 @@ function TabHistoria({ data, update, openAI }: { data: CharacterData; update: Up
       </div>
 
       {sesiones.length === 0 && (
-        <div style={{ textAlign: "center", padding: "32px 20px", background: "#f8f7f4", borderRadius: 12, border: "1px dashed #d3d1c7" }}>
-          <p style={{ fontSize: 13, color: "#bbb", margin: 0 }}>Todavía no hay entradas. Hacé clic en <strong style={{ color: "#7F77DD" }}>+ Agregar historia</strong> para registrar lo que fue sucediendo.</p>
+        <div style={{ textAlign: "center", padding: "32px 20px", background: "var(--bg-subtle)", borderRadius: 12, border: "1px dashed var(--border)" }}>
+          <p style={{ fontSize: 13, color: "var(--text-faint)", margin: 0 }}>Todavía no hay entradas. Hacé clic en <strong style={{ color: "#7F77DD" }}>+ Agregar historia</strong> para registrar lo que fue sucediendo.</p>
         </div>
       )}
 
@@ -764,8 +816,8 @@ function TabHistoria({ data, update, openAI }: { data: CharacterData; update: Up
         <div
           key={entry.id}
           style={{
-            background: "#fff", borderRadius: 12, padding: "14px 18px", marginBottom: 10,
-            border: entry.tipo === "personal" ? "1.5px solid #C8C5F6" : "1px solid #e5e3dc",
+            background: "var(--bg-card)", borderRadius: 12, padding: "14px 18px", marginBottom: 10,
+            border: entry.tipo === "personal" ? "1.5px solid var(--accent-border)" : "1px solid var(--border)",
           }}
         >
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8 }}>
@@ -773,30 +825,33 @@ function TabHistoria({ data, update, openAI }: { data: CharacterData; update: Up
               <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
                 <span style={{
                   fontSize: 10, padding: "2px 8px", borderRadius: 12, fontWeight: 600,
-                  background: entry.tipo === "personal" ? "#EEEDFE" : "#f0ede6",
-                  color: entry.tipo === "personal" ? "#534AB7" : "#666",
-                  border: entry.tipo === "personal" ? "1px solid #C8C5F6" : "1px solid #e5e3dc",
+                  background: entry.tipo === "personal" ? "var(--accent-bg)" : "var(--border-soft)",
+                  color: entry.tipo === "personal" ? "var(--accent-strong)" : "var(--text-muted)",
+                  border: entry.tipo === "personal" ? "1px solid var(--accent-border)" : "1px solid var(--border)",
                 }}>
-                  {entry.tipo === "personal" ? "✦ Personal" : "⚔️ Partida"}
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                    {entry.tipo === "personal" ? <Sparkles size={11} strokeWidth={2} /> : <Swords size={11} strokeWidth={2} />}
+                    {entry.tipo === "personal" ? "Personal" : "Partida"}
+                  </span>
                 </span>
-                {entry.sesion && <span style={{ fontSize: 11, color: "#999", fontWeight: 500 }}>{entry.sesion}</span>}
-                {entry.fecha && <span style={{ fontSize: 11, color: "#bbb" }}>{entry.fecha}</span>}
+                {entry.sesion && <span style={{ fontSize: 11, color: "var(--text-faint)", fontWeight: 500 }}>{entry.sesion}</span>}
+                {entry.fecha && <span style={{ fontSize: 11, color: "var(--text-faint)" }}>{entry.fecha}</span>}
               </div>
-              <p style={{ fontSize: 14, fontWeight: 600, color: "#1a1a1a", margin: "0 0 6px" }}>{entry.titulo}</p>
+              <p style={{ fontSize: 14, fontWeight: 600, color: "var(--text-main)", margin: "0 0 6px" }}>{entry.titulo}</p>
               {entry.contenido && (
-                <p style={{ fontSize: 13, color: "#555", lineHeight: 1.65, margin: 0, whiteSpace: "pre-wrap" }}>{entry.contenido}</p>
+                <p style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.65, margin: 0, whiteSpace: "pre-wrap" }}>{entry.contenido}</p>
               )}
             </div>
             <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
               <button
                 onClick={() => setEditEntry(entry)}
-                style={{ fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "#f8f7f4", color: "#555", border: "1px solid #e5e3dc", cursor: "pointer" }}
+                style={{ fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "var(--bg-subtle)", color: "var(--text-muted)", border: "1px solid var(--border)", cursor: "pointer" }}
               >
                 Editar
               </button>
               <button
                 onClick={() => handleDeleteSession(entry.id)}
-                style={{ fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "#fff5f5", color: "#c0392b", border: "1px solid #fcc", cursor: "pointer" }}
+                style={{ fontSize: 11, padding: "4px 10px", borderRadius: 6, background: "rgba(192,57,43,0.13)", color: "#ff8b80", border: "1px solid rgba(192,57,43,0.4)", cursor: "pointer" }}
               >
                 ✕
               </button>
@@ -839,9 +894,9 @@ function TabMundo({ data, update, openAI }: { data: CharacterData; update: Updat
 
       <SecLabel>Lugares importantes</SecLabel>
       {m.lugares.map((loc, i) => (
-        <div key={i} style={{ background: loc.destacado ? "#EEEDFE" : "#f8f7f4", border: loc.destacado ? "1.5px solid #7F77DD" : "1px solid #e5e3dc", borderRadius: 10, padding: "12px 16px", marginBottom: 10 }}>
+        <div key={i} style={{ background: loc.destacado ? "var(--accent-bg)" : "var(--bg-subtle)", border: loc.destacado ? "1.5px solid #7F77DD" : "1px solid var(--border)", borderRadius: 10, padding: "12px 16px", marginBottom: 10 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <p style={{ fontSize: 14, fontWeight: 500, color: "#1a1a1a", margin: "0 0 2px" }}>
+            <p style={{ fontSize: 14, fontWeight: 500, color: "var(--text-main)", margin: "0 0 2px" }}>
               <EditableText value={loc.nombre} onChange={(v) => update((d) => { const arr = [...d.mundo.lugares]; arr[i] = { ...arr[i], nombre: v }; return { ...d, mundo: { ...d.mundo, lugares: arr } }; })} />
             </p>
             <AIButton onClick={() => openAI(`Lugar: ${loc.nombre}`, loc.texto, (t) => update((d) => { const arr = [...d.mundo.lugares]; arr[i] = { ...arr[i], texto: t }; return { ...d, mundo: { ...d.mundo, lugares: arr } }; }))} />
@@ -866,12 +921,12 @@ function TabMaster({ data, update, openAI }: { data: CharacterData; update: Upda
       <Card>
         <CardTitle>Momentos narrativos que pueden ocurrir</CardTitle>
         {m.senales.map((sig, i) => (
-          <div key={i} style={{ display: "flex", gap: 12, padding: "10px 0", borderBottom: i < m.senales.length - 1 ? "1px solid #f0ede6" : "none" }}>
-            <div style={{ background: "#EEEDFE", color: "#534AB7", fontSize: 10, fontWeight: 600, padding: "3px 8px", borderRadius: 6, whiteSpace: "nowrap", alignSelf: "flex-start", marginTop: 2 }}>
-              <EditableText value={sig.nivel} onChange={(v) => update((d) => { const arr = [...d.master.senales]; arr[i] = { ...arr[i], nivel: v }; return { ...d, master: { ...d.master, senales: arr } }; })} className="text-[#534AB7] font-semibold" />
+          <div key={i} style={{ display: "flex", gap: 12, padding: "10px 0", borderBottom: i < m.senales.length - 1 ? "1px solid var(--border-soft)" : "none" }}>
+            <div style={{ background: "var(--accent-bg)", color: "var(--accent-strong)", fontSize: 10, fontWeight: 600, padding: "3px 8px", borderRadius: 6, whiteSpace: "nowrap", alignSelf: "flex-start", marginTop: 2 }}>
+              <EditableText value={sig.nivel} onChange={(v) => update((d) => { const arr = [...d.master.senales]; arr[i] = { ...arr[i], nivel: v }; return { ...d, master: { ...d.master, senales: arr } }; })} className="text-[var(--accent-strong)] font-semibold" />
             </div>
             <div style={{ flex: 1 }}>
-              <p style={{ fontSize: 13, fontWeight: 500, color: "#1a1a1a", marginBottom: 3 }}>
+              <p style={{ fontSize: 13, fontWeight: 500, color: "var(--text-main)", marginBottom: 3 }}>
                 <EditableText value={sig.titulo} onChange={(v) => update((d) => { const arr = [...d.master.senales]; arr[i] = { ...arr[i], titulo: v }; return { ...d, master: { ...d.master, senales: arr } }; })} />
               </p>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 6 }}>
@@ -896,7 +951,7 @@ function TabMaster({ data, update, openAI }: { data: CharacterData; update: Upda
       </Card>
 
       <Quote>
-        <EditableText value={m.quote} onChange={(v) => update((d) => ({ ...d, master: { ...d.master, quote: v } }))} multiline className="italic text-[#3C3489]" />
+        <EditableText value={m.quote} onChange={(v) => update((d) => ({ ...d, master: { ...d.master, quote: v } }))} multiline className="italic text-[var(--accent-strong)]" />
       </Quote>
     </div>
   );

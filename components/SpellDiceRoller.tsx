@@ -151,7 +151,7 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
           transition={{ type: "spring", stiffness: 380, damping: 28 }}
           onClick={(e) => e.stopPropagation()}
           style={{
-            background: "#fff",
+            background: "var(--bg-card)",
             borderRadius: 20,
             width: "100%",
             maxWidth: 460,
@@ -204,7 +204,7 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
                     background: "rgba(21,101,192,0.2)",
                     borderRadius: 6, padding: "2px 8px", border: "1px solid rgba(21,101,192,0.35)",
                   }}>
-                    Ataque +6
+                    Ataque +8
                   </span>
                 )}
               </div>
@@ -235,9 +235,9 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
                     style={{
                       flex: 1, padding: "8px 12px", borderRadius: 10, cursor: "pointer",
                       fontWeight: variante === val ? 700 : 400, fontSize: 12,
-                      background: variante === val ? colors.bg : "#f8f7f4",
-                      border: `1.5px solid ${variante === val ? colors.border : "#e5e3dc"}`,
-                      color: variante === val ? colors.text : "#666",
+                      background: variante === val ? colors.bg : "var(--bg-subtle)",
+                      border: `1.5px solid ${variante === val ? colors.border : "var(--border)"}`,
+                      color: variante === val ? colors.text : "var(--text-muted)",
                       transition: "all 0.15s",
                     }}
                   >
@@ -249,7 +249,7 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
 
             {/* ── Mode selector ────────────────────── */}
             <div style={{
-              display: "flex", background: "#f4f2ee", borderRadius: 12, padding: 4, marginBottom: 20, gap: 4,
+              display: "flex", background: "var(--bg-subtle)", borderRadius: 12, padding: 4, marginBottom: 20, gap: 4,
             }}>
               {([
                 { id: "digital" as const, label: "🎲 Tirar dado", sub: "lanza digitalmente" },
@@ -266,10 +266,10 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
                     transition: "all 0.18s",
                   }}
                 >
-                  <div style={{ fontSize: 13, fontWeight: mode === id ? 700 : 500, color: mode === id ? "#1a1830" : "#888" }}>
+                  <div style={{ fontSize: 13, fontWeight: mode === id ? 700 : 500, color: mode === id ? "var(--text-main)" : "var(--text-faint)" }}>
                     {label}
                   </div>
-                  <div style={{ fontSize: 10, color: mode === id ? "#7c7a8a" : "#bbb", marginTop: 1 }}>{sub}</div>
+                  <div style={{ fontSize: 10, color: mode === id ? "var(--text-muted)" : "var(--text-faint)", marginTop: 1 }}>{sub}</div>
                 </button>
               ))}
             </div>
@@ -326,7 +326,7 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
             {/* ══ MANUAL MODE ═══════════════════════ */}
             {mode === "manual" && (
               <div>
-                <p style={{ fontSize: 12, color: "#888", marginBottom: 12 }}>
+                <p style={{ fontSize: 12, color: "var(--text-faint)", marginBottom: 12 }}>
                   Ingresá el resultado de {cantidad > 1 ? `cada uno de tus ${cantidad} dados (d${caras})` : `tu dado (d${caras})`}:
                 </p>
 
@@ -334,7 +334,7 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
                 <div style={{ display: "flex", gap: 10, marginBottom: 16, flexWrap: "wrap" }}>
                   {manualVals.map((v, i) => (
                     <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-                      <label style={{ fontSize: 10, color: "#999", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                      <label style={{ fontSize: 10, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                         Dado {cantidad > 1 ? i + 1 : ""}
                       </label>
                       <input
@@ -352,32 +352,32 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
                         style={{
                           width: 64, height: 52, textAlign: "center",
                           fontSize: 22, fontWeight: 700,
-                          borderRadius: 10, border: `2px solid ${v ? colors.border : "#e5e3dc"}`,
-                          background: v ? colors.bg : "#f8f7f4",
-                          color: v ? colors.text : "#aaa",
+                          borderRadius: 10, border: `2px solid ${v ? colors.border : "var(--border)"}`,
+                          background: v ? colors.bg : "var(--bg-subtle)",
+                          color: v ? colors.text : "var(--text-faint)",
                           outline: "none",
                         }}
                         onFocus={(e) => { e.target.style.borderColor = colors.border; }}
-                        onBlur={(e)  => { if (!e.target.value) e.target.style.borderColor = "#e5e3dc"; }}
+                        onBlur={(e)  => { if (!e.target.value) e.target.style.borderColor = "var(--border)"; }}
                       />
-                      <span style={{ fontSize: 9, color: "#bbb" }}>d{caras}</span>
+                      <span style={{ fontSize: 9, color: "var(--text-faint)" }}>d{caras}</span>
                     </div>
                   ))}
 
                   {/* Modifier display */}
                   {mod !== 0 && (
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-                      <label style={{ fontSize: 10, color: "#999", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                      <label style={{ fontSize: 10, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                         Mod.
                       </label>
                       <div style={{
                         width: 52, height: 52, display: "flex", alignItems: "center", justifyContent: "center",
-                        background: "#EEEDFE", borderRadius: 10, border: "2px solid #C8C5F6",
-                        fontSize: 18, fontWeight: 800, color: "#534AB7",
+                        background: "var(--accent-bg)", borderRadius: 10, border: "2px solid var(--accent-border)",
+                        fontSize: 18, fontWeight: 800, color: "var(--accent-strong)",
                       }}>
                         +{mod}
                       </div>
-                      <span style={{ fontSize: 9, color: "#bbb" }}>Carisma</span>
+                      <span style={{ fontSize: 9, color: "var(--text-faint)" }}>Carisma</span>
                     </div>
                   )}
                 </div>
@@ -390,8 +390,8 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
                   disabled={!manualAllFilled}
                   style={{
                     width: "100%", padding: "13px", borderRadius: 12,
-                    background: manualAllFilled ? "#1a1830" : "#e8e5de",
-                    color: manualAllFilled ? "#fff" : "#aaa",
+                    background: manualAllFilled ? "#1a1830" : "var(--bg-subtle)",
+                    color: manualAllFilled ? "#fff" : "var(--text-faint)",
                     border: "none", fontSize: 15, fontWeight: 700,
                     cursor: manualAllFilled ? "pointer" : "not-allowed",
                     marginBottom: 18, transition: "background 0.15s",
@@ -423,16 +423,16 @@ export default function SpellDiceRoller({ dado, spellName, onClose }: Props) {
 
             {/* ── Mechanical description ───────────── */}
             <div style={{
-              background: "#f8f7f4", borderRadius: 10, padding: "12px 14px",
+              background: "var(--bg-subtle)", borderRadius: 10, padding: "12px 14px",
               borderLeft: `3px solid ${colors.border}`, marginTop: 4,
             }}>
-              <p style={{ fontSize: 12, color: "#555", margin: 0, lineHeight: 1.6 }}>
+              <p style={{ fontSize: 12, color: "var(--text-muted)", margin: 0, lineHeight: 1.6 }}>
                 {dado.descripcionMecanica}
               </p>
               {dado.notas && dado.notas.length > 0 && (
                 <ul style={{ margin: "8px 0 0", paddingLeft: 14 }}>
                   {dado.notas.map((n, i) => (
-                    <li key={i} style={{ fontSize: 11, color: "#777", marginBottom: 2, lineHeight: 1.45 }}>{n}</li>
+                    <li key={i} style={{ fontSize: 11, color: "var(--text-faint)", marginBottom: 2, lineHeight: 1.45 }}>{n}</li>
                   ))}
                 </ul>
               )}

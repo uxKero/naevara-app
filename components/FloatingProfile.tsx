@@ -2,33 +2,34 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { Swords, Sparkles, ScrollText, Globe2, Plus, Menu, X } from "lucide-react";
 
 interface Props {
   visible: boolean;
   activeTab: string;
   onTabChange: (tab: string) => void;
+  onAddHistoria: () => void;
   imageSrc: string;
   firstName: string;
   lastName: string;
 }
 
 const NAV_ITEMS = [
-  { id: "stats",    label: "Stats",    icon: "⚔️", color: "#E65100", bg: "#FFF3E0", border: "#FFB74D" },
-  { id: "hechizos", label: "Hechizos", icon: "✦",  color: "#534AB7", bg: "#EEEDFE", border: "#C8C5F6" },
-  { id: "historia", label: "Historia", icon: "📖", color: "#1B5E20", bg: "#E8F5E9", border: "#A5D6A7" },
-  { id: "mundo",    label: "El Mundo", icon: "🌍", color: "#0D47A1", bg: "#E3F2FD", border: "#90CAF9" },
+  { id: "stats",    label: "Stats",     Icon: Swords },
+  { id: "hechizos", label: "Hechizos",  Icon: Sparkles },
+  { id: "historia", label: "Historia",  Icon: ScrollText },
+  { id: "mundo",    label: "El Mundo",  Icon: Globe2 },
 ];
 
 const SPRING = { type: "spring" as const, stiffness: 360, damping: 26 };
 
-export default function FloatingProfile({ visible, activeTab, onTabChange, imageSrc, firstName, lastName }: Props) {
+export default function FloatingProfile({ visible, activeTab, onTabChange, onAddHistoria, imageSrc, firstName, lastName }: Props) {
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen]   = useState(false);
+  const [mobileNavOpen, setMobileNavOpen]     = useState(false);
 
   return (
     <>
       {/* ══ DESKTOP: left photo sidebar ═══════════════════════════ */}
-      {/* Wrapper div carries the CSS class — framer-motion inner div won't fight display:none on parent */}
       <div className="floating-profile-desktop">
       <AnimatePresence>
         {visible && (
@@ -49,16 +50,16 @@ export default function FloatingProfile({ visible, activeTab, onTabChange, image
               gap: 10,
             }}
           >
-            {/* Left column: photo + name + button */}
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+            {/* Left column: photo + name + buttons */}
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
 
               {/* Photo */}
               <div style={{
                 width: 260, height: 340,
-                borderRadius: 8,
+                borderRadius: 12,
                 overflow: "hidden",
-                border: "2px solid rgba(200,197,246,0.7)",
-                boxShadow: "0 8px 40px rgba(26,24,48,0.28)",
+                border: "1px solid var(--accent-border)",
+                boxShadow: "0 12px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(175,169,236,0.12)",
               }}>
                 <Image
                   src={imageSrc} alt={`${firstName} ${lastName}`}
@@ -70,26 +71,42 @@ export default function FloatingProfile({ visible, activeTab, onTabChange, image
 
               {/* Name */}
               <div style={{ textAlign: "center", lineHeight: 1.3 }}>
-                <div style={{ fontSize: 15, fontWeight: 700, color: "#1a1830" }}>{firstName}</div>
-                <div style={{ fontSize: 12, color: "#7c7a8a", letterSpacing: "0.05em" }}>{lastName}</div>
+                <div className="display-font" style={{ fontSize: 16, fontWeight: 600, color: "var(--text-main)", letterSpacing: "0.05em" }}>{firstName}</div>
+                <div style={{ fontSize: 12, color: "var(--text-faint)", letterSpacing: "0.08em" }}>{lastName}</div>
               </div>
 
-              {/* Button */}
+              {/* Primary action: Agregar historia */}
               <motion.button
-                onClick={() => setDesktopMenuOpen((o) => !o)}
-                whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.94 }}
+                onClick={onAddHistoria}
+                whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 transition={SPRING}
                 style={{
-                  padding: "8px 22px", borderRadius: 20,
-                  background: desktopMenuOpen ? "#1a1830" : "#EEEDFE",
-                  border: desktopMenuOpen ? "none" : "1.5px solid #C8C5F6",
-                  color: desktopMenuOpen ? "#fff" : "#534AB7",
-                  fontSize: 13, fontWeight: 600, cursor: "pointer",
-                  display: "flex", alignItems: "center", gap: 6,
-                  boxShadow: desktopMenuOpen ? "0 3px 16px rgba(83,74,183,0.4)" : "0 1px 6px rgba(0,0,0,0.1)",
+                  display: "flex", alignItems: "center", gap: 7,
+                  padding: "9px 20px", borderRadius: 22,
+                  background: "linear-gradient(135deg, #8e85f2 0%, #6a61c8 100%)",
+                  border: "1px solid var(--accent-border)",
+                  color: "#fff", fontSize: 13, fontWeight: 600, cursor: "pointer",
+                  boxShadow: "0 6px 22px rgba(142,133,242,0.45)",
                 }}
               >
-                <span style={{ fontSize: 16 }}>{desktopMenuOpen ? "×" : "⊕"}</span>
+                <Plus size={16} strokeWidth={2.4} /> Agregar historia
+              </motion.button>
+
+              {/* Secondary: navigate */}
+              <motion.button
+                onClick={() => setDesktopMenuOpen((o) => !o)}
+                whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                transition={SPRING}
+                style={{
+                  padding: "7px 18px", borderRadius: 20,
+                  background: desktopMenuOpen ? "var(--accent-bg)" : "rgba(20,17,40,0.9)",
+                  border: `1px solid ${desktopMenuOpen ? "var(--accent)" : "var(--accent-border)"}`,
+                  color: desktopMenuOpen ? "var(--accent-strong)" : "var(--text-muted)",
+                  fontSize: 12.5, fontWeight: 600, cursor: "pointer",
+                  display: "flex", alignItems: "center", gap: 6,
+                }}
+              >
+                {desktopMenuOpen ? <X size={15} /> : <Menu size={15} />}
                 {desktopMenuOpen ? "Cerrar" : "Navegar"}
               </motion.button>
             </div>
@@ -117,35 +134,18 @@ export default function FloatingProfile({ visible, activeTab, onTabChange, image
                         whileTap={{ scale: 0.97 }}
                         onClick={() => { onTabChange(item.id); setDesktopMenuOpen(false); }}
                         style={{
-                          display: "flex", alignItems: "center", gap: 8,
-                          padding: "9px 18px 9px 12px", borderRadius: 26,
-                          border: `${isActive ? 2 : 1.5}px solid ${item.border}`,
-                          background: isActive ? item.bg : "#fff",
+                          display: "flex", alignItems: "center", gap: 10,
+                          padding: "10px 18px", borderRadius: 24,
+                          border: `1.5px solid ${isActive ? "var(--accent)" : "var(--accent-border)"}`,
+                          background: isActive ? "var(--accent-bg)" : "rgba(20,17,40,0.92)",
                           cursor: "pointer",
-                          boxShadow: isActive ? `0 2px 14px ${item.border}88` : "0 1px 8px rgba(0,0,0,0.09)",
-                          whiteSpace: "nowrap", position: "relative", overflow: "hidden", minWidth: 130,
+                          boxShadow: isActive ? "0 4px 18px rgba(142,133,242,0.4)" : "0 3px 14px rgba(0,0,0,0.4)",
+                          whiteSpace: "nowrap", minWidth: 130,
+                          color: isActive ? "var(--accent-strong)" : "var(--text-muted)",
                         }}
                       >
-                        {isActive && (
-                          <motion.div
-                            animate={{ x: ["-100%", "220%"] }}
-                            transition={{ repeat: Infinity, duration: 2.4, ease: "linear", delay: i * 0.35 }}
-                            style={{
-                              position: "absolute", inset: 0,
-                              background: `linear-gradient(90deg, transparent 0%, ${item.border}66 50%, transparent 100%)`,
-                              pointerEvents: "none",
-                            }}
-                          />
-                        )}
-                        <span style={{ fontSize: 17 }}>{item.icon}</span>
-                        <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500, color: isActive ? item.color : "#444" }}>
-                          {item.label}
-                        </span>
-                        {isActive && (
-                          <motion.span layoutId="nav-dot-desktop"
-                            style={{ width: 7, height: 7, borderRadius: "50%", background: item.color, marginLeft: "auto" }}
-                          />
-                        )}
+                        <item.Icon size={17} strokeWidth={2} color={isActive ? "var(--accent-strong)" : "var(--accent)"} />
+                        <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500 }}>{item.label}</span>
                       </motion.button>
                     );
                   })}
@@ -157,94 +157,126 @@ export default function FloatingProfile({ visible, activeTab, onTabChange, image
       </AnimatePresence>
       </div>{/* end .floating-profile-desktop */}
 
-      {/* ══ MOBILE: speed-dial FAB bottom-right ═══════════════════ */}
+      {/* ══ MOBILE: bottom-right quick-access dial ════════════════ */}
       <div className="floating-profile-mobile">
         {/* Backdrop when open */}
         <AnimatePresence>
-          {mobileMenuOpen && (
+          {mobileNavOpen && (
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => setMobileNavOpen(false)}
               style={{
                 position: "fixed", inset: 0, zIndex: 88,
-                background: "rgba(10,8,30,0.35)", backdropFilter: "blur(2px)",
+                background: "rgba(8,6,20,0.6)", backdropFilter: "blur(3px)",
               }}
             />
           )}
         </AnimatePresence>
 
-        {/* Speed-dial items (above FAB) */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <div style={{
-              position: "fixed", right: 16, bottom: 90, zIndex: 89,
-              display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8,
-            }}>
-              {[...NAV_ITEMS].reverse().map((item, i) => {
-                const isActive = activeTab === item.id;
-                return (
-                  <motion.button
-                    key={item.id}
-                    initial={{ opacity: 0, y: 16, scale: 0.85 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                    transition={{ ...SPRING, delay: i * 0.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => { onTabChange(item.id); setMobileMenuOpen(false); }}
-                    style={{
-                      display: "flex", alignItems: "center", gap: 10,
-                      padding: "10px 18px 10px 14px", borderRadius: 28,
-                      background: isActive ? item.bg : "#fff",
-                      border: `${isActive ? 2 : 1.5}px solid ${item.border}`,
-                      boxShadow: isActive
-                        ? `0 4px 20px ${item.border}99`
-                        : "0 2px 12px rgba(0,0,0,0.14)",
-                      cursor: "pointer", whiteSpace: "nowrap",
-                    }}
-                  >
-                    <span style={{ fontSize: 20 }}>{item.icon}</span>
-                    <span style={{
-                      fontSize: 15, fontWeight: isActive ? 700 : 500,
-                      color: isActive ? item.color : "#333",
-                    }}>
-                      {item.label}
-                    </span>
-                    {isActive && (
-                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: item.color, marginLeft: 2, display: "inline-block" }} />
-                    )}
-                  </motion.button>
-                );
-              })}
-            </div>
-          )}
-        </AnimatePresence>
+        <div style={{
+          position: "fixed", right: 16, bottom: 20, zIndex: 89,
+          display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 9,
+        }}>
+          {/* Quick-access items */}
+          <AnimatePresence>
+            {mobileNavOpen && (
+              <motion.div
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 9, marginBottom: 1 }}
+              >
+                {/* Nav items (top) */}
+                {NAV_ITEMS.map((item, i) => {
+                  const isActive = activeTab === item.id;
+                  return (
+                    <DialItem
+                      key={item.id}
+                      index={i}
+                      label={item.label}
+                      Icon={item.Icon}
+                      active={isActive}
+                      onClick={() => { onTabChange(item.id); setMobileNavOpen(false); }}
+                    />
+                  );
+                })}
+                {/* Primary action (closest to FAB) */}
+                <DialItem
+                  index={NAV_ITEMS.length}
+                  label="Agregar historia"
+                  Icon={Plus}
+                  highlight
+                  onClick={() => { setMobileNavOpen(false); onAddHistoria(); }}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-        {/* FAB button */}
-        <motion.button
-          onClick={() => setMobileMenuOpen((o) => !o)}
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.93 }}
-          style={{
-            position: "fixed", right: 16, bottom: 20, zIndex: 89,
-            width: 56, height: 56, borderRadius: "50%",
-            background: mobileMenuOpen ? "#1a1830" : "#7F77DD",
-            border: "none", color: "#fff",
-            fontSize: 24, cursor: "pointer",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            boxShadow: mobileMenuOpen
-              ? "0 4px 20px rgba(26,24,48,0.5)"
-              : "0 4px 20px rgba(127,119,221,0.55)",
-          }}
-        >
-          <motion.span
-            animate={{ rotate: mobileMenuOpen ? 45 : 0 }}
-            transition={{ duration: 0.2 }}
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", lineHeight: 1 }}
+          {/* FAB toggle */}
+          <motion.button
+            onClick={() => setMobileNavOpen((o) => !o)}
+            whileTap={{ scale: 0.92 }}
+            style={{
+              width: 56, height: 56, borderRadius: "50%",
+              background: mobileNavOpen
+                ? "rgba(20,17,40,0.96)"
+                : "radial-gradient(circle at 32% 26%, #a89fff 0%, #8e85f2 50%, #6a61c8 100%)",
+              border: "1px solid var(--accent-border)",
+              color: "#fff", cursor: "pointer",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)",
+              boxShadow: mobileNavOpen
+                ? "0 6px 22px rgba(0,0,0,0.55)"
+                : "0 8px 28px rgba(142,133,242,0.6), inset 0 1px 2px rgba(255,255,255,0.32)",
+            }}
           >
-            {mobileMenuOpen ? "×" : "⊕"}
-          </motion.span>
-        </motion.button>
+            <motion.span animate={{ rotate: mobileNavOpen ? 90 : 0 }} transition={{ duration: 0.22 }} style={{ display: "flex" }}>
+              {mobileNavOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.span>
+          </motion.button>
+        </div>
       </div>
     </>
+  );
+}
+
+// ── Single dial item (no circle around icon) ──────────────────────
+function DialItem({
+  index, label, Icon, active = false, highlight = false, onClick,
+}: {
+  index: number;
+  label: string;
+  Icon: React.ComponentType<{ size?: number; strokeWidth?: number; color?: string }>;
+  active?: boolean;
+  highlight?: boolean;
+  onClick: () => void;
+}) {
+  const iconColor = highlight ? "#fff" : active ? "var(--accent-strong)" : "var(--accent)";
+  const labelColor = highlight ? "#fff" : active ? "var(--accent-strong)" : "var(--text-muted)";
+  return (
+    <motion.button
+      initial={{ opacity: 0, y: 16, scale: 0.85 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 10, scale: 0.9 }}
+      transition={{ ...SPRING, delay: index * 0.04 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={onClick}
+      style={{
+        display: "flex", flexDirection: "row-reverse", alignItems: "center", gap: 10,
+        padding: "10px 16px", borderRadius: 26,
+        background: highlight
+          ? "radial-gradient(circle at 30% 25%, #a89fff 0%, #8e85f2 52%, #6a61c8 100%)"
+          : active ? "var(--accent-bg)" : "rgba(20,17,40,0.94)",
+        border: `1.5px solid ${highlight || active ? "var(--accent)" : "var(--accent-border)"}`,
+        backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)",
+        boxShadow: highlight
+          ? "0 8px 26px rgba(142,133,242,0.6)"
+          : active ? "0 6px 22px rgba(142,133,242,0.4)" : "0 6px 18px rgba(0,0,0,0.5)",
+        cursor: "pointer", whiteSpace: "nowrap",
+      }}
+    >
+      <Icon size={highlight ? 20 : 18} strokeWidth={highlight ? 2.5 : 2} color={iconColor} />
+      <span style={{ fontSize: 15, fontWeight: highlight || active ? 700 : 500, letterSpacing: "0.02em", color: labelColor }}>
+        {label}
+      </span>
+    </motion.button>
   );
 }

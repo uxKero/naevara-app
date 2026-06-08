@@ -1,38 +1,128 @@
 @import "tailwindcss";
 
-/* Forzar modo claro siempre */
+/* ══ Tema: Arcano Lunar (oscuro) ══════════════════════════════ */
 :root {
-  color-scheme: light;
-  --bg-page: #f0eee9;
-  --bg-card: #ffffff;
-  --bg-subtle: #f8f7f4;
-  --border: #e5e3dc;
-  --text-main: #1a1a1a;
-  --text-muted: #555;
-  --text-faint: #999;
-  --accent: #7F77DD;
-  --accent-deep: #3C3489;
-  --accent-bg: #EEEDFE;
-  --hero-bg: #1a1830;
+  color-scheme: dark;
+
+  /* Fondos */
+  --bg-page:   #0c0a18;   /* medianoche base */
+  --bg-deep:   #090713;   /* el más profundo */
+  --bg-card:   #16132b;   /* panel/carta */
+  --bg-subtle: #1f1b39;   /* panel interno */
+  --hero-bg:   #100c22;   /* cabecera */
+
+  /* Bordes (violeta tenue) */
+  --border:      rgba(176,170,238,0.16);
+  --border-soft: rgba(176,170,238,0.09);
+
+  /* Texto */
+  --text-main:  #f3f1fb;
+  --text-muted: #cac5e7;
+  --text-faint: #9990ad;
+
+  /* Acentos arcanos */
+  --accent:        #8e85f2;
+  --accent-strong: #cbc6fb;
+  --accent-bg:     rgba(127,119,221,0.14);
+  --accent-border: rgba(176,170,238,0.34);
+  --accent-deep:   #3C3489;
+
+  /* Oro tenue (ornamento) */
+  --gold: #d8c08a;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
-  background: var(--bg-page);
   color: var(--text-main);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body), "Spectral", Georgia, serif;
+  font-size: 15px;
+  line-height: 1.62;
   min-height: 100vh;
+  background-color: var(--bg-page);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Texto de cuerpo un toque más sólido para legibilidad sobre oscuro */
+p, span, div, td, th, li, label, a { letter-spacing: 0.005em; }
+
+/* Nebulosas suaves de fondo (fijas) */
+body {
+  background-image:
+    radial-gradient(ellipse 70% 50% at 78% -8%, rgba(60,52,137,0.50) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 4% 108%, rgba(38,33,92,0.55) 0%, transparent 55%);
+  background-attachment: fixed;
+}
+
+/* Campo de estrellas (capa fija detrás de todo) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.80), transparent),
+    radial-gradient(1px 1px at 27% 62%, rgba(203,198,251,0.70), transparent),
+    radial-gradient(1.4px 1.4px at 41% 28%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1px 1px at 55% 80%, rgba(203,198,251,0.60), transparent),
+    radial-gradient(1px 1px at 63% 12%, rgba(255,255,255,0.70), transparent),
+    radial-gradient(1.6px 1.6px at 73% 48%, rgba(255,255,255,0.90), transparent),
+    radial-gradient(1px 1px at 82% 73%, rgba(203,198,251,0.65), transparent),
+    radial-gradient(1.2px 1.2px at 88% 24%, rgba(255,255,255,0.80), transparent),
+    radial-gradient(1px 1px at 34% 88%, rgba(255,255,255,0.55), transparent),
+    radial-gradient(1px 1px at 7% 78%, rgba(203,198,251,0.55), transparent),
+    radial-gradient(1.3px 1.3px at 94% 56%, rgba(255,255,255,0.75), transparent),
+    radial-gradient(1px 1px at 49% 8%, rgba(255,255,255,0.60), transparent);
+  opacity: 0.55;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar { width: 7px; height: 7px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #d3d1c7; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(142,133,242,0.35); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(142,133,242,0.55); }
 
-/* Grillas responsivas */
+/* ══ Tipografía de fantasía ══════════════════════════════════ */
+.hero-name {
+  font-family: var(--font-display), "Cinzel", serif;
+  letter-spacing: 0.04em !important;
+}
+.sec-label {
+  font-family: var(--font-display), "Cinzel", serif;
+  color: var(--accent-strong) !important;
+  letter-spacing: 0.18em !important;
+}
+.display-font {
+  font-family: var(--font-display), "Cinzel", serif;
+}
+
+/* Divisor decorativo con rombo central */
+.arcane-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 10px;
+  color: var(--accent-border);
+}
+.arcane-divider::before,
+.arcane-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+/* Brillo suave para cartas destacadas */
+.glow-soft {
+  box-shadow: 0 0 0 1px var(--accent-border), 0 8px 40px rgba(60,52,137,0.25);
+}
+
+/* ══ Grillas responsivas ═════════════════════════════════════ */
 .grid-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,14 +140,20 @@ html, body {
   gap: 8px;
   margin-bottom: 14px;
 }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
 
-/* Input fix — texto siempre legible */
+/* Inputs — legibles sobre el tema oscuro (sin !important: los inline ganan) */
 input, textarea, select {
-  color: #1a1a1a !important;
-  background-color: #ffffff !important;
+  color: var(--text-main);
+  background-color: var(--bg-subtle);
 }
 input::placeholder, textarea::placeholder {
-  color: #aaa !important;
+  color: var(--text-faint);
 }
 
 /* Animación guardado */
@@ -69,8 +165,8 @@ input::placeholder, textarea::placeholder {
 .save-flash { animation: fadeOutAnim 2.5s forwards; }
 
 /* Floating profile variants */
-.floating-profile-mobile  { display: none; }   /* hidden on desktop */
-.floating-profile-desktop { display: flex; }   /* visible on desktop */
+.floating-profile-mobile  { display: none; }
+.floating-profile-desktop { display: flex; }
 
 @media (max-width: 1280px) {
   .floating-profile-desktop { display: none !important; }
@@ -79,40 +175,36 @@ input::placeholder, textarea::placeholder {
 
 /* ── Responsive ───────────────────────────── */
 @media (max-width: 640px) {
-  .grid-2col {
-    grid-template-columns: 1fr;
-  }
-  .grid-3col {
-    grid-template-columns: 1fr 1fr;
-  }
-  .spell-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .hero-image-wrap {
-    display: none;
-  }
+  .grid-2col   { grid-template-columns: 1fr; }
+  .grid-3col   { grid-template-columns: 1fr 1fr; }
+  .spell-grid  { grid-template-columns: 1fr 1fr; }
   .hero-inner {
-    padding: 14px 16px 0 !important;
-    gap: 10px !important;
-  }
-  .hero-name {
-    font-size: 26px !important;
-  }
-  .hero-stats-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 22px 16px 6px !important;
     gap: 14px !important;
+  }
+  .hero-image-wrap { display: block !important; }
+  .hero-image-wrap img {
+    width: 168px !important;
+    height: 212px !important;
+    border-radius: 14px !important;
+    border-bottom: 1px solid rgba(175,169,236,0.35) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(175,169,236,0.18);
+  }
+  .hero-info { text-align: center; padding-bottom: 4px !important; }
+  .hero-tags { justify-content: center; }
+  .hero-name { font-size: 30px !important; }
+  .hero-stats-row {
+    justify-content: center;
+    gap: 16px !important;
     flex-wrap: wrap;
   }
-  .tabs-inner {
-    padding: 0 8px !important;
-  }
+  .tabs-inner { padding: 0 8px !important; }
   .tab-btn {
     padding: 12px 12px !important;
     font-size: 12px !important;
   }
-  .page-content {
-    padding: 1rem 1rem 3rem !important;
-  }
-  .combat-grid-3 {
-    grid-template-columns: 1fr 1fr !important;
-  }
+  .page-content { padding: 1rem 1rem 3rem !important; }
+  .combat-grid-3 { grid-template-columns: 1fr 1fr !important; }
 }

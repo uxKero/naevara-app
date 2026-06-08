@@ -42,14 +42,14 @@ export default function EditableText({
 
   const baseStyle: React.CSSProperties = {
     width: "100%",
-    background: "#fff",
-    border: "1.5px solid #7F77DD",
+    background: "var(--bg-subtle)",
+    border: "1.5px solid var(--accent)",
     borderRadius: 6,
     padding: "4px 8px",
     fontSize: "inherit",
     fontFamily: "inherit",
     lineHeight: "inherit",
-    color: "#1a1a1a",        // ← siempre texto oscuro
+    color: "var(--text-main)",        // ← siempre legible
     resize: "none",
     outline: "none",
     boxShadow: "0 0 0 3px rgba(127,119,221,0.12)",
@@ -63,7 +63,7 @@ export default function EditableText({
         title="Clic para editar"
         style={{ cursor: "text" }}
       >
-        {value || <span style={{ color: "#aaa", fontStyle: "italic" }}>{placeholder}</span>}
+        {value || <span style={{ color: "var(--text-faint)", fontStyle: "italic" }}>{placeholder}</span>}
         <span
           style={{
             marginLeft: 4,

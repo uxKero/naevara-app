@@ -43,14 +43,14 @@ export default function EditableNumber({ value, onChange, className = "" }: Edit
       style={{
         width: 72,
         textAlign: "center",
-        background: "#fff",
-        border: "1.5px solid #7F77DD",
+        background: "var(--bg-subtle)",
+        border: "1.5px solid var(--accent)",
         borderRadius: 6,
         padding: "2px 4px",
         fontSize: "inherit",
         fontFamily: "inherit",
         fontWeight: "inherit",
-        color: "#1a1a1a",          // ← siempre legible
+        color: "var(--text-main)",          // ← siempre legible
         outline: "none",
         boxShadow: "0 0 0 3px rgba(127,119,221,0.12)",
       }}
