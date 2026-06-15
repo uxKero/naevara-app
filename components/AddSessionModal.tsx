@@ -8,7 +8,7 @@ interface Props {
   onClose: () => void;
   onSave: (entry: SessionEntry) => void;
   existing?: SessionEntry; // para editar
-  openAI?: (title: string, currentText: string, onApply: (t: string) => void) => void;
+  openAI?: (title: string, currentText: string, onApply: (t: string) => void, tipo?: "personal" | "partida") => void;
 }
 
 function todayStr() {
@@ -169,7 +169,7 @@ export default function AddSessionModal({ isOpen, onClose, onSave, existing, ope
               </label>
               {openAI && (
                 <button
-                  onClick={() => openAI("Nueva entrada de historia", contenido, (t) => setContenido(t))}
+                  onClick={() => openAI("Nueva entrada de historia", contenido, (t) => setContenido(t), tipo)}
                   style={{
                     fontSize: 11, padding: "3px 10px", borderRadius: 8,
                     background: "var(--accent-bg)", color: "var(--accent-strong)",
@@ -177,7 +177,7 @@ export default function AddSessionModal({ isOpen, onClose, onSave, existing, ope
                   }}
                 >
                   <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
-                    <Sparkles size={11} strokeWidth={2} /> Expandir con IA
+                    <Sparkles size={11} strokeWidth={2} /> Mejorar con IA
                   </span>
                 </button>
               )}

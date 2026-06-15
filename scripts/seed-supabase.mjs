@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const url = process.env.SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const id = process.env.CHARACTER_ID || "naevara";
+const id = (process.env.CHARACTER_ID || "naevara").trim();
 
 if (!url || !key) {
   console.error("Faltan SUPABASE_URL o SUPABASE_SERVICE_ROLE_KEY en el entorno.");

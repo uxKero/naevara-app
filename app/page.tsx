@@ -39,6 +39,7 @@ export default function Home() {
   const [historiaModal, setHistoriaModal] = useState(false);
   const [aiModal, setAiModal]           = useState<{
     open: boolean; title: string; currentText: string; onApply: (t: string) => void;
+    tipo?: "personal" | "partida";
   }>({ open: false, title: "", currentText: "", onApply: () => {} });
 
   // Cargar datos
@@ -56,15 +57,26 @@ export default function Home() {
   const save = useCallback(async (d: CharacterData) => {
     setSaving(true);
     try {
-      await fetch("/api/save", {
+      const res = await fetch("/api/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(d),
       });
-      setSavedMsg("Guardado ✓");
-      setTimeout(() => setSavedMsg(""), 2500);
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        // No persistió: avisar fuerte y dejar el mensaje hasta el próximo intento.
+        setSavedMsg(`⚠ No se guardó: ${out?.error ?? res.status}`);
+        return;
+      }
+      if (out?.store === "supabase") {
+        setSavedMsg("Guardado en la nube ✓");
+        setTimeout(() => setSavedMsg(""), 2500);
+      } else {
+        // Cayó al archivo local (efímero en producción) → se puede perder.
+        setSavedMsg("⚠ Guardado solo local, NO en la nube");
+      }
     } catch {
-      setSavedMsg("Error al guardar");
+      setSavedMsg("⚠ Error de red: no se guardó");
     } finally {
       setSaving(false);
     }
@@ -83,8 +95,8 @@ export default function Home() {
   );
 
   const openAI = useCallback(
-    (title: string, currentText: string, onApply: (t: string) => void) => {
-      setAiModal({ open: true, title, currentText, onApply });
+    (title: string, currentText: string, onApply: (t: string) => void, tipo?: "personal" | "partida") => {
+      setAiModal({ open: true, title, currentText, onApply, tipo });
     },
     []
   );
@@ -119,6 +131,7 @@ export default function Home() {
         onApply={(text) => { aiModal.onApply(text); setAiModal((s) => ({ ...s, open: false })); }}
         sectionTitle={aiModal.title}
         currentText={aiModal.currentText}
+        tipo={aiModal.tipo}
         context={`Personaje: ${data.meta.firstName} ${data.meta.lastName}, ${data.meta.eyebrow}`}
       />
       {galleryIdx !== null && (
@@ -262,7 +275,7 @@ export default function Home() {
               ))}
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 8, paddingRight: 2, flexShrink: 0 }}>
-              {savedMsg && <span style={{ fontSize: 11, color: "#7F77DD" }} className="save-flash">{savedMsg}</span>}
+              {savedMsg && <span style={{ fontSize: 11, fontWeight: savedMsg.startsWith("⚠") ? 600 : 400, color: savedMsg.startsWith("⚠") ? "#C0392B" : "#7F77DD" }} className="save-flash">{savedMsg}</span>}
               <button
                 onClick={() => save(data)}
                 disabled={saving}

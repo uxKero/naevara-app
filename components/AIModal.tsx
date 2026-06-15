@@ -8,16 +8,16 @@ interface AIModalProps {
   sectionTitle: string;
   currentText: string;
   context?: string; // contexto adicional del personaje para la IA
+  tipo?: "personal" | "partida"; // tono: íntimo de Naevara vs. sesión de partida
   mode?: "expand" | "rewrite" | "continue" | "free";
 }
 
 const MODELS = [
-  { value: "anthropic/claude-3.5-sonnet", label: "Claude 3.5 Sonnet" },
-  { value: "anthropic/claude-3-haiku", label: "Claude 3 Haiku (rápido)" },
-  { value: "openai/gpt-4o", label: "GPT-4o" },
-  { value: "openai/gpt-4o-mini", label: "GPT-4o Mini (rápido)" },
-  { value: "meta-llama/llama-3.3-70b-instruct", label: "Llama 3.3 70B (gratis)" },
-  { value: "google/gemini-flash-1.5", label: "Gemini Flash 1.5" },
+  { value: "", label: "Automático (Claude 3.5 Haiku) — recomendado" },
+  { value: "anthropic/claude-3.5-haiku", label: "Claude 3.5 Haiku" },
+  { value: "openai/gpt-4o-mini", label: "GPT-4o Mini (más barato)" },
+  { value: "deepseek/deepseek-chat-v3-0324", label: "DeepSeek V3 (barato)" },
+  { value: "anthropic/claude-3.5-sonnet", label: "Claude 3.5 Sonnet (mejor, más caro)" },
 ];
 
 export default function AIModal({
@@ -27,26 +27,25 @@ export default function AIModal({
   sectionTitle,
   currentText,
   context = "",
+  tipo,
 }: AIModalProps) {
   const [prompt, setPrompt] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [apiKey, setApiKey] = useState("");
-  const [model, setModel] = useState("anthropic/claude-3.5-sonnet");
+  const [model, setModel] = useState("");
   const [showKeyInput, setShowKeyInput] = useState(false);
 
-  // Cargar configuración guardada
+  // Cargar configuración guardada (opcional: el servidor ya tiene una key por defecto)
   useEffect(() => {
     if (isOpen) {
-      const savedKey = localStorage.getItem("openrouter_key") || "";
-      const savedModel = localStorage.getItem("openrouter_model") || "anthropic/claude-3.5-sonnet";
-      setApiKey(savedKey);
-      setModel(savedModel);
+      setApiKey(localStorage.getItem("openrouter_key") || "");
+      setModel(localStorage.getItem("openrouter_model") || "");
       setResult("");
       setError("");
       setPrompt("");
-      setShowKeyInput(!savedKey);
+      setShowKeyInput(false);
     }
   }, [isOpen]);
 
@@ -56,13 +55,12 @@ export default function AIModal({
     setShowKeyInput(false);
   };
 
-  const generate = async () => {
-    if (!apiKey) {
-      setShowKeyInput(true);
-      setError("Primero configurá tu API key de OpenRouter.");
+  const callAI = async (mode: "improve" | "free") => {
+    if (mode === "improve" && !currentText.trim()) {
+      setError("No hay texto para mejorar todavía. Escribí algo primero.");
       return;
     }
-    if (!prompt.trim()) {
+    if (mode === "free" && !prompt.trim()) {
       setError("Escribí qué querés que haga la IA.");
       return;
     }
@@ -80,8 +78,10 @@ export default function AIModal({
           currentText,
           sectionTitle,
           context,
-          model,
-          apiKey,
+          tipo,
+          mode,
+          model: model || undefined,
+          apiKey: apiKey || undefined,
         }),
       });
 
@@ -98,6 +98,9 @@ export default function AIModal({
       setLoading(false);
     }
   };
+
+  const improve = () => callAI("improve");
+  const generate = () => callAI("free");
 
   if (!isOpen) return null;
 
@@ -135,7 +138,10 @@ export default function AIModal({
           {showKeyInput && (
             <div className="bg-[var(--accent-bg)] rounded-xl p-4 space-y-3">
               <p className="text-xs font-semibold text-[var(--accent-strong)] uppercase tracking-wide">
-                Configuración OpenRouter
+                Configuración OpenRouter (opcional)
+              </p>
+              <p className="text-xs text-[var(--text-faint)]">
+                Ya hay una key configurada en el servidor. Solo completá esto si querés usar tu propia key o forzar otro modelo.
               </p>
               <div>
                 <label className="text-xs text-[var(--text-muted)] mb-1 block">API Key</label>
@@ -193,10 +199,32 @@ export default function AIModal({
             </div>
           )}
 
-          {/* Prompt del usuario */}
+          {/* Acción principal: mejorar el texto tal cual, sin escribir instrucción */}
+          <button
+            onClick={improve}
+            disabled={loading || !currentText.trim()}
+            className="w-full bg-[#7F77DD] text-white rounded-xl py-2.5 text-sm font-semibold hover:bg-[#6B63C9] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          >
+            {loading ? (
+              <><span className="animate-spin">⟳</span> Mejorando...</>
+            ) : (
+              "✦ Mejorar mi texto"
+            )}
+          </button>
+          <p className="text-xs text-[var(--text-faint)] -mt-2">
+            Toma lo que escribiste y lo reescribe mucho mejor, manteniendo el sentido y el tono.
+          </p>
+
+          <div className="flex items-center gap-3 py-1">
+            <div className="flex-1 h-px bg-[var(--border)]" />
+            <span className="text-xs text-[var(--text-faint)]">o pedile algo específico</span>
+            <div className="flex-1 h-px bg-[var(--border)]" />
+          </div>
+
+          {/* Prompt del usuario (opcional) */}
           <div>
             <p className="text-xs font-medium text-[var(--text-faint)] uppercase tracking-wide mb-1">
-              ¿Qué querés que haga la IA?
+              ¿Qué querés que haga la IA? <span className="normal-case text-[var(--text-faint)]">(opcional)</span>
             </p>
             <textarea
               className="w-full border border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-main)] rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#7F77DD]/30 resize-none"
@@ -211,11 +239,11 @@ export default function AIModal({
             <p className="text-xs text-[var(--text-faint)] mt-1">Ctrl+Enter para generar</p>
           </div>
 
-          {/* Botón generar */}
+          {/* Botón generar con instrucción específica (secundario) */}
           <button
             onClick={generate}
-            disabled={loading}
-            className="w-full bg-[#1a1830] text-white rounded-xl py-2.5 text-sm font-medium hover:bg-[#2a2444] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            disabled={loading || !prompt.trim()}
+            className="w-full border border-[var(--border)] text-[var(--text-main)] rounded-xl py-2.5 text-sm font-medium hover:bg-[var(--bg-subtle)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {loading ? (
               <>
@@ -223,7 +251,7 @@ export default function AIModal({
                 Generando...
               </>
             ) : (
-              "✦ Generar con IA"
+              "Generar con esa instrucción"
             )}
           </button>
 

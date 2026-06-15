@@ -17,4 +17,6 @@ export const supabase: SupabaseClient | null = supabaseConfigured
   : null;
 
 /** Id de la fila única que guarda todo el personaje. */
-export const CHARACTER_ID = process.env.CHARACTER_ID || "naevara";
+// .trim() es clave: una env var con salto de línea ("naevara\n") crea una fila
+// fantasma distinta y parte los datos entre entornos.
+export const CHARACTER_ID = (process.env.CHARACTER_ID || "naevara").trim();
