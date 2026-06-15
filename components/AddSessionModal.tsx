@@ -54,7 +54,7 @@ export default function AddSessionModal({ isOpen, onClose, onSave, existing, ope
         background: "rgba(0,0,0,0.45)",
         display: "flex", alignItems: "center", justifyContent: "center", padding: 16,
       }}
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+      onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div style={{
         background: "var(--bg-card)", borderRadius: 16, width: "100%", maxWidth: 580,
