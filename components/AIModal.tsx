@@ -106,8 +106,8 @@ export default function AIModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+      className="fixed inset-0 flex items-center justify-center p-4"
+      style={{ backgroundColor: "rgba(0,0,0,0.5)", zIndex: 250 }}
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className="bg-[var(--bg-card)] rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto" style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.55)", border: "1px solid var(--border)" }}>
