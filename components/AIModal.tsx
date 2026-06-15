@@ -17,8 +17,9 @@ const MODELS = [
   { value: "anthropic/claude-3.5-haiku", label: "Claude 3.5 Haiku" },
   { value: "openai/gpt-4o-mini", label: "GPT-4o Mini (más barato)" },
   { value: "deepseek/deepseek-chat-v3-0324", label: "DeepSeek V3 (barato)" },
-  { value: "anthropic/claude-3.5-sonnet", label: "Claude 3.5 Sonnet (mejor, más caro)" },
+  { value: "anthropic/claude-haiku-4.5", label: "Claude Haiku 4.5 (mejor, más caro)" },
 ];
+const ALLOWED_MODELS = new Set(MODELS.map((m) => m.value));
 
 export default function AIModal({
   isOpen,
@@ -41,7 +42,9 @@ export default function AIModal({
   useEffect(() => {
     if (isOpen) {
       setApiKey(localStorage.getItem("openrouter_key") || "");
-      setModel(localStorage.getItem("openrouter_model") || "");
+      // Ignorar modelos viejos guardados que ya no existen en OpenRouter (ej. claude-3.5-sonnet).
+      const savedModel = localStorage.getItem("openrouter_model") || "";
+      setModel(ALLOWED_MODELS.has(savedModel) ? savedModel : "");
       setResult("");
       setError("");
       setPrompt("");
