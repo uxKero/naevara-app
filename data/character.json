@@ -1,10 +1,5 @@
 {
   "meta": {
-    "eyebrow": "Brujo del Gran Antiguo · Pacto del Tomo · Semielfa",
-    "firstName": "Naevara",
-    "lastName": "Tirael",
-    "subtitle": "Nivel 5 · Brujo del Gran Antiguo · Pacto del Tomo",
-    "subsubtitle": "Semielfa · Trasfondo: Ermitaña · Alineamiento: Neutral Buena",
     "tags": [
       "Semielfa",
       "Brujo",
@@ -12,624 +7,48 @@
       "Gran Antiguo",
       "Ermitaña",
       "Neutral Buena"
-    ]
-  },
-  "heroStats": [
-    {
-      "value": "5",
-      "label": "Nivel"
-    },
-    {
-      "value": "Brujo",
-      "label": "Clase"
-    },
-    {
-      "value": "Semielfa",
-      "label": "Raza"
-    },
-    {
-      "value": "Tomo",
-      "label": "Pacto"
-    }
-  ],
-  "heroQuote": "La que observa desde lejos",
-  "perfil": {
-    "nombre": {
-      "naevara": {
-        "palabra": "Naevara",
-        "etimologia": "Del élfico antiguo: nae (luna nueva, comienzo) + vara (guardiana). La Guardiana del Comienzo — la que protege lo que todavía no tiene forma."
-      },
-      "tirael": {
-        "palabra": "Tirael",
-        "etimologia": "Del élfico: tir (observar, vigilar desde lejos) + ael (cielo, éter). La que observa desde lejos — la que ve antes de que otros sepan que hay algo que mirar."
-      },
-      "combinado": "La Guardiana del Comienzo que observa desde lejos",
-      "descripcion": "Su nombre ya contiene su destino: cuida lo que aún no nació, y lo hace desde una distancia que solo ella conoce. De tanto observar, de tanto aprender, de tanto interiorizar — llega un momento en que lo que guardaba desde lejos se vuelve imposible de contener."
-    },
-    "aspecto": {
-      "rasgos": [
-        {
-          "label": "Piel",
-          "texto": "Clara, casi translúcida en luz directa — marfileña con subtono frío. En penumbra emite una luminosidad muy sutil, como luna detrás de nubes."
-        },
-        {
-          "label": "Ojos",
-          "texto": "Violeta pálido que vira a celeste según la luz. De noche, en el fondo del iris hay algo que no debería estar ahí."
-        },
-        {
-          "label": "Cabello",
-          "texto": "Rubio muy claro, casi plateado, liso hasta media espalda. Un mechón ceniza en el lado derecho — desde la noche del pacto."
-        },
-        {
-          "label": "Orejas y rasgos",
-          "texto": "Facciones delicadas, expresión serena e ilegible. Orejas levemente puntiagudas. Parece más joven de lo que es."
-        }
-      ],
-      "estilo": [
-        {
-          "label": "Ropa",
-          "texto": "Tonos fríos y suaves: blanco hueso, gris perla, azul cielo desaturado. Telas ligeras de buena confección. Manto gris-azulado caído sobre los hombros."
-        },
-        {
-          "label": "Amuleto de obsidiana",
-          "texto": "El único detalle oscuro en todo su look — contrasta exactamente por eso. También es su foco arcano."
-        },
-        {
-          "label": "Presencia",
-          "texto": "Todo en Naevara dice \"luz\". Y aún así la gente siente algo al estar cerca — como la sensación de estar parada al borde de algo muy alto. Es bella de una manera que no invita, sino que observa."
-        }
-      ]
-    },
-    "personalidad": {
-      "rasgos": [
-        {
-          "label": "Rasgo principal",
-          "texto": "Habla poco. Cuando lo hace, elige cada palabra. Escucha el doble de lo que habla y recuerda todo."
-        },
-        {
-          "label": "Ideal",
-          "texto": "El conocimiento es el único poder real. Todo lo demás es temporal — incluido el miedo."
-        },
-        {
-          "label": "Vínculo",
-          "texto": "Protege a quienes no pueden protegerse solos. No sabe exactamente por qué. Simplemente lo hace."
-        },
-        {
-          "label": "Defecto",
-          "texto": "A veces la voz le dice cosas que no comparte con el grupo. Genera tensión — especialmente cuando tiene razón."
-        }
-      ],
-      "relaciones": [
-        {
-          "label": "Con el grupo",
-          "texto": "No lidera, no sigue — está presente. Hace preguntas que incomodan sin levantar la voz. Cuando actúa, el grupo nota que algo cambió."
-        },
-        {
-          "label": "Deidad",
-          "texto": "Sehanine Moonbow — diosa élfica de la luna, los sueños y los viajes. No practica activamente. Pero hay algo en la luna del Bosque Oscuro que siempre sintió como su presencia. Sehanine fue primero. El Gran Antiguo llegó después. Coexisten."
-        }
-      ]
-    },
-    "equipamiento": [
-      {
-        "nombre": "Daga ×2",
-        "descripcion": "Arma de emergencia. 1d4 daño cortante. También puede lanzarse a distancia."
-      },
-      {
-        "nombre": "Amuleto de obsidiana",
-        "descripcion": "Foco arcano. Canal oficial para sus hechizos. El único detalle oscuro en su aspecto."
-      },
-      {
-        "nombre": "El Libro de las Sombras",
-        "descripcion": "El diario de la Escritura del Umbral convertido en artefacto por el Pacto del Tomo. Solo Naevara puede leerlo — sus símbolos cambian de forma ante cualquier otro ojo."
-      },
-      {
-        "nombre": "Mochila de Erudito",
-        "descripcion": "Notas adicionales, tinta, pluma, pergaminos, raciones, linterna."
-      },
-      {
-        "nombre": "Armadura de cuero",
-        "descripcion": "CA 13. Ligera, no penaliza hechizos."
-      },
-      {
-        "nombre": "Bastón",
-        "descripcion": "1d6 contundente si lo necesita."
-      }
     ],
-    "equipamientoNota": "CA final: 13 — Armadura de Cuero (11) + modificador Destreza (+2). Con Armor of Agathys (lanzado con espacio de 3.er nivel): 15 vida temporal y 15 de frío a quien la golpee cuerpo a cuerpo.",
-    "quote": "No sé qué vine a encontrar aquí. Pero lo que escucho esta noche es más claro que nunca. Estamos en el lugar correcto."
-  },
-  "stats": {
-    "base": [
-      {
-        "nombre": "Carisma",
-        "valor": 20,
-        "modificador": "+5",
-        "nota": "Stat principal — hechizos, CD 16, ataque +8. Subido a 20 con la mejora de nivel 4.",
-        "principal": true
-      },
-      {
-        "nombre": "Constitución",
-        "valor": 15,
-        "modificador": "+2",
-        "nota": "Vida y concentración.",
-        "principal": true
-      },
-      {
-        "nombre": "Destreza",
-        "valor": 14,
-        "modificador": "+2",
-        "nota": "CA e iniciativa.",
-        "principal": false
-      },
-      {
-        "nombre": "Sabiduría",
-        "valor": 14,
-        "modificador": "+2",
-        "nota": "Percepción e Insight.",
-        "principal": false
-      },
-      {
-        "nombre": "Inteligencia",
-        "valor": 14,
-        "modificador": "+2",
-        "nota": "Arcana e Historia.",
-        "principal": false
-      },
-      {
-        "nombre": "Fuerza",
-        "valor": 13,
-        "modificador": "+1",
-        "nota": "Raramente usada.",
-        "principal": false
-      }
-    ],
-    "combate": [
-      {
-        "valor": "44",
-        "label": "Puntos de vida"
-      },
-      {
-        "valor": "16",
-        "label": "CD de hechizos"
-      },
-      {
-        "valor": "+8",
-        "label": "Ataque arcano"
-      },
-      {
-        "valor": "13",
-        "label": "Clase de armadura"
-      },
-      {
-        "valor": "+3",
-        "label": "Bonif. competencia"
-      },
-      {
-        "valor": "2",
-        "label": "Espacios (niv 3)"
-      }
-    ],
-    "salvacion": {
-      "conComp": [
-        {
-          "stat": "Sabiduría",
-          "valor": "+5",
-          "nota": "(2 mod + 3 competencia)"
-        },
-        {
-          "stat": "Carisma",
-          "valor": "+8",
-          "nota": "(5 mod + 3 competencia)"
-        }
-      ],
-      "sinComp": [
-        {
-          "stat": "Fuerza",
-          "valor": "+1"
-        },
-        {
-          "stat": "Destreza · Constitución · Inteligencia",
-          "valor": "+2 cada una"
-        }
-      ]
-    },
-    "habilidades": [
-      {
-        "nombre": "Acrobacias (Des)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      },
-      {
-        "nombre": "Arcanos (Int)",
-        "circulo": true,
-        "numero": "+5",
-        "origen": "Brujo"
-      },
-      {
-        "nombre": "Atletismo (Fue)",
-        "circulo": false,
-        "numero": "+1",
-        "origen": ""
-      },
-      {
-        "nombre": "Engaño (Car)",
-        "circulo": false,
-        "numero": "+5",
-        "origen": ""
-      },
-      {
-        "nombre": "Historia (Int)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      },
-      {
-        "nombre": "Interpretación (Car)",
-        "circulo": false,
-        "numero": "+5",
-        "origen": ""
-      },
-      {
-        "nombre": "Intimidación (Car)",
-        "circulo": false,
-        "numero": "+5",
-        "origen": ""
-      },
-      {
-        "nombre": "Investigación (Int)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      },
-      {
-        "nombre": "Juego de Manos (Des)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      },
-      {
-        "nombre": "Medicina (Sab)",
-        "circulo": true,
-        "numero": "+5",
-        "origen": "Ermitaña"
-      },
-      {
-        "nombre": "Naturaleza (Int)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      },
-      {
-        "nombre": "Percepción (Sab)",
-        "circulo": true,
-        "numero": "+5",
-        "origen": "Semielfa"
-      },
-      {
-        "nombre": "Perspicacia (Sab)",
-        "circulo": true,
-        "numero": "+5",
-        "origen": "Brujo"
-      },
-      {
-        "nombre": "Persuasión (Car)",
-        "circulo": false,
-        "numero": "+5",
-        "origen": ""
-      },
-      {
-        "nombre": "Religión (Int)",
-        "circulo": true,
-        "numero": "+5",
-        "origen": "Ermitaña"
-      },
-      {
-        "nombre": "Sigilo (Des)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      },
-      {
-        "nombre": "Supervivencia (Sab)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      },
-      {
-        "nombre": "Trato con Animales (Sab)",
-        "circulo": false,
-        "numero": "+2",
-        "origen": ""
-      }
-    ],
-    "sabiduriaPasiva": "15"
-  },
-  "hechizos": {
-    "nota": "Regla del Brujo: 2 espacios de hechizo de 3.er nivel, recuperados con cada descanso corto (1 hora). Todo hechizo se lanza al 3.er nivel (se sube solo). Los trucos no cuestan espacio. Las invocaciones son permanentes y pasivas. Los hechizos de patrón (Gran Antiguo) están siempre disponibles y no ocupan tus 6 conocidos.",
-    "trucos": [
-      {
-        "badge": "Combate",
-        "nombre": "Eldritch Blast",
-        "descripcion": "Ataque a distancia cada turno. Con Agonizing Blast suma +5 daño. A nivel 5 dispara dos rayos.",
-        "destacado": true,
-        "dado": {
-          "cantidad": 1,
-          "caras": 10,
-          "modificador": 5,
-          "tipo": "fuerza",
-          "ataque": true,
-          "descripcionMecanica": "Rayo de energía arcana a 36 metros. Tirada de ataque de hechizo (+8). Sin tirada de salvación — si impacta, hace daño. Con Agonizing Blast suma +5 (Carisma) por rayo.",
-          "notas": [
-            "A nivel 5 → 2 rayos (cada uno con su propia tirada de ataque)",
-            "Podés apuntar a distintos objetivos",
-            "No gasta espacio de hechizo"
-          ]
-        }
-      },
-      {
-        "badge": "Utilidad",
-        "nombre": "Minor Illusion",
-        "descripcion": "Sonido o imagen falsa por 1 minuto. Distraer, confundir, crear oportunidades.",
-        "destacado": false
-      },
-      {
-        "badge": "Utilidad",
-        "nombre": "Prestidigitation",
-        "descripcion": "Efectos mágicos menores: sonidos, olores, marcar superficies. Útil para dejar marcas de la Escritura del Umbral discretamente.",
-        "destacado": false
-      },
-      {
-        "badge": "Tomo · utilidad",
-        "nombre": "Mage Hand",
-        "descripcion": "Mano arcana invisible a 9 metros. Abrir puertas, tomar cosas, activar mecanismos a distancia.",
-        "destacado": false
-      },
-      {
-        "badge": "Tomo · soporte",
-        "nombre": "Guidance",
-        "descripcion": "Tocás un aliado: +1d4 en su próxima tirada de habilidad. Sin límite. Usarla constantemente fuera de combate.",
-        "destacado": false,
-        "dado": {
-          "cantidad": 1,
-          "caras": 4,
-          "tipo": "bonificación",
-          "ataque": false,
-          "descripcionMecanica": "Tocás a un aliado dispuesto. Antes de que termine la concentración (1 minuto), puede sumar 1d4 a una tirada de habilidad.",
-          "notas": [
-            "No gasta espacio de hechizo",
-            "Concentración — se cancela si lanzás otro hechizo de concentración",
-            "Usarla en cada tirada importante del grupo"
-          ]
-        }
-      },
-      {
-        "badge": "Tomo · combate",
-        "nombre": "Toll the Dead",
-        "descripcion": "Daño necrótico: 1d8 si sano, 1d12 si ya herido. Alternativa ofensiva sin gastar espacio.",
-        "destacado": false,
-        "dado": {
-          "cantidad": 1,
-          "caras": 8,
-          "tipo": "necrótico",
-          "salvacion": "SAB CD 16",
-          "ataque": false,
-          "variante": {
-            "condicion": "Si el objetivo ya está herido (le faltan PV)",
-            "cantidad": 1,
-            "caras": 12
-          },
-          "descripcionMecanica": "Haces sonar una campana fúnebre invisible sobre el objetivo a 18 metros. Tirada de salvación de Sabiduría (CD 16). Si falla: daño necrótico completo. Si pasa: sin daño (es un truco, falla total en salvación exitosa).",
-          "notas": [
-            "No gasta espacio de hechizo",
-            "1d8 si el objetivo tiene todos sus PV",
-            "1d12 si al objetivo ya le falta algún PV — priorizar blancos heridos"
-          ]
-        }
-      }
-    ],
-    "patron": [
-      {
-        "badge": "Nivel 1 · patrón",
-        "nombre": "Dissonant Whispers",
-        "descripcion": "Susurros psíquicos: el objetivo huye aterrorizado y recibe daño psíquico. Los aliados pueden atacarle mientras huye.",
-        "destacado": false,
-        "dado": {
-          "cantidad": 3,
-          "caras": 6,
-          "tipo": "psíquico",
-          "salvacion": "SAB CD 16",
-          "ataque": false,
-          "descripcionMecanica": "Susurrás una melodía disonante a un objetivo a 18 metros. Tirada de salvación de Sabiduría (CD 16). Si falla: daño completo + debe usar su reacción para huir lo más lejos posible. Si pasa: la mitad del daño, no huye.",
-          "notas": [
-            "Gasta un espacio de hechizo de nivel 1",
-            "Si huye, los aliados pueden atacar con ventaja (oportunidad de ataque)",
-            "Las criaturas sordas pasan automáticamente la salvación",
-            "Al lanzar con espacios de mayor nivel: +1d6 por nivel extra"
-          ]
-        }
-      },
-      {
-        "badge": "Nivel 1 · patrón",
-        "nombre": "Tashas Hideous Laughter",
-        "descripcion": "El objetivo cae al suelo incapacitado, no puede moverse ni actuar. Control puro.",
-        "destacado": false
-      },
-      {
-        "badge": "Nivel 2 · patrón",
-        "nombre": "Detect Thoughts",
-        "descripcion": "Leés los pensamientos superficiales de una criatura cercana, o sondeás más profundo (salvación de Sabiduría CD 16). Gratis del patrón. La que observa, literal.",
-        "destacado": false
-      },
-      {
-        "badge": "Nivel 2 · patrón",
-        "nombre": "Phantasmal Force",
-        "descripcion": "Metés una ilusión en la mente de una sola criatura (salvación de Inteligencia CD 16) que la cree real — puede causarle 1d6 de daño psíquico por turno mientras la sostenés. Gratis del patrón.",
-        "destacado": false
-      },
-      {
-        "badge": "Nivel 3 · patrón",
-        "nombre": "Clairvoyance",
-        "descripcion": "Creás un sensor invisible en un lugar que conocés y ves u oís a distancia (1 min de lanzamiento, concentración 10 min). Gratis del patrón — espionaje puro, perfecto para 'la que observa desde lejos'.",
-        "destacado": true
-      },
-      {
-        "badge": "Nivel 3 · patrón",
-        "nombre": "Sending",
-        "descripcion": "Enviás un mensaje de 25 palabras a una criatura que conozcas, en cualquier parte del mundo, y recibís su respuesta. Gratis del patrón.",
-        "destacado": false
-      }
-    ],
-    "elegidos": [
-      {
-        "badge": "Nivel 1 · daño + control",
-        "nombre": "Hex",
-        "descripcion": "Maldecís a un enemigo: daño extra cada turno + desventaja en una habilidad. Dura 1 hora. Si cae, podés moverlo a otro sin gastar el espacio.",
-        "destacado": true,
-        "dado": {
-          "cantidad": 1,
-          "caras": 6,
-          "tipo": "necrótico",
-          "ataque": false,
-          "descripcionMecanica": "Maldecís un objetivo a 27 metros (acción adicional). Cada vez que lo golpeás (con cualquier ataque), añadís 1d6 de daño necrótico extra. También elegís una habilidad (ej: Fuerza) — el objetivo tiene desventaja en esas tiradas.",
-          "notas": [
-            "Gasta un espacio de hechizo de nivel 1",
-            "Concentración — dura hasta 1 hora",
-            "Si el objetivo cae a 0 PV, podés moverlo a otro enemigo (acción adicional)",
-            "Combo principal: Hex + Eldritch Blast (2 rayos) = 2×(1d10 + 5) + 2×1d6 necrótico por turno"
-          ]
-        }
-      },
-      {
-        "badge": "Nivel 1 · defensa",
-        "nombre": "Armor of Agathys",
-        "descripcion": "Armadura de hielo: como tus espacios son de 3.er nivel, da 15 vida temporal. Quien te golpee cuerpo a cuerpo recibe 15 de frío automáticamente. No usa concentración.",
-        "destacado": false
-      },
-      {
-        "badge": "Nivel 2 · control",
-        "nombre": "Hold Person",
-        "descripcion": "Paralizás hasta 2 humanoides (lo lanzás con espacio de 3.er nivel). Inmóviles, no actúan, y los ataques cuerpo a cuerpo contra ellos son críticos automáticos. Salvación de Sabiduría CD 16 al inicio de cada turno. Guardalo para el momento clave.",
-        "destacado": true
-      },
-      {
-        "badge": "Nivel 3 · zona Gran Antiguo",
-        "nombre": "Hunger of Hadar",
-        "descripcion": "Abrís una esfera de vacío frío del Reino Lejano: oscuridad total y terreno difícil adentro. Quien empieza su turno ahí recibe frío; quien lo termina ahí, ácido de los tentáculos. Niega zonas y atrapa.",
-        "destacado": true,
-        "dado": {
-          "cantidad": 2,
-          "caras": 6,
-          "tipo": "frío",
-          "salvacion": "DES CD 16",
-          "ataque": false,
-          "descripcionMecanica": "Esfera de 6m de radio a 45m, hasta 1 minuto (concentración). Adentro hay oscuridad mágica total y terreno difícil. Quien EMPIEZA su turno en la zona recibe 2d6 de frío (sin salvación). Quien TERMINA su turno en la zona hace salvación de Destreza (CD 16): si falla, 2d6 de ácido de los tentáculos del vacío.",
-          "notas": [
-            "Gasta un espacio de 3.er nivel",
-            "No hay tirada para evitar entrar — el control es la zona misma",
-            "Vos tampoco ves dentro (sin Devil's Sight): usalo para bloquear pasillos o negar terreno, no para disparar adentro",
-            "Hadar es la Estrella Oscura del Reino Lejano, de donde proviene tu patrón"
-          ]
-        }
-      },
-      {
-        "badge": "Nivel 3 · movilidad",
-        "nombre": "Fly",
-        "descripcion": "Velocidad de vuelo de 18m a una criatura dispuesta (podés ser vos), 10 min, concentración. Espacio de 3.er nivel. No podés mantener Hex / Hold Person / Hunger a la vez, y si perdés la concentración en el aire, caés (daño de caída). Clave en la ciudad flotante y el dungeon vertical — y semilla del arco: que algún día Naevara aprenda a volar de verdad.",
-        "destacado": true
-      },
-      {
-        "badge": "Nivel 3 · reacción",
-        "nombre": "Counterspell",
-        "descripcion": "Reacción: cuando ves a una criatura lanzando un hechizo, lo anulás (automático hasta 3.er nivel; superior requiere prueba de Carisma CD 10 + nivel del hechizo). No usa concentración, así que convive con Hex. Tu seguro contra los rituales e invocaciones de los cultistas de Tiamat.",
-        "destacado": true
-      }
-    ],
-    "invocaciones": [
-      {
-        "badge": "Permanente",
-        "nombre": "Agonizing Blast",
-        "descripcion": "Sumás +5 (Carisma) al daño de cada rayo de Eldritch Blast. Tu ataque básico ahora duele de verdad.",
-        "destacado": true
-      },
-      {
-        "badge": "Permanente",
-        "nombre": "Eyes of the Rune Keeper",
-        "descripcion": "Podés leer cualquier escritura en cualquier idioma. La base mecánica de la Escritura del Umbral — no hay texto oculto para Naevara.",
-        "destacado": true
-      },
-      {
-        "badge": "Permanente · nueva",
-        "nombre": "Book of Ancient Secrets",
-        "descripcion": "Inscribís rituales en tu Libro de las Sombras y los lanzás sin gastar espacios (Comprehend Languages, Detect Magic, Identify, Illusory Script, y cualquier ritual que encuentres por ahí). El motor de la lectora de sellos: todo lo arcano que documentás, lo podés volver a invocar.",
-        "destacado": true
-      }
-    ],
-    "loopCombate": "Hex (acción adicional) sobre el más peligroso → Eldritch Blast cada turno (2 rayos, +5 c/u) sobre el mismo. Para frenar a un grupo o bloquear un pasillo → Hunger of Hadar. Contra un jefe humanoide → Hold Person y avisale al grupo para aprovechar los críticos. Guardá Counterspell para cuando un cultista lance un ritual o invocación. Fly para reposicionarte o alcanzar lo inalcanzable. Toll the Dead cuando un enemigo ya está herido. Armor of Agathys (15 vida temp / 15 de frío) si esperás recibir golpes. Guidance en cada tirada de habilidad del grupo fuera de combate."
-  },
-  "historia": {
-    "origen": {
-      "titulo": "Historia de origen",
-      "parrafos": [
-        "Naevara creció en el borde del Bosque Oscuro, donde el día y la noche se funden en un eterno crepúsculo rosado-violáceo. Su abuela era adivina — le enseñó astronomía, runas antiguas, y a escuchar el silencio entre las estrellas.",
-        "A los 119 años, observando una constelación que se movió cuando no debía, algo al otro lado del cosmos la miró de vuelta. No fue aterrador. Fue como si alguien encendiera una vela en una habitación que siempre estuvo oscura.",
-        "El mechón ceniza apareció al amanecer siguiente. Su abuela lo vio, no dijo nada, y le preparó el bolso para viajar. Eso fue hace once años. Naevara todavía no sabe exactamente qué la trajo a RedMica — solo que la voz del Gran Antiguo se hizo más intensa cuando se acercó."
-      ],
-      "contextoActual": "RedMica está estacionada en Atlanta. Los cultistas de Tiamat trabajan para traer a la Reina de los Dragones Cromáticos — y para detenerla de forma definitiva, el grupo debe reunir ciertos objetos especiales. Debajo de la ciudad, un dungeon de diez pisos (explorado solo hasta el octavo) guarda algo encerrado. Y en este mundo de dragones abundantes, diez dragones ancianos duermen sellados: si uno despierta, su contraparte también lo hará. Algo en todo esto está conectado con lo que trajo a Naevara hasta acá."
-    },
-    "escrituraUmbral": {
-      "titulo": "La Escritura del Umbral",
-      "subtitulo": "Habilidad narrativa única — confirmada por el Master",
-      "descripcion": "Un sistema de símbolos propio que Naevara desarrolló a lo largo de años de observación, estudio y experiencia con el pacto. No es un idioma aprendido — emergió de ella. Condensa conocimientos, patrones arcanos, sensaciones que el lenguaje común no puede expresar.",
-      "extra": "Nadie más puede leerlo. Si alguien intenta hacerlo, los símbolos parecen rearreglarse solos cada vez que parpadea — nunca están en el mismo orden para un ojo ajeno. No hay forma de copiarlo ni descifarlo sin Naevara.",
-      "detalles": [
-        {
-          "label": "El Libro de las Sombras",
-          "texto": "El diario de la Escritura del Umbral, convertido en artefacto por el Pacto del Tomo. Cuero oscuro, cierre de plata, sin nombre en la cubierta. Algunas páginas escritas con tinta, otras con algo que parece quemado desde adentro. Si se destruye, Naevara puede invocarlo de nuevo con un ritual de 1 hora."
-        },
-        {
-          "label": "Usos narrativos posibles",
-          "texto": "Registrar fenómenos mágicos que nadie más documentó. Dejar mensajes indescifrables para sí misma en lugares estratégicos. Reconocer patrones arcanos que ya observó antes. Identificar la \"huella emocional\" de un hechizo o lugar. Y —la apuesta de esta campaña— leer las runas que sellan a los diez dragones ancianos, que nadie más ha podido descifrar."
-        },
-        {
-          "label": "Mecánica vinculada",
-          "texto": "Eyes of the Rune Keeper — puede leer cualquier escritura en cualquier idioma. Naevara lee al mundo, pero el mundo no puede leerla a ella."
-        }
-      ]
-    },
-    "arco": [
-      {
-        "fase": "Niveles 1–3 · Silencio",
-        "titulo": "Naevara observa, aprende, contiene",
-        "texto": "Útil, misteriosa, coherente. El grupo la respeta sin saber bien por qué. El amuleto y los sueños son los únicos indicios de algo más profundo. Ella no muestra nada."
-      },
-      {
-        "fase": "Niveles 3–5 · Grieta (fase actual)",
-        "titulo": "Algo empieza a filtrarse",
-        "texto": "Fase actual. Un hechizo que sale diferente. Una visión que comparte sin querer. La voz que menciona en voz alta por primera vez. Quizá los pies que se elevan solos. El grupo empieza a ver que lo que contenía era mucho más grande de lo que parecía."
-      },
-      {
-        "fase": "Niveles 5–7 · Elección",
-        "titulo": "Naevara elige qué hacer con lo que sabe",
-        "texto": "Tiene información. Tiene poder. Tiene un vínculo con algo que el grupo probablemente querría saber. La pregunta ya no es qué pasa — es qué hace ella al respecto."
-      },
-      {
-        "fase": "Niveles 7+ · Revelación",
-        "titulo": "La guardiana muestra lo que guardaba",
-        "texto": "No como amenaza. Como herramienta. Como decisión propia. El Gran Antiguo no la controla — ella negocia. Esa diferencia es todo."
-      }
-    ],
-    "sesiones": []
+    "eyebrow": "Brujo del Gran Antiguo · Pacto del Tomo · Semielfa",
+    "lastName": "Tirael",
+    "subtitle": "Nivel 5 · Brujo del Gran Antiguo · Pacto del Tomo",
+    "firstName": "Naevara",
+    "subsubtitle": "Semielfa · Trasfondo: Ermitaña · Alineamiento: Neutral Buena"
   },
   "mundo": {
-    "contexto": {
-      "titulo": "Contexto del mundo",
-      "texto": "El mundo es moderno con elementos de fantasía integrados. La magia existe pero no es omnipresente — convive con tecnología contemporánea. Las razas del manual viven mezcladas entre sí y con humanos. El conocimiento arcano es real pero no completamente comprendido ni regulado. Sobre todo, es un mundo donde los dragones son abundantes, y donde una vieja leyenda marca el equilibrio: diez dragones ancianos —cinco metálicos y cinco cromáticos— duermen sellados, y el despertar de uno arrastra al de su contraparte, desatando la catástrofe."
-    },
+    "lugares": [
+      {
+        "tipo": "Lugar de origen · Vínculo directo con Naevara",
+        "texto": "Donde Naevara fue criada. Un bosque de crepúsculo permanente — día y noche fundidos en luz violácea constante. El Master lo señaló como vinculante para su historia. Algo del Bosque Oscuro sigue con ella.",
+        "nombre": "Bosque Oscuro",
+        "destacado": true
+      },
+      {
+        "tipo": "Ubicación actual · ciudad en tierra",
+        "texto": "La ciudad donde transcurre la campaña. RedMica está estacionada aquí. Escenario presente de toda la acción.",
+        "nombre": "Atlanta",
+        "destacado": false
+      },
+      {
+        "tipo": "Capital flotante",
+        "texto": "Viaja por el continente. Centro político, religioso y de conocimiento. Actualmente sobre Atlanta.",
+        "nombre": "RedMica",
+        "destacado": false
+      },
+      {
+        "tipo": "Leyenda · eje de la campaña",
+        "texto": "Cinco metálicos y cinco cromáticos, dormidos en sellos repartidos por el mundo. La leyenda dice que si uno despierta, su contraparte despierta con él, y se desata la catástrofe. Las runas que los contienen son antiguas e indescifrables — el tipo de escritura que solo alguien como Naevara podría leer.",
+        "nombre": "Los Diez Dragones Ancianos",
+        "destacado": true
+      },
+      {
+        "tipo": "Por revelar en campaña",
+        "texto": "Mencionado como importante. Los detalles se revelarán en el transcurso de la historia.",
+        "nombre": "Aguas Profundas",
+        "destacado": false
+      }
+    ],
     "redmica": {
       "titulo": "RedMica — La Capital Flotante",
-      "descripcion": "Una ciudad que viaja por el continente. Actualmente estacionada sobre Atlanta. Es capital política, religiosa y de conocimiento. Tiene su propia economía, gobierno, y una densa red de relaciones de poder.",
       "detalles": [
         {
           "label": "Gran Biblioteca",
@@ -646,67 +65,252 @@
         {
           "label": "El rumor",
           "texto": "Debajo del dungeon hay algo encerrado. Nadie sabe qué. Hay personas que podrían saber algo — pero no hablan fácilmente."
+        },
+        {
+          "label": "Doña Nora",
+          "texto": "Una anciana de autoridad silenciosa, un nombre que fluye entre murmullos y miradas de respeto. Sus palabras son mandatos sutiles y sus galletitas, rituales de cortesía que nadie se atreve a rechazar: cada migaja condensa una historia, cada gesto una orden que se acata sin cuestionamiento. El tipo de poder informal que conviene tener de tu lado en la capital flotante."
+        }
+      ],
+      "descripcion": "Una ciudad que viaja por el continente. Actualmente estacionada sobre Atlanta. Es capital política, religiosa y de conocimiento. Tiene su propia economía, gobierno, y una densa red de relaciones de poder."
+    },
+    "contexto": {
+      "texto": "El mundo es moderno con elementos de fantasía integrados. La magia existe pero no es omnipresente — convive con tecnología contemporánea. Las razas del manual viven mezcladas entre sí y con humanos. El conocimiento arcano es real pero no completamente comprendido ni regulado. Sobre todo, es un mundo donde los dragones son abundantes, y donde una vieja leyenda marca el equilibrio: diez dragones ancianos —cinco metálicos y cinco cromáticos— duermen sellados, y el despertar de uno arrastra al de su contraparte, desatando la catástrofe.",
+      "titulo": "Contexto del mundo"
+    },
+    "cultistas": {
+      "texto": "Operan dentro de Atlanta con un objetivo concreto: traer a Tiamat, la Reina de los Dragones Cromáticos. Para detenerla de forma definitiva, el grupo debe conseguir ciertos objetos especiales. Su presencia fue uno de los factores que intensificó la voz del Gran Antiguo cuando Naevara se acercó — y como reina de los cromáticos, Tiamat está atada a la leyenda de los diez sellos. La conexión exacta con la historia personal de Naevara todavía no está clara.",
+      "titulo": "Cultistas de Tiamat"
+    }
+  },
+  "stats": {
+    "base": [
+      {
+        "nota": "Stat principal — hechizos, CD 16, ataque +8. Subido a 20 con la mejora de nivel 4.",
+        "valor": 20,
+        "nombre": "Carisma",
+        "principal": true,
+        "modificador": "+5"
+      },
+      {
+        "nota": "Vida y concentración.",
+        "valor": 15,
+        "nombre": "Constitución",
+        "principal": true,
+        "modificador": "+2"
+      },
+      {
+        "nota": "CA e iniciativa.",
+        "valor": 14,
+        "nombre": "Destreza",
+        "principal": false,
+        "modificador": "+2"
+      },
+      {
+        "nota": "Percepción e Insight.",
+        "valor": 14,
+        "nombre": "Sabiduría",
+        "principal": false,
+        "modificador": "+2"
+      },
+      {
+        "nota": "Arcana e Historia.",
+        "valor": 14,
+        "nombre": "Inteligencia",
+        "principal": false,
+        "modificador": "+2"
+      },
+      {
+        "nota": "Raramente usada.",
+        "valor": 13,
+        "nombre": "Fuerza",
+        "principal": false,
+        "modificador": "+1"
+      }
+    ],
+    "combate": [
+      {
+        "label": "Puntos de vida",
+        "valor": "44"
+      },
+      {
+        "label": "CD de hechizos",
+        "valor": "16"
+      },
+      {
+        "label": "Ataque arcano",
+        "valor": "+8"
+      },
+      {
+        "label": "Clase de armadura",
+        "valor": "13"
+      },
+      {
+        "label": "Bonif. competencia",
+        "valor": "+3"
+      },
+      {
+        "label": "Espacios (niv 3)",
+        "valor": "2"
+      }
+    ],
+    "salvacion": {
+      "conComp": [
+        {
+          "nota": "(2 mod + 3 competencia)",
+          "stat": "Sabiduría",
+          "valor": "+5"
+        },
+        {
+          "nota": "(5 mod + 3 competencia)",
+          "stat": "Carisma",
+          "valor": "+8"
+        }
+      ],
+      "sinComp": [
+        {
+          "stat": "Fuerza",
+          "valor": "+1"
+        },
+        {
+          "stat": "Destreza · Constitución · Inteligencia",
+          "valor": "+2 cada una"
         }
       ]
     },
-    "cultistas": {
-      "titulo": "Cultistas de Tiamat",
-      "texto": "Operan dentro de Atlanta con un objetivo concreto: traer a Tiamat, la Reina de los Dragones Cromáticos. Para detenerla de forma definitiva, el grupo debe conseguir ciertos objetos especiales. Su presencia fue uno de los factores que intensificó la voz del Gran Antiguo cuando Naevara se acercó — y como reina de los cromáticos, Tiamat está atada a la leyenda de los diez sellos. La conexión exacta con la historia personal de Naevara todavía no está clara."
-    },
-    "lugares": [
+    "habilidades": [
       {
-        "nombre": "Bosque Oscuro",
-        "tipo": "Lugar de origen · Vínculo directo con Naevara",
-        "texto": "Donde Naevara fue criada. Un bosque de crepúsculo permanente — día y noche fundidos en luz violácea constante. El Master lo señaló como vinculante para su historia. Algo del Bosque Oscuro sigue con ella.",
-        "destacado": true
+        "nombre": "Acrobacias (Des)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
       },
       {
-        "nombre": "Atlanta",
-        "tipo": "Ubicación actual · ciudad en tierra",
-        "texto": "La ciudad donde transcurre la campaña. RedMica está estacionada aquí. Escenario presente de toda la acción.",
-        "destacado": false
+        "nombre": "Arcanos (Int)",
+        "numero": "+5",
+        "origen": "Brujo",
+        "circulo": true
       },
       {
-        "nombre": "RedMica",
-        "tipo": "Capital flotante",
-        "texto": "Viaja por el continente. Centro político, religioso y de conocimiento. Actualmente sobre Atlanta.",
-        "destacado": false
+        "nombre": "Atletismo (Fue)",
+        "numero": "+1",
+        "origen": "",
+        "circulo": false
       },
       {
-        "nombre": "Los Diez Dragones Ancianos",
-        "tipo": "Leyenda · eje de la campaña",
-        "texto": "Cinco metálicos y cinco cromáticos, dormidos en sellos repartidos por el mundo. La leyenda dice que si uno despierta, su contraparte despierta con él, y se desata la catástrofe. Las runas que los contienen son antiguas e indescifrables — el tipo de escritura que solo alguien como Naevara podría leer.",
-        "destacado": true
+        "nombre": "Engaño (Car)",
+        "numero": "+5",
+        "origen": "",
+        "circulo": false
       },
       {
-        "nombre": "Aguas Profundas",
-        "tipo": "Por revelar en campaña",
-        "texto": "Mencionado como importante. Los detalles se revelarán en el transcurso de la historia.",
-        "destacado": false
+        "nombre": "Historia (Int)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Interpretación (Car)",
+        "numero": "+5",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Intimidación (Car)",
+        "numero": "+5",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Investigación (Int)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Juego de Manos (Des)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Medicina (Sab)",
+        "numero": "+5",
+        "origen": "Ermitaña",
+        "circulo": true
+      },
+      {
+        "nombre": "Naturaleza (Int)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Percepción (Sab)",
+        "numero": "+5",
+        "origen": "Semielfa",
+        "circulo": true
+      },
+      {
+        "nombre": "Perspicacia (Sab)",
+        "numero": "+5",
+        "origen": "Brujo",
+        "circulo": true
+      },
+      {
+        "nombre": "Persuasión (Car)",
+        "numero": "+5",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Religión (Int)",
+        "numero": "+5",
+        "origen": "Ermitaña",
+        "circulo": true
+      },
+      {
+        "nombre": "Sigilo (Des)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Supervivencia (Sab)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
+      },
+      {
+        "nombre": "Trato con Animales (Sab)",
+        "numero": "+2",
+        "origen": "",
+        "circulo": false
       }
-    ]
+    ],
+    "sabiduriaPasiva": "15"
   },
   "master": {
+    "quote": "De tanto observar, de tanto aprender, de tanto interiorizar — llega un momento en que lo que guardaba desde lejos se vuelve imposible de contener.",
     "senales": [
       {
         "nivel": "Niv. 1–3",
-        "titulo": "El amuleto responde",
-        "texto": "Cerca de magia dracónica o cultistas de Tiamat, el amuleto se enfría. No da información — solo señala presencia. Un detalle que Naevara puede notar en roleplay."
+        "texto": "Cerca de magia dracónica o cultistas de Tiamat, el amuleto se enfría. No da información — solo señala presencia. Un detalle que Naevara puede notar en roleplay.",
+        "titulo": "El amuleto responde"
       },
       {
         "nivel": "Niv. 2–3",
-        "titulo": "Sueños con forma",
-        "texto": "El Gran Antiguo puede enviar imágenes sin sentido todavía — constelaciones que no existen, puertas sin edificio. Naevara las anota en su libro. Pueden ser pistas veladas de la trama."
+        "texto": "El Gran Antiguo puede enviar imágenes sin sentido todavía — constelaciones que no existen, puertas sin edificio. Naevara las anota en su libro. Pueden ser pistas veladas de la trama.",
+        "titulo": "Sueños con forma"
       },
       {
         "nivel": "Niv. 3–4",
-        "titulo": "La mirada que detiene",
-        "texto": "En confrontaciones o momentos de tensión, los ojos de Naevara cambian levemente. Quien la mira de frente siente que está siendo completamente leída."
+        "texto": "En confrontaciones o momentos de tensión, los ojos de Naevara cambian levemente. Quien la mira de frente siente que está siendo completamente leída.",
+        "titulo": "La mirada que detiene"
       },
       {
         "nivel": "Niv. 4–5",
-        "titulo": "La primera grieta",
-        "texto": "Al proteger a alguien en peligro real, lanza un hechizo y algo más sale con él. Una onda que nadie esperaba — o, por primera vez, los pies que se despegan del suelo sin querer. El comienzo de algo que siempre estuvo ahí. (Semilla a charlar con el Master: que ese 'elevarse' se vuelva, con el tiempo, un volar real y libre, nunca una ventaja de combate.)"
+        "texto": "Al proteger a alguien en peligro real, lanza un hechizo y algo más sale con él. Una onda que nadie esperaba — o, por primera vez, los pies que se despegan del suelo sin querer. El comienzo de algo que siempre estuvo ahí. (Semilla a charlar con el Master: que ese 'elevarse' se vuelva, con el tiempo, un volar real y libre, nunca una ventaja de combate.)",
+        "titulo": "La primera grieta"
       }
     ],
     "conexiones": [
@@ -738,11 +342,419 @@
         "label": "Lo encerrado bajo el dungeon",
         "texto": "El rumor de que hay algo encerrado bajo los pisos cambiantes — para Naevara no es una amenaza todavía. Es una pregunta. Y ella no deja preguntas sin responder."
       }
+    ]
+  },
+  "perfil": {
+    "quote": "No sé qué vine a encontrar aquí. Pero lo que escucho esta noche es más claro que nunca. Estamos en el lugar correcto.",
+    "nombre": {
+      "tirael": {
+        "palabra": "Tirael",
+        "etimologia": "Del élfico: tir (observar, vigilar desde lejos) + ael (cielo, éter). La que observa desde lejos — la que ve antes de que otros sepan que hay algo que mirar."
+      },
+      "naevara": {
+        "palabra": "Naevara",
+        "etimologia": "Del élfico antiguo: nae (luna nueva, comienzo) + vara (guardiana). La Guardiana del Comienzo — la que protege lo que todavía no tiene forma."
+      },
+      "combinado": "La Guardiana del Comienzo que observa desde lejos",
+      "descripcion": "Su nombre ya contiene su destino: cuida lo que aún no nació, y lo hace desde una distancia que solo ella conoce. De tanto observar, de tanto aprender, de tanto interiorizar — llega un momento en que lo que guardaba desde lejos se vuelve imposible de contener."
+    },
+    "aspecto": {
+      "estilo": [
+        {
+          "label": "Ropa",
+          "texto": "Tonos fríos y suaves: blanco hueso, gris perla, azul cielo desaturado. Telas ligeras de buena confección. Manto gris-azulado caído sobre los hombros."
+        },
+        {
+          "label": "Amuleto de obsidiana",
+          "texto": "El único detalle oscuro en todo su look — contrasta exactamente por eso. También es su foco arcano."
+        },
+        {
+          "label": "Presencia",
+          "texto": "Todo en Naevara dice \"luz\". Y aún así la gente siente algo al estar cerca — como la sensación de estar parada al borde de algo muy alto. Es bella de una manera que no invita, sino que observa."
+        }
+      ],
+      "rasgos": [
+        {
+          "label": "Piel",
+          "texto": "Clara, casi translúcida en luz directa — marfileña con subtono frío. En penumbra emite una luminosidad muy sutil, como luna detrás de nubes."
+        },
+        {
+          "label": "Ojos",
+          "texto": "Violeta pálido que vira a celeste según la luz. De noche, en el fondo del iris hay algo que no debería estar ahí."
+        },
+        {
+          "label": "Cabello",
+          "texto": "Rubio muy claro, casi plateado, liso hasta media espalda. Un mechón ceniza en el lado derecho — desde la noche del pacto."
+        },
+        {
+          "label": "Orejas y rasgos",
+          "texto": "Facciones delicadas, expresión serena e ilegible. Orejas levemente puntiagudas. Parece más joven de lo que es."
+        }
+      ]
+    },
+    "equipamiento": [
+      {
+        "nombre": "Daga ×2",
+        "descripcion": "Arma de emergencia. 1d4 daño cortante. También puede lanzarse a distancia."
+      },
+      {
+        "nombre": "Amuleto de obsidiana",
+        "descripcion": "Foco arcano. Canal oficial para sus hechizos. El único detalle oscuro en su aspecto."
+      },
+      {
+        "nombre": "El Libro de las Sombras",
+        "descripcion": "El diario de la Escritura del Umbral convertido en artefacto por el Pacto del Tomo. Solo Naevara puede leerlo — sus símbolos cambian de forma ante cualquier otro ojo."
+      },
+      {
+        "nombre": "Mochila de Erudito",
+        "descripcion": "Notas adicionales, tinta, pluma, pergaminos, raciones, linterna."
+      },
+      {
+        "nombre": "Armadura de cuero",
+        "descripcion": "CA 13. Ligera, no penaliza hechizos."
+      },
+      {
+        "nombre": "Bastón",
+        "descripcion": "1d6 contundente si lo necesita."
+      },
+      {
+        "nombre": "Anillo de Protección Mental",
+        "descripcion": "Ring of Mind Shielding (poco común, requiere sintonía). Inmunidad a hechizos que leen pensamientos y a la detección de mentiras; oculta su alineamiento y su tipo de criatura, y le da control sobre la comunicación telepática. Puede volverse invisible con una acción. Si Naevara muriera, su alma puede permanecer en el anillo y seguir comunicándose desde él. El sello perfecto para la guardiana de la Escritura del Umbral: ya no se puede leer su libro, y ahora tampoco su mente."
+      },
+      {
+        "nombre": "Bolsa de monedas",
+        "descripcion": "750 piezas de oro disponibles tras la Sesión 2. Su reserva para sobornos, pergaminos, tomos raros y todo lo que el conocimiento cueste comprar."
+      }
     ],
-    "quote": "De tanto observar, de tanto aprender, de tanto interiorizar — llega un momento en que lo que guardaba desde lejos se vuelve imposible de contener."
+    "personalidad": {
+      "rasgos": [
+        {
+          "label": "Rasgo principal",
+          "texto": "Habla poco. Cuando lo hace, elige cada palabra. Escucha el doble de lo que habla y recuerda todo."
+        },
+        {
+          "label": "Ideal",
+          "texto": "El conocimiento es el único poder real. Todo lo demás es temporal — incluido el miedo."
+        },
+        {
+          "label": "Vínculo",
+          "texto": "Protege a quienes no pueden protegerse solos. No sabe exactamente por qué. Simplemente lo hace."
+        },
+        {
+          "label": "Defecto",
+          "texto": "A veces la voz le dice cosas que no comparte con el grupo. Genera tensión — especialmente cuando tiene razón."
+        }
+      ],
+      "relaciones": [
+        {
+          "label": "Con el grupo",
+          "texto": "No lidera, no sigue — está presente. Hace preguntas que incomodan sin levantar la voz. Cuando actúa, el grupo nota que algo cambió."
+        },
+        {
+          "label": "Deidad",
+          "texto": "Sehanine Moonbow — diosa élfica de la luna, los sueños y los viajes. No practica activamente. Pero hay algo en la luna del Bosque Oscuro que siempre sintió como su presencia. Sehanine fue primero. El Gran Antiguo llegó después. Coexisten."
+        }
+      ]
+    },
+    "equipamientoNota": "CA final: 13 — Armadura de Cuero (11) + modificador Destreza (+2). Con Armor of Agathys (lanzado con espacio de 3.er nivel): 15 vida temporal y 15 de frío a quien la golpee cuerpo a cuerpo."
+  },
+  "hechizos": {
+    "nota": "Regla del Brujo: 2 espacios de hechizo de 3.er nivel, recuperados con cada descanso corto (1 hora). Todo hechizo se lanza al 3.er nivel (se sube solo). Los trucos no cuestan espacio. Las invocaciones son permanentes y pasivas. Los hechizos de patrón (Gran Antiguo) están siempre disponibles y no ocupan tus 6 conocidos.",
+    "patron": [
+      {
+        "dado": {
+          "tipo": "psíquico",
+          "caras": 6,
+          "notas": [
+            "Gasta un espacio de hechizo de nivel 1",
+            "Si huye, los aliados pueden atacar con ventaja (oportunidad de ataque)",
+            "Las criaturas sordas pasan automáticamente la salvación",
+            "Al lanzar con espacios de mayor nivel: +1d6 por nivel extra"
+          ],
+          "ataque": false,
+          "cantidad": 3,
+          "salvacion": "SAB CD 16",
+          "descripcionMecanica": "Susurrás una melodía disonante a un objetivo a 18 metros. Tirada de salvación de Sabiduría (CD 16). Si falla: daño completo + debe usar su reacción para huir lo más lejos posible. Si pasa: la mitad del daño, no huye."
+        },
+        "badge": "Nivel 1 · patrón",
+        "nombre": "Dissonant Whispers",
+        "destacado": false,
+        "descripcion": "Susurros psíquicos: el objetivo huye aterrorizado y recibe daño psíquico. Los aliados pueden atacarle mientras huye."
+      },
+      {
+        "badge": "Nivel 1 · patrón",
+        "nombre": "Tashas Hideous Laughter",
+        "destacado": false,
+        "descripcion": "El objetivo cae al suelo incapacitado, no puede moverse ni actuar. Control puro."
+      },
+      {
+        "badge": "Nivel 2 · patrón",
+        "nombre": "Detect Thoughts",
+        "destacado": false,
+        "descripcion": "Leés los pensamientos superficiales de una criatura cercana, o sondeás más profundo (salvación de Sabiduría CD 16). Gratis del patrón. La que observa, literal."
+      },
+      {
+        "badge": "Nivel 2 · patrón",
+        "nombre": "Phantasmal Force",
+        "destacado": false,
+        "descripcion": "Metés una ilusión en la mente de una sola criatura (salvación de Inteligencia CD 16) que la cree real — puede causarle 1d6 de daño psíquico por turno mientras la sostenés. Gratis del patrón."
+      },
+      {
+        "badge": "Nivel 3 · patrón",
+        "nombre": "Clairvoyance",
+        "destacado": true,
+        "descripcion": "Creás un sensor invisible en un lugar que conocés y ves u oís a distancia (1 min de lanzamiento, concentración 10 min). Gratis del patrón — espionaje puro, perfecto para 'la que observa desde lejos'."
+      },
+      {
+        "badge": "Nivel 3 · patrón",
+        "nombre": "Sending",
+        "destacado": false,
+        "descripcion": "Enviás un mensaje de 25 palabras a una criatura que conozcas, en cualquier parte del mundo, y recibís su respuesta. Gratis del patrón."
+      }
+    ],
+    "trucos": [
+      {
+        "dado": {
+          "tipo": "fuerza",
+          "caras": 10,
+          "notas": [
+            "A nivel 5 → 2 rayos (cada uno con su propia tirada de ataque)",
+            "Podés apuntar a distintos objetivos",
+            "No gasta espacio de hechizo"
+          ],
+          "ataque": true,
+          "cantidad": 1,
+          "modificador": 5,
+          "descripcionMecanica": "Rayo de energía arcana a 36 metros. Tirada de ataque de hechizo (+8). Sin tirada de salvación — si impacta, hace daño. Con Agonizing Blast suma +5 (Carisma) por rayo."
+        },
+        "badge": "Combate",
+        "nombre": "Eldritch Blast",
+        "destacado": true,
+        "descripcion": "Ataque a distancia cada turno. Con Agonizing Blast suma +5 daño. A nivel 5 dispara dos rayos."
+      },
+      {
+        "badge": "Utilidad",
+        "nombre": "Minor Illusion",
+        "destacado": false,
+        "descripcion": "Sonido o imagen falsa por 1 minuto. Distraer, confundir, crear oportunidades."
+      },
+      {
+        "badge": "Utilidad",
+        "nombre": "Prestidigitation",
+        "destacado": false,
+        "descripcion": "Efectos mágicos menores: sonidos, olores, marcar superficies. Útil para dejar marcas de la Escritura del Umbral discretamente."
+      },
+      {
+        "badge": "Tomo · utilidad",
+        "nombre": "Mage Hand",
+        "destacado": false,
+        "descripcion": "Mano arcana invisible a 9 metros. Abrir puertas, tomar cosas, activar mecanismos a distancia."
+      },
+      {
+        "dado": {
+          "tipo": "bonificación",
+          "caras": 4,
+          "notas": [
+            "No gasta espacio de hechizo",
+            "Concentración — se cancela si lanzás otro hechizo de concentración",
+            "Usarla en cada tirada importante del grupo"
+          ],
+          "ataque": false,
+          "cantidad": 1,
+          "descripcionMecanica": "Tocás a un aliado dispuesto. Antes de que termine la concentración (1 minuto), puede sumar 1d4 a una tirada de habilidad."
+        },
+        "badge": "Tomo · soporte",
+        "nombre": "Guidance",
+        "destacado": false,
+        "descripcion": "Tocás un aliado: +1d4 en su próxima tirada de habilidad. Sin límite. Usarla constantemente fuera de combate."
+      },
+      {
+        "dado": {
+          "tipo": "necrótico",
+          "caras": 8,
+          "notas": [
+            "No gasta espacio de hechizo",
+            "1d8 si el objetivo tiene todos sus PV",
+            "1d12 si al objetivo ya le falta algún PV — priorizar blancos heridos"
+          ],
+          "ataque": false,
+          "cantidad": 1,
+          "variante": {
+            "caras": 12,
+            "cantidad": 1,
+            "condicion": "Si el objetivo ya está herido (le faltan PV)"
+          },
+          "salvacion": "SAB CD 16",
+          "descripcionMecanica": "Haces sonar una campana fúnebre invisible sobre el objetivo a 18 metros. Tirada de salvación de Sabiduría (CD 16). Si falla: daño necrótico completo. Si pasa: sin daño (es un truco, falla total en salvación exitosa)."
+        },
+        "badge": "Tomo · combate",
+        "nombre": "Toll the Dead",
+        "destacado": false,
+        "descripcion": "Daño necrótico: 1d8 si sano, 1d12 si ya herido. Alternativa ofensiva sin gastar espacio."
+      }
+    ],
+    "elegidos": [
+      {
+        "dado": {
+          "tipo": "necrótico",
+          "caras": 6,
+          "notas": [
+            "Gasta un espacio de hechizo de nivel 1",
+            "Concentración — dura hasta 1 hora",
+            "Si el objetivo cae a 0 PV, podés moverlo a otro enemigo (acción adicional)",
+            "Combo principal: Hex + Eldritch Blast (2 rayos) = 2×(1d10 + 5) + 2×1d6 necrótico por turno"
+          ],
+          "ataque": false,
+          "cantidad": 1,
+          "descripcionMecanica": "Maldecís un objetivo a 27 metros (acción adicional). Cada vez que lo golpeás (con cualquier ataque), añadís 1d6 de daño necrótico extra. También elegís una habilidad (ej: Fuerza) — el objetivo tiene desventaja en esas tiradas."
+        },
+        "badge": "Nivel 1 · daño + control",
+        "nombre": "Hex",
+        "destacado": true,
+        "descripcion": "Maldecís a un enemigo: daño extra cada turno + desventaja en una habilidad. Dura 1 hora. Si cae, podés moverlo a otro sin gastar el espacio."
+      },
+      {
+        "badge": "Nivel 1 · defensa",
+        "nombre": "Armor of Agathys",
+        "destacado": false,
+        "descripcion": "Armadura de hielo: como tus espacios son de 3.er nivel, da 15 vida temporal. Quien te golpee cuerpo a cuerpo recibe 15 de frío automáticamente. No usa concentración."
+      },
+      {
+        "badge": "Nivel 2 · control",
+        "nombre": "Hold Person",
+        "destacado": true,
+        "descripcion": "Paralizás hasta 2 humanoides (lo lanzás con espacio de 3.er nivel). Inmóviles, no actúan, y los ataques cuerpo a cuerpo contra ellos son críticos automáticos. Salvación de Sabiduría CD 16 al inicio de cada turno. Guardalo para el momento clave."
+      },
+      {
+        "dado": {
+          "tipo": "frío",
+          "caras": 6,
+          "notas": [
+            "Gasta un espacio de 3.er nivel",
+            "No hay tirada para evitar entrar — el control es la zona misma",
+            "Vos tampoco ves dentro (sin Devil's Sight): usalo para bloquear pasillos o negar terreno, no para disparar adentro",
+            "Hadar es la Estrella Oscura del Reino Lejano, de donde proviene tu patrón"
+          ],
+          "ataque": false,
+          "cantidad": 2,
+          "salvacion": "DES CD 16",
+          "descripcionMecanica": "Esfera de 6m de radio a 45m, hasta 1 minuto (concentración). Adentro hay oscuridad mágica total y terreno difícil. Quien EMPIEZA su turno en la zona recibe 2d6 de frío (sin salvación). Quien TERMINA su turno en la zona hace salvación de Destreza (CD 16): si falla, 2d6 de ácido de los tentáculos del vacío."
+        },
+        "badge": "Nivel 3 · zona Gran Antiguo",
+        "nombre": "Hunger of Hadar",
+        "destacado": true,
+        "descripcion": "Abrís una esfera de vacío frío del Reino Lejano: oscuridad total y terreno difícil adentro. Quien empieza su turno ahí recibe frío; quien lo termina ahí, ácido de los tentáculos. Niega zonas y atrapa."
+      },
+      {
+        "badge": "Nivel 3 · movilidad",
+        "nombre": "Fly",
+        "destacado": true,
+        "descripcion": "Velocidad de vuelo de 18m a una criatura dispuesta (podés ser vos), 10 min, concentración. Espacio de 3.er nivel. No podés mantener Hex / Hold Person / Hunger a la vez, y si perdés la concentración en el aire, caés (daño de caída). Clave en la ciudad flotante y el dungeon vertical — y semilla del arco: que algún día Naevara aprenda a volar de verdad."
+      },
+      {
+        "badge": "Nivel 3 · reacción",
+        "nombre": "Counterspell",
+        "destacado": true,
+        "descripcion": "Reacción: cuando ves a una criatura lanzando un hechizo, lo anulás (automático hasta 3.er nivel; superior requiere prueba de Carisma CD 10 + nivel del hechizo). No usa concentración, así que convive con Hex. Tu seguro contra los rituales e invocaciones de los cultistas de Tiamat."
+      }
+    ],
+    "loopCombate": "Hex (acción adicional) sobre el más peligroso → Eldritch Blast cada turno (2 rayos, +5 c/u) sobre el mismo. Para frenar a un grupo o bloquear un pasillo → Hunger of Hadar. Contra un jefe humanoide → Hold Person y avisale al grupo para aprovechar los críticos. Guardá Counterspell para cuando un cultista lance un ritual o invocación. Fly para reposicionarte o alcanzar lo inalcanzable. Toll the Dead cuando un enemigo ya está herido. Armor of Agathys (15 vida temp / 15 de frío) si esperás recibir golpes. Guidance en cada tirada de habilidad del grupo fuera de combate.",
+    "invocaciones": [
+      {
+        "badge": "Permanente",
+        "nombre": "Agonizing Blast",
+        "destacado": true,
+        "descripcion": "Sumás +5 (Carisma) al daño de cada rayo de Eldritch Blast. Tu ataque básico ahora duele de verdad."
+      },
+      {
+        "badge": "Permanente",
+        "nombre": "Eyes of the Rune Keeper",
+        "destacado": true,
+        "descripcion": "Podés leer cualquier escritura en cualquier idioma. La base mecánica de la Escritura del Umbral — no hay texto oculto para Naevara."
+      },
+      {
+        "badge": "Permanente · nueva",
+        "nombre": "Book of Ancient Secrets",
+        "destacado": true,
+        "descripcion": "Inscribís rituales en tu Libro de las Sombras y los lanzás sin gastar espacios (Comprehend Languages, Detect Magic, Identify, Illusory Script, y cualquier ritual que encuentres por ahí). El motor de la lectora de sellos: todo lo arcano que documentás, lo podés volver a invocar."
+      }
+    ]
+  },
+  "historia": {
+    "arco": [
+      {
+        "fase": "Niveles 1–3 · Silencio",
+        "texto": "Útil, misteriosa, coherente. El grupo la respeta sin saber bien por qué. El amuleto y los sueños son los únicos indicios de algo más profundo. Ella no muestra nada.",
+        "titulo": "Naevara observa, aprende, contiene"
+      },
+      {
+        "fase": "Niveles 3–5 · Grieta (fase actual)",
+        "texto": "Fase actual. Un hechizo que sale diferente. Una visión que comparte sin querer. La voz que menciona en voz alta por primera vez. Quizá los pies que se elevan solos. El grupo empieza a ver que lo que contenía era mucho más grande de lo que parecía.",
+        "titulo": "Algo empieza a filtrarse"
+      },
+      {
+        "fase": "Niveles 5–7 · Elección",
+        "texto": "Tiene información. Tiene poder. Tiene un vínculo con algo que el grupo probablemente querría saber. La pregunta ya no es qué pasa — es qué hace ella al respecto.",
+        "titulo": "Naevara elige qué hacer con lo que sabe"
+      },
+      {
+        "fase": "Niveles 7+ · Revelación",
+        "texto": "No como amenaza. Como herramienta. Como decisión propia. El Gran Antiguo no la controla — ella negocia. Esa diferencia es todo.",
+        "titulo": "La guardiana muestra lo que guardaba"
+      }
+    ],
+    "origen": {
+      "titulo": "Historia de origen",
+      "parrafos": [
+        "Naevara creció en el borde del Bosque Oscuro, donde el día y la noche se funden en un eterno crepúsculo rosado-violáceo. Su abuela era adivina — le enseñó astronomía, runas antiguas, y a escuchar el silencio entre las estrellas.",
+        "A los 119 años, observando una constelación que se movió cuando no debía, algo al otro lado del cosmos la miró de vuelta. No fue aterrador. Fue como si alguien encendiera una vela en una habitación que siempre estuvo oscura.",
+        "El mechón ceniza apareció al amanecer siguiente. Su abuela lo vio, no dijo nada, y le preparó el bolso para viajar. Eso fue hace once años. Naevara todavía no sabe exactamente qué la trajo a RedMica — solo que la voz del Gran Antiguo se hizo más intensa cuando se acercó."
+      ],
+      "contextoActual": "RedMica está estacionada en Atlanta. Los cultistas de Tiamat trabajan para traer a la Reina de los Dragones Cromáticos — y para detenerla de forma definitiva, el grupo debe reunir ciertos objetos especiales. Debajo de la ciudad, un dungeon de diez pisos (explorado solo hasta el octavo) guarda algo encerrado. Y en este mundo de dragones abundantes, diez dragones ancianos duermen sellados: si uno despierta, su contraparte también lo hará. Algo en todo esto está conectado con lo que trajo a Naevara hasta acá. En la sesión más reciente, un desconocido se acercó al grupo —hablando primero en privado con uno de ellos— y propuso una misión hacia un lugar donde expediciones previas habían desaparecido. Su llegada repentina sembró un silencio de escepticismo: el grupo no respondió de inmediato, optando por la prudencia, consultar a sus contactos y verificar la legitimidad de la oferta antes de comprometerse. La decisión sigue abierta."
+    },
+    "sesiones": [],
+    "escrituraUmbral": {
+      "extra": "Nadie más puede leerlo. Si alguien intenta hacerlo, los símbolos parecen rearreglarse solos cada vez que parpadea — nunca están en el mismo orden para un ojo ajeno. No hay forma de copiarlo ni descifarlo sin Naevara.",
+      "titulo": "La Escritura del Umbral",
+      "detalles": [
+        {
+          "label": "El Libro de las Sombras",
+          "texto": "El diario de la Escritura del Umbral, convertido en artefacto por el Pacto del Tomo. Cuero oscuro, cierre de plata, sin nombre en la cubierta. Algunas páginas escritas con tinta, otras con algo que parece quemado desde adentro. Si se destruye, Naevara puede invocarlo de nuevo con un ritual de 1 hora."
+        },
+        {
+          "label": "Usos narrativos posibles",
+          "texto": "Registrar fenómenos mágicos que nadie más documentó. Dejar mensajes indescifrables para sí misma en lugares estratégicos. Reconocer patrones arcanos que ya observó antes. Identificar la \"huella emocional\" de un hechizo o lugar. Y —la apuesta de esta campaña— leer las runas que sellan a los diez dragones ancianos, que nadie más ha podido descifrar."
+        },
+        {
+          "label": "Mecánica vinculada",
+          "texto": "Eyes of the Rune Keeper — puede leer cualquier escritura en cualquier idioma. Naevara lee al mundo, pero el mundo no puede leerla a ella."
+        }
+      ],
+      "subtitulo": "Habilidad narrativa única — confirmada por el Master",
+      "descripcion": "Un sistema de símbolos propio que Naevara desarrolló a lo largo de años de observación, estudio y experiencia con el pacto. No es un idioma aprendido — emergió de ella. Condensa conocimientos, patrones arcanos, sensaciones que el lenguaje común no puede expresar."
+    }
   },
   "settings": {
-    "openrouterModel": "anthropic/claude-3.5-sonnet",
-    "openrouterKey": ""
-  }
+    "openrouterKey": "",
+    "openrouterModel": "anthropic/claude-3.5-sonnet"
+  },
+  "heroQuote": "La que observa desde lejos",
+  "heroStats": [
+    {
+      "label": "Nivel",
+      "value": "5"
+    },
+    {
+      "label": "Clase",
+      "value": "Brujo"
+    },
+    {
+      "label": "Raza",
+      "value": "Semielfa"
+    },
+    {
+      "label": "Pacto",
+      "value": "Tomo"
+    }
+  ]
 }
