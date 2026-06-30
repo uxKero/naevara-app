@@ -276,6 +276,19 @@ export default function Home() {
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 8, paddingRight: 2, flexShrink: 0 }}>
               {savedMsg && <span style={{ fontSize: 11, fontWeight: savedMsg.startsWith("⚠") ? 600 : 400, color: savedMsg.startsWith("⚠") ? "#C0392B" : "#7F77DD" }} className="save-flash">{savedMsg}</span>}
+              <a
+                href="/combate"
+                style={{
+                  padding: "5px 14px", fontSize: 11, fontWeight: 700,
+                  background: "linear-gradient(135deg, #7F77DD, #3C3489)",
+                  border: "1px solid rgba(176,170,238,0.4)",
+                  borderRadius: 7, color: "#fff", textDecoration: "none",
+                  whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5,
+                }}
+                title="Abrir la hoja de combate de Naevara"
+              >
+                <Swords size={13} strokeWidth={2.4} /> Hoja de combate
+              </a>
               <button
                 onClick={() => save(data)}
                 disabled={saving}

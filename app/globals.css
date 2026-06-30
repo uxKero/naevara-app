@@ -173,6 +173,19 @@ input::placeholder, textarea::placeholder {
   .floating-profile-mobile  { display: block !important; }
 }
 
+/* ── Vista de combate / builder ───────────── */
+.cmb-main { padding: 1.25rem; }
+.cmb-tracker { position: sticky; top: 0; z-index: 90; }
+.cmb-tabs { overflow-x: auto; scrollbar-width: none; }
+.cmb-tabs::-webkit-scrollbar { display: none; }
+
+@media (max-width: 640px) {
+  .cmb-main { padding: 0.8rem; }
+  /* En celular el tracker no es pegajoso: ocuparía media pantalla */
+  .cmb-tracker { position: static !important; box-shadow: none; }
+  .cmb-tracker > div { box-shadow: none !important; }
+}
+
 /* ── Responsive ───────────────────────────── */
 @media (max-width: 640px) {
   .grid-2col   { grid-template-columns: 1fr; }

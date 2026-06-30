@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# Hojas del builder (fallback local; en prod se usa Supabase)
+data/characters/
