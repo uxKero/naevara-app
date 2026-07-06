@@ -69,6 +69,18 @@
         {
           "label": "Doña Nora",
           "texto": "Una anciana de autoridad silenciosa, un nombre que fluye entre murmullos y miradas de respeto. Sus palabras son mandatos sutiles y sus galletitas, rituales de cortesía que nadie se atreve a rechazar: cada migaja condensa una historia, cada gesto una orden que se acata sin cuestionamiento. El tipo de poder informal que conviene tener de tu lado en la capital flotante."
+        },
+        {
+          "label": "Capitán Mitre",
+          "texto": "Capitán de la Guardia. Corrupto — el grupo ya lo sabe. Un uniforme que no protege la ley sino a quien mejor paga. Saber de quién cobra puede valer más que denunciarlo. (Sesión 2)"
+        },
+        {
+          "label": "Ragon",
+          "texto": "Jefe de los dragones de plata. En un mundo donde diez dragones ancianos duermen sellados, el líder de los plateados es una pieza mayor del lado metálico del tablero. (Sesión 2)"
+        },
+        {
+          "label": "Balasar",
+          "texto": "Secretario de un sacerdote de Bahamut. Una puerta de entrada a la iglesia del Dragón de Platino — el contrapeso natural de los cultistas de Tiamat. (Sesión 2)"
         }
       ],
       "descripcion": "Una ciudad que viaja por el continente. Actualmente estacionada sobre Atlanta. Es capital política, religiosa y de conocimiento. Tiene su propia economía, gobierno, y una densa red de relaciones de poder."
