@@ -198,4 +198,28 @@ Formato horizontal 16:9. Un transporte de construcción steampunk: una plataform
 
 ---
 
+# Colosos de trabajo (máquinas imponentes, con color)
+
+Estas tres van con otra receta: máquinas enormes con pintura industrial de color vivo y desgastada, paisaje natural luminoso de día, y personas diminutas que dan la escala. El color acá es protagonista.
+
+## 28 · El caminante rojo
+
+Ilustración estilo anime de alta calidad, como fotograma de película de animación de fantasía retrofuturista: pintura detallada, luz natural de día, cielo azul con nubes. Diseño de máquina creíble estilo retro industrial: remaches, chapas curvas, maquinaria expuesta en el techo, tubos y greebles. Sin texto en la imagen.
+
+Formato horizontal 16:9. Una máquina de obras colosal e imponente, del tamaño de una locomotora: cabina cerrada de chapa pintada de ROJO ANARANJADO vivo, desgastado y con chorreaduras de óxido, montada sobre cuatro patas articuladas que terminan en orugas de tanque. Sube despacio por un camino de piedra rota junto a un lago azul, con un puente de hierro y pinos al fondo. Al lado camina un operario diminuto con mochila, que le da la escala. Día luminoso, sombras nítidas.
+
+## 29 · La perforadora amarilla
+
+Ilustración estilo anime de alta calidad, fotograma de película de animación retrofuturista: pintura detallada, luz cálida de media tarde, cielo azul. Máquina de diseño creíble: remaches, grúas montadas encima, pasarelas y escaleras atornilladas al casco. Sin texto en la imagen.
+
+Formato horizontal 16:9. Una perforadora minera colosal detenida al borde de una cantera donde duerme un portal (grieta luminosa cercada): casco de chapa AMARILLO MOSTAZA vivo y desgastado con franjas negras de advertencia, un brazo taladro vertical del tamaño de una torre, chimeneas soltando vapor blanco, y andamios colgados del costado donde trabaja una cuadrilla diminuta. Suelo de roca ocre, charcos que reflejan el cielo. Imponente, casi arquitectónica.
+
+## 30 · La recolectora verde
+
+Ilustración estilo anime de alta calidad, fotograma de película de animación retrofuturista: pintura detallada, día nublado luminoso con claros de sol. Máquina de diseño creíble con mandíbulas grúa, cinta transportadora en el lomo y horno interno. Sin texto en la imagen.
+
+Formato horizontal 16:9. Una recolectora de chatarra colosal avanzando sobre orugas dobles por el valle del cementerio de máquinas: casco VERDE CARDENILLO vivo y desgastado, dos brazos grúa como mandíbulas levantando restos de un coloso caído, una boca de horno que brilla naranja al frente y una cinta transportadora que sube por el lomo. Pájaros alrededor, hiedra en la chatarra, y chatarreros diminutos mirando desde una loma. Verde de la naturaleza contra verde de la máquina.
+
+---
+
 **Después de generar:** guardá las imágenes y agregalas a la galería de `/vaegrant` con el botón "Agregar imagen" (pegando la URL), o pasámelas y las subo al repo en `/public` para que queden fijas.
