@@ -50,7 +50,8 @@
       "Vaegrant funciona. Trabaja, cumple, responde con una ironía seca cuando lo apuran. Pero hay una distancia entre él y el mundo que no termina de cerrarse desde que cruzó el portal: los días le llegan un poco amortiguados, como a través de agua. Aprendió a vivir así. No lo cuenta.",
       "En sus años de ermitaño esa distancia fue mucho peor. Hubo una época en la que necesitaba comprobar que seguía adentro de su propio cuerpo, y lo comprobaba de la peor manera: haciéndose daño, con método y en silencio. No por castigo. Por certeza. El dolor era lo único del mundo nuevo que no parecía pintado. De esa época quedan cicatrices que nadie ve, porque siempre va cubierto, y una costumbre que sí se ve: la vela.",
       "Descubrió una noche que sostener la mano cerca de una llama, sentir el calor volverse casi insoportable y retirarla a tiempo, le daba la misma certeza sin dejar marca. Desde entonces enciende una vela cada noche, esté donde esté, haga falta luz o no. Nadie del grupo sabe por qué.",
-      "Hoy está mejor. No bien: mejor. Lo sostienen la rutina, los trabajos concretos, ser útil de maneras chicas y visibles. Cuidar a otros lo devuelve al presente mejor que cualquier llama."
+      "Hoy está mejor. No bien: mejor. Lo sostienen la rutina, los trabajos concretos, ser útil de maneras chicas y visibles. Cuidar a otros lo devuelve al presente mejor que cualquier llama.",
+      "Y hay algo más, que él todavía no sabe leer. Cuando resuelve un encargo, aunque sea menor, algo alrededor sale un poco mejor de lo que debería: la fiebre baja esa noche, la discusión de al lado se apaga, la calle amanece más liviana. El gnomo del bar que reparte los trabajos lo notó hace tiempo, y por eso los encargos van siempre a los que cruzaron el portal: donde un quebrado pone las manos, el mundo queda mejor cosido. A Vaegrant la ironía no se le escapa: el que siente el mundo a través del agua es de los que lo dejan más vivo al pasar."
     ],
     "costumbres": [
       "Enciende una vela cada noche. La apaga con los dedos.",
@@ -171,6 +172,12 @@
         "tipo": "Por decidir en mesa",
         "texto": "El lugar donde la party vive y viene haciendo trabajos menores. Queda por decidir si conserva su nombre antiguo o lleva uno nuevo. Si \"Silvapor\" sigue vivo en la mesa, encaja acá.",
         "destacado": false
+      },
+      {
+        "nombre": "El bar del gnomo",
+        "tipo": "Encargos · punto de partida de las misiones",
+        "texto": "Donde un gnomo reparte los trabajos. Elige siempre a quienes cruzaron el portal, y tiene su razón: notó que cuando un quebrado resuelve un encargo, incluso uno sencillo, los resultados son notablemente buenos y algo alrededor mejora, aunque sea en lo mínimo. No explica por qué. Quizá no lo sabe. Quizá sí.",
+        "destacado": true
       }
     ],
     "ganchos": [
@@ -179,7 +186,8 @@
       { "label": "El antes", "texto": "De dónde venía Aeril Tirael y qué dejó del otro lado queda sin definir a propósito, disponible para el Master." },
       { "label": "El apellido Tirael", "texto": "Un linaje élfico de observadores. Si sirve, otros portadores del nombre existen o existieron." },
       { "label": "Los quebrados", "texto": "Años de trabajos invisibles dejaron una red informal de gente sin nombre que confía en él: ojos y oídos donde nadie importante mira." },
-      { "label": "El arco anímico", "texto": "Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada." }
+      { "label": "El arco anímico", "texto": "Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada." },
+      { "label": "Lo que dejan los quebrados", "texto": "Por qué los que cruzaron el portal desprenden resultados mejores es una pregunta abierta de la campaña: ¿traen algo del otro lado? ¿El mundo roto los reconoce como remiendo? Para Vaegrant conecta directo con lo que cruzó con él, y con la sospecha de que el Testigo no es el único que mira." }
     ]
   },
   "galeria": {

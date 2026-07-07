@@ -27,6 +27,8 @@ Descubrió una noche que sostener la mano cerca de una llama, sentir el calor vo
 
 Hoy está mejor. No bien: mejor. Lo sostienen la rutina, los trabajos concretos, ser útil de maneras chicas y visibles. Cuidar a otros lo devuelve al presente mejor que cualquier llama.
 
+Y hay algo más, que él todavía no sabe leer. Cuando resuelve un encargo, aunque sea menor, algo alrededor sale un poco mejor de lo que debería: la fiebre baja esa noche, la discusión de al lado se apaga, la calle amanece más liviana. El gnomo del bar que reparte los trabajos lo notó hace tiempo, y por eso los encargos van siempre a los que cruzaron el portal: donde un quebrado pone las manos, el mundo queda mejor cosido. A Vaegrant la ironía no se le escapa: el que siente el mundo a través del agua es de los que lo dejan más vivo al pasar.
+
 ### Costumbres y señales (para jugarlo en mesa)
 
 - Enciende una vela cada noche. La apaga con los dedos.
@@ -63,6 +65,8 @@ La idea no es que Vaegrant "esté triste". Es que está lejos, y que el grupo, s
 La Gran Guerra rompió el mapa. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.
 
 A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en el Faerûn de después de la guerra los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada.
+
+Y sin embargo, hay un gnomo en un bar que reparte encargos, y se los da siempre a los quebrados. Tiene su razón, aunque no la explique: notó que cuando uno de ellos resuelve un trabajo, incluso el más sencillo, los resultados son notablemente buenos, y algo alrededor mejora, aunque sea en lo mínimo. Nadie sabe por qué. Todavía.
 
 ### El cruce
 
@@ -116,6 +120,7 @@ Tres cosas lo mueven, y solo admite dos.
 - **El apellido Tirael.** Un linaje élfico de observadores. Si sirve, otros portadores del nombre existen o existieron.
 - **Los quebrados.** Años de trabajos invisibles dejaron una red informal de gente sin nombre que confía en él: ojos y oídos donde nadie importante mira.
 - **El arco anímico.** Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada.
+- **Lo que dejan los quebrados.** Por qué los que cruzaron el portal desprenden resultados mejores es una pregunta abierta de la campaña: ¿traen algo del otro lado? ¿El mundo roto los reconoce como remiendo? Para Vaegrant conecta directo con lo que cruzó con él, y con la sospecha de que el Testigo no es el único que mira.
 
 *(Notas de mesa: dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores. Si el nombre "Silvapor" sigue vivo en la mesa, encaja natural como uno de los lugares rebautizados tras la guerra.)*
 
@@ -137,18 +142,31 @@ Tres cosas lo mueven, y solo admite dos.
 | Iniciativa | +3 |
 | CD de conjuros | 13 |
 | Ataque de conjuro | +5 |
-| Sabiduría Pasiva (Percepción) | 12 |
+| Sabiduría Pasiva (Percepción) | 10 |
+
+*(Este resumen sigue la hoja física real; ver "Pendientes con el Master" abajo.)*
 
 **Características:** Fue 11 (+0) · Des 16 (+3) · Con 14 (+2) · Int 14 (+2) · Sab 11 (+0) · Car 17 (+3)
 
-**Salvaciones con competencia:** Sabiduría +2 · Carisma +5
+**Salvaciones con competencia:** Sabiduría +2 · Carisma +5. Ojo: en la hoja física la de Sabiduría quedó anotada como 0; corresponde +2 (0 de modificador + 2 de competencia).
 
-**Habilidades marcadas:** Arcanos +4 y Engaño +5 (clase) · Medicina +2 y Religión +4 (Ermitaño) · Percepción +2 (Sentidos Agudos, rasgo de Elfo)
+**Habilidades marcadas:** Arcanos +4 (Int) · Engaño +5 (Car) · Religión +4 (Int)
 
-**Rasgos raciales:** Visión en la oscuridad 18 m · Ascendencia Feérica (ventaja contra encantamiento, inmune a sueño mágico) · Trance (4 h) · Sentidos Agudos · competencia con espada larga/corta y arcos (Alto Elfo)
+**Idiomas y competencias:** Común y Élfico · armas simples y dagas · kit de herborista (trasfondo)
 
-**Trucos (3):** Eldritch Blast, Minor Illusion (Brujo) · Prestidigitation (truco racial de Alto Elfo: se lanza con Inteligencia; intercambiable por otro truco de Mago si preferís)
+**Rasgos y atributos (según la hoja):** Visión en la oscuridad · Ascendencia Feérica (ventaja contra encantado, inmune a dormir mágico) · Pacto Mágico (hechizos con Carisma) · Patrón de otro mundo: Archfey · Hechizos de pacto
+
+**Trucos (2):** Eldritch Blast · Minor Illusion
 
 **Hechizos conocidos (2 de 2):** Charm Person · Hex. Un espacio de nivel 1, se recupera con descanso corto.
 
-**Equipo:** armadura de cuero, 3 dagas, foco arcano, mochila de explorador, estuche de pergaminos, kit de herboristería, 5 po
+**Ataques:** Daga +5, 1d4+3 perforante (también arrojadiza)
+
+**Equipo:** armadura de cuero, 3 dagas, foco arcano, mochila de explorador, estuche de pergaminos para notas, ropa común, kit de herboristería, 5 po
+
+**Pendientes con el Master (por reglas corresponderían, la hoja física no los tiene):**
+- Medicina +2: el trasfondo Ermitaño da competencia en Medicina además de Religión.
+- Percepción +2 (y pasiva 12): el rasgo élfico Sentidos Agudos da competencia en Percepción.
+- Un truco de Mago extra por Alto Elfo (se lanza con Inteligencia; buena opción: Prestidigitation o Mage Hand).
+- Trance (los elfos meditan 4 h en vez de dormir 8): no está anotado en rasgos.
+- Corregir en papel la salvación de Sabiduría: +2.
