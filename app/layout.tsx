@@ -19,7 +19,7 @@ const spectral = Spectral({
 
 export const metadata: Metadata = {
   title: "Naevara Tirael",
-  description: "Perfil de personaje — Naevara Tirael, Brujo del Gran Antiguo",
+  description: "Perfil de personaje: Naevara Tirael, Brujo del Gran Antiguo",
 };
 
 export default function RootLayout({
