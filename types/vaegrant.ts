@@ -1,5 +1,6 @@
 // Perfil narrativo de Vaegrant. Se guarda en Supabase (tabla `character`,
 // fila id "vaegrant") vía /api/vaegrant, con fallback a data/vaegrant.json.
+import type { SessionEntry } from "./character";
 
 export interface VItem {
   label: string;
@@ -51,6 +52,9 @@ export interface VaegrantData {
     quote: string;
     secciones: { titulo: string; parrafos: string[] }[];
     notaMesa: string;
+    // Registro de sesiones: cola temporal, igual que en Naevara.
+    // Se integra al canon y se vacía (ver workflow de sesiones).
+    sesiones?: SessionEntry[];
   };
   mundo: {
     contexto: { titulo: string; texto: string };

@@ -6,6 +6,8 @@ import { VaegrantData, VImagen } from "@/types/vaegrant";
 import EditableText from "@/components/EditableText";
 import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
+import AddSessionModal from "@/components/AddSessionModal";
+import type { SessionEntry } from "@/types/character";
 import { Swords, Flame, ArrowLeft, ScrollText, Download } from "lucide-react";
 import { descargarImagen } from "@/lib/descargar";
 import { BuilderCharacter } from "@/types/builder";
@@ -822,12 +824,87 @@ function TabHoja({ combateId }: { combateId: string }) {
 
 function TabHistoria({ data, update, openAI }: { data: VaegrantData; update: UpdateFn; openAI: OpenAIFn }) {
   const h = data.historia;
+  const [addModal, setAddModal]   = useState(false);
+  const [editEntry, setEditEntry] = useState<SessionEntry | null>(null);
+  const sesiones = h.sesiones ?? [];
+
+  const guardarSesion = (entry: SessionEntry) => {
+    update((d) => {
+      const current = d.historia.sesiones ?? [];
+      const i = current.findIndex((s) => s.id === entry.id);
+      const updated = i >= 0 ? current.map((s, x) => (x === i ? entry : s)) : [entry, ...current];
+      return { ...d, historia: { ...d.historia, sesiones: updated } };
+    });
+  };
+
+  const borrarSesion = (id: string) => {
+    if (!window.confirm("¿Borrar esta entrada?")) return;
+    update((d) => ({
+      ...d,
+      historia: { ...d.historia, sesiones: (d.historia.sesiones ?? []).filter((s) => s.id !== id) },
+    }));
+  };
+
   return (
     <div>
+      <AddSessionModal
+        isOpen={addModal || !!editEntry}
+        onClose={() => { setAddModal(false); setEditEntry(null); }}
+        onSave={guardarSesion}
+        existing={editEntry ?? undefined}
+        openAI={openAI}
+      />
+
       <VQuote>
         <EditableText value={h.quote} multiline onChange={(v) => update((d) => ({ ...d, historia: { ...d.historia, quote: v } }))} />
       </VQuote>
-      <div style={{ marginTop: 24 }} />
+
+      {/* Registro de sesiones: cola temporal que después se integra al canon */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, marginTop: 24 }}>
+        <VSecLabel>Registro de sesiones · lo nuevo, antes de integrarlo al canon</VSecLabel>
+        <button
+          className="vg-btn"
+          onClick={() => setAddModal(true)}
+          style={{
+            padding: "5px 14px", fontSize: 11, fontWeight: 700, borderRadius: R + 1,
+            background: C.amber, border: "none", color: "#10151c", cursor: "pointer",
+            whiteSpace: "nowrap", flexShrink: 0,
+          }}
+        >
+          ＋ Agregar historia
+        </button>
+      </div>
+      <VDivider />
+      {sesiones.length === 0 ? (
+        <p style={{ ...pStyle, fontSize: 12.5, color: C.faint, fontStyle: "italic" }}>
+          No hay entradas pendientes. Lo que agregues acá queda guardado en la nube hasta que lo integremos a la historia.
+        </p>
+      ) : (
+        sesiones.map((s) => (
+          <div key={s.id} className="vg-row" style={{ padding: "12px 0" }}>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap", marginBottom: 3 }}>
+              <span style={{ fontSize: 9.5, fontWeight: 700, color: s.tipo === "partida" ? C.amber : C.steel, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                {s.tipo === "partida" ? "Partida" : "Personal"}
+              </span>
+              <span className={serif.className} style={{ fontSize: 17, fontWeight: 600, color: C.text }}>{s.titulo}</span>
+              <span style={{ fontSize: 10.5, color: C.faint }}>{[s.sesion, s.fecha].filter(Boolean).join(" · ")}</span>
+              <span style={{ marginLeft: "auto", display: "flex", gap: 6 }}>
+                <button className="vg-btn" onClick={() => setEditEntry(s)} title="Editar"
+                  style={{ fontSize: 10, padding: "2px 8px", borderRadius: R, cursor: "pointer", background: "transparent", color: C.faint, border: `1px solid ${C.borderSoft}` }}>
+                  Editar
+                </button>
+                <button className="vg-btn" onClick={() => borrarSesion(s.id)} title="Borrar"
+                  style={{ fontSize: 10, padding: "2px 8px", borderRadius: R, cursor: "pointer", background: "transparent", color: C.faint, border: `1px solid ${C.borderSoft}` }}>
+                  ×
+                </button>
+              </span>
+            </div>
+            <div style={{ ...pStyle, margin: 0, whiteSpace: "pre-wrap" }}>{s.contenido}</div>
+          </div>
+        ))
+      )}
+
+      <div style={{ marginTop: 28 }} />
       {h.secciones.map((s, i) => (
         <div key={i}>
           {i > 0 && <VDivider />}
