@@ -136,4 +136,44 @@ Formato vertical 2:3. Un callejón angosto steampunk donde viven los sin nombre:
 
 ---
 
+# Silverun a fondo: máquinas, chatarra y armas
+
+## 19 · El taller de chatarra (closeup)
+
+Ilustración estilo anime de alta calidad: fotograma de película de animación de fantasía steampunk, primer plano con muchísimo detalle de objetos, texturas de latón rayado y cobre opaco. Nada de fotorrealismo. Paleta fría con una lámpara de gas verde como acento. Sin personajes protagonistas. Sin texto en la imagen.
+
+Formato horizontal 3:2, primer plano cerrado sobre una mesa de trabajo. Un taller steampunk de posguerra: un brazo mecánico de autómata a medio desarmar sobre la mesa, engranajes y resortes ordenados en frascos, planos amarillentos clavados con punzones, llaves inglesas gastadas, una lupa de relojero montada en un brazo articulado. Vapor fino saliendo de una junta.
+
+## 20 · El arsenal retirado (closeup)
+
+Ilustración estilo anime de alta calidad: fotograma de película de animación de fantasía steampunk, vista cercana con mucho detalle de objetos. Nada de fotorrealismo. Paleta fría de claraboya con una sola lámpara de gas cálida. Sin personajes. Sin texto en la imagen.
+
+Formato vertical 2:3, vista cercana. Un depósito militar de la Gran Guerra: un rack de madera con armas de vapor retiradas y etiquetadas: rifles con pequeñas calderas de bronce y manómetros, una lanza con pistón, un cañón portátil de mano con manivela, hojas envainadas con tubos de cobre. Todo limpio pero fuera de servicio, con placas numeradas colgando de cordeles. Polvo en el aire.
+
+## 21 · El cementerio de máquinas (lejano)
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía steampunk, perspectiva lejana y artística, niebla atmosférica. Nada de fotorrealismo. Paleta fría con una sola franja ámbar de atardecer. Sin texto en la imagen.
+
+Formato horizontal 16:9. Un valle entero convertido en cementerio de máquinas de la Gran Guerra: colosos de asedio a vapor caídos y oxidados, del tamaño de edificios, medio hundidos en la tierra y comidos por la hiedra, con las calderas abiertas como costillas. Niebla baja, bandadas de pájaros, y chatarreros diminutos con lámparas trepando por un brazo gigante.
+
+## 22 · La fundición (interior)
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía steampunk, interior de escala monumental. Nada de fotorrealismo. Penumbra azul con el metal fundido naranja como única calidez. Personas solo en silueta. Sin texto en la imagen.
+
+Formato horizontal 16:9. El interior catedralicio de una fundición steampunk: columnas de hierro remachado, engranajes del tamaño de casas girando lento, cadenas colgando de la oscuridad del techo, y un río de metal fundido naranja que cruza la escena. Obreros en silueta con caretas, chispas, vapor. Escala enorme, personas diminutas.
+
+## 23 · El tren blindado (lejano)
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía steampunk, perspectiva lejana y artística, luz de anochecer. Nada de fotorrealismo. Paleta fría con el faro del tren como acento cálido. Sin texto en la imagen.
+
+Formato horizontal 16:9. Un tren blindado a vapor, reliquia de la Gran Guerra reconvertida en transporte de carga, cruza un viaducto de piedra y hierro sobre un mar de niebla al anochecer. Faro delantero encendido, estela de humo blanco, vagones con placas remachadas y una torreta desactivada cubierta con lona. Al fondo, una ciudad flotante apenas insinuada entre nubes.
+
+## 24 · El puesto de chatarra (closeup)
+
+Ilustración estilo anime de alta calidad: fotograma de película de animación de fantasía steampunk, vista cercana a nivel de mesa con muchísimo detalle de objetos. Nada de fotorrealismo. Faroles de gas cálidos contra atardecer frío. Sin texto en la imagen.
+
+Formato horizontal 3:2. Un puesto de mercado de chatarra steampunk: la mesa desborda de manos mecánicas, lentes de aumento, relojes de bolsillo abiertos, válvulas, brújulas rotas y un pájaro autómata sin un ala. Un gnomo comerciante con visor de relojero le muestra una pieza a un cliente encapuchado (solo se ven las manos de ambos). Etiquetas de precio colgando con hilo.
+
+---
+
 **Después de generar:** guardá las imágenes y agregalas a la galería de `/vaegrant` con el botón "Agregar imagen" (pegando la URL), o pasámelas y las subo al repo en `/public` para que queden fijas.

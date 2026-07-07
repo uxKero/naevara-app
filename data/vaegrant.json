@@ -264,6 +264,30 @@
       {
         "titulo": "Mundo · La calle de los quebrados",
         "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato vertical 2:3. Un callejón angosto steampunk donde viven los sin nombre: ropa tendida entre balcones torcidos, tuberías de cobre trepando las paredes con válvulas que gotean vapor, velas en las ventanas y un farol de gas parpadeante, escaleras que no combinan, un gato dormido sobre una caldera tibia. Melancólico pero habitado, lleno de pequeñas luces cálidas. Al fondo, entre los techos, se asoma la niebla del vacío."
+      },
+      {
+        "titulo": "Mundo · El taller de chatarra (closeup)",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 3:2, primer plano cerrado sobre una mesa de trabajo. Un taller steampunk de posguerra: un brazo mecánico de autómata a medio desarmar sobre la mesa, engranajes y resortes ordenados en frascos, planos amarillentos clavados con punzones, llaves inglesas gastadas, una lupa de relojero montada en un brazo articulado y una lámpara de gas verde. Vapor fino saliendo de una junta. Cada pieza contada con detalle, texturas de latón rayado y cobre opaco."
+      },
+      {
+        "titulo": "Mundo · El arsenal retirado (closeup)",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato vertical 2:3, vista cercana. Un depósito militar de la Gran Guerra: un rack de madera con armas de vapor retiradas y etiquetadas: rifles con pequeñas calderas de bronce y manómetros, una lanza con pistón, un cañón portátil de mano con manivela, hojas envainadas con tubos de cobre. Todo limpio pero fuera de servicio, con placas numeradas colgando de cordeles. Luz fría de claraboya, polvo en el aire, una sola lámpara de gas encendida."
+      },
+      {
+        "titulo": "Mundo · El cementerio de máquinas (lejano)",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 16:9, perspectiva lejana y artística. Un valle entero convertido en cementerio de máquinas de la Gran Guerra: colosos de asedio a vapor caídos y oxidados, del tamaño de edificios, medio hundidos en la tierra y comidos por la hiedra, con las calderas abiertas como costillas. Niebla baja, bandadas de pájaros, y chatarreros diminutos con lámparas trepando por un brazo gigante. Atardecer frío con una sola franja ámbar."
+      },
+      {
+        "titulo": "Mundo · La fundición (interior)",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 16:9. El interior catedralicio de una fundición steampunk: columnas de hierro remachado, engranajes del tamaño de casas girando lento, cadenas colgando de la oscuridad del techo, y un río de metal fundido naranja que cruza la escena como única fuente de calidez contra la penumbra azul. Obreros en silueta con caretas, chispas, vapor. Escala enorme, personas diminutas."
+      },
+      {
+        "titulo": "Mundo · El tren blindado (lejano)",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 16:9, perspectiva lejana y artística. Un tren blindado a vapor, reliquia de la Gran Guerra reconvertida en transporte de carga, cruza un viaducto de piedra y hierro sobre un mar de niebla al anochecer. Faro delantero encendido, estela de humo blanco, vagones con placas remachadas y una torreta desactivada cubierta con lona. Al fondo, una ciudad flotante apenas insinuada entre nubes."
+      },
+      {
+        "titulo": "Mundo · El puesto de chatarra (closeup)",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 3:2, vista cercana a nivel de mesa. Un puesto de mercado de chatarra steampunk: la mesa desborda de manos mecánicas, lentes de aumento, relojes de bolsillo abiertos, válvulas, brújulas rotas y un pájaro autómata sin un ala. Un gnomo comerciante con visor de relojero le muestra una pieza a un cliente encapuchado (solo se ven las manos de ambos). Faroles de gas cálidos contra el atardecer frío, etiquetas de precio colgando con hilo."
       }
     ],
     "imagenes": [],
