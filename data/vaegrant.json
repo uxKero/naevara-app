@@ -1,0 +1,224 @@
+{
+  "__type": "vaegrant",
+  "meta": {
+    "alias": "Vaegrant",
+    "nombreReal": "Aeril Tirael",
+    "eyebrow": "Brujo del Archifey · Pacto abierto · Alto Elfo",
+    "subtitle": "Nivel 1 · Brujo · Patrón: el Testigo",
+    "subsubtitle": "Alto Elfo · Trasfondo: Eremita · Alineamiento: Neutral Bueno",
+    "tags": [
+      "Alto Elfo",
+      "Brujo",
+      "Archifey",
+      "Eremita",
+      "Neutral Bueno",
+      "Quebrado"
+    ]
+  },
+  "heroQuote": "Estoy acá.",
+  "heroStats": [
+    { "label": "Nivel", "value": "1" },
+    { "label": "Clase", "value": "Brujo" },
+    { "label": "Raza", "value": "Alto Elfo" },
+    { "label": "Patrón", "value": "El Testigo" }
+  ],
+  "combateId": "vaegrant-aeril-tirael-7bynj",
+  "perfil": {
+    "quote": "Nunca dice \"estoy bien\". Dice \"estoy acá\". En su idioma privado, es mejor.",
+    "nombre": {
+      "alias": {
+        "palabra": "Vaegrant",
+        "etimologia": "El alias público. Suena a lo que es: alguien sin raíces fijas. Un nombre para trabajar, viajar y no responder preguntas."
+      },
+      "real": {
+        "palabra": "Aeril Tirael",
+        "etimologia": "Del élfico viejo: tir, observar desde lejos; ael, cielo. Un apellido de observadores. Lo guarda, y no sabe si guardarlo es protección o vergüenza."
+      },
+      "descripcion": "Vaegrant es lo que eligió ser. Aeril es lo que todavía no decidió si abandonar. Entre esos dos nombres vive su ideal: nadie elige de dónde viene, pero todos eligen quién ser después."
+    },
+    "vista": [
+      "Un elfo de rasgos finos que parece siempre recién llegado o a punto de irse. Ropa de viaje en grises y azules apagados, bien cuidada y sin un solo adorno. Habla poco y tarde: deja que la conversación muestre sus cartas antes de tocar las suyas. Cae bien sin buscarlo, con esa simpatía tranquila de quien no compite por nada. Su Carisma alto no se nota en discursos: se nota en que la gente baja la guardia cerca suyo sin saber por qué.",
+      "Se mueve con una agilidad económica, sin gestos de más. Escucha con todo el cuerpo. Si alguien lo mira fijo demasiado tiempo, es él quien desvía la vista primero."
+    ],
+    "aspecto": [
+      { "label": "Rasgos", "texto": "Elfo de rasgos finos, piel pálida de subtono frío, ojos gris claro con un cansancio que no se corresponde con su cara. Pelo lacio oscuro hasta los hombros, orejas puntiagudas discretas." },
+      { "label": "Ropa", "texto": "De viaje, en grises y azules apagados. Bien cuidada, de buena confección, sin un solo adorno. Mangas largas siempre, incluso con calor." },
+      { "label": "Presencia", "texto": "No llena la sala: la lee. La gente baja la guardia cerca suyo sin saber por qué. Parece siempre recién llegado o a punto de irse." },
+      { "label": "Las muñecas", "texto": "Cubiertas. Siempre. Nadie del grupo vio nunca por qué." }
+    ],
+    "interior": [
+      "Vaegrant funciona. Trabaja, cumple, responde con una ironía seca cuando lo apuran. Pero hay una distancia entre él y el mundo que no termina de cerrarse desde que cruzó el portal: los días le llegan un poco amortiguados, como a través de agua. Aprendió a vivir así. No lo cuenta.",
+      "En sus años de ermitaño esa distancia fue mucho peor. Hubo una época en la que necesitaba comprobar que seguía adentro de su propio cuerpo, y lo comprobaba de la peor manera: haciéndose daño, con método y en silencio. No por castigo. Por certeza. El dolor era lo único del mundo nuevo que no parecía pintado. De esa época quedan cicatrices que nadie ve, porque siempre va cubierto, y una costumbre que sí se ve: la vela.",
+      "Descubrió una noche que sostener la mano cerca de una llama, sentir el calor volverse casi insoportable y retirarla a tiempo, le daba la misma certeza sin dejar marca. Desde entonces enciende una vela cada noche, esté donde esté, haga falta luz o no. Nadie del grupo sabe por qué.",
+      "Hoy está mejor. No bien: mejor. Lo sostienen la rutina, los trabajos concretos, ser útil de maneras chicas y visibles. Cuidar a otros lo devuelve al presente mejor que cualquier llama."
+    ],
+    "costumbres": [
+      "Enciende una vela cada noche. La apaga con los dedos.",
+      "Evita los espejos grandes. Si duerme en una habitación con uno, lo cubre.",
+      "Cuando miente o esconde algo, se toca la muñeca izquierda por encima de la manga.",
+      "Recuerda los nombres de la gente invisible: mozos, cocheros, lavanderas. Les agradece de más.",
+      "El humor le sale seco y tarde, una línea cada tanto. Cuando hace reír al grupo, el primero sorprendido es él.",
+      "Nunca dice \"estoy bien\". Dice \"estoy acá\". En su idioma privado, es mejor."
+    ],
+    "relaciones": [
+      { "label": "Con el grupo", "texto": "No lidera ni sigue: acompaña. Está en los detalles: recuerda lo que cada uno dijo, aparece con lo que hacía falta antes de que lo pidan. Cuidar a otros lo devuelve al presente mejor que cualquier llama." },
+      { "label": "Con el Testigo", "texto": "No le reza ni le habla en voz alta. A veces deja el espejo sin cubrir un rato, como quien deja una puerta entornada. Sabe que la deuda existe y prefiere no pensar en qué moneda se paga." },
+      { "label": "Con los quebrados", "texto": "Los suyos. Los reconoce a primera vista, en cualquier ciudad. Con ellos no administra la verdad: la dice." }
+    ],
+    "hoja": [
+      { "label": "Rasgo de personalidad", "texto": "Observo más de lo que hablo. Prefiero escuchar tres veces antes de decir una palabra." },
+      { "label": "Ideal", "texto": "Identidad. Nadie elige de dónde viene, pero todos eligen quién ser después." },
+      { "label": "Vínculo", "texto": "Mi patrón me vio cuando yo mismo había dejado de verme. Le debo eso, aunque no sepa todavía qué me va a pedir a cambio." },
+      { "label": "Defecto", "texto": "Mantengo siempre una salida, hasta con la gente en la que confío." }
+    ],
+    "arco": [
+      {
+        "fase": "Etapa 1 · ahora",
+        "titulo": "Funcional y lejano",
+        "texto": "Cumple, ayuda, se guarda. Física y emocionalmente, siempre cerca de la puerta. La vela, cada noche."
+      },
+      {
+        "fase": "Etapa 2",
+        "titulo": "Primeras grietas de calidez",
+        "texto": "Un chiste que le sale sin pensarlo. Quedarse en la mesa cuando ya podría haberse ido. Llamar a un compañero por su nombre, con afecto."
+      },
+      {
+        "fase": "Etapa 3",
+        "titulo": "Elegir sentir",
+        "texto": "Ante una pérdida o un miedo real del grupo, no retirarse: quedarse en el dolor con los demás, y descubrir que lo aguanta."
+      },
+      {
+        "fase": "Etapa 4",
+        "titulo": "Presente",
+        "texto": "Los días ya no llegan a través del agua. Quizá una noche se olvida de encender la vela y, al darse cuenta, sonríe: ya no la necesitaba."
+      }
+    ]
+  },
+  "historia": {
+    "quote": "Faerûn ya no es el nombre de un mundo. Es el nombre de lo que quedó.",
+    "secciones": [
+      {
+        "titulo": "El mundo después de la Gran Guerra",
+        "parrafos": [
+          "La Gran Guerra rompió el mapa. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.",
+          "A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en el Faerûn de después de la guerra los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada."
+        ]
+      },
+      {
+        "titulo": "El cruce",
+        "parrafos": [
+          "Vaegrant recuerda que el cruce no dolió, y que eso fue lo más inquietante. Un paso, un frío de umbral, y del otro lado un mundo de ruinas gloriosas que no lo estaba esperando. Llegó sin equipaje, sin cartas, sin nadie que lo reclamara. De dónde venía es una conversación que Vaegrant no tiene. Con nadie.",
+          "Desde el primer día notó que algo había cruzado con él. O dentro de él. Las velas se inclinan apenas cuando pasa cerca. Los espejos tardan medio parpadeo de más en devolverle el reflejo. Nunca supo si era magia residual del portal o algo más viejo, y esa pregunta fue, durante años, lo único que lo mantuvo estudiando lo arcano."
+        ]
+      },
+      {
+        "titulo": "Los años del ermitaño",
+        "parrafos": [
+          "Los primeros tiempos en el mundo nuevo fueron los peores de su vida, y los pasó solo, en el borde de un asentamiento cuyo nombre nuevo tardó en aprender. No fue un retiro espiritual. Fue un derrumbe lento y sin testigos.",
+          "El mundo de después de la guerra le parecía una escenografía: bella, rota y ajena. Y él se parecía cada vez más a un recuerdo de sí mismo. Necesitaba pruebas de seguir existiendo, y el dolor era la única prueba que no podía discutirse. Se hizo daño, con método y en silencio, durante más tiempo del que va a admitir nunca.",
+          "Lo que lo fue sacando no fue una revelación. Fue la vela, primero: la certeza sin la marca. Y después el trabajo: alguien del asentamiento le pidió ayuda con un techo, después con una carta, después con un chico perdido. Ser necesitado, resultó, también era una prueba de existir. Más lenta. Mejor."
+        ]
+      },
+      {
+        "titulo": "El Testigo",
+        "parrafos": [
+          "Fue en lo más hondo de esos años cuando algo lo encontró. No un dios, no un demonio. Algo fey y viejísimo, sin corte, sin trono y sin agenda: un ser que existe en los reflejos y en los bordes de la luz, tan antiguo que ya no recuerda su propio nombre ni siente el paso de nada. Los eruditos discutirían si \"archifey\" es la palabra justa. A efectos del pacto, lo es.",
+          "Lo había estado mirando desde los espejos. Quizá desde antes del portal. Quizá el portal era suyo. No lo dice.",
+          "No le ofreció poder. Le ofreció lo único que Vaegrant necesitaba y no tenía: ser visto. Si el pacto tuvo palabras, fueron algo así: yo te miro, y mientras te mire, existís. Vos sentís, y mientras sientas, yo recuerdo qué era eso. Un ser que lo perdió todo menos la atención, y un elfo que lo conservaba todo menos la certeza. Cada uno es la prueba de existencia del otro.",
+          "Quedó una sola condición, dicha con la liviandad con la que los fey dicen las cosas que van a doler: algún día le pedirá algo a cambio. No dijo qué. Vaegrant aceptó igual. No por ambición: aceptó porque, por primera vez desde el cruce, algo lo eligió a él en vez de ignorarlo.",
+          "El Testigo no interviene en el mundo. No mueve piezas, no tiene enemigos, no encarga misiones. Solo mira, y presta."
+        ]
+      },
+      {
+        "titulo": "Los años invisibles",
+        "parrafos": [
+          "Cuando volvió a la gente eligió el lugar que ocupan todos los quebrados: abajo, al costado, donde nadie mira. Recados, mesas, techos, cartas. Desde ahí se ve todo: quién paga, quién miente, quién tiene miedo y a qué. Su Engaño no nació de mentir. Nació de la costumbre de no mostrar nunca la mano completa. Un mentiroso fabrica; él administra la verdad de a poco.",
+          "En público usa Vaegrant, un alias que suena a lo que es: alguien sin raíces fijas. El nombre real, Aeril Tirael, lo guarda. Tirael, en el élfico viejo: tir, observar desde lejos; ael, cielo. Un apellido de observadores. No sabe si guardarlo es protección o vergüenza, y su ideal vive en esa duda: nadie elige de dónde viene, pero todos eligen quién ser después."
+        ]
+      },
+      {
+        "titulo": "Por qué camina",
+        "parrafos": [
+          "Tres cosas lo mueven, y solo admite dos.",
+          "La pregunta. Qué cruzó con él, qué era el portal, por qué el Testigo lo miraba desde antes. La respuesta no está quieta, así que él tampoco.",
+          "Los invisibles. Sabe lo que cuesta sostener un mundo que no te nombra. Cuando un quebrado está en problemas, Vaegrant aparece, discreto y lateral, y después le resta importancia. No es heroísmo. Es memoria.",
+          "La tercera, la que no admite: quiere volver a sentir el mundo de cerca. Sospecha que la distancia no se cierra sola; se cierra con gente. Por eso, aunque mantiene siempre una salida, últimamente elige quedarse en habitaciones donde la salida queda un poco más lejos."
+        ]
+      }
+    ],
+    "notaMesa": "Dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores. Si el nombre \"Silvapor\" sigue vivo en la mesa, encaja natural como uno de los lugares rebautizados tras la guerra."
+  },
+  "mundo": {
+    "contexto": {
+      "titulo": "Faerûn, después de la Gran Guerra",
+      "texto": "El plano es Faerûn, pero posterior a la Gran Guerra. El mapa quedó roto: ciudades enteras se levantaron hacia el cielo y flotan desde entonces; muchos lugares mantienen sus nombres antiguos y otros eligieron nombres nuevos. Entre las grietas de la guerra quedaron portales que a veces escupen cosas, y a veces personas: los quebrados. Los linajes gloriosos cotizan bajo; la gente invisible sostiene el mundo."
+    },
+    "lugares": [
+      {
+        "nombre": "Las ciudades flotantes",
+        "tipo": "Rasgo del mundo · por explorar",
+        "texto": "Ciudades que se alzaron enteras durante la guerra y nunca volvieron a bajar. Puertos colgando sobre la niebla, economías propias, y la pregunta de qué las mantiene arriba.",
+        "destacado": true
+      },
+      {
+        "nombre": "Los portales",
+        "tipo": "Heridas de la guerra · vínculo directo con Vaegrant",
+        "texto": "Grietas que la Gran Guerra dejó en el mundo. A veces escupen cosas; a veces, personas. Vaegrant cruzó por uno, y algo cruzó con él. Nadie sabe cuántos hay ni a dónde dan.",
+        "destacado": true
+      },
+      {
+        "nombre": "El asentamiento actual",
+        "tipo": "Por decidir en mesa",
+        "texto": "El lugar donde la party vive y viene haciendo trabajos menores. Queda por decidir si conserva su nombre antiguo o lleva uno nuevo. Si \"Silvapor\" sigue vivo en la mesa, encaja acá.",
+        "destacado": false
+      }
+    ],
+    "ganchos": [
+      { "label": "La deuda abierta", "texto": "El pacto tiene un precio sin nombrar que puede cobrarse cuando la historia lo necesite. El Testigo no encarga misiones ni mueve el mundo: cuando pida, va a pedir algo íntimo." },
+      { "label": "Lo que cruzó con él", "texto": "Velas que se inclinan, espejos que dudan. Escalable a pistas, presencias o consecuencias, o ignorable, según le convenga a la trama." },
+      { "label": "El antes", "texto": "De dónde venía Aeril Tirael y qué dejó del otro lado queda sin definir a propósito, disponible para el Master." },
+      { "label": "El apellido Tirael", "texto": "Un linaje élfico de observadores. Si sirve, otros portadores del nombre existen o existieron." },
+      { "label": "Los quebrados", "texto": "Años de trabajos invisibles dejaron una red informal de gente sin nombre que confía en él: ojos y oídos donde nadie importante mira." },
+      { "label": "El arco anímico", "texto": "Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada." }
+    ]
+  },
+  "galeria": {
+    "estiloBase": "Pintura digital de fantasía oscura, atmosférica y contenida. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y distante, ojos gris claro con un cansancio antiguo, piel pálida de subtono frío, pelo lacio oscuro hasta los hombros, orejas puntiagudas discretas. Viste ropa de viaje gris azulada sin adornos, de buena confección, con mangas largas que cubren las muñecas y una capa de capucha baja. Paleta fría (azules apagados, grises, penumbra) con una única fuente de calidez: luz de vela ámbar. Tono melancólico, digno, sin dramatismo ni poses heroicas. Sin texto en la imagen.",
+    "prompts": [
+      {
+        "titulo": "Retrato principal (para el perfil)",
+        "prompt": "Retrato de busto en formato vertical 2:3. Vaegrant mira apenas fuera de cámara, ni triste ni frío: presente pero lejos. Detrás, desenfocadas, ruinas elegantes de fantasía y una ciudad flotante lejana entre la niebla. La luz de una vela fuera de cuadro le entibia un lado de la cara; el otro queda en penumbra azul."
+      },
+      {
+        "titulo": "La vela",
+        "prompt": "Escena íntima en formato vertical 2:3. De noche, en una habitación austera de posada, Vaegrant sentado a una mesa de madera con una única vela encendida. Sostiene la mano abierta cerca de la llama, sin tocarla, y la mira con una concentración serena, casi ritual. Todo lo demás en penumbra."
+      },
+      {
+        "titulo": "El espejo cubierto",
+        "prompt": "Formato vertical 2:3. Una habitación sencilla de posada. Un espejo grande de cuerpo entero cubierto con una tela gris; Vaegrant, de espaldas y con su ropa de viaje, termina de acomodar la tela con la cabeza levemente inclinada. En el borde descubierto del espejo, un reflejo mínimo que no debería estar ahí."
+      },
+      {
+        "titulo": "El cruce del portal",
+        "prompt": "Formato horizontal 3:2. Un campo de ruinas de guerra al anochecer. Una grieta luminosa vertical flota en el aire: un portal que se está cerrando. Vaegrant acaba de salir de él, sin equipaje, quieto, mirando un mundo que no lo esperaba. El viento le mueve la capa. A lo lejos, una ciudad flotante entre nubes bajas."
+      },
+      {
+        "titulo": "El Testigo",
+        "prompt": "Primer plano en formato vertical 2:3. Vaegrant inclinado sobre un charco quieto, de noche, con una vela en la mano como única luz. En el agua, su reflejo no está en la misma pose: llega medio gesto tarde. Dentro del reflejo, dos puntos de luz tenues lo miran."
+      },
+      {
+        "titulo": "Los años invisibles",
+        "prompt": "Formato horizontal 3:2. Una taberna llena y cálida, con gente riendo desenfocada en primer plano. Al fondo, nítido, Vaegrant lleva una bandeja entre las mesas: presente, eficiente e invisible para todos. Es el único elemento en foco de toda la imagen."
+      },
+      {
+        "titulo": "Faerûn después de la Gran Guerra",
+        "prompt": "Paisaje amplio en formato horizontal 16:9. Un mundo de posguerra: ruinas elegantes cubiertas de niebla, caminos rotos, y arriba una ciudad flotante enorme con puertos que cuelgan sobre el vacío. Abajo, diminuto, Vaegrant camina solo por el camino. Amanecer frío, con una sola franja de luz cálida en el horizonte."
+      },
+      {
+        "titulo": "Magia de pacto",
+        "prompt": "Formato vertical 2:3. Vaegrant en combate, sin pose heroica: el gesto mínimo de una mano extendida de la que sale una descarga arcana de luz fría azul violácea. El rostro sereno, casi triste. Alrededor, la penumbra retrocede apenas."
+      }
+    ],
+    "imagenes": [],
+    "portada": 0
+  }
+}

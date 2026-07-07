@@ -277,6 +277,13 @@ export default function Home() {
             <div style={{ display: "flex", alignItems: "center", gap: 8, paddingRight: 2, flexShrink: 0 }}>
               {savedMsg && <span style={{ fontSize: 11, fontWeight: savedMsg.startsWith("⚠") ? 600 : 400, color: savedMsg.startsWith("⚠") ? "#C0392B" : "#7F77DD" }} className="save-flash">{savedMsg}</span>}
               <a
+                href="/vaegrant"
+                style={{ fontSize: 11, color: "var(--text-faint)", textDecoration: "none", whiteSpace: "nowrap", padding: "5px 6px" }}
+                title="Perfil de Vaegrant (Aeril Tirael)"
+              >
+                Vaegrant →
+              </a>
+              <a
                 href="/combate"
                 style={{
                   padding: "5px 14px", fontSize: 11, fontWeight: 700,

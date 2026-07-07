@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Hojas del builder (fallback local; en prod se usa Supabase)
 data/characters/
+
+# imagenes generadas en dev local
+/public/galeria/

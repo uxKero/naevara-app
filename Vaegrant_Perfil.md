@@ -1,83 +1,123 @@
 # Vaegrant
-### (Aeril Tirael) — Alto Elfo, Brujo de Pacto Archfey
+### (Aeril Tirael) · Alto Elfo, Brujo de Pacto Archfey
 
 **Alineamiento:** Neutral Bueno
 **Trasfondo:** Eremita
+**Mundo:** Faerûn, después de la Gran Guerra
+
+---
+
+## Quién es
+
+Primero el personaje. La historia explica cómo llegó hasta acá; esto es lo que se ve, se escucha y se siente cuando Vaegrant está en la sala.
+
+### A primera vista
+
+Un elfo de rasgos finos que parece siempre recién llegado o a punto de irse. Ropa de viaje en grises y azules apagados, bien cuidada y sin un solo adorno. Habla poco y tarde: deja que la conversación muestre sus cartas antes de tocar las suyas. Cae bien sin buscarlo, con esa simpatía tranquila de quien no compite por nada. Su Carisma alto no se nota en discursos: se nota en que la gente baja la guardia cerca suyo sin saber por qué.
+
+Se mueve con una agilidad económica, sin gestos de más. Escucha con todo el cuerpo. Si alguien lo mira fijo demasiado tiempo, es él quien desvía la vista primero.
+
+### Por dentro
+
+Vaegrant funciona. Trabaja, cumple, responde con una ironía seca cuando lo apuran. Pero hay una distancia entre él y el mundo que no termina de cerrarse desde que cruzó el portal: los días le llegan un poco amortiguados, como a través de agua. Aprendió a vivir así. No lo cuenta.
+
+En sus años de ermitaño esa distancia fue mucho peor. Hubo una época en la que necesitaba comprobar que seguía adentro de su propio cuerpo, y lo comprobaba de la peor manera: haciéndose daño, con método y en silencio. No por castigo. Por certeza. El dolor era lo único del mundo nuevo que no parecía pintado. De esa época quedan cicatrices que nadie ve, porque siempre va cubierto, y una costumbre que sí se ve: la vela.
+
+Descubrió una noche que sostener la mano cerca de una llama, sentir el calor volverse casi insoportable y retirarla a tiempo, le daba la misma certeza sin dejar marca. Desde entonces enciende una vela cada noche, esté donde esté, haga falta luz o no. Nadie del grupo sabe por qué.
+
+Hoy está mejor. No bien: mejor. Lo sostienen la rutina, los trabajos concretos, ser útil de maneras chicas y visibles. Cuidar a otros lo devuelve al presente mejor que cualquier llama.
+
+### Costumbres y señales (para jugarlo en mesa)
+
+- Enciende una vela cada noche. La apaga con los dedos.
+- Evita los espejos grandes. Si duerme en una habitación con uno, lo cubre.
+- Cuando miente o esconde algo, se toca la muñeca izquierda por encima de la manga.
+- Recuerda los nombres de la gente invisible: mozos, cocheros, lavanderas. Les agradece de más.
+- El humor le sale seco y tarde, una línea cada tanto. Cuando hace reír al grupo, el primero sorprendido es él.
+- Nunca dice "estoy bien". Dice "estoy acá". En su idioma privado, es mejor.
+
+### Para la hoja
+
+- **Rasgo de personalidad:** "Observo más de lo que hablo. Prefiero escuchar tres veces antes de decir una palabra."
+- **Ideal:** *Identidad.* "Nadie elige de dónde viene, pero todos eligen quién ser después."
+- **Vínculo:** "Mi patrón me vio cuando yo mismo había dejado de verme. Le debo eso, aunque no sepa todavía qué me va a pedir a cambio."
+- **Defecto:** "Mantengo siempre una salida, hasta con la gente en la que confío."
+
+### El arco anímico (privado: para jugarlo sin anunciarlo)
+
+La idea no es que Vaegrant "esté triste". Es que está lejos, y que el grupo, sin saberlo, lo va trayendo de vuelta. Una evolución lenta, de sesión a sesión:
+
+1. **Funcional y lejano.** Cumple, ayuda, se guarda. Física y emocionalmente, siempre cerca de la puerta. La vela, cada noche.
+2. **Primeras grietas de calidez.** Un chiste que le sale sin pensarlo. Quedarse en la mesa cuando ya podría haberse ido. Llamar a un compañero por su nombre, con afecto.
+3. **Elegir sentir.** Ante una pérdida o un miedo real del grupo, no retirarse: quedarse en el dolor con los demás, y descubrir que lo aguanta.
+4. **Presente.** Los días ya no llegan a través del agua. Quizá una noche se olvida de encender la vela y, al darse cuenta, sonríe: ya no la necesitaba.
 
 ---
 
 ## Historia
 
-> *Silvapor no le preguntó quién era. Esa fue la primera bondad que alguien tuvo con él en mucho tiempo.*
+> Faerûn ya no es el nombre de un mundo. Es el nombre de lo que quedó.
+
+### El mundo después de la Gran Guerra
+
+La Gran Guerra rompió el mapa. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.
+
+A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en el Faerûn de después de la guerra los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada.
 
 ### El cruce
 
-Nadie en Silvapor sabe cuándo cruzó el portal. Él sí. Recuerda que el cruce no dolió — y que eso fue lo más inquietante. Un paso, un frío de umbral que no pertenecía a ningún plano porque estaba exactamente entre dos, y del otro lado un mundo que no lo estaba esperando. Llegó sin equipaje, sin cartas, sin nadie que lo reclamara. Y descubrió pronto que en Silvapor eso no era una desgracia: era un salvoconducto.
+Vaegrant recuerda que el cruce no dolió, y que eso fue lo más inquietante. Un paso, un frío de umbral, y del otro lado un mundo de ruinas gloriosas que no lo estaba esperando. Llegó sin equipaje, sin cartas, sin nadie que lo reclamara. De dónde venía es una conversación que Vaegrant no tiene. Con nadie.
 
-Porque en este plano un nombre importante es una ofensa. Los que cruzan portales no traen linajes — traen deudas, fugas, vergüenzas, o nada. Los que traen nada duran más. A él nadie le preguntó de qué casa venía, porque no ofreció ninguna. Aprendió a devolver el silencio con silencio, y el plano lo absorbió como absorbe a todos los suyos: sin ceremonia, sin nombre, sin promesas.
+Desde el primer día notó que algo había cruzado con él. O dentro de él. Las velas se inclinan apenas cuando pasa cerca. Los espejos tardan medio parpadeo de más en devolverle el reflejo. Nunca supo si era magia residual del portal o algo más viejo, y esa pregunta fue, durante años, lo único que lo mantuvo estudiando lo arcano.
 
-Lo que no le dijo a nadie — lo que todavía no le ha dicho a nadie — es que algo cruzó con él. No sabe qué. Las velas se inclinan apenas hacia él cuando pasa cerca. Los espejos tardan medio parpadeo de más en devolverle el reflejo. Al principio lo atribuyó a magia residual del portal, un polvo arcano que el tiempo limpiaría. Las estaciones pasaron. Sigue ahí. Por eso estudia lo arcano: no por ambición académica, sino porque hay una pregunta pegada a su sombra y es la única que de verdad necesita responder. ¿Cruzó algo con él… o algo ya lo estaba esperando del otro lado, desde antes de que existiera la idea del cruce?
+### Los años del ermitaño
+
+Los primeros tiempos en el mundo nuevo fueron los peores de su vida, y los pasó solo, en el borde de un asentamiento cuyo nombre nuevo tardó en aprender. No fue un retiro espiritual. Fue un derrumbe lento y sin testigos.
+
+El mundo de después de la guerra le parecía una escenografía: bella, rota y ajena. Y él se parecía cada vez más a un recuerdo de sí mismo. Necesitaba pruebas de seguir existiendo, y el dolor era la única prueba que no podía discutirse. Se hizo daño, con método y en silencio, durante más tiempo del que va a admitir nunca.
+
+Lo que lo fue sacando no fue una revelación. Fue la vela, primero: la certeza sin la marca. Y después el trabajo: alguien del asentamiento le pidió ayuda con un techo, después con una carta, después con un chico perdido. Ser necesitado, resultó, también era una prueba de existir. Más lenta. Mejor.
+
+### El Testigo
+
+Fue en lo más hondo de esos años cuando algo lo encontró. No un dios, no un demonio. Algo fey y viejísimo, sin corte, sin trono y sin agenda: un ser que existe en los reflejos y en los bordes de la luz, tan antiguo que ya no recuerda su propio nombre ni siente el paso de nada. Los eruditos discutirían si "archifey" es la palabra justa. A efectos del pacto, lo es.
+
+Lo había estado mirando desde los espejos. Quizá desde antes del portal. Quizá el portal era suyo. No lo dice.
+
+No le ofreció poder. Le ofreció lo único que Vaegrant necesitaba y no tenía: ser visto. Si el pacto tuvo palabras, fueron algo así: *yo te miro, y mientras te mire, existís. Vos sentís, y mientras sientas, yo recuerdo qué era eso.* Un ser que lo perdió todo menos la atención, y un elfo que lo conservaba todo menos la certeza. Cada uno es la prueba de existencia del otro.
+
+Quedó una sola condición, dicha con la liviandad con la que los fey dicen las cosas que van a doler: algún día le pedirá algo a cambio. No dijo qué. Vaegrant aceptó igual. No por ambición: aceptó porque, por primera vez desde el cruce, algo lo eligió a él en vez de ignorarlo.
+
+El Testigo no interviene en el mundo. No mueve piezas, no tiene enemigos, no encarga misiones. Solo mira, y presta. Si el Master prefiere otra naturaleza, otra escala u otro origen para el patrón, todo esto es maleable: lo importante es la relación. Ser visto como forma de existir.
 
 ### Los años invisibles
 
-Silvapor se sostiene sobre gente que nadie mira. Los quebrados — los que el plano absorbió sin darles nombre — cargan leña, remiendan redes, llevan recados, hacen los trabajos que mantienen el mundo en pie y no aparecen en ninguna canción. Vaegrant se hizo uno de ellos. El mismo patrón silencioso que cumplió aquel muchacho de la taberna, y cada quebrado antes que él.
+Cuando volvió a la gente eligió el lugar que ocupan todos los quebrados: abajo, al costado, donde nadie mira. Recados, mesas, techos, cartas. Desde ahí se ve todo: quién paga, quién miente, quién tiene miedo y a qué. Su Engaño no nació de mentir. Nació de la costumbre de no mostrar nunca la mano completa. Un mentiroso fabrica; él administra la verdad de a poco.
 
-No fue resignación: fue método. Desde abajo se ve todo — quién paga, quién miente, quién tiene miedo y a qué. Sirviendo mesas y haciendo encargos menores aprendió los verdaderos mapas del plano: no los de caminos, los de favores. Su Engaño no nació de mentir; nació de la costumbre de no mostrar nunca la mano completa. Hay una diferencia, y él la cuida. Un mentiroso fabrica. Él solo administra la verdad de a poco.
+En público usa **Vaegrant**, un alias que suena a lo que es: alguien sin raíces fijas. El nombre real, **Aeril Tirael**, lo guarda. *Tirael*, en el élfico viejo: *tir*, observar desde lejos; *ael*, cielo. Un apellido de observadores. No sabe si guardarlo es protección o vergüenza, y su ideal vive en esa duda: nadie elige de dónde viene, pero todos eligen quién ser después.
 
-### Algo lo eligió
-
-Fue en su período de ermitaño, viviendo solo lejos del pueblo, cuando algo lo encontró. No un dios. No un demonio. Algo **fey** — viejo de una manera que los árboles entienden y la gente no —, algo que llevaba observando Silvapor desde mucho antes de que él cayera por el portal.
-
-No se presentó con truenos. Se sentó frente a su fuego una noche como si siempre hubiera tenido un lugar reservado ahí, y estuvo un largo rato sin decir nada — cosa que Vaegrant, experto en silencios, supo reconocer como una cortesía. Cuando por fin habló, no ofreció poder. Ofreció atención. *"Te miro desde hace tiempo"*, dijo, o algo que significaba eso. *"Todos en este plano esconden su nombre por miedo. Tú guardas el tuyo por decisión. Eso es raro. Eso vale."*
-
-El pacto no tuvo condiciones claras. Solo una promesa, dicha con la liviandad con la que los fey dicen las cosas que van a doler: **algún día te pediré algo a cambio.** Él aceptó. No pidió oro, ni venganza, ni un trono. Aceptó porque por primera vez desde que cruzó el portal, algo lo eligió a él en vez de ignorarlo. Los sabios de todos los planos coinciden en que esa es la peor razón posible para pactar con un fey. Probablemente tengan razón. No le importó entonces, y trata de que no le importe ahora.
-
-Desde esa noche, cada tanto, el patrón le pide pequeñeces: dejar una piedra blanca en cierto umbral, aprenderse una canción y no cantarla jamás, saludar por su apodo a un desconocido que se irá del pueblo al día siguiente. Favores de apariencia inofensiva que no forman todavía ningún dibujo. *Todavía.*
-
-### El nombre
-
-En público usa **Vaegrant** — un alias que suena a lo que es: alguien sin raíces fijas. El nombre verdadero, **Aeril Tirael**, lo guarda. *Tirael*, en el élfico viejo: *tir* — observar, vigilar desde lejos — y *ael* — cielo, éter. Un apellido de observadores. No sabe si guardarlo es protección o vergüenza, y esa duda es quizás lo más honesto que tiene: nadie elige de dónde viene, pero todos eligen quién ser después. Vaegrant es lo que eligió ser. Aeril es lo que todavía no decidió si abandonar.
-
-Y hay algo más, algo que no formula ni en voz baja: su patrón nunca le preguntó el nombre real. Un ser que lo observa todo, que entiende lo que valen los nombres como solo los fey lo entienden — y jamás se lo pidió. Como si no lo necesitara. O como si lo estuviera dejando madurar.
-
-### Lo que lo pone en camino
+### Por qué camina
 
 Tres cosas lo mueven, y solo admite dos.
 
-**La pregunta.** Qué cruzó con él, qué era el portal, si su patrón esperaba del otro lado. Cada texto arcano, cada ruina, cada viajero extraño es una posible esquina de esa respuesta. No puede quedarse quieto porque la respuesta no está quieta.
+**La pregunta.** Qué cruzó con él, qué era el portal, por qué el Testigo lo miraba desde antes. La respuesta no está quieta, así que él tampoco.
 
-**Los invisibles.** Sabe exactamente lo que cuesta sostener un mundo que no te nombra. Cuando alguien sin nombre está en problemas, Vaegrant aparece — discreto, lateral, restándole importancia después. No es heroísmo. Es memoria.
+**Los invisibles.** Sabe lo que cuesta sostener un mundo que no te nombra. Cuando un quebrado está en problemas, Vaegrant aparece, discreto y lateral, y después le resta importancia. No es heroísmo. Es memoria.
 
-**La deuda** — la que no admite. La espera del pedido pesa más que cualquier pedido posible. Una parte de él busca una vida más grande, más expuesta, más interesante, porque sospecha que cuanto más valga su historia, antes vendrá el fey a cobrar — y por fin va a saber cuánto costaba lo que firmó aquella noche frente al fuego.
+**La tercera, la que no admite:** quiere volver a sentir el mundo de cerca. Sospecha que la distancia no se cierra sola; se cierra con gente. Por eso, aunque mantiene siempre una salida, últimamente elige quedarse en habitaciones donde la salida queda un poco más lejos.
 
 ---
 
 ## Ganchos para el Master
 
-- **El precio sin nombrar.** La deuda del pacto está abierta y sin condiciones: puede cobrarse en el peor momento posible, o de a cuotas (los "favores pequeños"). Si el patrón colecciona algo, son *nombres*. El día que pida el suyo — *Aeril Tirael*, dicho en voz alta, entregado — Vaegrant tendrá que decidir cuánto de sí mismo vivía en ese nombre.
-- **Lo que cruzó con él.** Las velas que se inclinan, los espejos que dudan. Puede escalar a pistas, presencias o consecuencias cuando le convenga a la trama. ¿Es residuo del portal, un observador enviado por el patrón, o una tercera cosa que ni el patrón conoce?
-- **Los favores pequeños.** Piedras blancas en umbrales, canciones que no se cantan. El Master decide qué dibujo forman — y cuándo Vaegrant lo descubre.
-- **El apellido Tirael.** Un linaje élfico de "los que observan desde lejos". Si al Master le sirve, otros portadores del nombre existen o existieron — y saber de ellos sería, para Vaegrant, la primera raíz real desde el cruce.
-- **Los quebrados.** Años de trabajos invisibles dejaron una red informal de gente sin nombre que lo conoce y confía en él: recaderos, taberneros, lavanderas. Ojos y oídos en los lugares donde nadie importante mira.
+- **La deuda abierta.** El pacto tiene un precio sin nombrar que puede cobrarse cuando la historia lo necesite. El Testigo no encarga misiones ni mueve el mundo: cuando pida, va a pedir algo íntimo.
+- **Lo que cruzó con él.** Velas que se inclinan, espejos que dudan. Escalable a pistas, presencias o consecuencias, o ignorable, según le convenga a la trama.
+- **El antes.** De dónde venía Aeril Tirael y qué dejó del otro lado queda sin definir a propósito, disponible para el Master.
+- **El apellido Tirael.** Un linaje élfico de observadores. Si sirve, otros portadores del nombre existen o existieron.
+- **Los quebrados.** Años de trabajos invisibles dejaron una red informal de gente sin nombre que confía en él: ojos y oídos donde nadie importante mira.
+- **El arco anímico.** Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada.
 
-*(Nota de mesa: aún no está definido si Vaegrant conoce previamente al resto de la party o si se encuentran por primera vez al arrancar la campaña.)*
-
----
-
-## Personalidad y ánimo
-
-**Actitud general:** reservado, observador, calculador sin ser frío. No es alguien que entra a una sala hablando — entra escuchando. Su Carisma alto (+3) no se nota en grandes discursos, sino en la facilidad con la que cae bien sin esfuerzo aparente, casi sin proponérselo.
-
-Su Destreza alta (+3) y su Sabiduría/Fuerza promedio (+0) pintan a alguien ágil y reactivo más que fuerte o intuitivo de manera mística — confía más en lo que puede deducir (Inteligencia +2, Arcanos) que en corazonadas.
-
-- **Rasgo de personalidad:** "Observo más de lo que hablo. Prefiero escuchar tres veces antes de decir una palabra."
-- **Ideal:** *Identidad.* "Nadie elige de dónde viene, pero todos eligen quién ser después."
-- **Vínculo:** "Mi patrón me eligió cuando nadie más lo había hecho. Le debo eso, aunque no sepa todavía qué me va a pedir a cambio."
-- **Defecto:** "Mantengo siempre una salida, hasta con la gente en la que confío."
-
-**En combate:** prefiere mantener distancia, usar el entorno y el engaño antes que el choque directo — coherente con llevar dagas en vez de armas pesadas y con su Fuerza sin entrenar.
-
-**En lo social:** cómodo en las sombras de una conversación, incómodo siendo el centro de atención. Su Engaño (+5) es casi un reflejo: no necesariamente miente, pero rara vez muestra todas sus cartas.
+*(Notas de mesa: dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores. Si el nombre "Silvapor" sigue vivo en la mesa, encaja natural como uno de los lugares rebautizados tras la guerra.)*
 
 ---
 
@@ -107,8 +147,8 @@ Su Destreza alta (+3) y su Sabiduría/Fuerza promedio (+0) pintan a alguien ági
 
 **Rasgos raciales:** Visión en la oscuridad 18 m · Ascendencia Feérica (ventaja contra encantamiento, inmune a sueño mágico) · Trance (4 h) · Sentidos Agudos · competencia con espada larga/corta y arcos (Alto Elfo)
 
-**Trucos (3):** Eldritch Blast, Minor Illusion (Brujo) · Prestidigitation (truco racial de Alto Elfo — se lanza con Inteligencia; intercambiable por otro truco de Mago si preferís)
+**Trucos (3):** Eldritch Blast, Minor Illusion (Brujo) · Prestidigitation (truco racial de Alto Elfo: se lanza con Inteligencia; intercambiable por otro truco de Mago si preferís)
 
-**Hechizos conocidos (2 de 2):** Charm Person · Hex — *1 espacio de nivel 1, se recupera con descanso corto*
+**Hechizos conocidos (2 de 2):** Charm Person · Hex. Un espacio de nivel 1, se recupera con descanso corto.
 
 **Equipo:** armadura de cuero, 3 dagas, foco arcano, mochila de explorador, estuche de pergaminos, kit de herboristería, 5 po
