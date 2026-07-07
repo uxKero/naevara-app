@@ -316,6 +316,35 @@ console.log(`  + ${classes.reduce((s, c) => s + c.subclasses_full.length, 0)} su
 // ── DEIDADES (apéndice abierto "Gods of the Multiverse", SRD) ────
 const deities = buildDeities();
 
+// ── HECHIZOS EXTRA (fuera del SRD 5.1; están en el SRD 5.2, CC-BY-4.0;
+//    descripciones parafraseadas, sin texto literal del manual) ──────
+const EXTRA_SPELLS = [
+  {
+    index: "hex",
+    name: "Hex",
+    level: 1,
+    school: "Enchantment",
+    casting_time: "1 bonus action",
+    range: "90 feet",
+    duration: "Concentration, up to 1 hour",
+    concentration: true,
+    ritual: false,
+    components: ["V", "S", "M"],
+    classes: ["warlock"],
+    attack_type: null,
+    save: null,
+    area: null,
+    damage: { tipo: "Necrotic", bySlot: { "1": "1d6" }, byChar: null },
+    heal: null,
+    desc: "You curse a creature you can see within range. Until the spell ends, the target takes an extra 1d6 necrotic damage whenever you hit it with an attack, and it has disadvantage on ability checks made with one ability you choose when casting. If the target drops to 0 hit points before the spell ends, you can use a bonus action on a later turn to move the curse to a new creature. A remove curse cast on the target ends the spell early.",
+    higher_level: "With a spell slot of 3rd or 4th level, you can maintain concentration for up to 8 hours; with a slot of 5th level or higher, up to 24 hours.",
+  },
+];
+for (const s of EXTRA_SPELLS) {
+  if (!spells.some((x) => x.index === s.index)) spells.push(s);
+}
+console.log(`  + ${EXTRA_SPELLS.length} hechizos extra curados`);
+
 // ── ESCRIBIR ────────────────────────────────────────────────────
 await mkdir(OUT, { recursive: true });
 const files = {
