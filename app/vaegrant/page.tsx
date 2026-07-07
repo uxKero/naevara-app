@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Cormorant_Garamond } from "next/font/google";
 import { VaegrantData, VImagen } from "@/types/vaegrant";
 import EditableText from "@/components/EditableText";
 import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
-import { Swords, Flame, ArrowLeft } from "lucide-react";
+import { Swords, Flame, ArrowLeft, ScrollText } from "lucide-react";
 
 // Display serif propio de esta ruta: la identidad tipográfica de Vaegrant.
 const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"], style: ["normal", "italic"] });
@@ -15,7 +15,6 @@ const TABS = [
   { id: "perfil",   label: "Perfil" },
   { id: "historia", label: "Historia" },
   { id: "mundo",    label: "El mundo" },
-  { id: "galeria",  label: "Galería" },
 ];
 
 // Paleta fría de Vaegrant. El ámbar es la única calidez de la página y se
@@ -23,8 +22,7 @@ const TABS = [
 const C = {
   bg: "#10151c",
   bgDeep: "#0b0f15",
-  card: "#151c25",
-  subtle: "#1a222d",
+  subtle: "#161d26",
   border: "rgba(141,163,184,0.16)",
   borderSoft: "rgba(141,163,184,0.09)",
   text: "#e6e9ec",
@@ -35,16 +33,19 @@ const C = {
   amber: "#c99c5a",
   amberSoft: "rgba(201,156,90,0.14)",
 };
+const R = 3; // radio base: presente pero discreto
 
 type UpdateFn = (updater: (d: VaegrantData) => VaegrantData) => void;
 type OpenAIFn = (title: string, currentText: string, onApply: (t: string) => void) => void;
+
+const esMundo = (img: VImagen) => img.prompt.startsWith("Mundo");
 
 export default function VaegrantPage() {
   const [data, setData]           = useState<VaegrantData | null>(null);
   const [activeTab, setActiveTab] = useState("perfil");
   const [saving, setSaving]       = useState(false);
   const [savedMsg, setSavedMsg]   = useState("");
-  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+  const [lightbox, setLightbox]   = useState<{ imgs: string[]; idx: number; alt: string } | null>(null);
   const [aiModal, setAiModal]     = useState<{
     open: boolean; title: string; currentText: string; onApply: (t: string) => void;
   }>({ open: false, title: "", currentText: "", onApply: () => {} });
@@ -89,6 +90,9 @@ export default function VaegrantPage() {
     setAiModal({ open: true, title, currentText, onApply });
   }, []);
 
+  const retratos = useMemo(() => data?.galeria.imagenes.filter((i) => !esMundo(i)) ?? [], [data]);
+  const estampas = useMemo(() => data?.galeria.imagenes.filter(esMundo) ?? [], [data]);
+
   if (!data) {
     return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh", background: C.bg }}>
@@ -97,8 +101,7 @@ export default function VaegrantPage() {
     );
   }
 
-  const imagenes = data.galeria.imagenes;
-  const portada = imagenes[data.galeria.portada] ?? imagenes[0] ?? null;
+  const portada = data.galeria.imagenes[data.galeria.portada] ?? retratos[0] ?? null;
 
   return (
     <div style={{ minHeight: "100vh", background: C.bg, color: C.text }}>
@@ -112,10 +115,10 @@ export default function VaegrantPage() {
           .vg-reflection { animation: none; opacity: 0.35; }
         }
         .vg-tab:focus-visible, .vg-btn:focus-visible { outline: 2px solid ${C.amber}; outline-offset: 2px; }
-        .vg-card-hover { transition: border-color 0.2s; }
-        .vg-card-hover:hover { border-color: rgba(201,156,90,0.35) !important; }
-        .vg-img-card img { transition: opacity 0.15s; }
-        .vg-img-card:hover img { opacity: 0.85; }
+        .vg-row { border-top: 1px solid ${C.borderSoft}; }
+        .vg-row:first-of-type { border-top: none; }
+        .vg-thumb { transition: opacity 0.15s; }
+        .vg-thumb:hover { opacity: 0.85; }
         @media (max-width: 720px) {
           .vg-hero-inner { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; }
           .vg-grid-2 { grid-template-columns: 1fr !important; }
@@ -133,12 +136,12 @@ export default function VaegrantPage() {
         tipo="personal"
         context={`Personaje: ${data.meta.alias} (${data.meta.nombreReal}), brujo del Archifey en Silverun, el mundo que quedó de Faerûn tras la Gran Guerra. Tono: melancólico, contenido, sobrio; frases cortas; nada de dramatismo. PROHIBIDO usar la raya larga (—).`}
       />
-      {lightboxIdx !== null && imagenes.length > 0 && (
+      {lightbox && (
         <ImageLightbox
-          images={imagenes.map((i) => i.url)}
-          startIndex={lightboxIdx}
-          alt={data.meta.alias}
-          onClose={() => setLightboxIdx(null)}
+          images={lightbox.imgs}
+          startIndex={lightbox.idx}
+          alt={lightbox.alt}
+          onClose={() => setLightbox(null)}
         />
       )}
 
@@ -149,44 +152,39 @@ export default function VaegrantPage() {
           background: `radial-gradient(ellipse at 80% 110%, ${C.amberSoft} 0%, transparent 55%), radial-gradient(ellipse at 15% -10%, rgba(141,163,184,0.12) 0%, transparent 60%)`,
         }} />
         <div className="vg-hero-inner" style={{
-          maxWidth: 980, margin: "0 auto", padding: "28px 2rem 24px",
+          maxWidth: 960, margin: "0 auto", padding: "28px 2rem 24px",
           position: "relative", display: "flex", gap: "1.8rem", alignItems: "flex-end",
         }}>
-          {/* Retrato o estado vacío */}
           <div style={{ flexShrink: 0 }}>
             {portada ? (
-              <div onClick={() => setLightboxIdx(data.galeria.portada < imagenes.length ? data.galeria.portada : 0)} title="Ver galería" style={{ cursor: "zoom-in" }}>
+              <div
+                onClick={() => setLightbox({ imgs: retratos.map((i) => i.url), idx: Math.max(0, retratos.findIndex((i) => i.url === portada.url)), alt: data.meta.alias })}
+                title="Ver retratos"
+                style={{ cursor: "zoom-in" }}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={portada.url}
                   alt={data.meta.alias}
                   style={{
                     width: 175, height: 225, objectFit: "cover", objectPosition: "top center",
-                    borderRadius: 10, border: `1px solid ${C.border}`, display: "block",
+                    borderRadius: R + 1, border: `1px solid ${C.border}`, display: "block",
                   }}
                 />
               </div>
             ) : (
-              <button
-                className="vg-btn"
-                onClick={() => setActiveTab("galeria")}
-                style={{
-                  width: 175, height: 225, borderRadius: 10,
-                  border: `1px dashed rgba(141,163,184,0.35)`, background: "rgba(141,163,184,0.05)",
-                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                  gap: 10, cursor: "pointer", color: C.faint, padding: 14,
-                }}
-                title="Ir a la galería"
-              >
+              <div style={{
+                width: 175, height: 225, borderRadius: R + 1,
+                border: `1px dashed rgba(141,163,184,0.35)`, background: "rgba(141,163,184,0.05)",
+                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                gap: 10, color: C.faint, padding: 14,
+              }}>
                 <Flame size={22} color={C.amber} strokeWidth={1.6} />
-                <span style={{ fontSize: 11, lineHeight: 1.5, textAlign: "center" }}>
-                  Sin retrato todavía.<br />En la Galería están los prompts<br />para generarlo.
-                </span>
-              </button>
+                <span style={{ fontSize: 11, lineHeight: 1.5, textAlign: "center" }}>Sin retrato todavía.</span>
+              </div>
             )}
           </div>
 
-          {/* Identidad */}
           <div style={{ flex: 1, paddingBottom: 2 }}>
             <p style={{ fontSize: 10, fontWeight: 500, color: C.steel, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 6 }}>
               <EditableText value={data.meta.eyebrow} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, eyebrow: v } }))} />
@@ -194,7 +192,6 @@ export default function VaegrantPage() {
             <h1 className={serif.className} style={{ fontSize: 46, fontWeight: 600, color: C.text, lineHeight: 1, letterSpacing: "0.01em", margin: 0 }}>
               <EditableText value={data.meta.alias} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, alias: v } }))} />
             </h1>
-            {/* El nombre real: un reflejo que tarda en aparecer */}
             <div className={`vg-reflection ${serif.className}`} style={{ fontSize: 19, fontStyle: "italic", color: C.steel, marginTop: 2, marginBottom: 10 }} title="El nombre que guarda">
               {data.meta.nombreReal}
             </div>
@@ -205,7 +202,7 @@ export default function VaegrantPage() {
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 12 }}>
               {data.meta.tags.map((tag, i) => (
-                <span key={i} style={{ fontSize: 10, padding: "2px 9px", borderRadius: 20, fontWeight: 500, background: "rgba(141,163,184,0.10)", color: C.muted, border: `1px solid ${C.border}` }}>
+                <span key={i} style={{ fontSize: 10, padding: "2px 9px", borderRadius: R, fontWeight: 500, background: "rgba(141,163,184,0.10)", color: C.muted, border: `1px solid ${C.border}` }}>
                   {tag}
                 </span>
               ))}
@@ -229,7 +226,7 @@ export default function VaegrantPage() {
 
       {/* ══ TABS (sticky) ═════════════════════════ */}
       <div style={{ position: "sticky", top: 0, zIndex: 100, background: C.bgDeep, borderBottom: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 980, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", overflowX: "auto", scrollbarWidth: "none" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", overflowX: "auto", scrollbarWidth: "none" }}>
           <div style={{ display: "flex" }}>
             {TABS.map((tab) => (
               <button
@@ -254,26 +251,38 @@ export default function VaegrantPage() {
               <ArrowLeft size={12} /> Naevara
             </a>
             <a
+              href="/vaegrant/diario"
+              title="Leer el perfil como un diario antiguo"
+              style={{
+                padding: "5px 12px", fontSize: 11, fontWeight: 700,
+                background: "transparent", border: `1px solid rgba(201,156,90,0.45)`,
+                borderRadius: R + 2, color: C.amber, textDecoration: "none",
+                whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5,
+              }}
+            >
+              <ScrollText size={13} strokeWidth={2.2} /> Diario
+            </a>
+            <a
               href={`/combate/c/${data.combateId}`}
               style={{
-                padding: "5px 14px", fontSize: 11, fontWeight: 700,
+                padding: "5px 12px", fontSize: 11, fontWeight: 700,
                 background: "linear-gradient(135deg, #46586b, #2a3644)",
-                border: `1px solid ${C.border}`, borderRadius: 7, color: "#fff",
+                border: `1px solid ${C.border}`, borderRadius: R + 2, color: "#fff",
                 textDecoration: "none", whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5,
               }}
               title="Abrir la hoja de combate de Vaegrant"
             >
-              <Swords size={13} strokeWidth={2.4} /> Hoja de combate
+              <Swords size={13} strokeWidth={2.4} /> Combate
             </a>
             <button
               className="vg-btn"
               onClick={() => save(data)}
               disabled={saving}
               style={{
-                padding: "5px 14px", fontSize: 11, fontWeight: 600,
+                padding: "5px 12px", fontSize: 11, fontWeight: 600,
                 background: saving ? "transparent" : C.steel,
                 border: saving ? `1px solid ${C.steel}` : "none",
-                borderRadius: 7, color: saving ? C.steel : "#10151c",
+                borderRadius: R + 2, color: saving ? C.steel : "#10151c",
                 cursor: saving ? "not-allowed" : "pointer", whiteSpace: "nowrap",
               }}
             >
@@ -284,43 +293,44 @@ export default function VaegrantPage() {
       </div>
 
       {/* ══ CONTENIDO ═════════════════════════════ */}
-      <div className="vg-content" style={{ maxWidth: 980, margin: "0 auto", padding: "1.5rem 2rem 4rem" }}>
-        {activeTab === "perfil"   && <TabPerfil   data={data} update={update} openAI={openAI} />}
+      <div className="vg-content" style={{ maxWidth: 760, margin: "0 auto", padding: "2rem 2rem 4rem" }}>
+        {activeTab === "perfil" && (
+          <TabPerfil data={data} update={update} openAI={openAI} retratos={retratos}
+            onOpen={(idx) => setLightbox({ imgs: retratos.map((i) => i.url), idx, alt: data.meta.alias })} />
+        )}
         {activeTab === "historia" && <TabHistoria data={data} update={update} openAI={openAI} />}
-        {activeTab === "mundo"    && <TabMundo    data={data} update={update} openAI={openAI} />}
-        {activeTab === "galeria"  && <TabGaleria  data={data} update={update} onOpen={(i) => setLightboxIdx(i)} />}
+        {activeTab === "mundo" && (
+          <TabMundo data={data} update={update} openAI={openAI} estampas={estampas}
+            onOpen={(idx) => setLightbox({ imgs: estampas.map((i) => i.url), idx, alt: "Silverun" })} />
+        )}
       </div>
     </div>
   );
 }
 
-// ── Piezas de UI ─────────────────────────────────────────────────
-
-function VCard({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return (
-    <div className="vg-card-hover" style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "16px 18px", marginBottom: 12, ...style }}>
-      {children}
-    </div>
-  );
-}
+// ── Piezas de UI (editoriales: sin cajas, con jerarquía tipográfica) ──
 
 function VSecLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.14em", margin: "22px 0 10px" }}>
+    <p style={{ fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.16em", margin: "36px 0 4px" }}>
       {children}
     </p>
   );
 }
 
-function VTitle({ children }: { children: React.ReactNode }) {
-  return <h3 className={serif.className} style={{ fontSize: 21, fontWeight: 600, color: C.text, margin: "0 0 8px" }}>{children}</h3>;
+function VDivider() {
+  return <div style={{ height: 1, background: `linear-gradient(to right, ${C.border}, transparent 70%)`, margin: "2px 0 16px" }} />;
+}
+
+function VTitle({ children, size = 22 }: { children: React.ReactNode; size?: number }) {
+  return <h3 className={serif.className} style={{ fontSize: size, fontWeight: 600, color: C.text, margin: "0 0 8px" }}>{children}</h3>;
 }
 
 function VQuote({ children }: { children: React.ReactNode }) {
   return (
     <blockquote className={serif.className} style={{
-      fontSize: 20, fontStyle: "italic", color: C.muted, lineHeight: 1.45,
-      borderLeft: `2px solid ${C.amber}`, margin: "6px 0 20px", padding: "4px 0 4px 16px",
+      fontSize: 21, fontStyle: "italic", color: C.muted, lineHeight: 1.45,
+      borderLeft: `2px solid ${C.amber}`, margin: "6px 0 8px", padding: "4px 0 4px 16px",
     }}>
       {children}
     </blockquote>
@@ -335,8 +345,8 @@ function VAIBtn({ onClick }: { onClick: () => void }) {
       title="Mejorar con IA"
       style={{
         marginLeft: 8, padding: "2px 9px", fontSize: 10, fontWeight: 600,
-        background: C.amberSoft, color: C.amber, border: `1px solid rgba(201,156,90,0.3)`,
-        borderRadius: 6, cursor: "pointer", flexShrink: 0,
+        background: "transparent", color: C.amber, border: `1px solid rgba(201,156,90,0.3)`,
+        borderRadius: R, cursor: "pointer", flexShrink: 0,
       }}
     >
       ✦ IA
@@ -344,16 +354,17 @@ function VAIBtn({ onClick }: { onClick: () => void }) {
   );
 }
 
-const pStyle: React.CSSProperties = { fontSize: 13.5, color: C.muted, lineHeight: 1.65, margin: "0 0 10px" };
+const pStyle: React.CSSProperties = { fontSize: 14, color: C.muted, lineHeight: 1.7, margin: "0 0 12px" };
+const labelStyle: React.CSSProperties = { fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 };
 
-// Editor de una lista de párrafos con un botón de IA por sección
-function Parrafos({ titulo, parrafos, onChange, openAI }: {
+// Sección editorial: título serif + párrafos en flujo, IA por sección
+function Seccion({ titulo, parrafos, onChange, openAI }: {
   titulo: string; parrafos: string[];
   onChange: (p: string[]) => void; openAI: OpenAIFn;
 }) {
   return (
-    <VCard>
-      <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
+    <section style={{ marginBottom: 26 }}>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: 6 }}>
         <VTitle>{titulo}</VTitle>
         <VAIBtn onClick={() => openAI(titulo, parrafos.join("\n\n"), (t) => onChange(t.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean)))} />
       </div>
@@ -362,13 +373,124 @@ function Parrafos({ titulo, parrafos, onChange, openAI }: {
           <EditableText value={p} multiline onChange={(v) => { const arr = [...parrafos]; arr[i] = v; onChange(arr); }} />
         </div>
       ))}
-    </VCard>
+    </section>
+  );
+}
+
+// Galería embebida (fotos con controles mínimos)
+function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }: {
+  titulo: string;
+  imagenes: VImagen[];
+  todas: VImagen[];
+  portada: number;
+  update: UpdateFn;
+  onOpen: (idx: number) => void;
+  tipoMundo: boolean;
+}) {
+  const [nuevaUrl, setNuevaUrl] = useState("");
+  const globalIdx = (img: VImagen) => todas.findIndex((t) => t.url === img.url);
+
+  const agregar = () => {
+    const url = nuevaUrl.trim();
+    if (!url) return;
+    const nueva: VImagen = {
+      url,
+      prompt: tipoMundo ? "Mundo · Nueva estampa" : "Nueva imagen",
+      fecha: new Date().toISOString().slice(0, 10),
+    };
+    update((d) => ({ ...d, galeria: { ...d.galeria, imagenes: [...d.galeria.imagenes, nueva] } }));
+    setNuevaUrl("");
+  };
+
+  return (
+    <section>
+      <VSecLabel>{titulo} ({imagenes.length})</VSecLabel>
+      <VDivider />
+      <div className="vg-gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
+        {imagenes.map((img, i) => {
+          const gi = globalIdx(img);
+          const esPortada = !tipoMundo && gi === portada;
+          return (
+            <figure key={img.url} style={{ margin: 0 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="vg-thumb"
+                src={img.url}
+                alt={img.prompt}
+                onClick={() => onOpen(i)}
+                style={{
+                  width: "100%", aspectRatio: tipoMundo ? "3 / 2" : "2 / 3", objectFit: "cover",
+                  display: "block", cursor: "zoom-in", borderRadius: R + 1,
+                  border: `1px solid ${esPortada ? "rgba(201,156,90,0.55)" : C.borderSoft}`,
+                }}
+              />
+              <figcaption style={{ display: "flex", alignItems: "center", gap: 6, padding: "5px 2px 0" }}>
+                <span style={{ fontSize: 9.5, color: C.faint, lineHeight: 1.3, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={img.prompt}>
+                  {img.prompt.replace(/^Mundo · /, "")}
+                </span>
+                {!tipoMundo && (
+                  <button
+                    className="vg-btn"
+                    onClick={() => update((d) => ({ ...d, galeria: { ...d.galeria, portada: gi } }))}
+                    disabled={esPortada}
+                    title={esPortada ? "Retrato actual" : "Usar de retrato"}
+                    style={{ fontSize: 9, padding: "1px 6px", borderRadius: R, cursor: esPortada ? "default" : "pointer", background: "transparent", color: esPortada ? C.amber : C.faint, border: `1px solid ${esPortada ? "rgba(201,156,90,0.4)" : C.borderSoft}` }}
+                  >
+                    {esPortada ? "Retrato" : "☆"}
+                  </button>
+                )}
+                <button
+                  className="vg-btn"
+                  onClick={() => {
+                    if (!window.confirm("¿Quitar esta imagen?")) return;
+                    update((d) => {
+                      const imgs = d.galeria.imagenes.filter((x) => x.url !== img.url);
+                      const portada = Math.min(d.galeria.portada, Math.max(0, imgs.length - 1));
+                      return { ...d, galeria: { ...d.galeria, imagenes: imgs, portada } };
+                    });
+                  }}
+                  title="Quitar de la galería"
+                  style={{ fontSize: 9, padding: "1px 6px", borderRadius: R, cursor: "pointer", background: "transparent", color: C.faint, border: `1px solid ${C.borderSoft}` }}
+                >
+                  ×
+                </button>
+              </figcaption>
+            </figure>
+          );
+        })}
+      </div>
+      <div style={{ display: "flex", gap: 8, marginTop: 14, alignItems: "center" }}>
+        <input
+          value={nuevaUrl}
+          onChange={(e) => setNuevaUrl(e.target.value)}
+          placeholder="Agregar imagen: URL o /ruta en public"
+          style={{ flex: 1, background: C.subtle, color: C.text, border: `1px solid ${C.borderSoft}`, borderRadius: R + 1, padding: "7px 11px", fontSize: 12, fontFamily: "inherit" }}
+        />
+        <button
+          className="vg-btn"
+          onClick={agregar}
+          disabled={!nuevaUrl.trim()}
+          style={{
+            padding: "7px 14px", fontSize: 11, fontWeight: 700, borderRadius: R + 1,
+            background: nuevaUrl.trim() ? C.amber : "transparent",
+            border: nuevaUrl.trim() ? "none" : `1px solid ${C.borderSoft}`,
+            color: nuevaUrl.trim() ? "#10151c" : C.faint,
+            cursor: nuevaUrl.trim() ? "pointer" : "not-allowed",
+          }}
+        >
+          Agregar
+        </button>
+      </div>
+    </section>
   );
 }
 
 // ── Tabs ─────────────────────────────────────────────────────────
 
-function TabPerfil({ data, update, openAI }: { data: VaegrantData; update: UpdateFn; openAI: OpenAIFn }) {
+function TabPerfil({ data, update, openAI, retratos, onOpen }: {
+  data: VaegrantData; update: UpdateFn; openAI: OpenAIFn;
+  retratos: VImagen[]; onOpen: (idx: number) => void;
+}) {
   const p = data.perfil;
   return (
     <div>
@@ -377,13 +499,14 @@ function TabPerfil({ data, update, openAI }: { data: VaegrantData; update: Updat
       </VQuote>
 
       <VSecLabel>El nombre</VSecLabel>
-      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
+      <VDivider />
+      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 10 }}>
         {([p.nombre.alias, p.nombre.real] as const).map((n, i) => (
-          <VCard key={i} style={{ marginBottom: 0, borderLeft: i === 1 ? `2px solid ${C.amber}` : undefined }}>
-            <div className={serif.className} style={{ fontSize: 22, fontWeight: 600, color: i === 1 ? C.steelStrong : C.text, marginBottom: 6, fontStyle: i === 1 ? "italic" : "normal" }}>
+          <div key={i} style={{ borderLeft: i === 1 ? `2px solid ${C.amber}` : `2px solid ${C.borderSoft}`, paddingLeft: 14 }}>
+            <div className={serif.className} style={{ fontSize: 24, fontWeight: 600, color: i === 1 ? C.steelStrong : C.text, marginBottom: 4, fontStyle: i === 1 ? "italic" : "normal" }}>
               {n.palabra}
             </div>
-            <div style={{ ...pStyle, margin: 0 }}>
+            <div style={{ ...pStyle, fontSize: 13, margin: 0 }}>
               <EditableText value={n.etimologia} multiline onChange={(v) => update((d) => {
                 const nombre = { ...d.perfil.nombre };
                 if (i === 0) nombre.alias = { ...nombre.alias, etimologia: v };
@@ -391,79 +514,92 @@ function TabPerfil({ data, update, openAI }: { data: VaegrantData; update: Updat
                 return { ...d, perfil: { ...d.perfil, nombre } };
               })} />
             </div>
-          </VCard>
+          </div>
         ))}
       </div>
-      <VCard style={{ background: C.subtle }}>
-        <div style={{ ...pStyle, margin: 0, fontStyle: "italic" }}>
-          <EditableText value={p.nombre.descripcion} multiline onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, nombre: { ...d.perfil.nombre, descripcion: v } } }))} />
-        </div>
-      </VCard>
+      <div className={serif.className} style={{ fontSize: 16, fontStyle: "italic", color: C.faint, lineHeight: 1.6, marginBottom: 6 }}>
+        <EditableText value={p.nombre.descripcion} multiline onChange={(v) => update((d) => ({ ...d, perfil: { ...d.perfil, nombre: { ...d.perfil.nombre, descripcion: v } } }))} />
+      </div>
 
       <VSecLabel>A primera vista</VSecLabel>
-      <Parrafos titulo="Lo que se ve" parrafos={p.vista} openAI={openAI}
+      <VDivider />
+      <Seccion titulo="Lo que se ve" parrafos={p.vista} openAI={openAI}
         onChange={(arr) => update((d) => ({ ...d, perfil: { ...d.perfil, vista: arr } }))} />
 
-      <VSecLabel>Aspecto</VSecLabel>
-      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 28px" }}>
         {p.aspecto.map((a, i) => (
-          <VCard key={i} style={{ marginBottom: 0 }}>
-            <div style={{ fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 6 }}>{a.label}</div>
-            <div style={{ ...pStyle, margin: 0 }}>
+          <div key={i} className="vg-row" style={{ padding: "12px 0" }}>
+            <div style={labelStyle}>{a.label}</div>
+            <div style={{ ...pStyle, fontSize: 13, margin: 0 }}>
               <EditableText value={a.texto} multiline onChange={(v) => update((d) => { const arr = [...d.perfil.aspecto]; arr[i] = { ...arr[i], texto: v }; return { ...d, perfil: { ...d.perfil, aspecto: arr } }; })} />
             </div>
-          </VCard>
+          </div>
         ))}
       </div>
 
       <VSecLabel>Por dentro</VSecLabel>
-      <Parrafos titulo="Lo que no cuenta" parrafos={p.interior} openAI={openAI}
+      <VDivider />
+      <Seccion titulo="Lo que no cuenta" parrafos={p.interior} openAI={openAI}
         onChange={(arr) => update((d) => ({ ...d, perfil: { ...d.perfil, interior: arr } }))} />
 
       <VSecLabel>Costumbres y señales · para jugarlo en mesa</VSecLabel>
-      <VCard>
+      <VDivider />
+      <div style={{ marginBottom: 10 }}>
         {p.costumbres.map((c, i) => (
-          <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "5px 0" }}>
-            <Flame size={13} color={C.amber} strokeWidth={1.8} style={{ marginTop: 3, flexShrink: 0 }} />
+          <div key={i} className="vg-row" style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "10px 0" }}>
+            <Flame size={13} color={C.amber} strokeWidth={1.8} style={{ marginTop: 4, flexShrink: 0 }} />
             <div style={{ ...pStyle, margin: 0 }}>
               <EditableText value={c} multiline onChange={(v) => update((d) => { const arr = [...d.perfil.costumbres]; arr[i] = v; return { ...d, perfil: { ...d.perfil, costumbres: arr } }; })} />
             </div>
           </div>
         ))}
-      </VCard>
+      </div>
 
       <VSecLabel>Relaciones</VSecLabel>
+      <VDivider />
       {p.relaciones.map((r, i) => (
-        <VCard key={i}>
-          <div style={{ fontSize: 11, fontWeight: 600, color: C.steelStrong, marginBottom: 5 }}>{r.label}</div>
+        <div key={i} className="vg-row" style={{ padding: "12px 0" }}>
+          <div style={labelStyle}>{r.label}</div>
           <div style={{ ...pStyle, margin: 0 }}>
             <EditableText value={r.texto} multiline onChange={(v) => update((d) => { const arr = [...d.perfil.relaciones]; arr[i] = { ...arr[i], texto: v }; return { ...d, perfil: { ...d.perfil, relaciones: arr } }; })} />
           </div>
-        </VCard>
+        </div>
       ))}
 
       <VSecLabel>Para la hoja</VSecLabel>
-      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+      <VDivider />
+      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 28px" }}>
         {p.hoja.map((h, i) => (
-          <VCard key={i} style={{ marginBottom: 0 }}>
-            <div style={{ fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 6 }}>{h.label}</div>
-            <div style={{ ...pStyle, margin: 0 }}>
+          <div key={i} className="vg-row" style={{ padding: "12px 0" }}>
+            <div style={labelStyle}>{h.label}</div>
+            <div style={{ ...pStyle, fontSize: 13, margin: 0 }}>
               <EditableText value={h.texto} multiline onChange={(v) => update((d) => { const arr = [...d.perfil.hoja]; arr[i] = { ...arr[i], texto: v }; return { ...d, perfil: { ...d.perfil, hoja: arr } }; })} />
             </div>
-          </VCard>
+          </div>
         ))}
       </div>
 
       <VSecLabel>El arco anímico · privado, sin anunciarlo</VSecLabel>
+      <VDivider />
       {p.arco.map((a, i) => (
-        <VCard key={i} style={{ borderLeft: i === 0 ? `2px solid ${C.amber}` : `2px solid ${C.borderSoft}` }}>
-          <div style={{ fontSize: 10, color: C.faint, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>{a.fase}</div>
-          <VTitle>{a.titulo}</VTitle>
-          <div style={{ ...pStyle, margin: 0 }}>
-            <EditableText value={a.texto} multiline onChange={(v) => update((d) => { const arr = [...d.perfil.arco]; arr[i] = { ...arr[i], texto: v }; return { ...d, perfil: { ...d.perfil, arco: arr } }; })} />
+        <div key={i} className="vg-row" style={{ display: "flex", gap: 18, padding: "14px 0" }}>
+          <div className={serif.className} style={{ fontSize: 30, fontWeight: 600, color: i === 0 ? C.amber : C.borderSoft, lineHeight: 1, minWidth: 40 }}>
+            {String(i + 1).padStart(2, "0")}
           </div>
-        </VCard>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 10, color: C.faint, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 2 }}>{a.fase}</div>
+            <VTitle size={18}>{a.titulo}</VTitle>
+            <div style={{ ...pStyle, margin: 0 }}>
+              <EditableText value={a.texto} multiline onChange={(v) => update((d) => { const arr = [...d.perfil.arco]; arr[i] = { ...arr[i], texto: v }; return { ...d, perfil: { ...d.perfil, arco: arr } }; })} />
+            </div>
+          </div>
+        </div>
       ))}
+
+      {retratos.length > 0 && (
+        <Galeria titulo="Retratos" imagenes={retratos} todas={data.galeria.imagenes}
+          portada={data.galeria.portada} update={update} onOpen={onOpen} tipoMundo={false} />
+      )}
     </div>
   );
 }
@@ -475,231 +611,77 @@ function TabHistoria({ data, update, openAI }: { data: VaegrantData; update: Upd
       <VQuote>
         <EditableText value={h.quote} multiline onChange={(v) => update((d) => ({ ...d, historia: { ...d.historia, quote: v } }))} />
       </VQuote>
+      <div style={{ marginTop: 24 }} />
       {h.secciones.map((s, i) => (
-        <Parrafos
-          key={i}
-          titulo={s.titulo}
-          parrafos={s.parrafos}
-          openAI={openAI}
-          onChange={(arr) => update((d) => {
-            const secs = [...d.historia.secciones];
-            secs[i] = { ...secs[i], parrafos: arr };
-            return { ...d, historia: { ...d.historia, secciones: secs } };
-          })}
-        />
+        <div key={i}>
+          {i > 0 && <VDivider />}
+          <Seccion
+            titulo={s.titulo}
+            parrafos={s.parrafos}
+            openAI={openAI}
+            onChange={(arr) => update((d) => {
+              const secs = [...d.historia.secciones];
+              secs[i] = { ...secs[i], parrafos: arr };
+              return { ...d, historia: { ...d.historia, secciones: secs } };
+            })}
+          />
+        </div>
       ))}
-      <VCard style={{ background: C.subtle }}>
-        <div style={{ fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 6 }}>Nota de mesa</div>
-        <div style={{ ...pStyle, margin: 0, fontStyle: "italic" }}>
+      <div style={{ background: C.subtle, borderRadius: R + 1, borderLeft: `2px solid ${C.borderSoft}`, padding: "12px 16px", marginTop: 8 }}>
+        <div style={labelStyle}>Nota de mesa</div>
+        <div style={{ ...pStyle, margin: 0, fontStyle: "italic", fontSize: 13 }}>
           <EditableText value={h.notaMesa} multiline onChange={(v) => update((d) => ({ ...d, historia: { ...d.historia, notaMesa: v } }))} />
         </div>
-      </VCard>
+      </div>
     </div>
   );
 }
 
-function TabMundo({ data, update, openAI }: { data: VaegrantData; update: UpdateFn; openAI: OpenAIFn }) {
+function TabMundo({ data, update, openAI, estampas, onOpen }: {
+  data: VaegrantData; update: UpdateFn; openAI: OpenAIFn;
+  estampas: VImagen[]; onOpen: (idx: number) => void;
+}) {
   const m = data.mundo;
   return (
     <div>
-      <VSecLabel>Contexto</VSecLabel>
-      <VCard>
-        <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
-          <VTitle>{m.contexto.titulo}</VTitle>
-          <VAIBtn onClick={() => openAI(m.contexto.titulo, m.contexto.texto, (t) => update((d) => ({ ...d, mundo: { ...d.mundo, contexto: { ...d.mundo.contexto, texto: t } } })))} />
-        </div>
-        <div style={{ ...pStyle, margin: 0 }}>
-          <EditableText value={m.contexto.texto} multiline onChange={(v) => update((d) => ({ ...d, mundo: { ...d.mundo, contexto: { ...d.mundo.contexto, texto: v } } }))} />
-        </div>
-      </VCard>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: 6 }}>
+        <VTitle size={26}>{m.contexto.titulo}</VTitle>
+        <VAIBtn onClick={() => openAI(m.contexto.titulo, m.contexto.texto, (t) => update((d) => ({ ...d, mundo: { ...d.mundo, contexto: { ...d.mundo.contexto, texto: t } } })))} />
+      </div>
+      <div style={pStyle}>
+        <EditableText value={m.contexto.texto} multiline onChange={(v) => update((d) => ({ ...d, mundo: { ...d.mundo, contexto: { ...d.mundo.contexto, texto: v } } }))} />
+      </div>
 
       <VSecLabel>Lugares</VSecLabel>
+      <VDivider />
       {m.lugares.map((l, i) => (
-        <VCard key={i} style={{ borderLeft: l.destacado ? `2px solid ${C.amber}` : undefined }}>
-          <VTitle>
+        <div key={i} className="vg-row" style={{ padding: "14px 0", borderLeft: l.destacado ? `2px solid ${C.amber}` : "2px solid transparent", paddingLeft: 14 }}>
+          <VTitle size={19}>
             <EditableText value={l.nombre} onChange={(v) => update((d) => { const arr = [...d.mundo.lugares]; arr[i] = { ...arr[i], nombre: v }; return { ...d, mundo: { ...d.mundo, lugares: arr } }; })} />
           </VTitle>
-          <div style={{ fontSize: 10.5, color: C.steel, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+          <div style={{ fontSize: 10, color: C.steel, marginBottom: 5, textTransform: "uppercase", letterSpacing: "0.08em" }}>
             <EditableText value={l.tipo} onChange={(v) => update((d) => { const arr = [...d.mundo.lugares]; arr[i] = { ...arr[i], tipo: v }; return { ...d, mundo: { ...d.mundo, lugares: arr } }; })} />
           </div>
           <div style={{ ...pStyle, margin: 0 }}>
             <EditableText value={l.texto} multiline onChange={(v) => update((d) => { const arr = [...d.mundo.lugares]; arr[i] = { ...arr[i], texto: v }; return { ...d, mundo: { ...d.mundo, lugares: arr } }; })} />
           </div>
-        </VCard>
+        </div>
       ))}
 
       <VSecLabel>Ganchos para el Master</VSecLabel>
+      <VDivider />
       {m.ganchos.map((g, i) => (
-        <VCard key={i}>
-          <div style={{ fontSize: 11, fontWeight: 600, color: C.steelStrong, marginBottom: 5 }}>{g.label}</div>
+        <div key={i} className="vg-row" style={{ padding: "12px 0" }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: C.steelStrong, marginBottom: 4 }}>{g.label}</div>
           <div style={{ ...pStyle, margin: 0 }}>
             <EditableText value={g.texto} multiline onChange={(v) => update((d) => { const arr = [...d.mundo.ganchos]; arr[i] = { ...arr[i], texto: v }; return { ...d, mundo: { ...d.mundo, ganchos: arr } }; })} />
           </div>
-        </VCard>
-      ))}
-    </div>
-  );
-}
-
-function TabGaleria({ data, update, onOpen }: { data: VaegrantData; update: UpdateFn; onOpen: (i: number) => void }) {
-  const [copiado, setCopiado]   = useState<number | null>(null);
-  const [nuevaUrl, setNuevaUrl] = useState("");
-  const [nuevaNota, setNuevaNota] = useState("");
-
-  const copiar = (i: number, texto: string) => {
-    // Cada prompt se copia completo: identidad visual + escena, listo para GPT.
-    navigator.clipboard.writeText(`${data.galeria.estiloBase}\n\n${texto}`).then(() => {
-      setCopiado(i);
-      setTimeout(() => setCopiado((c) => (c === i ? null : c)), 2000);
-    });
-  };
-
-  const agregar = () => {
-    const url = nuevaUrl.trim();
-    if (!url) return;
-    const nueva: VImagen = { url, prompt: nuevaNota.trim() || "Imagen de Vaegrant", fecha: new Date().toISOString().slice(0, 10) };
-    update((d) => ({ ...d, galeria: { ...d.galeria, imagenes: [...d.galeria.imagenes, nueva] } }));
-    setNuevaUrl("");
-    setNuevaNota("");
-  };
-
-  return (
-    <div>
-      <VSecLabel>Identidad visual · la base de todos los prompts</VSecLabel>
-      <VCard>
-        <div style={{ ...pStyle, margin: 0 }}>
-          <EditableText
-            value={data.galeria.estiloBase}
-            multiline
-            onChange={(v) => update((d) => ({ ...d, galeria: { ...d.galeria, estiloBase: v } }))}
-          />
         </div>
-      </VCard>
-
-      <VSecLabel>Prompts para generar en GPT · copiá y pegá de a uno</VSecLabel>
-      <p style={{ fontSize: 11.5, color: C.faint, margin: "0 0 12px", lineHeight: 1.5 }}>
-        El botón Copiar arma el prompt completo (identidad visual + escena). Generá primero el retrato principal y
-        adjuntalo en los siguientes pedidos con &quot;mismo personaje que en la imagen adjunta&quot; para mantener consistencia.
-        También están en el repo, en <code style={{ color: C.steel }}>Vaegrant_Prompts.md</code>.
-      </p>
-      {data.galeria.prompts.map((pr, i) => (
-        <VCard key={i}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 6 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, color: C.steelStrong }}>{pr.titulo}</div>
-            <button
-              className="vg-btn"
-              onClick={() => copiar(i, pr.prompt)}
-              style={{
-                padding: "3px 12px", fontSize: 10.5, fontWeight: 700, borderRadius: 6, cursor: "pointer",
-                background: copiado === i ? C.amberSoft : C.amber,
-                color: copiado === i ? C.amber : "#10151c",
-                border: copiado === i ? "1px solid rgba(201,156,90,0.3)" : "none",
-                flexShrink: 0,
-              }}
-            >
-              {copiado === i ? "Copiado ✓" : "Copiar"}
-            </button>
-          </div>
-          <div style={{ ...pStyle, margin: 0 }}>
-            <EditableText value={pr.prompt} multiline onChange={(v) => update((d) => { const arr = [...d.galeria.prompts]; arr[i] = { ...arr[i], prompt: v }; return { ...d, galeria: { ...d.galeria, prompts: arr } }; })} />
-          </div>
-        </VCard>
       ))}
 
-      <VSecLabel>Agregar imagen</VSecLabel>
-      <VCard>
-        <p style={{ fontSize: 11.5, color: C.faint, margin: "0 0 10px", lineHeight: 1.5 }}>
-          Pegá la URL de una imagen ya generada (o una ruta local como <code style={{ color: C.steel }}>/vaegrant-1.png</code> si
-          el archivo está en <code style={{ color: C.steel }}>/public</code> del repo).
-        </p>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <input
-            value={nuevaUrl}
-            onChange={(e) => setNuevaUrl(e.target.value)}
-            placeholder="https://... o /vaegrant-1.png"
-            style={{ flex: "2 1 260px", background: C.subtle, color: C.text, border: `1px solid ${C.border}`, borderRadius: 8, padding: "8px 12px", fontSize: 12.5, fontFamily: "inherit" }}
-          />
-          <input
-            value={nuevaNota}
-            onChange={(e) => setNuevaNota(e.target.value)}
-            placeholder="Nota (ej: La vela, v2)"
-            style={{ flex: "1 1 160px", background: C.subtle, color: C.text, border: `1px solid ${C.border}`, borderRadius: 8, padding: "8px 12px", fontSize: 12.5, fontFamily: "inherit" }}
-          />
-          <button
-            className="vg-btn"
-            onClick={agregar}
-            disabled={!nuevaUrl.trim()}
-            style={{
-              padding: "8px 18px", fontSize: 12, fontWeight: 700, borderRadius: 8,
-              background: nuevaUrl.trim() ? C.amber : "transparent",
-              border: nuevaUrl.trim() ? "none" : `1px solid ${C.border}`,
-              color: nuevaUrl.trim() ? "#10151c" : C.faint,
-              cursor: nuevaUrl.trim() ? "pointer" : "not-allowed",
-              display: "inline-flex", alignItems: "center", gap: 6,
-            }}
-          >
-            <Flame size={13} strokeWidth={2.2} /> Agregar
-          </button>
-        </div>
-      </VCard>
-
-      <VSecLabel>Galería ({data.galeria.imagenes.length})</VSecLabel>
-      {data.galeria.imagenes.length === 0 ? (
-        <VCard style={{ textAlign: "center", padding: "34px 18px" }}>
-          <Flame size={20} color={C.amber} strokeWidth={1.6} style={{ marginBottom: 8 }} />
-          <p style={{ ...pStyle, margin: 0, color: C.faint }}>
-            Todavía no hay imágenes. Generá el retrato en GPT con los prompts de arriba y agregalo acá: la primera imagen se convierte en el retrato del perfil.
-          </p>
-        </VCard>
-      ) : (
-        <div className="vg-gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
-          {data.galeria.imagenes.map((img, i) => (
-            <div key={i} className="vg-img-card" style={{ background: C.card, border: `1px solid ${data.galeria.portada === i ? "rgba(201,156,90,0.5)" : C.border}`, borderRadius: 10, overflow: "hidden" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={img.url}
-                alt={img.prompt}
-                onClick={() => onOpen(i)}
-                style={{ width: "100%", aspectRatio: "2 / 3", objectFit: "cover", display: "block", cursor: "zoom-in" }}
-              />
-              <div style={{ padding: "8px 10px" }}>
-                <p style={{ fontSize: 10.5, color: C.faint, margin: "0 0 6px", lineHeight: 1.4, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                  {img.prompt}
-                </p>
-                <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                  <button
-                    className="vg-btn"
-                    onClick={() => update((d) => ({ ...d, galeria: { ...d.galeria, portada: i } }))}
-                    disabled={data.galeria.portada === i}
-                    style={{
-                      fontSize: 10, padding: "2px 8px", borderRadius: 5, cursor: data.galeria.portada === i ? "default" : "pointer",
-                      background: data.galeria.portada === i ? C.amberSoft : "transparent",
-                      color: data.galeria.portada === i ? C.amber : C.faint,
-                      border: `1px solid ${data.galeria.portada === i ? "rgba(201,156,90,0.3)" : C.border}`,
-                    }}
-                  >
-                    {data.galeria.portada === i ? "Retrato actual" : "Usar de retrato"}
-                  </button>
-                  <button
-                    className="vg-btn"
-                    onClick={() => {
-                      if (!window.confirm("¿Quitar esta imagen de la galería?")) return;
-                      update((d) => {
-                        const imgs = d.galeria.imagenes.filter((_, x) => x !== i);
-                        const portada = Math.min(d.galeria.portada, Math.max(0, imgs.length - 1));
-                        return { ...d, galeria: { ...d.galeria, imagenes: imgs, portada } };
-                      });
-                    }}
-                    style={{ fontSize: 10, padding: "2px 8px", borderRadius: 5, cursor: "pointer", background: "transparent", color: C.faint, border: `1px solid ${C.border}` }}
-                  >
-                    Quitar
-                  </button>
-                  <span style={{ fontSize: 9.5, color: C.faint, marginLeft: "auto" }}>{img.fecha}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      {estampas.length > 0 && (
+        <Galeria titulo="Estampas de Silverun" imagenes={estampas} todas={data.galeria.imagenes}
+          portada={data.galeria.portada} update={update} onOpen={onOpen} tipoMundo={true} />
       )}
     </div>
   );

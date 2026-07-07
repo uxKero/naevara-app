@@ -6,6 +6,7 @@
 // ════════════════════════════════════════════════════════════════
 import { BuilderCharacter, BuilderAbilities, AbilityKey } from "@/types/builder";
 import { CombatAction, Tirada, Dano } from "@/lib/combatData";
+import { hechizoES, hechizoDescES, duracionES, armaES } from "@/lib/traducciones";
 
 // ── Tipos del SRD curado ────────────────────────────────────────
 export interface SrdSpell {
@@ -396,9 +397,10 @@ export function spellToAction(spell: SrdSpell, derived: Derived, charLevel: numb
   else if (esTruco) grupo = danos.length ? "loop" : "utilidad";
   else grupo = "accion";
 
+  const descEs = hechizoDescES(spell.index);
   return {
     id: spell.index,
-    nombre: spell.name,
+    nombre: hechizoES(spell.index, spell.name),
     grupo,
     coste: esTruco ? "Truco · gratis e ilimitado" : `Espacio de nivel ${spell.level}`,
     usaEspacio: !esTruco,
@@ -408,8 +410,8 @@ export function spellToAction(spell: SrdSpell, derived: Derived, charLevel: numb
     tirada,
     danos: danos.length ? danos : undefined,
     concentracion: spell.concentration,
-    duracion: spell.duration,
-    ojo: spell.desc ? `Descripción oficial (SRD, en inglés): ${spell.desc}${spell.higher_level ? `\n\nA niveles superiores: ${spell.higher_level}` : ""}` : undefined,
+    duracion: duracionES(spell.duration),
+    ojo: descEs ? `Descripción: ${descEs}` : undefined,
   };
 }
 
@@ -459,14 +461,15 @@ export function weaponToAction(weapon: SrdWeapon, cls: SrdClass, derived: Derive
   if (weapon.versatile) notas.push(`Versátil: a dos manos el daño es ${weapon.versatile} (cambialo en el modo manual).`);
   if (weapon.finesse) notas.push("Sutil (finesse): podés usar Destreza en vez de Fuerza.");
 
+  const nombreArma = armaES(weapon.index, weapon.name);
   return {
     id: `weapon-${weapon.index}`,
-    nombre: weapon.name,
+    nombre: nombreArma,
     grupo: "armas",
     coste: `Arma ${weapon.category === "Simple" ? "simple" : "marcial"}`,
     accion: "Acción",
     alcance,
-    queHace: `Ataque con ${weapon.name.toLowerCase()}.${rayos > 1 ? ` Con Ataque adicional hacés ${rayos} ataques.` : ""}`,
+    queHace: `Ataque con ${nombreArma.toLowerCase()}.${rayos > 1 ? ` Con Ataque adicional hacés ${rayos} ataques.` : ""}`,
     tirada: {
       tipo: "ataque",
       bonus: atkBonus,

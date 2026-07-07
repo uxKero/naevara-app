@@ -10,6 +10,7 @@ import {
   ALL_SKILLS, skillTotal, skillAbility, skillES, skillDesc,
 } from "@/lib/srd";
 import { computeEffects, buildRiders, buildSubclassActions } from "@/lib/features";
+import { claseES, razaES, featureES, rasgoES, rasgoDescES } from "@/lib/traducciones";
 import { CombatAction, GRUPOS } from "@/lib/combatData";
 import CombatRoller from "@/components/CombatRoller";
 
@@ -123,7 +124,7 @@ export default function CharacterCombatPage() {
             <Link href="/combate" style={lnk}>← Personajes</Link>
             <h1 className="hero-name" style={{ fontSize: 26, fontWeight: 600, color: "#fff", margin: "4px 0 0" }}>{ch.name}</h1>
             <p style={{ fontSize: 11, color: "var(--text-faint)", margin: "2px 0 0" }}>
-              {cls?.name}{ch.subclassName ? ` (${ch.subclassName})` : ""} nivel {ch.level} · {race?.name ?? ch.customRace ?? "—"}
+              {cls ? claseES(cls.name) : ""}{ch.subclassName ? ` (${ch.subclassName})` : ""} nivel {ch.level} · {race ? razaES(race.name) : ch.customRace ?? "—"}
               {ch.alignment ? ` · ${ch.alignment}` : ""}{ch.deity ? ` · ⛪ ${ch.deity}` : ""}
             </p>
           </div>
@@ -220,7 +221,7 @@ export default function CharacterCombatPage() {
           {derived.spellSaveDC !== null && <Vit label="✦ CD hechizos" v={derived.spellSaveDC} big />}
           {derived.spellAttack !== null && <Vit label="🎯 Ataque mágico" v={fmtMod(derived.spellAttack)} big />}
           <Vit label="⚡ Iniciativa" v={fmtMod(derived.initiative)} />
-          <Vit label="👣 Velocidad" v={`${derived.speed} ft`} />
+          <Vit label="👣 Velocidad" v={`${Math.round((derived.speed * 0.3) / 1.5) * 1.5} m`} />
           <Vit label="➕ Competencia" v={fmtMod(derived.prof)} />
           <Vit label="👁 Perc. pasiva" v={derived.passivePerception} />
         </div>
@@ -304,12 +305,12 @@ export default function CharacterCombatPage() {
         <div style={grid(240)}>
           {cls && (
             <div style={cardS}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "var(--accent-strong)", marginBottom: 6 }}>{cls.name} — features hasta nivel {ch.level}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "var(--accent-strong)", marginBottom: 6 }}>{claseES(cls.name)}: rasgos hasta nivel {ch.level}</div>
               {featuresHasta.length ? (
                 <ul style={{ margin: 0, paddingLeft: 16 }}>
-                  {featuresHasta.map((f, i) => <li key={i} style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 2 }}>{f.name} <span style={{ color: "var(--text-faint)" }}>(nv{f.lvl})</span></li>)}
+                  {featuresHasta.map((f, i) => <li key={i} style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 2 }}>{featureES(f.name)} <span style={{ color: "var(--text-faint)" }}>(nv{f.lvl})</span></li>)}
                 </ul>
-              ) : <p style={{ fontSize: 11, color: "var(--text-faint)", margin: 0 }}>Sin features listadas en el SRD para estos niveles.</p>}
+              ) : <p style={{ fontSize: 11, color: "var(--text-faint)", margin: 0 }}>Sin rasgos listados en el SRD para estos niveles.</p>}
               {cls.subclasses.length > 0 && <p style={{ fontSize: 11, color: "var(--text-faint)", marginTop: 8 }}>Subclases SRD: {cls.subclasses.join(", ")}</p>}
             </div>
           )}
@@ -327,14 +328,14 @@ export default function CharacterCombatPage() {
           })()}
           {race && race.traits.map((t, i) => (
             <div key={i} style={cardS}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "var(--accent-strong)", marginBottom: 4 }}>{t.name}</div>
-              <p style={{ fontSize: 11, color: "var(--text-muted)", margin: 0, lineHeight: 1.5 }}>{t.desc || "—"}</p>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "var(--accent-strong)", marginBottom: 4 }}>{rasgoES(t.name)}</div>
+              <p style={{ fontSize: 11, color: "var(--text-muted)", margin: 0, lineHeight: 1.5 }}>{rasgoDescES(t.name, t.desc) || "—"}</p>
             </div>
           ))}
         </div>
 
         <p style={{ fontSize: 10, color: "var(--text-faint)", marginTop: 24, lineHeight: 1.5 }}>
-          Las descripciones de hechizos vienen del SRD (contenido abierto OGL, en inglés). Las instrucciones de tirada (ataque/salvación/daño) están calculadas y traducidas. Si tu mesa usa una regla distinta, podés ajustar los números editando la hoja.
+          Las mecánicas vienen del SRD (contenido abierto); nombres y descripciones están traducidos y las tiradas (ataque/salvación/daño) se calculan solas. Si tu mesa usa una regla distinta, ajustá los números editando la hoja.
         </p>
         </>)}
       </main>
