@@ -62,7 +62,9 @@ La idea no es que Vaegrant "esté triste". Es que está lejos, y que el grupo, s
 
 ### Silverun, el mundo que quedó
 
-La Gran Guerra rompió el mapa, y el mundo que quedó eligió un nombre nuevo: Silverun. Los mapas de antes lo llamaban Faerûn. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que, como el mundo mismo, eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.
+La Gran Guerra rompió el mapa, y el mundo que quedó eligió un nombre nuevo: Silverun. Los mapas de antes lo llamaban Faerûn. Se cuenta que la guerra enfrentó a los humanos con los elfos, y que los humanos la ganaron sin ser mejores en magia: fueron mejores en herramientas. Ingeniería, calderas, engranajes, vapor. El mundo que quedó tiene esa cara: faroles de gas, dirigibles, cadenas colosales, y ciudades enteras que se levantaron hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que, como el mundo mismo, eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.
+
+*(Datos de mesa: la guerra humanos vs. elfos queda por confirmar con el Master. Ser elfo hoy no es un estigma ni algo puntual para el mundo: es historia pasada. Y a futuro el mundo va hacia lo magepunk: magia y máquina fundiéndose.)*
 
 A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en Silverun los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada.
 

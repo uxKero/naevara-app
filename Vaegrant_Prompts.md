@@ -40,7 +40,7 @@ Formato vertical 2:3. Una habitación sencilla de posada. Un espejo grande de cu
 
 Ilustración estilo anime de alta calidad, como fotograma de película de fantasía animada: línea limpia, cel shading suave, fondos pintados con detalle, iluminación cinematográfica. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, piel pálida fría, ropa de viaje gris azulada y capa con capucha baja. Paleta fría con una única calidez tenue. Tono melancólico, digno, sin poses heroicas. Sin texto en la imagen.
 
-Formato horizontal 3:2. Un campo de ruinas de guerra al anochecer. Una grieta luminosa vertical flota en el aire: un portal que se está cerrando. Vaegrant acaba de salir de él, sin equipaje, quieto, mirando un mundo que no lo esperaba. El viento le mueve la capa y el pelo blanco azulado. A lo lejos, una ciudad flotante entre nubes bajas.
+Formato horizontal 3:2. Un campo de ruinas de guerra al anochecer: restos de máquinas de asedio a vapor, engranajes gigantes hundidos en la tierra, calderas oxidadas. Una grieta luminosa vertical flota en el aire: un portal que se está cerrando. Vaegrant acaba de salir de él, sin equipaje, quieto, mirando un mundo que no lo esperaba. El viento le mueve la capa y el pelo blanco azulado. A lo lejos, una ciudad flotante entre nubes bajas, con luces y humo de calderas.
 
 ## 5 · El Testigo
 
@@ -56,9 +56,9 @@ Formato horizontal 3:2. Una taberna llena y cálida, con gente riendo desenfocad
 
 ## 7 · Silverun, el mundo después de la Gran Guerra
 
-Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, del tipo de los paisajes de films animados japoneses, con niebla y luz atmosférica. Nada de fotorrealismo. Paleta fría (azules apagados, grises, niebla) con una sola franja de luz cálida. Sin texto en la imagen.
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía steampunk, del tipo de los paisajes de films animados japoneses, con niebla y luz atmosférica. Nada de fotorrealismo. Paleta fría (azules apagados, grises, niebla) con una sola franja de luz cálida. Sin texto en la imagen.
 
-Paisaje amplio en formato horizontal 16:9. Un mundo de posguerra: ruinas elegantes cubiertas de niebla, caminos rotos, y arriba una ciudad flotante enorme con puertos que cuelgan sobre el vacío. Abajo, diminuto, un elfo viajero (Vaegrant) camina solo por el camino, reconocible por la capa gris azulada y el pelo blanco azulado. Amanecer frío, con una sola franja de luz cálida en el horizonte.
+Paisaje amplio en formato horizontal 16:9. Un mundo de posguerra: ruinas elegantes cubiertas de niebla, caminos rotos con vías y engranajes hundidos, y arriba una ciudad flotante enorme sostenida por cadenas colosales y maquinaria de vapor, con chimeneas de bronce, hélices y puertos que cuelgan sobre el vacío. Un dirigible pequeño cruza el cielo. Abajo, diminuto, un elfo viajero (Vaegrant) camina solo por el camino, reconocible por la capa gris azulada y el pelo blanco azulado. Amanecer frío, con una sola franja de luz cálida en el horizonte.
 
 ## 8 · Magia de pacto
 
@@ -74,7 +74,7 @@ Formato vertical 2:3. Vaegrant en combate, sin pose heroica: el gesto mínimo de
 
 Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, iluminación cinematográfica. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, piel pálida fría, ropa sencilla de trabajo en grises azulados con mangas largas. Paleta fría con luces ámbar de amanecer. Tono tranquilo, cotidiano, digno. Sin texto en la imagen.
 
-Formato horizontal 3:2. Vaegrant arrodillado sobre un techo de tejas de un asentamiento, martillo en mano, arreglándolo con paciencia. Amanecer de niebla fría, primeras luces ámbar sobre las tejas. Abajo, la calle empieza a despertar. Expresión concentrada y tranquila. A lo lejos, una ciudad flotante pequeña entre nubes.
+Formato horizontal 3:2. Vaegrant arrodillado sobre un techo de tejas de un asentamiento steampunk, martillo en mano, arreglándolo con paciencia. Amanecer de niebla fría, primeras luces ámbar sobre las tejas y las chimeneas de cobre que humean alrededor. Abajo, la calle empieza a despertar y un farolero apaga los faroles de gas. Expresión concentrada y tranquila. A lo lejos, una ciudad flotante pequeña entre nubes.
 
 ## 10 · La carta
 
@@ -92,7 +92,7 @@ Formato horizontal 3:2. Vaegrant en cuclillas en un campo con niebla baja, junta
 
 Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, cielo pintado con detalle. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, ropa de viaje gris azulada con mangas largas. Paleta fría de atardecer con una franja ámbar. Tono sereno, casi luminoso. Sin texto en la imagen.
 
-Formato vertical 2:3. Vaegrant sentado al borde de un muelle de madera de una ciudad flotante, con las piernas colgando sobre un mar de nubes y una taza humeante entre las manos. El viento le mueve el pelo blanco azulado. Casi una sonrisa.
+Formato vertical 2:3. Vaegrant sentado al borde de un muelle de madera y hierro remachado de una ciudad flotante, junto a un noray con una cadena colosal, con las piernas colgando sobre un mar de nubes y una taza humeante entre las manos. Detrás, una grúa de engranajes quieta y un farol de gas. El viento le mueve el pelo blanco azulado. Casi una sonrisa.
 
 ## 13 · El encargo del gnomo
 
@@ -106,33 +106,33 @@ Formato horizontal 3:2. Interior de un bar cálido y gastado: madera vieja, vela
 
 ## 14 · El puerto colgante
 
-Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, con niebla y luz atmosférica, mucho detalle. Nada de fotorrealismo. Paleta fría (azules apagados, grises, niebla) con toques cálidos de faroles. Sin personajes protagonistas. Sin texto en la imagen.
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía steampunk (engranajes, latón y cobre, vapor, faroles de gas, dirigibles), con niebla y luz atmosférica, mucho detalle. Nada de fotorrealismo. Paleta fría (azules apagados, grises, niebla) con toques cálidos de faroles. Sin personajes protagonistas. Sin texto en la imagen.
 
-Formato horizontal 3:2. Primer plano de un puerto colgante de una ciudad flotante: muelles de madera y cadenas gigantes suspendidos sobre un mar de nubes, grúas y cuerdas, faroles encendidos, estibadores diminutos trabajando y un barco volador amarrado.
+Formato horizontal 3:2. Primer plano de un puerto colgante de una ciudad flotante steampunk: muelles de madera y hierro remachado suspendidos sobre un mar de nubes por cadenas gigantes, grúas mecánicas de engranajes, tuberías de cobre soltando vapor, faroles de gas encendidos, estibadores diminutos trabajando y un dirigible de casco de latón amarrado.
 
 ## 15 · El barrio bajo la ciudad
 
 Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, mucho detalle, luz de atardecer. Nada de fotorrealismo. Paleta fría con faroles cálidos encendiéndose. Gente variada de fantasía como figuras secundarias, sin protagonistas. Sin texto en la imagen.
 
-Formato horizontal 16:9. Un barrio de mercado al atardecer, visto a nivel de calle: puestos con toldos, faroles encendiéndose, gente de razas mezcladas. Arriba, ocupando medio cielo, la panza enorme de una ciudad flotante con luces y cadenas colgando.
+Formato horizontal 16:9. Un barrio de mercado steampunk al atardecer, visto a nivel de calle: puestos con toldos entre tuberías de cobre que trepan las paredes, faroles de gas encendiéndose, vapor saliendo de rejillas, gente de razas mezcladas con anteojeras y guantes de trabajo. Arriba, ocupando medio cielo, la panza enorme de una ciudad flotante con luces, hélices lentas y cadenas colgando.
 
 ## 16 · El portal dormido
 
 Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, perspectiva lejana, cielo enorme. Nada de fotorrealismo. Paleta fría de nubes y llanura quebrada. Sin personajes protagonistas. Sin texto en la imagen.
 
-Formato horizontal 16:9. Perspectiva lejana de una llanura quebrada por la guerra. En el centro, una grieta luminosa vertical (un portal dormido) cercada con estacas y banderines de advertencia, y una torre de vigilancia solitaria al lado.
+Formato horizontal 16:9. Perspectiva lejana de una llanura quebrada por la guerra, con restos de máquinas de asedio oxidadas medio hundidas en la tierra. En el centro, una grieta luminosa vertical (un portal dormido) cercada con estacas, cables y banderines de advertencia, y al lado una torre de vigilancia solitaria de madera y latón con un reflector de gas apagado.
 
 ## 17 · La caravana
 
 Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, perspectiva muy lejana, niebla atmosférica. Nada de fotorrealismo. Paleta fría con una sola franja de luz cálida de amanecer. Sin texto en la imagen.
 
-Formato horizontal 16:9. Una caravana diminuta cruza un puente antiguo reparado con maderas nuevas, sobre un valle de ruinas elegantes comidas por la niebla. En el horizonte, dos ciudades flotantes a distinta altura.
+Formato horizontal 16:9. Una caravana diminuta, encabezada por un carro a vapor que deja una estela de humo blanco, cruza un puente antiguo reparado con maderas nuevas y refuerzos de hierro, sobre un valle de ruinas elegantes comidas por la niebla. En el horizonte, dos ciudades flotantes a distinta altura, con hilos de humo de calderas.
 
 ## 18 · La calle de los quebrados
 
 Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, mucho detalle íntimo. Nada de fotorrealismo. Paleta fría con pequeñas luces cálidas de velas y ventanas. Sin personajes protagonistas (siluetas lejanas está bien). Sin texto en la imagen.
 
-Formato vertical 2:3. Un callejón angosto donde viven los sin nombre: ropa tendida entre balcones torcidos, velas en las ventanas, escaleras que no combinan, un gato en un umbral. Melancólico pero habitado. Al fondo, entre los techos, se asoma la niebla del vacío.
+Formato vertical 2:3. Un callejón angosto steampunk donde viven los sin nombre: ropa tendida entre balcones torcidos, tuberías de cobre trepando las paredes con válvulas que gotean vapor, velas en las ventanas y un farol de gas parpadeante, escaleras que no combinan, un gato dormido sobre una caldera tibia. Melancólico pero habitado. Al fondo, entre los techos, se asoma la niebla del vacío.
 
 ---
 
