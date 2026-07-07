@@ -48,3 +48,6 @@ data/characters/
 
 # imagenes generadas en dev local
 /public/galeria/
+
+# PNG originales de la galeria (pesados; en el repo van los .jpg optimizados)
+/public/datas-vaegrant/*.png

@@ -17,10 +17,22 @@
   },
   "heroQuote": "Estoy acá.",
   "heroStats": [
-    { "label": "Nivel", "value": "1" },
-    { "label": "Clase", "value": "Brujo" },
-    { "label": "Raza", "value": "Alto Elfo" },
-    { "label": "Patrón", "value": "El Testigo" }
+    {
+      "label": "Nivel",
+      "value": "1"
+    },
+    {
+      "label": "Clase",
+      "value": "Brujo"
+    },
+    {
+      "label": "Raza",
+      "value": "Alto Elfo"
+    },
+    {
+      "label": "Patrón",
+      "value": "El Testigo"
+    }
   ],
   "combateId": "vaegrant-aeril-tirael-7bynj",
   "perfil": {
@@ -41,10 +53,22 @@
       "Se mueve con una agilidad económica, sin gestos de más. Escucha con todo el cuerpo. Si alguien lo mira fijo demasiado tiempo, es él quien desvía la vista primero."
     ],
     "aspecto": [
-      { "label": "Rasgos", "texto": "Elfo de rasgos finos, piel pálida de subtono frío. Ojos claros gris azulado, luminosos y detallados, con un cansancio que no se corresponde con su cara. Pelo lacio blanco con reflejos azulados hasta los hombros, mechones sueltos sobre la cara, orejas puntiagudas discretas." },
-      { "label": "Ropa", "texto": "De viaje, en grises y azules apagados. Bien cuidada, de buena confección, sin un solo adorno. Mangas largas siempre, incluso con calor." },
-      { "label": "Presencia", "texto": "No llena la sala: la lee. La gente baja la guardia cerca suyo sin saber por qué. Parece siempre recién llegado o a punto de irse." },
-      { "label": "Las muñecas", "texto": "Cubiertas. Siempre. Nadie del grupo vio nunca por qué." }
+      {
+        "label": "Rasgos",
+        "texto": "Elfo de rasgos finos, piel pálida de subtono frío. Ojos claros gris azulado, luminosos y detallados, con un cansancio que no se corresponde con su cara. Pelo lacio blanco con reflejos azulados hasta los hombros, mechones sueltos sobre la cara, orejas puntiagudas discretas."
+      },
+      {
+        "label": "Ropa",
+        "texto": "De viaje, en grises y azules apagados. Bien cuidada, de buena confección, sin un solo adorno. Mangas largas siempre, incluso con calor."
+      },
+      {
+        "label": "Presencia",
+        "texto": "No llena la sala: la lee. La gente baja la guardia cerca suyo sin saber por qué. Parece siempre recién llegado o a punto de irse."
+      },
+      {
+        "label": "Las muñecas",
+        "texto": "Cubiertas. Siempre. Nadie del grupo vio nunca por qué."
+      }
     ],
     "interior": [
       "Vaegrant funciona. Trabaja, cumple, responde con una ironía seca cuando lo apuran. Pero hay una distancia entre él y el mundo que no termina de cerrarse desde que cruzó el portal: los días le llegan un poco amortiguados, como a través de agua. Aprendió a vivir así. No lo cuenta.",
@@ -62,15 +86,36 @@
       "Nunca dice \"estoy bien\". Dice \"estoy acá\". En su idioma privado, es mejor."
     ],
     "relaciones": [
-      { "label": "Con el grupo", "texto": "No lidera ni sigue: acompaña. Está en los detalles: recuerda lo que cada uno dijo, aparece con lo que hacía falta antes de que lo pidan. Cuidar a otros lo devuelve al presente mejor que cualquier llama." },
-      { "label": "Con el Testigo", "texto": "No le reza ni le habla en voz alta. A veces deja el espejo sin cubrir un rato, como quien deja una puerta entornada. Sabe que la deuda existe y prefiere no pensar en qué moneda se paga." },
-      { "label": "Con los quebrados", "texto": "Los suyos. Los reconoce a primera vista, en cualquier ciudad. Con ellos no administra la verdad: la dice." }
+      {
+        "label": "Con el grupo",
+        "texto": "No lidera ni sigue: acompaña. Está en los detalles: recuerda lo que cada uno dijo, aparece con lo que hacía falta antes de que lo pidan. Cuidar a otros lo devuelve al presente mejor que cualquier llama."
+      },
+      {
+        "label": "Con el Testigo",
+        "texto": "No le reza ni le habla en voz alta. A veces deja el espejo sin cubrir un rato, como quien deja una puerta entornada. Sabe que la deuda existe y prefiere no pensar en qué moneda se paga."
+      },
+      {
+        "label": "Con los quebrados",
+        "texto": "Los suyos. Los reconoce a primera vista, en cualquier ciudad. Con ellos no administra la verdad: la dice."
+      }
     ],
     "hoja": [
-      { "label": "Rasgo de personalidad", "texto": "Observo más de lo que hablo. Prefiero escuchar tres veces antes de decir una palabra." },
-      { "label": "Ideal", "texto": "Identidad. Nadie elige de dónde viene, pero todos eligen quién ser después." },
-      { "label": "Vínculo", "texto": "Mi patrón me vio cuando yo mismo había dejado de verme. Le debo eso, aunque no sepa todavía qué me va a pedir a cambio." },
-      { "label": "Defecto", "texto": "Mantengo siempre una salida, hasta con la gente en la que confío." }
+      {
+        "label": "Rasgo de personalidad",
+        "texto": "Observo más de lo que hablo. Prefiero escuchar tres veces antes de decir una palabra."
+      },
+      {
+        "label": "Ideal",
+        "texto": "Identidad. Nadie elige de dónde viene, pero todos eligen quién ser después."
+      },
+      {
+        "label": "Vínculo",
+        "texto": "Mi patrón me vio cuando yo mismo había dejado de verme. Le debo eso, aunque no sepa todavía qué me va a pedir a cambio."
+      },
+      {
+        "label": "Defecto",
+        "texto": "Mantengo siempre una salida, hasta con la gente en la que confío."
+      }
     ],
     "arco": [
       {
@@ -181,13 +226,34 @@
       }
     ],
     "ganchos": [
-      { "label": "La deuda abierta", "texto": "El pacto tiene un precio sin nombrar que puede cobrarse cuando la historia lo necesite. El Testigo no encarga misiones ni mueve el mundo: cuando pida, va a pedir algo íntimo." },
-      { "label": "Lo que cruzó con él", "texto": "Velas que se inclinan, espejos que dudan. Escalable a pistas, presencias o consecuencias, o ignorable, según le convenga a la trama." },
-      { "label": "El antes", "texto": "De dónde venía Aeril Tirael y qué dejó del otro lado queda sin definir a propósito, disponible para el Master." },
-      { "label": "El apellido Tirael", "texto": "Un linaje élfico de observadores. Si sirve, otros portadores del nombre existen o existieron." },
-      { "label": "Los quebrados", "texto": "Años de trabajos invisibles dejaron una red informal de gente sin nombre que confía en él: ojos y oídos donde nadie importante mira." },
-      { "label": "El arco anímico", "texto": "Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada." },
-      { "label": "Lo que dejan los quebrados", "texto": "Por qué los que cruzaron el portal desprenden resultados mejores es una pregunta abierta de la campaña: ¿traen algo del otro lado? ¿El mundo roto los reconoce como remiendo? Para Vaegrant conecta directo con lo que cruzó con él, y con la sospecha de que el Testigo no es el único que mira." }
+      {
+        "label": "La deuda abierta",
+        "texto": "El pacto tiene un precio sin nombrar que puede cobrarse cuando la historia lo necesite. El Testigo no encarga misiones ni mueve el mundo: cuando pida, va a pedir algo íntimo."
+      },
+      {
+        "label": "Lo que cruzó con él",
+        "texto": "Velas que se inclinan, espejos que dudan. Escalable a pistas, presencias o consecuencias, o ignorable, según le convenga a la trama."
+      },
+      {
+        "label": "El antes",
+        "texto": "De dónde venía Aeril Tirael y qué dejó del otro lado queda sin definir a propósito, disponible para el Master."
+      },
+      {
+        "label": "El apellido Tirael",
+        "texto": "Un linaje élfico de observadores. Si sirve, otros portadores del nombre existen o existieron."
+      },
+      {
+        "label": "Los quebrados",
+        "texto": "Años de trabajos invisibles dejaron una red informal de gente sin nombre que confía en él: ojos y oídos donde nadie importante mira."
+      },
+      {
+        "label": "El arco anímico",
+        "texto": "Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada."
+      },
+      {
+        "label": "Lo que dejan los quebrados",
+        "texto": "Por qué los que cruzaron el portal desprenden resultados mejores es una pregunta abierta de la campaña: ¿traen algo del otro lado? ¿El mundo roto los reconoce como remiendo? Para Vaegrant conecta directo con lo que cruzó con él, y con la sospecha de que el Testigo no es el único que mira."
+      }
     ]
   },
   "galeria": {
@@ -290,7 +356,128 @@
         "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 3:2, vista cercana a nivel de mesa. Un puesto de mercado de chatarra steampunk: la mesa desborda de manos mecánicas, lentes de aumento, relojes de bolsillo abiertos, válvulas, brújulas rotas y un pájaro autómata sin un ala. Un gnomo comerciante con visor de relojero le muestra una pieza a un cliente encapuchado (solo se ven las manos de ambos). Faroles de gas cálidos contra el atardecer frío, etiquetas de precio colgando con hilo."
       }
     ],
-    "imagenes": [],
+    "imagenes": [
+      {
+        "url": "/vaegrant-galeria/vaegrant-1.jpg",
+        "prompt": "Retrato principal",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-2.jpg",
+        "prompt": "La vela",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-3.jpg",
+        "prompt": "La vela (variante)",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-4.jpg",
+        "prompt": "El Testigo",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-5.jpg",
+        "prompt": "El cruce del portal",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-6.jpg",
+        "prompt": "Los años invisibles",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-7.jpg",
+        "prompt": "Silverun, el mundo después de la Gran Guerra",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-8.jpg",
+        "prompt": "Magia de pacto",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-9.jpg",
+        "prompt": "La carta",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-10.jpg",
+        "prompt": "Juntando hierbas",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-11.jpg",
+        "prompt": "Pausa en el muelle colgante",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-12.jpg",
+        "prompt": "El techo al amanecer",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-13.jpg",
+        "prompt": "El encargo del gnomo",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-1.jpg",
+        "prompt": "Mundo · El barrio bajo la ciudad",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-2.jpg",
+        "prompt": "Mundo · El portal dormido",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-3.jpg",
+        "prompt": "Mundo · La caravana",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-4.jpg",
+        "prompt": "Mundo · El puerto colgante",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-5.jpg",
+        "prompt": "Mundo · El barrio bajo la ciudad (variante)",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-6.jpg",
+        "prompt": "Mundo · El taller de chatarra",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-7.jpg",
+        "prompt": "Mundo · El cementerio de máquinas",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-8.jpg",
+        "prompt": "Mundo · La fundición",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-9.jpg",
+        "prompt": "Mundo · El tren blindado",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-10.jpg",
+        "prompt": "Mundo · El arsenal retirado",
+        "fecha": "2026-07-07"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-11.jpg",
+        "prompt": "Mundo · El puesto de chatarra",
+        "fecha": "2026-07-07"
+      }
+    ],
     "portada": 0
   }
 }
