@@ -142,21 +142,19 @@ Tres cosas lo mueven, y solo admite dos.
 | Iniciativa | +3 |
 | CD de conjuros | 13 |
 | Ataque de conjuro | +5 |
-| Sabiduría Pasiva (Percepción) | 10 |
-
-*(Este resumen sigue la hoja física real; ver "Pendientes con el Master" abajo.)*
+| Sabiduría Pasiva (Percepción) | 12 |
 
 **Características:** Fue 11 (+0) · Des 16 (+3) · Con 14 (+2) · Int 14 (+2) · Sab 11 (+0) · Car 17 (+3)
 
-**Salvaciones con competencia:** Sabiduría +2 · Carisma +5. Ojo: en la hoja física la de Sabiduría quedó anotada como 0; corresponde +2 (0 de modificador + 2 de competencia).
+**Salvaciones con competencia:** Sabiduría +2 · Carisma +5
 
-**Habilidades marcadas:** Arcanos +4 (Int) · Engaño +5 (Car) · Religión +4 (Int)
+**Habilidades marcadas:** Arcanos +4 y Engaño +5 (clase) · Medicina +2 y Religión +4 (Ermitaño) · Percepción +2 (Sentidos Agudos, rasgo de Elfo)
 
 **Idiomas y competencias:** Común y Élfico · armas simples y dagas · kit de herborista (trasfondo)
 
-**Rasgos y atributos (según la hoja):** Visión en la oscuridad · Ascendencia Feérica (ventaja contra encantado, inmune a dormir mágico) · Pacto Mágico (hechizos con Carisma) · Patrón de otro mundo: Archfey · Hechizos de pacto
+**Rasgos raciales:** Visión en la oscuridad 18 m · Ascendencia Feérica (ventaja contra encantado, inmune a dormir mágico) · Trance (medita 4 h en vez de dormir 8) · Sentidos Agudos · Pacto Mágico (hechizos con Carisma) · Patrón de otro mundo: Archfey
 
-**Trucos (2):** Eldritch Blast · Minor Illusion
+**Trucos (3):** Eldritch Blast · Minor Illusion (Brujo) · Prestidigitation (truco racial de Alto Elfo: se lanza con Inteligencia)
 
 **Hechizos conocidos (2 de 2):** Charm Person · Hex. Un espacio de nivel 1, se recupera con descanso corto.
 
@@ -164,9 +162,8 @@ Tres cosas lo mueven, y solo admite dos.
 
 **Equipo:** armadura de cuero, 3 dagas, foco arcano, mochila de explorador, estuche de pergaminos para notas, ropa común, kit de herboristería, 5 po
 
-**Pendientes con el Master (por reglas corresponderían, la hoja física no los tiene):**
-- Medicina +2: el trasfondo Ermitaño da competencia en Medicina además de Religión.
-- Percepción +2 (y pasiva 12): el rasgo élfico Sentidos Agudos da competencia en Percepción.
-- Un truco de Mago extra por Alto Elfo (se lanza con Inteligencia; buena opción: Prestidigitation o Mage Hand).
-- Trance (los elfos meditan 4 h en vez de dormir 8): no está anotado en rasgos.
-- Corregir en papel la salvación de Sabiduría: +2.
+**Para pasar a la hoja física (todo es de libro permitido, la hoja quedó incompleta):**
+- Marcar Medicina +2 (la da Ermitaño) y Percepción +2 (la da Sentidos Agudos de elfo; pasiva pasa a 12).
+- Anotar el truco racial de Alto Elfo: Prestidigitation (con Inteligencia).
+- Anotar Trance y Sentidos Agudos en rasgos.
+- Corregir la salvación de Sabiduría: dice 0, es +2 (0 de modificador + 2 de competencia).

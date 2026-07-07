@@ -41,7 +41,7 @@
       "Se mueve con una agilidad económica, sin gestos de más. Escucha con todo el cuerpo. Si alguien lo mira fijo demasiado tiempo, es él quien desvía la vista primero."
     ],
     "aspecto": [
-      { "label": "Rasgos", "texto": "Elfo de rasgos finos, piel pálida de subtono frío, ojos gris claro con un cansancio que no se corresponde con su cara. Pelo lacio oscuro hasta los hombros, orejas puntiagudas discretas." },
+      { "label": "Rasgos", "texto": "Elfo de rasgos finos, piel pálida de subtono frío. Ojos claros gris azulado, luminosos y detallados, con un cansancio que no se corresponde con su cara. Pelo lacio blanco con reflejos azulados hasta los hombros, mechones sueltos sobre la cara, orejas puntiagudas discretas." },
       { "label": "Ropa", "texto": "De viaje, en grises y azules apagados. Bien cuidada, de buena confección, sin un solo adorno. Mangas largas siempre, incluso con calor." },
       { "label": "Presencia", "texto": "No llena la sala: la lee. La gente baja la guardia cerca suyo sin saber por qué. Parece siempre recién llegado o a punto de irse." },
       { "label": "Las muñecas", "texto": "Cubiertas. Siempre. Nadie del grupo vio nunca por qué." }
@@ -191,39 +191,39 @@
     ]
   },
   "galeria": {
-    "estiloBase": "Pintura digital de fantasía oscura, atmosférica y contenida. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y distante, ojos gris claro con un cansancio antiguo, piel pálida de subtono frío, pelo lacio oscuro hasta los hombros, orejas puntiagudas discretas. Viste ropa de viaje gris azulada sin adornos, de buena confección, con mangas largas que cubren las muñecas y una capa de capucha baja. Paleta fría (azules apagados, grises, penumbra) con una única fuente de calidez: luz de vela ámbar. Tono melancólico, digno, sin dramatismo ni poses heroicas. Sin texto en la imagen.",
+    "estiloBase": "Ilustración estilo anime de alta calidad, como fotograma de una película de fantasía animada moderna: línea limpia, cel shading suave, iluminación cinematográfica, fondos pintados con detalle. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y distante. Pelo lacio blanco con reflejos azulados, hasta los hombros, con mechones sueltos sobre la cara. Ojos claros gris azulado grandes al estilo anime pero contenidos, muy detallados, con el iris luminoso y un cansancio antiguo en la mirada. Piel pálida de subtono frío, orejas élficas puntiagudas discretas. Ropa de viaje gris azulada sin adornos, de buena confección, mangas largas que cubren las muñecas, capa con capucha baja. Paleta fría (azules apagados, grises, penumbra) con una única fuente de calidez: luz de vela ámbar. Tono melancólico, digno, sin dramatismo ni poses heroicas. Sin texto en la imagen.",
     "prompts": [
       {
         "titulo": "Retrato principal (para el perfil)",
-        "prompt": "Retrato de busto en formato vertical 2:3. Vaegrant mira apenas fuera de cámara, ni triste ni frío: presente pero lejos. Detrás, desenfocadas, ruinas elegantes de fantasía y una ciudad flotante lejana entre la niebla. La luz de una vela fuera de cuadro le entibia un lado de la cara; el otro queda en penumbra azul."
+        "prompt": "Retrato de busto en formato vertical 2:3. Vaegrant mira apenas fuera de cámara, ni triste ni frío: presente pero lejos. Los ojos son el punto focal de la imagen: iris claro gris azulado con mucho detalle, y una llama pequeña reflejada en ellos. La luz de una vela fuera de cuadro le entibia un lado de la cara; el otro queda en penumbra azul. Detrás, desenfocadas, ruinas elegantes de fantasía y una ciudad flotante lejana entre la niebla."
       },
       {
         "titulo": "La vela",
-        "prompt": "Escena íntima en formato vertical 2:3. De noche, en una habitación austera de posada, Vaegrant sentado a una mesa de madera con una única vela encendida. Sostiene la mano abierta cerca de la llama, sin tocarla, y la mira con una concentración serena, casi ritual. Todo lo demás en penumbra."
+        "prompt": "Escena íntima en formato vertical 2:3. De noche, en una habitación austera de posada, Vaegrant sentado a una mesa de madera con una única vela encendida. Sostiene la mano abierta cerca de la llama, sin tocarla, y la mira con una concentración serena, casi ritual. El pelo blanco azulado toma el color ámbar de la llama del lado de la luz. Todo lo demás en penumbra."
       },
       {
         "titulo": "El espejo cubierto",
-        "prompt": "Formato vertical 2:3. Una habitación sencilla de posada. Un espejo grande de cuerpo entero cubierto con una tela gris; Vaegrant, de espaldas y con su ropa de viaje, termina de acomodar la tela con la cabeza levemente inclinada. En el borde descubierto del espejo, un reflejo mínimo que no debería estar ahí."
+        "prompt": "Formato vertical 2:3. Una habitación sencilla de posada. Un espejo grande de cuerpo entero cubierto con una tela gris; Vaegrant, de espaldas y con su ropa de viaje, termina de acomodar la tela con la cabeza levemente inclinada. Su pelo blanco azulado es lo más luminoso de la escena. En el borde descubierto del espejo, un reflejo mínimo que no debería estar ahí."
       },
       {
         "titulo": "El cruce del portal",
-        "prompt": "Formato horizontal 3:2. Un campo de ruinas de guerra al anochecer. Una grieta luminosa vertical flota en el aire: un portal que se está cerrando. Vaegrant acaba de salir de él, sin equipaje, quieto, mirando un mundo que no lo esperaba. El viento le mueve la capa. A lo lejos, una ciudad flotante entre nubes bajas."
+        "prompt": "Formato horizontal 3:2. Un campo de ruinas de guerra al anochecer. Una grieta luminosa vertical flota en el aire: un portal que se está cerrando. Vaegrant acaba de salir de él, sin equipaje, quieto, mirando un mundo que no lo esperaba. El viento le mueve la capa y el pelo blanco azulado. A lo lejos, una ciudad flotante entre nubes bajas."
       },
       {
         "titulo": "El Testigo",
-        "prompt": "Primer plano en formato vertical 2:3. Vaegrant inclinado sobre un charco quieto, de noche, con una vela en la mano como única luz. En el agua, su reflejo no está en la misma pose: llega medio gesto tarde. Dentro del reflejo, dos puntos de luz tenues lo miran."
+        "prompt": "Primer plano en formato vertical 2:3. Vaegrant inclinado sobre un charco quieto, de noche, con una vela en la mano como única luz. En el agua, su reflejo no está en la misma pose: llega medio gesto tarde. Dentro del reflejo, dos puntos de luz tenues lo miran. Los ojos claros de Vaegrant, muy detallados, sostienen la mirada del reflejo."
       },
       {
         "titulo": "Los años invisibles",
-        "prompt": "Formato horizontal 3:2. Una taberna llena y cálida, con gente riendo desenfocada en primer plano. Al fondo, nítido, Vaegrant lleva una bandeja entre las mesas: presente, eficiente e invisible para todos. Es el único elemento en foco de toda la imagen."
+        "prompt": "Formato horizontal 3:2. Una taberna llena y cálida, con gente riendo desenfocada en primer plano. Al fondo, nítido, Vaegrant lleva una bandeja entre las mesas: presente, eficiente e invisible para todos. Es el único elemento en foco de toda la imagen, y su pelo blanco azulado lo distingue entre la multitud que no lo mira."
       },
       {
         "titulo": "Faerûn después de la Gran Guerra",
-        "prompt": "Paisaje amplio en formato horizontal 16:9. Un mundo de posguerra: ruinas elegantes cubiertas de niebla, caminos rotos, y arriba una ciudad flotante enorme con puertos que cuelgan sobre el vacío. Abajo, diminuto, Vaegrant camina solo por el camino. Amanecer frío, con una sola franja de luz cálida en el horizonte."
+        "prompt": "Paisaje amplio en formato horizontal 16:9, estilo fondo pintado de película de animación de fantasía. Un mundo de posguerra: ruinas elegantes cubiertas de niebla, caminos rotos, y arriba una ciudad flotante enorme con puertos que cuelgan sobre el vacío. Abajo, diminuto, Vaegrant camina solo por el camino, reconocible por la capa gris azulada y el pelo claro. Amanecer frío, con una sola franja de luz cálida en el horizonte."
       },
       {
         "titulo": "Magia de pacto",
-        "prompt": "Formato vertical 2:3. Vaegrant en combate, sin pose heroica: el gesto mínimo de una mano extendida de la que sale una descarga arcana de luz fría azul violácea. El rostro sereno, casi triste. Alrededor, la penumbra retrocede apenas."
+        "prompt": "Formato vertical 2:3. Vaegrant en combate, sin pose heroica: el gesto mínimo de una mano extendida de la que sale una descarga arcana de luz fría azul violácea. El rostro sereno, casi triste, iluminado desde abajo por la magia; los ojos claros brillan con el reflejo del hechizo y el pelo blanco azulado flota apenas por la energía. Alrededor, la penumbra retrocede."
       }
     ],
     "imagenes": [],
