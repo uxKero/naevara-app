@@ -8,12 +8,22 @@ import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
 import { Swords, Flame, ArrowLeft, ScrollText, Download } from "lucide-react";
 import { descargarImagen } from "@/lib/descargar";
+import { BuilderCharacter } from "@/types/builder";
+import {
+  loadAll, computeDerived, spellToAction, weaponToAction, spellSlotLevel,
+  ABILITY_ORDER, ABILITY_ES, ALL_SKILLS, skillES, skillTotal, fmtMod,
+  type Derived, type SrdClass, type SrdRace,
+} from "@/lib/srd";
+import { computeEffects, buildSubclassActions } from "@/lib/features";
+import { featureES, rasgoES, rasgoDescES } from "@/lib/traducciones";
+import type { CombatAction } from "@/lib/combatData";
 
 // Display serif propio de esta ruta: la identidad tipográfica de Vaegrant.
 const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"], style: ["normal", "italic"] });
 
 const TABS = [
   { id: "perfil",   label: "Perfil" },
+  { id: "hoja",     label: "Hoja" },
   { id: "historia", label: "Historia" },
   { id: "mundo",    label: "El mundo" },
 ];
@@ -307,6 +317,7 @@ export default function VaegrantPage() {
           <TabPerfil data={data} update={update} openAI={openAI} retratos={retratos}
             onOpen={(idx) => setLightbox({ imgs: retratos.map((i) => i.url), caps: retratos.map((i) => i.prompt), idx, alt: data.meta.alias })} />
         )}
+        {activeTab === "hoja" && <TabHoja combateId={data.combateId} />}
         {activeTab === "historia" && <TabHistoria data={data} update={update} openAI={openAI} />}
         {activeTab === "mundo" && (
           <TabMundo data={data} update={update} openAI={openAI} estampas={estampas}
@@ -617,6 +628,194 @@ function TabPerfil({ data, update, openAI, retratos, onOpen }: {
         <Galeria titulo="Retratos" imagenes={retratos} todas={data.galeria.imagenes}
           portada={data.galeria.portada} update={update} onOpen={onOpen} tipoMundo={false} />
       )}
+    </div>
+  );
+}
+
+// ── Hoja: stats y hechizos, leídos de la ficha real del builder ──
+// Fuente única: la misma fila de Supabase que usa la hoja de combate.
+function TabHoja({ combateId }: { combateId: string }) {
+  const [hoja, setHoja] = useState<{
+    ch: BuilderCharacter; derived: Derived; cls: SrdClass; race: SrdRace | null;
+    trucos: CombatAction[]; hechizos: CombatAction[]; armas: CombatAction[]; rasgosSub: CombatAction[];
+    features: { lvl: number; name: string }[];
+  } | null>(null);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    let vivo = true;
+    (async () => {
+      try {
+        const [ch, srd] = await Promise.all([
+          fetch(`/api/characters/${combateId}`).then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json() as Promise<BuilderCharacter>; }),
+          loadAll(),
+        ]);
+        const cls = srd.classes.find((c) => c.index === ch.classIndex);
+        if (!cls) throw new Error("clase no encontrada");
+        const race = srd.races.find((r) => r.index === ch.raceIndex) ?? null;
+        const armor = srd.armor.find((a) => a.index === ch.armorIndex) ?? null;
+        const effects = computeEffects({ clsIndex: cls.index, level: ch.level, hasArmor: !!ch.armorIndex, fightingStyle: ch.fightingStyle, invocations: ch.invocations });
+        const derived = computeDerived(ch, cls, race, { armor, shield: ch.shield, acBonus: effects.acBonus });
+
+        const spellIdx = new Map(srd.spells.map((s) => [s.index, s]));
+        const trucos: CombatAction[] = [];
+        const hechizos: CombatAction[] = [];
+        [...ch.cantrips, ...ch.spells].forEach((idx) => {
+          const sp = spellIdx.get(idx);
+          if (!sp) return;
+          const a = spellToAction(sp, derived, ch.level, effects.ebAgonizing);
+          (spellSlotLevel(sp) === 0 ? trucos : hechizos).push(a);
+        });
+        const wEff = { rangedAttackBonus: effects.rangedAttackBonus, meleeAttackBonus: effects.meleeAttackBonus, oneHandedMeleeDmgBonus: effects.oneHandedMeleeDmgBonus, extraAttacks: effects.extraAttacks };
+        const armas = (ch.weapons ?? []).flatMap((idx) => {
+          const w = srd.weapons.find((x) => x.index === idx);
+          return w ? [weaponToAction(w, cls, derived, wEff)] : [];
+        });
+        const rasgosSub = buildSubclassActions(cls.index, ch.subclassName, ch.level, derived.spellSaveDC, derived.abilityMods);
+
+        const features: { lvl: number; name: string }[] = [];
+        for (let L = 1; L <= ch.level; L++) {
+          for (const f of cls.levels[String(L)]?.features ?? []) features.push({ lvl: L, name: f });
+        }
+
+        if (vivo) setHoja({ ch, derived, cls, race, trucos, hechizos, armas, rasgosSub, features });
+      } catch (e) {
+        if (vivo) setError(e instanceof Error ? e.message : "error");
+      }
+    })();
+    return () => { vivo = false; };
+  }, [combateId]);
+
+  if (error) return <p style={{ ...pStyle, color: "#e07a5f" }}>⚠ No se pudo cargar la ficha ({error}). Probá desde la hoja de combate.</p>;
+  if (!hoja) return <p style={{ ...pStyle, color: C.faint }}>Leyendo la ficha...</p>;
+
+  const { ch, derived, race, trucos, hechizos, armas, rasgosSub, features } = hoja;
+  const slotLvls = Object.entries(derived.slots).filter(([, n]) => n > 0);
+
+  const num = (label: string, v: string | number) => (
+    <div key={label} style={{ textAlign: "center", minWidth: 74 }}>
+      <div className={serif.className} style={{ fontSize: 26, fontWeight: 600, color: C.text, lineHeight: 1 }}>{v}</div>
+      <div style={{ fontSize: 9, color: C.steel, textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 4 }}>{label}</div>
+    </div>
+  );
+
+  const Accion = ({ a }: { a: CombatAction }) => (
+    <div className="vg-row" style={{ padding: "12px 0" }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap", marginBottom: 3 }}>
+        <span className={serif.className} style={{ fontSize: 18, fontWeight: 600, color: C.text }}>{a.nombre}</span>
+        <span style={{ fontSize: 10, color: C.amber, letterSpacing: "0.04em" }}>{a.coste}</span>
+        <span style={{ fontSize: 10, color: C.faint }}>{a.accion} · {a.alcance}{a.concentracion ? " · concentración" : ""}</span>
+      </div>
+      <div style={{ ...pStyle, fontSize: 13, margin: 0 }}>{a.queHace}</div>
+      <div style={{ fontSize: 11.5, color: C.steelStrong, marginTop: 4 }}>
+        {a.tirada.tipo === "ataque" && <>Tirada: 1d20 {fmtMod(a.tirada.bonus)} contra la CA{(a.tirada.rayos ?? 1) > 1 ? ` · ${a.tirada.rayos} rayos` : ""}</>}
+        {a.tirada.tipo === "salvacion" && <>El objetivo salva {a.tirada.stat} contra CD {a.tirada.cd}</>}
+        {a.tirada.tipo === "ninguna" && (a.tirada.nota ?? "Sin tirada")}
+        {a.danos?.length ? <span style={{ color: C.amber }}> · daño {a.danos.map((d) => `${d.cantidad}d${d.caras}${d.modificador ? `+${d.modificador}` : ""} ${d.tipo}`).join(" + ")}</span> : null}
+      </div>
+    </div>
+  );
+
+  return (
+    <div>
+      <VSecLabel>Números clave</VSecLabel>
+      <VDivider />
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "18px 10px", justifyContent: "space-between", marginBottom: 8 }}>
+        {num("Vida", derived.maxHp)}
+        {num("CA", derived.ac)}
+        {derived.spellSaveDC !== null ? num("CD conjuros", derived.spellSaveDC) : null}
+        {derived.spellAttack !== null ? num("Ataque mágico", fmtMod(derived.spellAttack)) : null}
+        {num("Iniciativa", fmtMod(derived.initiative))}
+        {num("Competencia", fmtMod(derived.prof))}
+        {num("Perc. pasiva", derived.passivePerception)}
+      </div>
+      {slotLvls.length > 0 && (
+        <p style={{ fontSize: 12, color: C.faint, margin: "0 0 4px" }}>
+          Espacios de conjuro: {slotLvls.map(([l, n]) => `${n} de nivel ${l}`).join(" · ")}. Se recuperan con descanso {ch.classIndex === "warlock" ? "corto" : "largo"}.
+        </p>
+      )}
+
+      <VSecLabel>Características y salvaciones</VSecLabel>
+      <VDivider />
+      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0 24px" }}>
+        {ABILITY_ORDER.map((k) => {
+          const sv = derived.saves.find((s) => s.key === k)!;
+          return (
+            <div key={k} className="vg-row" style={{ padding: "10px 0", display: "flex", alignItems: "center", gap: 12 }}>
+              <span className={serif.className} style={{ fontSize: 24, fontWeight: 600, color: C.text, minWidth: 58 }}>
+                {ch.abilities[k]} <span style={{ fontSize: 14, color: C.steel }}>({fmtMod(derived.abilityMods[k])})</span>
+              </span>
+              <span style={{ flex: 1 }}>
+                <span style={{ display: "block", fontSize: 11, color: C.muted }}>{ABILITY_ES[k]}</span>
+                <span style={{ fontSize: 10.5, color: sv.competente ? C.amber : C.faint }}>salvación {fmtMod(sv.valor)}{sv.competente ? " ●" : ""}</span>
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      <VSecLabel>Habilidades</VSecLabel>
+      <VDivider />
+      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 28px" }}>
+        {ALL_SKILLS.map((sk) => {
+          const comp = ch.skillProf.includes(sk);
+          return (
+            <div key={sk} className="vg-row" style={{ display: "flex", justifyContent: "space-between", padding: "7px 0" }}>
+              <span style={{ fontSize: 12.5, color: comp ? C.steelStrong : C.faint, fontWeight: comp ? 600 : 400 }}>
+                {comp ? "● " : ""}{skillES(sk)}
+              </span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: comp ? C.text : C.faint, fontVariantNumeric: "tabular-nums" }}>
+                {fmtMod(skillTotal(ch, derived, sk))}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      {armas.length > 0 && (<>
+        <VSecLabel>Armas</VSecLabel>
+        <VDivider />
+        {armas.map((a) => <Accion key={a.id} a={a} />)}
+      </>)}
+
+      {trucos.length > 0 && (<>
+        <VSecLabel>Trucos · gratis e ilimitados</VSecLabel>
+        <VDivider />
+        {trucos.map((a) => <Accion key={a.id} a={a} />)}
+      </>)}
+
+      {hechizos.length > 0 && (<>
+        <VSecLabel>Hechizos conocidos</VSecLabel>
+        <VDivider />
+        {hechizos.map((a) => <Accion key={a.id} a={a} />)}
+      </>)}
+
+      {rasgosSub.length > 0 && (<>
+        <VSecLabel>Rasgos del patrón</VSecLabel>
+        <VDivider />
+        {rasgosSub.map((a) => <Accion key={a.id} a={a} />)}
+      </>)}
+
+      <VSecLabel>Rasgos de clase y raza</VSecLabel>
+      <VDivider />
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
+        {features.map((f, i) => (
+          <span key={i} style={{ fontSize: 11, color: C.muted, border: `1px solid ${C.borderSoft}`, borderRadius: R, padding: "3px 9px" }}>
+            {featureES(f.name)} <span style={{ color: C.faint }}>nv{f.lvl}</span>
+          </span>
+        ))}
+      </div>
+      {race?.traits.map((t, i) => (
+        <div key={i} className="vg-row" style={{ padding: "9px 0" }}>
+          <span style={{ fontSize: 12, fontWeight: 600, color: C.steelStrong }}>{rasgoES(t.name)}: </span>
+          <span style={{ fontSize: 12.5, color: C.muted, lineHeight: 1.6 }}>{rasgoDescES(t.name, t.desc)}</span>
+        </div>
+      ))}
+
+      <p style={{ fontSize: 12, color: C.faint, marginTop: 28 }}>
+        Esta hoja se lee de la ficha real: para tirar dados, gastar espacios o editarla, usá la{" "}
+        <a href={`/combate/c/${combateId}`} style={{ color: C.amber }}>hoja de combate</a>.
+      </p>
     </div>
   );
 }
