@@ -9,7 +9,7 @@ import {
   computeDerived, levelData, spellToAction, weaponToAction, fmtMod, ABILITY_ES, ABILITY_ORDER, ABILITY_DESC,
   ALL_SKILLS, skillTotal, skillAbility, skillES, skillDesc,
 } from "@/lib/srd";
-import { computeEffects, buildRiders } from "@/lib/features";
+import { computeEffects, buildRiders, buildSubclassActions } from "@/lib/features";
 import { CombatAction, GRUPOS } from "@/lib/combatData";
 import CombatRoller from "@/components/CombatRoller";
 
@@ -84,6 +84,7 @@ export default function CharacterCombatPage() {
     }
 
     buildRiders(cls.index, ch.level, derived.abilityMods).forEach((r) => list.push(r));
+    buildSubclassActions(cls.index, ch.subclassName, ch.level, derived.spellSaveDC, derived.abilityMods).forEach((r) => list.push(r));
     return list;
   }, [ch, srd, derived, cls, effects]);
 

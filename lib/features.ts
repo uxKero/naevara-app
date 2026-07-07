@@ -87,6 +87,75 @@ export function computeEffects(opts: {
   return eff;
 }
 
+// ── Rasgos de subclase (curados) como cartas de acción ───────────
+// La hoja no auto-aplica subclases (solo las lista por nombre), pero los
+// rasgos de nivel bajo más usados se curan acá para que aparezcan como
+// cartas jugables, explicadas para principiantes.
+export function buildSubclassActions(
+  clsIndex: string,
+  subclassName: string | null | undefined,
+  level: number,
+  spellSaveDC: number | null,
+  mods: Record<AbilityKey, number>
+): CombatAction[] {
+  const out: CombatAction[] = [];
+  const sub = (subclassName ?? "").toLowerCase();
+
+  if (clsIndex === "warlock" && /arch?i?fey/.test(sub) && level >= 1) {
+    out.push({
+      id: "fey-presence",
+      nombre: "Presencia Feérica",
+      grupo: "accion",
+      coste: "1 uso · vuelve con descanso corto o largo",
+      accion: "Acción",
+      alcance: "Cubo de 3 m alrededor tuyo (pegado a vos)",
+      queHace:
+        "Tu patrón se asoma un instante a través tuyo. Todas las criaturas dentro de un cubo de 3 metros alrededor tuyo (o sea: bien cerca, cuerpo a cuerpo) tiran una salvación de Sabiduría. Las que fallan quedan, a TU elección para todas por igual, hechizadas (no pueden atacarte y les caés bien) o asustadas (no pueden acercarse a vos y atacan con desventaja si te ven). Dura hasta el final de tu PRÓXIMO turno.",
+      tirada: {
+        tipo: "salvacion",
+        stat: "Sabiduría",
+        cd: spellSaveDC ?? 8,
+        fallo: "queda hechizada o asustada (elegís vos, lo mismo para todas) hasta el final de tu próximo turno.",
+        exito: "no le pasa nada.",
+      },
+      cuando:
+        "Usala cuando te rodearon: varios enemigos encima tuyo y necesitás una salida. Elegí 'asustadas' para que no puedan acercarse y escapate; o 'hechizadas' para que no te ataquen mientras el grupo actúa. También sirve fuera de combate como impacto social (a criterio del Master). Como vuelve con descanso corto, no la guardes de más: si la situación la pide, usala.",
+      ojo:
+        "No hace daño y afecta a TODAS las criaturas del área, aliados incluidos: no la tires con un compañero pegado a vos. El efecto es corto (hasta el final de tu próximo turno): aprovechalo ya mismo. Hechizado sabe que lo hechizaste cuando se le pasa.",
+    });
+  }
+
+  if (clsIndex === "warlock" && /fiend|infernal/.test(sub) && level >= 1) {
+    out.push({
+      id: "dark-ones-blessing",
+      nombre: "Bendición del Oscuro",
+      grupo: "pasiva",
+      coste: "Pasiva",
+      accion: "Automática",
+      alcance: "Vos misma",
+      queHace: `Cuando reducís a un enemigo a 0 PV, ganás ${Math.max(1, mods.cha + level)} puntos de golpe temporales (Carisma + nivel de brujo).`,
+      tirada: { tipo: "ninguna", nota: "No se tira nada: pasa solo al voltear a un enemigo." },
+      cuando: "Recordalo cada vez que rematás a un enemigo: anotá los PV temporales en el tracker.",
+    });
+  }
+
+  if (clsIndex === "warlock" && /great old one|gran antiguo/.test(sub) && level >= 1) {
+    out.push({
+      id: "awakened-mind",
+      nombre: "Mente Despierta",
+      grupo: "utilidad",
+      coste: "Gratis e ilimitada",
+      accion: "Libre",
+      alcance: "9 m",
+      queHace: "Podés hablarle telepáticamente a cualquier criatura que veas a 9 metros. No hace falta compartir idioma, pero la criatura tiene que entender al menos un idioma.",
+      tirada: { tipo: "ninguna", nota: "Sin tirada: es comunicación, no control." },
+      cuando: "Para coordinar en silencio, amenazar sin testigos o hablar con quien no comparte idioma.",
+    });
+  }
+
+  return out;
+}
+
 // ── Riders de daño situacional (cartas con dado para tirar) ──────
 export function buildRiders(clsIndex: string, level: number, mods: Record<AbilityKey, number>): CombatAction[] {
   const out: CombatAction[] = [];
