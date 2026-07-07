@@ -176,4 +176,26 @@ Formato horizontal 3:2. Un puesto de mercado de chatarra steampunk: la mesa desb
 
 ---
 
+# Exotrajes y maquinaria de trabajo (escala humana)
+
+## 25 · El exotraje de carga
+
+Ilustración estilo anime de alta calidad: fotograma de película de animación de fantasía steampunk, diseño mecánico detallado y creíble. Nada de fotorrealismo. Paleta fría (azules apagados, grises) con faroles de gas cálidos. Sin texto en la imagen.
+
+Formato vertical 2:3, plano medio. Un exotraje de carga a vapor de unos dos metros y medio: un armazón abierto de latón y hierro con pistones y mangueras de cobre, una caldera compacta en la espalda soltando vapor fino, y brazos mecánicos que amplifican los movimientos del piloto. Adentro, bien visible, una trabajadora humana con anteojeras y guantes maneja el traje con palancas, cargando una caja enorme en un puerto colgante. Escala humana ampliada, no gigante: el traje le agrega medio cuerpo de altura.
+
+## 26 · La cuadrilla de reconstrucción
+
+Ilustración estilo anime de alta calidad: fotograma de película de animación de fantasía steampunk, escena de trabajo cotidiana, mucho detalle mecánico. Nada de fotorrealismo. Amanecer de niebla fría con luces ámbar de trabajo. Sin texto en la imagen.
+
+Formato horizontal 3:2. Una obra en un barrio de posguerra: dos exotrajes a vapor de escala humana (armazón abierto, piloto visible adentro, pistones de cobre, caldera al hombro) sostienen una viga de hierro mientras la calzan en la fachada de un edificio a medio reconstruir. Andamios de madera, una grúa de vapor pequeña, y obreros de a pie que guían la maniobra con señas y banderines. Vapor y polvo de obra en la luz del amanecer.
+
+## 27 · El carguero caminante
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía steampunk, diseño de vehículo detallado. Nada de fotorrealismo. Atardecer frío con una franja ámbar; faroles encendidos en el vehículo. Sin texto en la imagen.
+
+Formato horizontal 16:9. Un transporte de construcción steampunk: una plataforma de carga sobre seis patas mecánicas articuladas (del tamaño de un camión, no gigante), con cabina de latón adelante, chimenea humeando, grúa plegada al costado y materiales de obra amarrados con lonas. Avanza despacio por un camino roto entre ruinas, con un operario caminando adelante con un farol para marcar el paso. Arriba, lejos, un dirigible pequeño.
+
+---
+
 **Después de generar:** guardá las imágenes y agregalas a la galería de `/vaegrant` con el botón "Agregar imagen" (pegando la URL), o pasámelas y las subo al repo en `/public` para que queden fijas.
