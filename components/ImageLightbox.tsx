@@ -1,20 +1,22 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut, Download } from "lucide-react";
+import { descargarImagen } from "@/lib/descargar";
 
 interface Props {
   images: string[];
   startIndex?: number;
   alt: string;
   onClose: () => void;
+  captions?: string[]; // texto opcional por imagen (pie de foto)
 }
 
 const MIN_SCALE = 1;
 const MAX_SCALE = 5;
 const clamp = (s: number) => Math.min(MAX_SCALE, Math.max(MIN_SCALE, s));
 
-export default function ImageLightbox({ images, startIndex = 0, alt, onClose }: Props) {
+export default function ImageLightbox({ images, startIndex = 0, alt, onClose, captions }: Props) {
   const [idx, setIdx] = useState(startIndex);
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -39,7 +41,6 @@ export default function ImageLightbox({ images, startIndex = 0, alt, onClose }: 
     [count, resetZoom]
   );
 
-  // Reset zoom whenever the image changes
   useEffect(() => { resetZoom(); }, [idx, resetZoom]);
 
   // Keyboard + scroll lock
@@ -111,19 +112,22 @@ export default function ImageLightbox({ images, startIndex = 0, alt, onClose }: 
   };
 
   const stop = (e: React.MouseEvent) => e.stopPropagation();
+  const caption = captions?.[idx];
 
-  const ctrlBtn: React.CSSProperties = {
-    width: 38, height: 38, borderRadius: "50%",
-    background: "rgba(20,17,40,0.8)", border: "1px solid var(--accent-border)",
-    color: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+  // Cromo neutro y plano: funciona sobre cualquier página (Naevara o Vaegrant)
+  const btn: React.CSSProperties = {
+    height: 34, minWidth: 34, padding: "0 8px", borderRadius: 6,
+    background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.14)",
+    color: "rgba(255,255,255,0.85)", cursor: "pointer",
+    display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 6,
+    fontSize: 12, fontWeight: 600, transition: "background 0.15s",
   };
   const arrowStyle: React.CSSProperties = {
     position: "absolute", top: "50%", transform: "translateY(-50%)",
-    width: 44, height: 44, borderRadius: "50%",
-    background: "rgba(20,17,40,0.8)", border: "1px solid var(--accent-border)",
-    color: "#fff", cursor: "pointer", zIndex: 3,
+    width: 40, height: 56, borderRadius: 6,
+    background: "rgba(0,0,0,0.35)", border: "1px solid rgba(255,255,255,0.10)",
+    color: "rgba(255,255,255,0.8)", cursor: "pointer", zIndex: 3,
     display: "flex", alignItems: "center", justifyContent: "center",
-    backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)",
   };
 
   return (
@@ -131,30 +135,42 @@ export default function ImageLightbox({ images, startIndex = 0, alt, onClose }: 
       onClick={onClose}
       style={{
         position: "fixed", inset: 0, zIndex: 200,
-        background: "rgba(6,4,16,0.94)", backdropFilter: "blur(4px)",
+        background: "rgba(5,7,10,0.96)",
         display: "flex", flexDirection: "column", alignItems: "center",
-        padding: "14px 12px 12px",
       }}
     >
-      {/* Top bar */}
+      <style>{`
+        .ilb-btn:hover { background: rgba(255,255,255,0.14) !important; }
+        .ilb-thumbs::-webkit-scrollbar { display: none; }
+        @media (max-width: 640px) { .ilb-label { display: none; } }
+      `}</style>
+
+      {/* Barra superior */}
       <div
         onClick={stop}
-        style={{ width: "100%", maxWidth: 860, display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10, flexShrink: 0 }}
+        style={{
+          width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "10px 14px", flexShrink: 0,
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)",
+        }}
       >
-        <span className="display-font" style={{ fontSize: 13, letterSpacing: "0.14em", color: "var(--accent-strong)", textTransform: "uppercase" }}>
+        <span style={{ fontSize: 12, letterSpacing: "0.1em", color: "rgba(255,255,255,0.55)", fontVariantNumeric: "tabular-nums" }}>
           {idx + 1} / {count}
         </span>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <button onClick={() => applyScale(scale / 1.4)} aria-label="Alejar" style={ctrlBtn}><ZoomOut size={18} /></button>
-          <button onClick={resetZoom} aria-label="Restablecer zoom" style={{ ...ctrlBtn, width: "auto", padding: "0 12px", fontSize: 12, fontWeight: 600, fontVariantNumeric: "tabular-nums" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <button className="ilb-btn" onClick={() => applyScale(scale / 1.4)} aria-label="Alejar" style={btn}><ZoomOut size={16} /></button>
+          <button className="ilb-btn" onClick={resetZoom} aria-label="Restablecer zoom" style={{ ...btn, fontVariantNumeric: "tabular-nums" }}>
             {Math.round(scale * 100)}%
           </button>
-          <button onClick={() => applyScale(scale * 1.4)} aria-label="Acercar" style={ctrlBtn}><ZoomIn size={18} /></button>
-          <button onClick={onClose} aria-label="Cerrar" style={{ ...ctrlBtn, marginLeft: 4 }}><X size={20} /></button>
+          <button className="ilb-btn" onClick={() => applyScale(scale * 1.4)} aria-label="Acercar" style={btn}><ZoomIn size={16} /></button>
+          <button className="ilb-btn" onClick={() => descargarImagen(images[idx])} aria-label="Descargar imagen" title="Descargar" style={btn}>
+            <Download size={16} /> <span className="ilb-label">Descargar</span>
+          </button>
+          <button className="ilb-btn" onClick={onClose} aria-label="Cerrar" style={{ ...btn, marginLeft: 6 }}><X size={17} /></button>
         </div>
       </div>
 
-      {/* Main image area */}
+      {/* Imagen */}
       <div
         ref={areaRef}
         onClick={stop}
@@ -164,15 +180,16 @@ export default function ImageLightbox({ images, startIndex = 0, alt, onClose }: 
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
         style={{
-          position: "relative", flex: 1, width: "100%", maxWidth: 860, minHeight: 0,
+          position: "relative", flex: 1, width: "100%", maxWidth: 1000, minHeight: 0,
           display: "flex", alignItems: "center", justifyContent: "center",
           overflow: "hidden", touchAction: "none",
           cursor: scale > 1 ? "grab" : "default",
+          padding: "0 6px",
         }}
       >
         {count > 1 && (
-          <button onClick={() => go(-1)} onPointerDown={(e) => e.stopPropagation()} aria-label="Anterior" style={{ ...arrowStyle, left: 4 }}>
-            <ChevronLeft size={24} />
+          <button className="ilb-btn" onClick={() => go(-1)} onPointerDown={(e) => e.stopPropagation()} aria-label="Anterior" style={{ ...arrowStyle, left: 10 }}>
+            <ChevronLeft size={22} />
           </button>
         )}
 
@@ -187,44 +204,49 @@ export default function ImageLightbox({ images, startIndex = 0, alt, onClose }: 
           <Image
             key={idx}
             src={images[idx]}
-            alt={`${alt} — ${idx + 1}`}
+            alt={caption ? `${alt}: ${caption}` : `${alt} ${idx + 1}`}
             fill
-            sizes="(max-width: 860px) 100vw, 860px"
-            style={{ objectFit: "contain", borderRadius: 12, pointerEvents: "none", userSelect: "none" }}
+            sizes="(max-width: 1000px) 100vw, 1000px"
+            style={{ objectFit: "contain", borderRadius: 3, pointerEvents: "none", userSelect: "none" }}
             draggable={false}
             priority
           />
         </div>
 
         {count > 1 && (
-          <button onClick={() => go(1)} onPointerDown={(e) => e.stopPropagation()} aria-label="Siguiente" style={{ ...arrowStyle, right: 4 }}>
-            <ChevronRight size={24} />
+          <button className="ilb-btn" onClick={() => go(1)} onPointerDown={(e) => e.stopPropagation()} aria-label="Siguiente" style={{ ...arrowStyle, right: 10 }}>
+            <ChevronRight size={22} />
           </button>
         )}
       </div>
 
-      {/* Thumbnails */}
-      {count > 1 && (
-        <div
-          onClick={stop}
-          style={{ display: "flex", gap: 8, marginTop: 12, padding: "4px 2px", maxWidth: "100%", overflowX: "auto", flexShrink: 0 }}
-        >
-          {images.map((src, i) => (
-            <button
-              key={i}
-              onClick={() => setIdx(i)}
-              style={{
-                flexShrink: 0, width: 52, height: 66, borderRadius: 8, overflow: "hidden",
-                border: i === idx ? "2px solid var(--accent)" : "1px solid var(--border)",
-                opacity: i === idx ? 1 : 0.55, cursor: "pointer", padding: 0,
-                background: "var(--bg-subtle)", transition: "opacity 0.15s",
-              }}
-            >
-              <Image src={src} alt={`miniatura ${i + 1}`} width={52} height={66} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            </button>
-          ))}
-        </div>
-      )}
+      {/* Pie: caption + miniaturas */}
+      <div onClick={stop} style={{ width: "100%", flexShrink: 0, padding: "8px 14px 12px", background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }}>
+        {caption && (
+          <p style={{ textAlign: "center", fontSize: 12.5, color: "rgba(255,255,255,0.75)", margin: "0 0 8px", lineHeight: 1.4 }}>
+            {caption}
+          </p>
+        )}
+        {count > 1 && (
+          <div className="ilb-thumbs" style={{ display: "flex", gap: 6, justifyContent: "safe center", maxWidth: "100%", overflowX: "auto", scrollbarWidth: "none", padding: "2px 0" }}>
+            {images.map((src, i) => (
+              <button
+                key={i}
+                onClick={() => setIdx(i)}
+                aria-label={`Imagen ${i + 1}`}
+                style={{
+                  flexShrink: 0, width: 46, height: 58, borderRadius: 3, overflow: "hidden",
+                  border: i === idx ? "1px solid rgba(255,255,255,0.9)" : "1px solid rgba(255,255,255,0.12)",
+                  opacity: i === idx ? 1 : 0.45, cursor: "pointer", padding: 0,
+                  background: "#111", transition: "opacity 0.15s",
+                }}
+              >
+                <Image src={src} alt={`miniatura ${i + 1}`} width={46} height={58} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

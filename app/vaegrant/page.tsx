@@ -6,7 +6,8 @@ import { VaegrantData, VImagen } from "@/types/vaegrant";
 import EditableText from "@/components/EditableText";
 import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
-import { Swords, Flame, ArrowLeft, ScrollText } from "lucide-react";
+import { Swords, Flame, ArrowLeft, ScrollText, Download } from "lucide-react";
+import { descargarImagen } from "@/lib/descargar";
 
 // Display serif propio de esta ruta: la identidad tipográfica de Vaegrant.
 const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"], style: ["normal", "italic"] });
@@ -45,7 +46,7 @@ export default function VaegrantPage() {
   const [activeTab, setActiveTab] = useState("perfil");
   const [saving, setSaving]       = useState(false);
   const [savedMsg, setSavedMsg]   = useState("");
-  const [lightbox, setLightbox]   = useState<{ imgs: string[]; idx: number; alt: string } | null>(null);
+  const [lightbox, setLightbox]   = useState<{ imgs: string[]; caps: string[]; idx: number; alt: string } | null>(null);
   const [aiModal, setAiModal]     = useState<{
     open: boolean; title: string; currentText: string; onApply: (t: string) => void;
   }>({ open: false, title: "", currentText: "", onApply: () => {} });
@@ -120,10 +121,16 @@ export default function VaegrantPage() {
         .vg-thumb { transition: opacity 0.15s; }
         .vg-thumb:hover { opacity: 0.85; }
         @media (max-width: 720px) {
-          .vg-hero-inner { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; }
+          .vg-hero-inner { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; padding: 20px 1rem 18px !important; }
           .vg-grid-2 { grid-template-columns: 1fr !important; }
           .vg-gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .vg-content { padding: 1.2rem 1rem 3rem !important; }
+          .vg-bar { padding: 0 0.6rem !important; }
+          .vg-tab { padding: 11px 10px !important; font-size: 11.5px !important; }
+          .vg-btn-label, .vg-nav-label { display: none; }
+          .vg-bar-actions { gap: 6px !important; }
+          .vg-bar-actions a, .vg-bar-actions button { padding: 5px 9px !important; }
+          .vg-savedmsg { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); background: #161d26; border: 1px solid ${C.border}; border-radius: 4px; padding: 6px 14px; z-index: 200; }
         }
       `}</style>
 
@@ -139,6 +146,7 @@ export default function VaegrantPage() {
       {lightbox && (
         <ImageLightbox
           images={lightbox.imgs}
+          captions={lightbox.caps}
           startIndex={lightbox.idx}
           alt={lightbox.alt}
           onClose={() => setLightbox(null)}
@@ -158,7 +166,7 @@ export default function VaegrantPage() {
           <div style={{ flexShrink: 0 }}>
             {portada ? (
               <div
-                onClick={() => setLightbox({ imgs: retratos.map((i) => i.url), idx: Math.max(0, retratos.findIndex((i) => i.url === portada.url)), alt: data.meta.alias })}
+                onClick={() => setLightbox({ imgs: retratos.map((i) => i.url), caps: retratos.map((i) => i.prompt), idx: Math.max(0, retratos.findIndex((i) => i.url === portada.url)), alt: data.meta.alias })}
                 title="Ver retratos"
                 style={{ cursor: "zoom-in" }}
               >
@@ -226,8 +234,8 @@ export default function VaegrantPage() {
 
       {/* ══ TABS (sticky) ═════════════════════════ */}
       <div style={{ position: "sticky", top: 0, zIndex: 100, background: C.bgDeep, borderBottom: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", overflowX: "auto", scrollbarWidth: "none" }}>
-          <div style={{ display: "flex" }}>
+        <div className="vg-bar" style={{ maxWidth: 960, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+          <div style={{ display: "flex", minWidth: 0 }}>
             {TABS.map((tab) => (
               <button
                 key={tab.id}
@@ -245,10 +253,10 @@ export default function VaegrantPage() {
               </button>
             ))}
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
-            {savedMsg && <span style={{ fontSize: 11, fontWeight: savedMsg.startsWith("⚠") ? 600 : 400, color: savedMsg.startsWith("⚠") ? "#e07a5f" : C.steel }}>{savedMsg}</span>}
-            <a href="/" title="Volver al perfil de Naevara" style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, color: C.faint, textDecoration: "none", whiteSpace: "nowrap" }}>
-              <ArrowLeft size={12} /> Naevara
+          <div className="vg-bar-actions" style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+            {savedMsg && <span className="vg-savedmsg" style={{ fontSize: 11, fontWeight: savedMsg.startsWith("⚠") ? 600 : 400, color: savedMsg.startsWith("⚠") ? "#e07a5f" : C.steel }}>{savedMsg}</span>}
+            <a href="/" title="Volver al perfil de Naevara" style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, color: C.faint, textDecoration: "none", whiteSpace: "nowrap", padding: "5px 2px" }}>
+              <ArrowLeft size={13} /> <span className="vg-nav-label">Naevara</span>
             </a>
             <a
               href="/vaegrant/diario"
@@ -260,7 +268,7 @@ export default function VaegrantPage() {
                 whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5,
               }}
             >
-              <ScrollText size={13} strokeWidth={2.2} /> Diario
+              <ScrollText size={14} strokeWidth={2.2} /> <span className="vg-btn-label">Diario</span>
             </a>
             <a
               href={`/combate/c/${data.combateId}`}
@@ -272,12 +280,13 @@ export default function VaegrantPage() {
               }}
               title="Abrir la hoja de combate de Vaegrant"
             >
-              <Swords size={13} strokeWidth={2.4} /> Combate
+              <Swords size={14} strokeWidth={2.4} /> <span className="vg-btn-label">Combate</span>
             </a>
             <button
               className="vg-btn"
               onClick={() => save(data)}
               disabled={saving}
+              title="Guardar cambios"
               style={{
                 padding: "5px 12px", fontSize: 11, fontWeight: 600,
                 background: saving ? "transparent" : C.steel,
@@ -296,12 +305,12 @@ export default function VaegrantPage() {
       <div className="vg-content" style={{ maxWidth: 760, margin: "0 auto", padding: "2rem 2rem 4rem" }}>
         {activeTab === "perfil" && (
           <TabPerfil data={data} update={update} openAI={openAI} retratos={retratos}
-            onOpen={(idx) => setLightbox({ imgs: retratos.map((i) => i.url), idx, alt: data.meta.alias })} />
+            onOpen={(idx) => setLightbox({ imgs: retratos.map((i) => i.url), caps: retratos.map((i) => i.prompt), idx, alt: data.meta.alias })} />
         )}
         {activeTab === "historia" && <TabHistoria data={data} update={update} openAI={openAI} />}
         {activeTab === "mundo" && (
           <TabMundo data={data} update={update} openAI={openAI} estampas={estampas}
-            onOpen={(idx) => setLightbox({ imgs: estampas.map((i) => i.url), idx, alt: "Silverun" })} />
+            onOpen={(idx) => setLightbox({ imgs: estampas.map((i) => i.url), caps: estampas.map((i) => i.prompt.replace(/^Mundo · /, "")), idx, alt: "Silverun" })} />
         )}
       </div>
     </div>
@@ -439,6 +448,14 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
                     {esPortada ? "Retrato" : "☆"}
                   </button>
                 )}
+                <button
+                  className="vg-btn"
+                  onClick={() => descargarImagen(img.url)}
+                  title="Descargar imagen"
+                  style={{ fontSize: 9, padding: "2px 6px", borderRadius: R, cursor: "pointer", background: "transparent", color: C.faint, border: `1px solid ${C.borderSoft}`, display: "inline-flex", alignItems: "center" }}
+                >
+                  <Download size={10} />
+                </button>
                 <button
                   className="vg-btn"
                   onClick={() => {
