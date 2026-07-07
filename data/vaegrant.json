@@ -96,13 +96,13 @@
     ]
   },
   "historia": {
-    "quote": "Faerûn ya no es el nombre de un mundo. Es el nombre de lo que quedó.",
+    "quote": "Faerûn ya no es el nombre del mundo. Lo que quedó se llama Silverun.",
     "secciones": [
       {
-        "titulo": "El mundo después de la Gran Guerra",
+        "titulo": "Silverun, el mundo que quedó",
         "parrafos": [
-          "La Gran Guerra rompió el mapa. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.",
-          "A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en el Faerûn de después de la guerra los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada."
+          "La Gran Guerra rompió el mapa, y el mundo que quedó eligió un nombre nuevo: Silverun. Los mapas de antes lo llamaban Faerûn. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que, como el mundo mismo, eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.",
+          "A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en Silverun los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada."
         ]
       },
       {
@@ -147,12 +147,12 @@
         ]
       }
     ],
-    "notaMesa": "Dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores. Si el nombre \"Silvapor\" sigue vivo en la mesa, encaja natural como uno de los lugares rebautizados tras la guerra."
+    "notaMesa": "Dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores para el gnomo del bar."
   },
   "mundo": {
     "contexto": {
-      "titulo": "Faerûn, después de la Gran Guerra",
-      "texto": "El plano es Faerûn, pero posterior a la Gran Guerra. El mapa quedó roto: ciudades enteras se levantaron hacia el cielo y flotan desde entonces; muchos lugares mantienen sus nombres antiguos y otros eligieron nombres nuevos. Entre las grietas de la guerra quedaron portales que a veces escupen cosas, y a veces personas: los quebrados. Los linajes gloriosos cotizan bajo; la gente invisible sostiene el mundo."
+      "titulo": "Silverun",
+      "texto": "El plano se llama Silverun: el nombre que el mundo eligió para sí después de la Gran Guerra (los mapas de antes lo llamaban Faerûn). El mapa quedó roto: ciudades enteras se levantaron hacia el cielo y flotan desde entonces; muchos lugares mantienen sus nombres antiguos y otros eligieron nombres nuevos, como el mundo mismo. Entre las grietas de la guerra quedaron portales que a veces escupen cosas, y a veces personas: los quebrados. Los linajes gloriosos cotizan bajo; la gente invisible sostiene el mundo."
     },
     "lugares": [
       {
@@ -170,7 +170,7 @@
       {
         "nombre": "El asentamiento actual",
         "tipo": "Por decidir en mesa",
-        "texto": "El lugar donde la party vive y viene haciendo trabajos menores. Queda por decidir si conserva su nombre antiguo o lleva uno nuevo. Si \"Silvapor\" sigue vivo en la mesa, encaja acá.",
+        "texto": "El lugar de Silverun donde la party vive y viene haciendo trabajos menores. Queda por decidir en mesa cuál es y si conserva su nombre antiguo o lleva uno nuevo.",
         "destacado": false
       },
       {
@@ -218,7 +218,7 @@
         "prompt": "Formato horizontal 3:2. Una taberna llena y cálida, con gente riendo desenfocada en primer plano. Al fondo, nítido, Vaegrant lleva una bandeja entre las mesas: presente, eficiente e invisible para todos. Es el único elemento en foco de toda la imagen, y su pelo blanco azulado lo distingue entre la multitud que no lo mira."
       },
       {
-        "titulo": "Faerûn después de la Gran Guerra",
+        "titulo": "Silverun, el mundo después de la Gran Guerra",
         "prompt": "Paisaje amplio en formato horizontal 16:9, estilo fondo pintado de película de animación de fantasía. Un mundo de posguerra: ruinas elegantes cubiertas de niebla, caminos rotos, y arriba una ciudad flotante enorme con puertos que cuelgan sobre el vacío. Abajo, diminuto, Vaegrant camina solo por el camino, reconocible por la capa gris azulada y el pelo claro. Amanecer frío, con una sola franja de luz cálida en el horizonte."
       },
       {

@@ -131,7 +131,7 @@ export default function VaegrantPage() {
         sectionTitle={aiModal.title}
         currentText={aiModal.currentText}
         tipo="personal"
-        context={`Personaje: ${data.meta.alias} (${data.meta.nombreReal}), brujo del Archifey en Faerûn después de la Gran Guerra. Tono: melancólico, contenido, sobrio; frases cortas; nada de dramatismo. PROHIBIDO usar la raya larga (—).`}
+        context={`Personaje: ${data.meta.alias} (${data.meta.nombreReal}), brujo del Archifey en Silverun, el mundo que quedó de Faerûn tras la Gran Guerra. Tono: melancólico, contenido, sobrio; frases cortas; nada de dramatismo. PROHIBIDO usar la raya larga (—).`}
       />
       {lightboxIdx !== null && imagenes.length > 0 && (
         <ImageLightbox

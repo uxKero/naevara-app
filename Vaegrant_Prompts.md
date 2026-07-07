@@ -54,7 +54,7 @@ Ilustración estilo anime de alta calidad, tipo película de fantasía animada m
 
 Formato horizontal 3:2. Una taberna llena y cálida, con gente riendo desenfocada en primer plano. Al fondo, nítido, Vaegrant lleva una bandeja entre las mesas: presente, eficiente e invisible para todos. Es el único elemento en foco de toda la imagen, y su pelo blanco azulado lo distingue entre la multitud que no lo mira.
 
-## 7 · Faerûn después de la Gran Guerra
+## 7 · Silverun, el mundo después de la Gran Guerra
 
 Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, del tipo de los paisajes de films animados japoneses, con niebla y luz atmosférica. Nada de fotorrealismo. Paleta fría (azules apagados, grises, niebla) con una sola franja de luz cálida. Sin texto en la imagen.
 

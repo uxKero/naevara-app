@@ -3,7 +3,7 @@
 
 **Alineamiento:** Neutral Bueno
 **Trasfondo:** Eremita
-**Mundo:** Faerûn, después de la Gran Guerra
+**Mundo:** Silverun (lo que quedó de Faerûn después de la Gran Guerra)
 
 ---
 
@@ -58,13 +58,13 @@ La idea no es que Vaegrant "esté triste". Es que está lejos, y que el grupo, s
 
 ## Historia
 
-> Faerûn ya no es el nombre de un mundo. Es el nombre de lo que quedó.
+> Faerûn ya no es el nombre del mundo. Lo que quedó se llama Silverun.
 
-### El mundo después de la Gran Guerra
+### Silverun, el mundo que quedó
 
-La Gran Guerra rompió el mapa. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.
+La Gran Guerra rompió el mapa, y el mundo que quedó eligió un nombre nuevo: Silverun. Los mapas de antes lo llamaban Faerûn. Hay ciudades que se levantaron enteras hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que, como el mundo mismo, eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.
 
-A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en el Faerûn de después de la guerra los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada.
+A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en Silverun los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada.
 
 Y sin embargo, hay un gnomo en un bar que reparte encargos, y se los da siempre a los quebrados. Tiene su razón, aunque no la explique: notó que cuando uno de ellos resuelve un trabajo, incluso el más sencillo, los resultados son notablemente buenos, y algo alrededor mejora, aunque sea en lo mínimo. Nadie sabe por qué. Todavía.
 
@@ -122,7 +122,7 @@ Tres cosas lo mueven, y solo admite dos.
 - **El arco anímico.** Si el Master quiere tocar el tema, la vela y los espejos son las puertas. Las cicatrices no son un secreto para explotar: son un lugar al que solo se llega con confianza ganada.
 - **Lo que dejan los quebrados.** Por qué los que cruzaron el portal desprenden resultados mejores es una pregunta abierta de la campaña: ¿traen algo del otro lado? ¿El mundo roto los reconoce como remiendo? Para Vaegrant conecta directo con lo que cruzó con él, y con la sospecha de que el Testigo no es el único que mira.
 
-*(Notas de mesa: dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores. Si el nombre "Silvapor" sigue vivo en la mesa, encaja natural como uno de los lugares rebautizados tras la guerra.)*
+*(Notas de mesa: dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores para el gnomo del bar.)*
 
 ---
 
