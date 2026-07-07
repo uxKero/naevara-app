@@ -154,6 +154,10 @@ Tres cosas lo mueven, y solo admite dos.
 
 **Rasgos raciales:** Visión en la oscuridad 18 m · Ascendencia Feérica (ventaja contra encantado, inmune a dormir mágico) · Trance (medita 4 h en vez de dormir 8) · Sentidos Agudos · Pacto Mágico (hechizos con Carisma) · Patrón de otro mundo: Archfey
 
+**Rasgo de subclase (Archifey, nivel 1): Presencia Feérica.** Con una acción, cada criatura en un cubo de 3 m alrededor de Vaegrant hace una salvación de Sabiduría (CD 13); las que fallan quedan hechizadas o asustadas (a elección) hasta el final de su próximo turno. Se recupera con descanso corto o largo. En la ficción: la atención del Testigo derramándose un instante sobre la sala.
+
+**Lista ampliada del Archifey:** el patrón suma opciones fey a los hechizos que Vaegrant puede conocer. A nivel 1: Faerie Fire y Sleep (por si en algún ajuste conviene cambiar un conocido).
+
 **Trucos (3):** Eldritch Blast · Minor Illusion (Brujo) · Prestidigitation (truco racial de Alto Elfo: se lanza con Inteligencia)
 
 **Hechizos conocidos (2 de 2):** Charm Person · Hex. Un espacio de nivel 1, se recupera con descanso corto.
@@ -166,4 +170,5 @@ Tres cosas lo mueven, y solo admite dos.
 - Marcar Medicina +2 (la da Ermitaño) y Percepción +2 (la da Sentidos Agudos de elfo; pasiva pasa a 12).
 - Anotar el truco racial de Alto Elfo: Prestidigitation (con Inteligencia).
 - Anotar Trance y Sentidos Agudos en rasgos.
+- Anotar Presencia Feérica (rasgo de Archifey nivel 1): acción, cubo de 3 m, salvación SAB CD 13 o hechizado/asustado hasta el final de su próximo turno; 1 uso por descanso corto.
 - Corregir la salvación de Sabiduría: dice 0, es +2 (0 de modificador + 2 de competencia).

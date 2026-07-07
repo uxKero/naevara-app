@@ -68,4 +68,72 @@ Formato vertical 2:3. Vaegrant en combate, sin pose heroica: el gesto mínimo de
 
 ---
 
+# Vaegrant en el día a día (relajado, trabajando)
+
+## 9 · El techo al amanecer
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, iluminación cinematográfica. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, piel pálida fría, ropa sencilla de trabajo en grises azulados con mangas largas. Paleta fría con luces ámbar de amanecer. Tono tranquilo, cotidiano, digno. Sin texto en la imagen.
+
+Formato horizontal 3:2. Vaegrant arrodillado sobre un techo de tejas de un asentamiento, martillo en mano, arreglándolo con paciencia. Amanecer de niebla fría, primeras luces ámbar sobre las tejas. Abajo, la calle empieza a despertar. Expresión concentrada y tranquila. A lo lejos, una ciudad flotante pequeña entre nubes.
+
+## 10 · La carta
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, luz cálida de interior. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y atenta, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, ropa de viaje gris azulada con mangas largas. Tono íntimo, cotidiano, amable. Sin texto en la imagen.
+
+Formato vertical 2:3. Escena cálida y tranquila en el rincón de una taberna de día. Vaegrant escribe una carta con pluma mientras una anciana, sentada enfrente, le dicta con las manos juntas. Él escucha con toda la atención del mundo. Luz de ventana suave, polvo flotando en el aire.
+
+## 11 · Juntando hierbas
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, naturaleza pintada con detalle. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y casi en paz, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, ropa de viaje gris azulada con mangas largas. Paleta fría de mañana con rocío. Tono calmo, respirable. Sin texto en la imagen.
+
+Formato horizontal 3:2. Vaegrant en cuclillas en un campo con niebla baja, juntando hierbas con cuidado y guardándolas en una bolsita de cuero. Mañana gris azulada, rocío en el pasto. Un conejo lo observa a unos metros, y él lo mira de reojo sin espantarlo.
+
+## 12 · Pausa en el muelle colgante
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, cielo pintado con detalle. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, ropa de viaje gris azulada con mangas largas. Paleta fría de atardecer con una franja ámbar. Tono sereno, casi luminoso. Sin texto en la imagen.
+
+Formato vertical 2:3. Vaegrant sentado al borde de un muelle de madera de una ciudad flotante, con las piernas colgando sobre un mar de nubes y una taza humeante entre las manos. El viento le mueve el pelo blanco azulado. Casi una sonrisa.
+
+## 13 · El encargo del gnomo
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, luz cálida de velas y madera vieja. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena con una ceja apenas levantada, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, ropa de viaje gris azulada. Tono cotidiano, cómplice, tranquilo. Sin texto en la imagen.
+
+Formato horizontal 3:2. Interior de un bar cálido y gastado: madera vieja, velas, vasos colgando. Un gnomo de patillas enormes le desliza un papel doblado por encima de la barra a Vaegrant, que lo toma con dos dedos. Complicidad tranquila entre los dos.
+
+---
+
+# El mundo: Silverun (sin Vaegrant en cuadro)
+
+## 14 · El puerto colgante
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, con niebla y luz atmosférica, mucho detalle. Nada de fotorrealismo. Paleta fría (azules apagados, grises, niebla) con toques cálidos de faroles. Sin personajes protagonistas. Sin texto en la imagen.
+
+Formato horizontal 3:2. Primer plano de un puerto colgante de una ciudad flotante: muelles de madera y cadenas gigantes suspendidos sobre un mar de nubes, grúas y cuerdas, faroles encendidos, estibadores diminutos trabajando y un barco volador amarrado.
+
+## 15 · El barrio bajo la ciudad
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, mucho detalle, luz de atardecer. Nada de fotorrealismo. Paleta fría con faroles cálidos encendiéndose. Gente variada de fantasía como figuras secundarias, sin protagonistas. Sin texto en la imagen.
+
+Formato horizontal 16:9. Un barrio de mercado al atardecer, visto a nivel de calle: puestos con toldos, faroles encendiéndose, gente de razas mezcladas. Arriba, ocupando medio cielo, la panza enorme de una ciudad flotante con luces y cadenas colgando.
+
+## 16 · El portal dormido
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, perspectiva lejana, cielo enorme. Nada de fotorrealismo. Paleta fría de nubes y llanura quebrada. Sin personajes protagonistas. Sin texto en la imagen.
+
+Formato horizontal 16:9. Perspectiva lejana de una llanura quebrada por la guerra. En el centro, una grieta luminosa vertical (un portal dormido) cercada con estacas y banderines de advertencia, y una torre de vigilancia solitaria al lado.
+
+## 17 · La caravana
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, perspectiva muy lejana, niebla atmosférica. Nada de fotorrealismo. Paleta fría con una sola franja de luz cálida de amanecer. Sin texto en la imagen.
+
+Formato horizontal 16:9. Una caravana diminuta cruza un puente antiguo reparado con maderas nuevas, sobre un valle de ruinas elegantes comidas por la niebla. En el horizonte, dos ciudades flotantes a distinta altura.
+
+## 18 · La calle de los quebrados
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, mucho detalle íntimo. Nada de fotorrealismo. Paleta fría con pequeñas luces cálidas de velas y ventanas. Sin personajes protagonistas (siluetas lejanas está bien). Sin texto en la imagen.
+
+Formato vertical 2:3. Un callejón angosto donde viven los sin nombre: ropa tendida entre balcones torcidos, velas en las ventanas, escaleras que no combinan, un gato en un umbral. Melancólico pero habitado. Al fondo, entre los techos, se asoma la niebla del vacío.
+
+---
+
 **Después de generar:** guardá las imágenes y agregalas a la galería de `/vaegrant` con el botón "Agregar imagen" (pegando la URL), o pasámelas y las subo al repo en `/public` para que queden fijas.

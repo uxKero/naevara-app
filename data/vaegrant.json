@@ -224,6 +224,46 @@
       {
         "titulo": "Magia de pacto",
         "prompt": "Formato vertical 2:3. Vaegrant en combate, sin pose heroica: el gesto mínimo de una mano extendida de la que sale una descarga arcana de luz fría azul violácea. El rostro sereno, casi triste, iluminado desde abajo por la magia; los ojos claros brillan con el reflejo del hechizo y el pelo blanco azulado flota apenas por la energía. Alrededor, la penumbra retrocede."
+      },
+      {
+        "titulo": "El techo al amanecer (trabajos)",
+        "prompt": "Formato horizontal 3:2. Vaegrant arrodillado sobre un techo de tejas de un asentamiento, martillo en mano, arreglándolo con paciencia. Amanecer de niebla fría, primeras luces ámbar sobre las tejas. Abajo, la calle empieza a despertar. Expresión concentrada y tranquila, mangas siempre largas. A lo lejos, una ciudad flotante pequeña entre nubes."
+      },
+      {
+        "titulo": "La carta (trabajos)",
+        "prompt": "Formato vertical 2:3. Escena cálida y tranquila en el rincón de una taberna de día. Vaegrant escribe una carta con pluma mientras una anciana, sentada enfrente, le dicta con las manos juntas. Él escucha con toda la atención del mundo. Luz de ventana suave, polvo flotando en el aire."
+      },
+      {
+        "titulo": "Juntando hierbas (relajado)",
+        "prompt": "Formato horizontal 3:2. Vaegrant en cuclillas en un campo con niebla baja, juntando hierbas con cuidado y guardándolas en una bolsita de cuero. Mañana gris azulada, rocío en el pasto. Expresión serena, casi en paz. Un conejo lo observa a unos metros, y él lo mira de reojo sin espantarlo."
+      },
+      {
+        "titulo": "Pausa en el muelle colgante (relajado)",
+        "prompt": "Formato vertical 2:3. Vaegrant sentado al borde de un muelle de madera de una ciudad flotante, con las piernas colgando sobre un mar de nubes y una taza humeante entre las manos. El viento le mueve el pelo blanco azulado. Casi una sonrisa. Atardecer frío con una sola franja ámbar en el horizonte."
+      },
+      {
+        "titulo": "El encargo del gnomo",
+        "prompt": "Formato horizontal 3:2. Interior del bar del gnomo, cálido y gastado: madera vieja, velas, vasos colgando. Un gnomo de patillas enormes le desliza un papel doblado por encima de la barra a Vaegrant, que lo toma con dos dedos y una ceja apenas levantada. Complicidad tranquila entre los dos."
+      },
+      {
+        "titulo": "Mundo · El puerto colgante",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 3:2. Primer plano de un puerto colgante de una ciudad flotante: muelles de madera y cadenas gigantes suspendidos sobre un mar de nubes, grúas y cuerdas, faroles encendidos, estibadores diminutos trabajando y un barco volador amarrado."
+      },
+      {
+        "titulo": "Mundo · El barrio bajo la ciudad",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 16:9. Un barrio de mercado al atardecer, visto a nivel de calle: puestos con toldos, faroles encendiéndose, gente de razas mezcladas. Arriba, ocupando medio cielo, la panza enorme de una ciudad flotante con luces y cadenas colgando."
+      },
+      {
+        "titulo": "Mundo · El portal dormido",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 16:9. Perspectiva lejana de una llanura quebrada por la guerra. En el centro, una grieta luminosa vertical (un portal dormido) cercada con estacas y banderines de advertencia, y una torre de vigilancia solitaria al lado. Cielo enorme de nubes frías."
+      },
+      {
+        "titulo": "Mundo · La caravana",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 16:9. Perspectiva muy lejana: una caravana diminuta cruza un puente antiguo reparado con maderas nuevas, sobre un valle de ruinas elegantes comidas por la niebla. En el horizonte, dos ciudades flotantes a distinta altura. Amanecer frío con una sola franja de luz cálida."
+      },
+      {
+        "titulo": "Mundo · La calle de los quebrados",
+        "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato vertical 2:3. Un callejón angosto donde viven los sin nombre: ropa tendida entre balcones torcidos, velas en las ventanas, escaleras que no combinan, un gato en un umbral. Melancólico pero habitado, lleno de pequeñas luces cálidas. Al fondo, entre los techos, se asoma la niebla del vacío."
       }
     ],
     "imagenes": [],
