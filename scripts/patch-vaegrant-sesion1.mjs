@@ -51,6 +51,15 @@ data.mapa = seed.mapa;
 data.mundo = { ...data.mundo, contexto: seed.mundo.contexto, lugares: seed.mundo.lugares };
 data.historia = { ...data.historia, notaMesa: seed.historia.notaMesa };
 
+// Galería: agrega las imágenes nuevas de la semilla que la fila todavía no tiene
+// (por url), sin tocar las que el usuario agregó o reordenó desde la UI.
+if (data.galeria?.imagenes && seed.galeria?.imagenes) {
+  const urls = new Set(data.galeria.imagenes.map((i) => i.url));
+  const nuevas = seed.galeria.imagenes.filter((i) => !urls.has(i.url));
+  data.galeria.imagenes.push(...nuevas);
+  if (nuevas.length) console.log(`Galería: +${nuevas.length} imágenes nuevas.`);
+}
+
 const { error: writeError } = await supabase
   .from("character")
   .upsert({ id: ROW_ID, data, updated_at: new Date().toISOString() });

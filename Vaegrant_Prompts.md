@@ -222,4 +222,94 @@ Formato horizontal 16:9. Una recolectora de chatarra colosal avanzando sobre oru
 
 ---
 
+# Sesión 1 · El enano reclama (escenas con Vaegrant)
+
+Estos prompts siguen el canon que el Master abrió en la Sesión 1: las Guerras de los Magos, el archipiélago de Lantan, Ámbar y la posada Tres Dientes. Los prompts 7 y 14 a 30 quedan como el borrador personal previo a la mesa: siguen sirviendo de estética, pero el canon visual del mundo ahora es este.
+
+**Identidad de Durin (base para los prompts donde aparece):** enano anciano y robusto, en su tercera edad pero todavía fuerte, barba gris enorme y trenzada donde podría esconderse cualquier cosa, cejas espesas, nariz ancha, arrugas de reír y de perder. Delantal de cuero de tonelero sobre camisa arremangada, manos gruesas de artesano. Expresión cálida y terca a la vez.
+
+## 31 · El salón de los Tres Dientes
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, luz cálida de interior de posada, madera pintada con detalle. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y atenta, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, piel pálida fría, ropa sencilla de trabajo en grises azulados con mangas largas y un delantal de salón. Tono cotidiano, cálido, digno. Sin texto en la imagen.
+
+Formato horizontal 3:2. El interior de una posada de arquitectura enana en madera: vigas gruesas talladas, toneles enormes contra la pared del fondo, jarros colgando, velas y un hogar encendido. Vaegrant atraviesa el salón lleno con una bandeja, moviéndose entre mesas de gente variada de fantasía, eficiente y casi invisible. Detrás de la barra, un enano anciano y robusto de barba gris trenzada enorme y delantal de cuero (Durin) lo sigue con la mirada, con el orgullo tranquilo de un socio, no de un jefe. El pelo blanco azulado de Vaegrant es el punto frío en una escena de maderas y ámbar.
+
+## 32 · Durin Martillobre (retrato)
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, luz cálida de velas y madera vieja. Nada de fotorrealismo. Durin: enano anciano y robusto, en su tercera edad pero todavía fuerte, barba gris enorme y trenzada, cejas espesas, nariz ancha, arrugas de reír y de perder, delantal de cuero de tonelero sobre camisa arremangada, manos gruesas de artesano. Tono cálido, digno, con una tristeza vieja bien guardada. Sin texto en la imagen.
+
+Retrato en formato vertical 2:3. Durin detrás de la barra de su posada, apoyado en la madera con las dos manos, con toneles enormes desenfocados detrás. Sostiene un jarro de fondo blanco a medio camino de la cara, y tiene los ojos apenas brillosos, como quien acaba de hablar de las montañas que perdió y lo disimula con una excusa. La barba gris trenzada ocupa medio cuadro. Luz de velas ámbar, sombras suaves.
+
+## 33 · El establo: el medallón
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, luz de un solo farol en la penumbra. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado muy detallados, piel pálida fría, ropa de viaje gris azulada con mangas largas. Durin: enano anciano y robusto, barba gris enorme y trenzada, delantal de cuero, manos gruesas. Tono de despedida: íntimo, grave, sin dramatismo. Sin texto en la imagen.
+
+Formato horizontal 3:2. El interior de un granero de noche, iluminado por un único farol colgado de una viga: heno, arneses, herramientas. Un carnero viejo y robusto, del tamaño de una montura, con cuernos enroscados y lana espesa, observa quieto desde la penumbra. En el centro, Durin le cierra a Vaegrant los dedos sobre un medallón sencillo: una piedra con una runa tallada, atada con un cuero viejo. El enano mira al elfo desde abajo con una seriedad de despedida; Vaegrant, medio cuerpo más alto, recibe el peso de algo más grande que la piedra. La luz ámbar del farol sobre las dos manos juntas es el centro de la imagen.
+
+## 34 · Los chismes de la Plaza Central
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, luz de mañana de mercado, mucho detalle de puestos y frutas. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y atenta, pelo lacio blanco azulado hasta los hombros, ojos claros gris azulado, ropa de viaje gris azulada con capa de capucha baja y una canasta de compras al brazo. Tono cotidiano con una tensión sutil de fondo. Sin texto en la imagen.
+
+Formato horizontal 3:2. La plaza de mercado de un pueblo portuario amurallado: puestos con toldos, frutas y verduras del sur, gaviotas, y al fondo, entre los techos, un tramo de muralla nueva de piedra que tapa el mar. Vaegrant elige fruta en un puesto mientras una puestera mayor le habla bajito, tapándose la boca con el costado de la mano; él inclina apenas la cabeza para escuchar sin mirar. En la esquina del cuadro, desenfocado, un comerciante forastero con un guante de hierro en la mano derecha atiende sin mercadería a la vista.
+
+## 35 · La partida: rumbo al norte
+
+Ilustración estilo anime de alta calidad, como fotograma de película de fantasía animada: línea limpia, cel shading suave, mar y cielo pintados con detalle, luz de primera mañana. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, pelo lacio blanco azulado hasta los hombros movido por el viento, ojos claros gris azulado, ropa de viaje gris azulada y capa con capucha baja. Tono de partida: melancólico y decidido a la vez. Sin texto en la imagen.
+
+Formato horizontal 16:9. La popa de una urca mercante, un barco de carga panzón de madera con una sola vela grande, saliendo del puerto con la primera luz. Vaegrant de pie en la borda de popa, quieto, mirando lo que queda atrás: un pueblo portuario que fue una perla y ahora está tapado por murallas de piedra nuevas, al pie de una montaña, con grúas del puerto y barcazas a medio construir. Sobre el agua, la estela del barco. Dos compañeros de viaje desenfocados a su espalda, uno con porte de guerrero y otro con porte de letrado. El medallón rúnico de cuero asoma en el puño cerrado de Vaegrant.
+
+## 36 · La vela sobre la mesa
+
+Ilustración estilo anime de alta calidad, tipo película de fantasía animada moderna: línea limpia, cel shading suave, una sola fuente de luz cálida en un interior a oscuras, muchísimo detalle de madera y objetos. Nada de fotorrealismo. Sin personajes. Tono íntimo, de promesa. Sin texto en la imagen.
+
+Formato vertical 2:3. El salón de la posada de madera, de noche, vacío y en penumbra: sillas ordenadas sobre las mesas, toneles enormes dormidos al fondo, jarros colgados. Sobre la mesa más cercana a la puerta, una única vela encendida, bien al centro del cuadro, con la llama quieta. La luz ámbar alcanza apenas los bordes de la madera y deja todo lo demás en azul. Es un mensaje: nos fuimos hacia nuestra misión, y acá se vuelve.
+
+---
+
+# El mundo después de la Sesión 1 (canon del Master, sin Vaegrant en cuadro)
+
+## 37 · Ámbar, la perla amurallada
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, panorama costero con mucho detalle, luz de tarde. Nada de fotorrealismo. Paleta de mar del sur (azules y verdes cálidos) enfriada por la piedra gris de las murallas. Sin personajes protagonistas. Sin texto en la imagen.
+
+Formato horizontal 16:9. Un pueblo-ciudad portuario al pie de una montaña, en una costa del sur: casas de teja clara trepando la ladera, una gran planicie fértil a un costado y un puerto activo. Todo lo que fue una perla en el océano ahora está cercado por murallas de piedra nuevas, a medio construir en algunos tramos, con andamios y grúas, que le tapan la belleza y la vista al mar. Adentro del puerto, medio escondidas bajo lonas, viejas barcazas en secreto. En un patio de armas, filas diminutas de reclutas formando, algunos demasiado chicos.
+
+## 38 · La posada Tres Dientes (exterior)
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, luz de anochecer con ventanas cálidas, mucho detalle de madera tallada. Nada de fotorrealismo. Paleta fría de anochecer con el ámbar de las ventanas como corazón de la imagen. Sin personajes protagonistas (siluetas está bien). Sin texto en la imagen.
+
+Formato horizontal 3:2. Un cruce de caminos a las afueras de un pueblo amurallado, al anochecer. En el cruce, una posada grande de arquitectura enana en madera: vigas macizas talladas con motivos geométricos, techos de pendiente fuerte, un cartel colgante de madera con tres dientes tallados, y adosados al costado, toneles enormes del tamaño de habitaciones. Las ventanas encendidas en ámbar, humo de chimenea, un carro estacionado y un viajero entrando. Fue templo y casa de juego antes; algo de esas dos vidas se le nota en los huesos del edificio.
+
+## 39 · Sambar, la tecnocracia de cristal
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de ciencia ficción, ciudad densa y funcional al estilo de Sidonia no Kishi: bloques apilados, estructuras macizas, maquinaria expuesta por todos lados, nada decorativo. Es una ciudad habitable y creíble, no una utopía flotante: tecnología avanzada pero pesada, mecánica, atornillada. Nada de fotorrealismo. Paleta fría de grises, blancos sucios y metal, con acentos de luz celeste saliendo de gemas y cristales engarzados en las máquinas. Sin texto en la imagen.
+
+Formato horizontal 16:9. Una ciudad-estado tecnocrática en el centro de una isla, vista a nivel de calle con la ciudad trepando en capas hacia arriba: edificios macizos apilados unos sobre otros, conectados por rieles, funiculares, ascensores de contrapeso y pasarelas con soportes bien visibles. Maquinaria por todos lados: brazos mecánicos de mantenimiento plegados contra las fachadas, pistones, cableado grueso ordenado en bandejas, compuertas de hangar entreabiertas dejando ver siluetas de máquinas grandes. La única concesión mágica: gemas celestes engarzadas en los mecanismos como fuente de energía, brillando suave. En la calle, gente común con injertos mecánicos prolijos (un brazo, media cara) caminando entre obreros y carritos de riel, y una clínica abierta donde alguien espera turno para una mejora. En lo alto, cuatro estandartes o relieves austeros con los rostros geométricos de los tecnomantes. Ordenada, gris y un poco opresiva, pero viva.
+
+## 40 · El puerto de Ámbar, con Anchoril flotando a lo lejos
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía steampunk, puerto grande vivo y desprolijo en primer plano, mucho detalle mecánico, y una escala sobrecogedora en el horizonte. Nada de fotorrealismo. Paleta cálida de mar del sur con óxidos, latón y toldos, enfriándose hacia el horizonte. Sin texto en la imagen.
+
+Formato horizontal 16:9. El foco principal es el puerto de Ámbar, y Ámbar no es una aldea: es un pueblo-ciudad, y su puerto es grande de verdad. Muelles largos de piedra y madera con varias urcas y barcos mercantes amarrados, grúas de carga hechas de piezas que no combinan, depósitos, redes, toldos, estibadores, talleres abiertos a la calle donde se compra, se vende y se mejora todo, y en una dársena apartada, barcazas flotantes a medio construir tapadas con lonas. Detrás del puerto, la ciudad de Ámbar trepando la ladera de su montaña, ya cercada por tramos de muralla nueva. Y a lo lejos, sobre el mar abierto, la vista se va sola hacia Anchoril: la capital, una ciudad entera flotando en el aire, grande e imponente incluso a esa distancia, un macizo de roca y construcciones steampunk suspendido sin cadenas, con grúas y chimeneas asomando en su silueta, pedazos de mina flotando quietos alrededor y algún hilo de humo subiendo. La marca de que la magia golpeó duro acá. La composición debe dejar claro el vínculo: el puerto grande y concreto en primer plano, la capital flotante enorme y lejana como fondo que lo domina todo.
+
+## 41 · El semiplano de las guerras
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, cielo enorme y atmosférico, escala sobrecogedora. Nada de fotorrealismo. Paleta de nubes al atardecer con resplandores de guerra arriba y un acento dorado cayendo. Sin texto en la imagen.
+
+Formato vertical 2:3. Visto desde una colina tranquila: por encima de la línea de las nubes, el cielo entero está tomado por un semiplano donde las Guerras de los Magos siguen: resplandores de colores imposibles entre las nubes, siluetas de torres y montañas flotantes insinuadas allá arriba, truenos sin tormenta. De esa frontera cae un único punto dorado con estela, como una estrella fugaz demasiado lenta: el anillo de un mago muerto atravesando el límite. Abajo, en el pasto, una figura elemental serena y neutral (un pacificador de piedra, agua, aire y fuego contenidos en un cuerpo humanoide) ya está esperando donde va a caer.
+
+## 42 · El santuario faérico
+
+Ilustración estilo anime de alta calidad: fondo pintado de película de animación de fantasía, claro de bosque al anochecer, luz mágica contenida y solemne. Nada de fotorrealismo. Paleta de verdes profundos y azules con un resplandor interior cálido en la piedra. Sin texto en la imagen.
+
+Formato vertical 2:3. Un claro de bosque antiguo con una piedra megalítica sola en el centro, alta como dos personas, cubierta de musgo y de tallas finísimas que brillan tenue. No es un portal: es un plano entero comprimido adentro de la piedra, y se nota en cómo la luz se dobla apenas alrededor, como si la piedra pesara más que el paisaje. Frente a ella, criaturas faéricas pequeñas realizan un ritual en círculo con velas y cuencos, en plena reverencia. Alrededor del claro, el bosque monta guardia. Destruir esa piedra es destruir un clan entero, y la imagen tiene que transmitir ese valor.
+
+## 43 · Alistair, el Gran Toro Blanco
+
+Ilustración estilo anime de alta calidad: fotograma de película de animación de fantasía, criatura colosal diseñada con majestad y calma, jungla pintada con muchísimo detalle. Nada de fotorrealismo. Paleta de verdes de jungla con luz de sol entrando en haces y el blanco de la criatura como centro. Sin texto en la imagen.
+
+Formato horizontal 3:2. En lo profundo de una jungla espesa, un minotauro colosal de pelaje blanco, alto como los árboles, sentado en calma sobre raíces gigantes: cuernos anchos y viejos, ojos sabios y tranquilos, flores y enredaderas creciendo sobre los hombros como si el tiempo no le importara. A sus pies, diminutos, dos viajeros presentados por una criatura faérica esperan su consejo con la cabeza baja. Nada agresivo: la escena es una audiencia, no una amenaza. La sabiduría se le nota en la postura antes que en cualquier gesto.
+
+---
+
 **Después de generar:** guardá las imágenes y agregalas a la galería de `/vaegrant` con el botón "Agregar imagen" (pegando la URL), o pasámelas y las subo al repo en `/public` para que queden fijas.
