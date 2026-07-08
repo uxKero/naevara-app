@@ -20,6 +20,63 @@ export interface VImagen {
   fecha: string;
 }
 
+// ── Crónica de sesiones ──────────────────────────────────────────
+// Registro curado por sesión: narración por capítulos con el diálogo
+// real de mesa insertado donde vale la pena conservarlo textual.
+
+export interface VDialogoLinea {
+  quien: string; // "Durin", "Vaegrant", "El Master", etc.
+  texto: string;
+}
+
+export interface VCapituloSesion {
+  titulo: string;
+  texto: string; // párrafos separados por líneas en blanco
+  dialogo?: VDialogoLinea[];
+}
+
+export interface VSesionCronica {
+  id: string;      // "sesion-1"
+  numero: number;
+  titulo: string;
+  fecha?: string;
+  resumen: string;
+  capitulos: VCapituloSesion[];
+  nombres: { nombre: string; rol: string }[]; // PNJ, facciones y grupos que aparecieron
+  dudas: string[]; // nombres o hechos pendientes de confirmar en mesa
+}
+
+// ── Mapa de campaña ──────────────────────────────────────────────
+// Pines sobre el mapa de Faerûn, como el mapa físico del salón del club.
+// x e y son porcentajes sobre la imagen (independientes de resolución).
+
+export interface VMarcador {
+  id: string;
+  nombre: string;
+  x: number; // % desde la izquierda
+  y: number; // % desde arriba
+  tipo: "ciudad" | "region" | "isla" | "hito" | "mar";
+  sesiones: number[]; // en qué sesiones apareció o se mencionó
+  nota: string;
+  estado: "confirmado" | "aproximado"; // aproximado = lugar original del Master, ubicado a ojo
+}
+
+export interface VRuta {
+  sesion: number;
+  // recorrido = ya viajado · planeado = el viaje comprometido · opcional = encargo personal, no obligatorio
+  estado: "recorrido" | "planeado" | "opcional";
+  puntos: string[]; // ids de marcadores, en orden
+}
+
+export interface VMapa {
+  imagen: string;
+  titulo: string;
+  nota: string;
+  party: { marcadorId: string; texto: string }; // dónde está el grupo ahora
+  marcadores: VMarcador[];
+  rutas: VRuta[];
+}
+
 export interface VaegrantData {
   __type: "vaegrant";
   meta: {
@@ -61,6 +118,10 @@ export interface VaegrantData {
     lugares: VLugar[];
     ganchos: VItem[];
   };
+  // Opcionales para que las filas viejas de Supabase sigan validando;
+  // el GET las completa desde la semilla vía mergeConSeed.
+  cronica?: VSesionCronica[];
+  mapa?: VMapa;
   galeria: {
     estiloBase: string;
     prompts: { titulo: string; prompt: string }[];

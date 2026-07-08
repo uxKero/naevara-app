@@ -171,7 +171,7 @@ export default async function DiarioPage() {
             case "h1": return (
               <div key={i}>
                 <h1>{b.text}</h1>
-                <p className="diario-sub">Apuntes de un quebrado, escritos en Silverun</p>
+                <p className="diario-sub">Apuntes de un quebrado, escritos en Silvapor</p>
               </div>
             );
             case "h2": return <h2 key={i}>{b.text}</h2>;

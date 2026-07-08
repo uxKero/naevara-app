@@ -141,13 +141,13 @@
     ]
   },
   "historia": {
-    "quote": "Faerûn ya no es el nombre del mundo. Lo que quedó se llama Silverun.",
+    "quote": "Faerûn ya no es el nombre del mundo. Lo que quedó se llama Silvapor.",
     "secciones": [
       {
-        "titulo": "Silverun, el mundo que quedó",
+        "titulo": "Silvapor, el mundo que quedó",
         "parrafos": [
-          "La Gran Guerra rompió el mapa, y el mundo que quedó eligió un nombre nuevo: Silverun. Los mapas de antes lo llamaban Faerûn. Se cuenta que la guerra enfrentó a los humanos con los elfos, y que los humanos la ganaron sin ser mejores en magia: fueron mejores en herramientas. Ingeniería, calderas, engranajes, vapor. El mundo que quedó tiene esa cara: faroles de gas, dirigibles, cadenas colosales, y ciudades enteras que se levantaron hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que, como el mundo mismo, eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.",
-          "A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en Silverun los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada."
+          "La Gran Guerra rompió el mapa, y el mundo que quedó eligió un nombre nuevo: Silvapor. Los mapas de antes lo llamaban Faerûn. Se cuenta que la guerra enfrentó a los humanos con los elfos, y que los humanos la ganaron sin ser mejores en magia: fueron mejores en herramientas. Ingeniería, calderas, engranajes, vapor. El mundo que quedó tiene esa cara: faroles de gas, dirigibles, cadenas colosales, y ciudades enteras que se levantaron hacia el cielo y flotan desde entonces, con los puertos colgando sobre la niebla. Hay lugares que conservan su nombre antiguo como quien conserva una foto, y lugares que, como el mundo mismo, eligieron llamarse de nuevo porque el nombre viejo dolía. Y entre las grietas que dejó la guerra quedaron portales: heridas del mundo que a veces escupen cosas. A veces, personas.",
+          "A los que llegan por portal los llaman quebrados. Nadie les pregunta el linaje: en Silvapor los apellidos gloriosos cotizan bajo, porque demasiados de ellos firmaron demasiados desastres. Un quebrado sin nombre es, por lo menos, alguien que no debe nada."
         ]
       },
       {
@@ -192,38 +192,74 @@
         ]
       }
     ],
-    "notaMesa": "Dónde está instalada la party y si se conocían de antes queda por decidir; el grupo ya vive en el lugar y viene haciendo trabajos menores para el gnomo del bar.",
+    "notaMesa": "Sesión 1 integrada en la pestaña Sesiones (crónica completa, con el diálogo real de mesa) y en el Mapa. La party vive en la posada Tres Dientes, a las afueras de Ámbar: Vaegrant lleva el salón y las compras, un historiador letrado lleva los inventarios y un paladín oficia de guardia (nombres de PJ por confirmar). El mundo-plano actual se llama Silvapor (los mapas viejos lo llamaban Faerûn; los lugares conservan los nombres del mapa real). Del borrador personal, el portal y los quebrados siguen siendo la historia íntima de Vaegrant. Pendiente: redondear estas sesiones en historia pura cuando la campaña avance.",
     "sesiones": []
   },
   "mundo": {
     "contexto": {
-      "titulo": "Silverun",
-      "texto": "El plano se llama Silverun: el nombre que el mundo eligió para sí después de la Gran Guerra (los mapas de antes lo llamaban Faerûn). La guerra, según se cuenta, enfrentó a los humanos con los elfos: los humanos compensaron la magia con ingeniería, y ganaron con herramientas, máquinas y vapor. El mundo que quedó lleva esa marca: es steampunk (engranajes, latón, calderas, dirigibles, faroles de gas), y se dice que la magia y la máquina van a terminar fundiéndose (magepunk). El mapa quedó roto: ciudades enteras se levantaron hacia el cielo y flotan desde entonces, sostenidas por cadenas y maquinaria; muchos lugares mantienen sus nombres antiguos y otros eligieron nombres nuevos, como el mundo mismo. Entre las grietas de la guerra quedaron portales que a veces escupen cosas, y a veces personas: los quebrados. Los linajes gloriosos cotizan bajo; la gente invisible sostiene el mundo. (Detalle de la guerra humanos vs. elfos: por confirmar en mesa. Ser elfo hoy NO es un estigma ni algo puntual para el mundo: es historia pasada.)"
+      "titulo": "Silvapor",
+      "texto": "El mundo-plano actual se llama Silvapor. La campaña transcurre sobre el mapa de Faerûn, con una historia original del Master y en otros años: los lugares conservan los nombres del mapa real; lo que pasó en ese mundo, no. La línea que contó en mesa: después de Jorvinthal vino la Gran Purga, en la que el mundo entero salió a perseguir y exterminar dragones hasta volverlos mito y leyenda. Los magos se quedaron con lo más poderoso de los dragones (las glándulas de fuego y elementales, para sus hechicerías); los humanos se quedaron con las cavernas y sus riquezas, y ahí descubrieron las Gemas Lunares, piedras que les permiten manejar magia sin ser magos. De ese reclamo de poder nacieron las Guerras de los Magos: una guerra de clases entre humanos con piedras y magos puros, que todavía sigue. Los pueblos faéricos mediaron y gestaron a los pacificadores, seres elementales neutrales (los soldados controlan un elemento; los generales, los cuatro). Cuando la cúspide de la guerra rompió la urdimbre mágica del plano (montañas que se desprenden y flotan, gravedad rota, zonas donde la magia se autogestiona y zonas donde se suprime), los faéricos gastaron casi toda su magia, al borde de extinguirse, en crear un semiplano por encima de la línea de las nubes y encerrar ahí las guerras. De ese semiplano a veces caen reliquias, como anillos de magos desintegrados, y los pacificadores las recolectan y las guardan. Abajo quedó un mundo de posguerra permanente: la magia escasea, los magos están mal vistos por la sociedad, y la tecnología avanza para llenar ese hueco. Nota: del borrador personal previo a la mesa, la guerra de humanos contra elfos queda reemplazada por las Guerras de los Magos; el portal y los quebrados siguen siendo la historia íntima de Vaegrant."
     },
     "lugares": [
       {
-        "nombre": "Las ciudades flotantes",
-        "tipo": "Rasgo del mundo · por explorar",
-        "texto": "Ciudades que se alzaron enteras durante la guerra y nunca volvieron a bajar. Puertos colgando sobre la niebla, cadenas colosales, maquinaria de vapor, economías propias, y la pregunta de qué las mantiene arriba de verdad: si las calderas, la magia, o algo que nadie quiere decir.",
+        "nombre": "Lantan, el archipiélago",
+        "tipo": "Sesión 1 · tres islas, tres formas de vivir",
+        "texto": "Las islas del sudoeste, frente a las junglas de Chult. Sundrah, la ciudad-estado del norte, se mantiene lo más primitiva posible: pacifista, aboga por el diálogo, usa apenas maquinaria liviana (tractores chicos, alambiques automatizados) y cree que la tecnología no debería avanzar demasiado. Sambar, la ciudad-estado del centro, es una tecnocracia avanzadísima de cristal, magia y absorción de poderes: la gobiernan cuatro tecnomantes que reemplazaron su cuerpo hasta quedar como conciencias mecánicas, la gente se remueve partes del cuerpo para mejorarse, y su gobierno es expansionista porque un tecnomante vaticinó que esa era la respuesta para acabar con todas las guerras. Anchoril, el estado-ciudad del sur, en una islita, son los chatarreros del sur: steampunk, cultura de comprar, vender y mejorar máquinas, y ahora gemas en armas y defensas, no por deseo sino por la amenaza constante de Sambar.",
         "destacado": true
       },
       {
-        "nombre": "Los portales",
-        "tipo": "Heridas de la guerra · vínculo directo con Vaegrant",
-        "texto": "Grietas que la Gran Guerra dejó en el mundo. A veces escupen cosas; a veces, personas. Vaegrant cruzó por uno, y algo cruzó con él. Nadie sabe cuántos hay ni a dónde dan.",
+        "nombre": "Ámbar",
+        "tipo": "Sesión 1 · el hogar del grupo · nombre original del Master",
+        "texto": "Pueblo grande, casi ciudad: un pueblo-ciudad en la órbita de Anchoril, en la última montaña del sur. Portuaria, con una gran planicie de extracción y una montaña: el último puerto donde reabastecerse antes de entrar a los mares interiores y a las tierras faéricas. Era una perla en el océano hasta que el miedo la amuralló: el gobernador enlistó a más de cien personas y prometió cien por mes, se instruye militarmente a chicos de doce años, y el puerto fabrica en secreto viejas barcazas flotantes. Tras la muerte de Marcus, la Casa de Gobierno quedó sitiada por guardias que no son del pueblo. Conoce la historia de la fortaleza flotante de Anchoril.",
         "destacado": true
       },
       {
-        "nombre": "El asentamiento actual",
-        "tipo": "Por decidir en mesa",
-        "texto": "El lugar de Silverun donde la party vive y viene haciendo trabajos menores. Queda por decidir en mesa cuál es y si conserva su nombre antiguo o lleva uno nuevo.",
+        "nombre": "La posada Tres Dientes",
+        "tipo": "Sesión 1 · la casa · cruce de caminos a las afueras de Ámbar",
+        "texto": "El viejo caserón que Durin Martillobre compró con hasta el último centavo, después de décadas de prometer su taberna. Fue una capilla de los viejos dioses, después una casa de juego y malos hábitos, y hoy una posada de arquitectura enana en madera, al estilo de los buscahuellas, con toneles enormes esperando las mejores cervezas enanas. Punto estratégico para los viajeros que comercian entre el sur y el norte. Acá se conocieron Vaegrant, el historiador y el paladín, y trabajaron juntos un año.",
+        "destacado": true
+      },
+      {
+        "nombre": "Las junglas de Chult",
+        "tipo": "Sesión 1 · tierras faéricas",
+        "texto": "Donde la gente va a pedir respuestas o consejo a los faéricos. Entrar cuesta: hay que ganarse el favor de un faérico para que te presente ante el más fuerte que se encuentre. Hoy esa entidad es Alistair, el Gran Toro Blanco: una especie de minotauro colosal y muy sabio.",
         "destacado": false
       },
       {
-        "nombre": "El bar del gnomo",
-        "tipo": "Encargos · punto de partida de las misiones",
-        "texto": "Donde un gnomo reparte los trabajos. Elige siempre a quienes cruzaron el portal, y tiene su razón: notó que cuando un quebrado resuelve un encargo, incluso uno sencillo, los resultados son notablemente buenos y algo alrededor mejora, aunque sea en lo mínimo. No explica por qué. Quizá no lo sabe. Quizá sí.",
+        "nombre": "El semiplano de las guerras",
+        "tipo": "Sesión 1 · encima de la línea de las nubes",
+        "texto": "El plano que los faéricos crearon casi a costa de su propia vida para sacar las Guerras de los Magos de la tierra. Ahí arriba la guerra sigue. De vez en cuando algo cae y atraviesa la frontera: anillos de magos muertos, reliquias que se veneran o se temen. Los pacificadores las buscan y las guardan, porque nadie sabe cuán peligrosas son. Emparentado: los santuarios faéricos, pequeños por fuera, guardan planos comprimidos dentro de piedras megalíticas. No son portales: el plano está literalmente adentro de la piedra, y destruir una piedra es destruir un clan entero. Ya pasó, y por eso los magos cargan con la mala fama.",
         "destacado": true
+      },
+      {
+        "nombre": "Moray",
+        "tipo": "Sesión 1 · destino del viaje · islas Moonshae",
+        "texto": "Vieja isla al norte, yendo por el Mar de las Espadas, en las Moonshae. Son dos: la de la montaña y la del llano. En la del llano hay un pequeño templo, y en el templo vive Zarif, el gnomo que Durin cree que puede gobernar bien Anchoril.",
+        "destacado": true
+      },
+      {
+        "nombre": "Waterdeep",
+        "tipo": "Sesión 1 · el encargo de Durin",
+        "texto": "Ciudad del Mar de las Espadas, así figura en las viejas cartas. Ahí hay que buscar a Gonagal Crestarroja, un enano que conoció a Durin mejor de lo que Durin lo conoció a él, y decirle que haga circular una vez más el estandarte de los enanos.",
+        "destacado": false
+      },
+      {
+        "nombre": "Luskan",
+        "tipo": "Sesión 1 · muy al norte",
+        "texto": "El lugar del que Durin sospecha: la traición no vino de los vecinos del norte sino de mucho más al norte. Cree que ahí van a encontrar respuestas. Los rumores del puerto hablan de barcos nocturnos con banderas nunca vistas, de gente de muy al norte.",
+        "destacado": false
+      },
+      {
+        "nombre": "Lo que flota",
+        "tipo": "Rasgo del mundo · confirmado en mesa",
+        "texto": "Las anomalías de la urdimbre dejaron cosas en el aire: montañas desprendidas, la fortaleza flotante de Anchoril, minas flotantes en la isla quebrada donde la magia golpeó duro. El puerto de Ámbar fabrica barcazas flotantes en secreto. Lo que en el borrador personal eran ciudades flotantes, en el canon del Master existe así: pedazos de mundo que la guerra dejó sin gravedad.",
+        "destacado": false
+      },
+      {
+        "nombre": "Los portales",
+        "tipo": "Del borrador personal · por reconciliar con el canon",
+        "texto": "Grietas que la guerra dejó en el mundo. A veces escupen cosas; a veces, personas. Vaegrant cruzó por uno, y algo cruzó con él. Sigue siendo la historia íntima del personaje; cómo encaja en el mundo del Master queda por verse en mesa.",
+        "destacado": false
       }
     ],
     "ganchos": [
@@ -257,6 +293,120 @@
       }
     ]
   },
+  "cronica": [
+    {
+      "id": "sesion-1",
+      "numero": 1,
+      "titulo": "El enano reclama",
+      "fecha": "2026-07",
+      "resumen": "La sesión que lo puso todo en marcha. El Master abrió el mundo: las Guerras de los Magos, el archipiélago de Lantan, la vida en la posada Tres Dientes. Y la cerró con una despedida: Marcus muerto, Ámbar tomada por dentro, y Durin entregándole a Vaegrant un medallón rúnico y una misión que va mucho más al norte de lo que ninguno viajó jamás.",
+      "capitulos": [
+        {
+          "titulo": "Las Guerras de los Magos",
+          "texto": "El Master contó la historia grande del mundo. Primero pasó Jorvinthal. Después de Jorvinthal vino la Gran Purga: el mundo entero salió a perseguir, matar y exterminar dragones, hasta que las razas dracónicas desaparecieron y los dragones quedaron reducidos a mitos y leyendas. Del reparto de los despojos nació todo lo demás. Los magos se hicieron con lo más poderoso de los dragones: las glándulas de fuego y las glándulas elementales, para sus hechicerías. Los humanos se apoderaron de las cavernas y sus riquezas, y ahí descubrieron las gemas de poder que hoy llaman Gemas Lunares: piedras que le permiten a un humano común manejar magia como un mago.\n\nCuando los humanos reclamaron ese poder, estallaron las Guerras de los Magos. Una guerra de clases, más que nada: los humanos acusaban a los magos de haber sido egoístas con el poder; los magos estaban convencidos de que el humano común no tenía derecho a portar magia, que por algo sus dioses no se la dieron. Ese conflicto sigue activo.\n\nLos pueblos faéricos entraron como mediadores, y de esa mediación se gestó una raza: los pacificadores, seres nacidos de los elementales. Los soldados básicos controlan un solo elemento; los generales, los cuatro. Son neutrales de verdad, con la ideología faérica de fondo: no pises mi bosquecito, no me quemes los arbolitos, y si devastás una gran zona tomate el trabajo de replantarla. Y una paciencia de eternos: tarde o temprano uno de los bandos va a desaparecer, y ellos van a hacer la limpieza y reconquistar todo.\n\nLos faéricos viven en santuarios que por fuera se ven pequeños pero por dentro son planos comprimidos, contenidos literalmente dentro de piedras megalíticas. No son portales: el plano está adentro de la piedra, y se atraviesa por medio de rituales. Esas piedras se cuidan con la vida, porque con la escasez de magia de hoy podrían destruirse de forma egoísta para sacar Piedra Lunar o urdimbre mágica. Y destruir una piedra es destruir un clan entero. Ya pasó en la historia, y por eso los magos están mal vistos en la sociedad.\n\nEn la cúspide de la guerra, la urdimbre mágica del plano se rompió: montañas que se desprendieron y flotan, problemas de gravedad, lugares donde la magia se autogestiona y lugares donde directamente se suprime. Ahí los faéricos dijeron basta. Ocuparon una porción enorme de su magia, al borde de extinguir su propia vida, y crearon un semiplano por encima de la línea de las nubes. Las guerras siguen ahí arriba. De vez en cuando algo cae: anillos de magos que murieron desintegrados en ese plano y cuya reliquia atravesó la frontera. Los pacificadores las buscan y las guardan, porque nadie tiene idea de lo peligrosas que pueden ser.",
+          "dialogo": [
+            { "quien": "El Master", "texto": "No porque sea un portal, sino porque el plano literalmente está adentro de esas piedras." },
+            { "quien": "El Master", "texto": "Si destruís una piedra, destruís todo un clan." }
+          ]
+        },
+        {
+          "titulo": "Lantan: tres islas, tres formas de vivir",
+          "texto": "La historia baja al sudoeste del mapa, a un archipiélago chiquito llamado Lantan, frente a las junglas de Chult. Tres islas, tres respuestas a la misma pregunta sobre la tecnología.\n\nSundrah, la ciudad-estado del norte, se mantiene lo más primitiva posible. No odia la tecnología: la aprovecha en puntos justos (pequeños tractores para las cosechas, alambiques automatizados, salones de electromecánica), pero cree que no sería bueno dejarla avanzar demasiado. Son pacifistas: abogan siempre por la paz y el diálogo.\n\nSambar, la ciudad-estado del centro, es la otra punta: una tecnocracia que quiere borrar hasta los viejos nombres y empezar de vuelta, una nueva raza basada en tecnología. Ya no es vapor: es tecnología de cristal, magia y absorción de poderes. No es raro ver gente que va voluntariamente a removerse partes del cuerpo para hacerse mejoras. La gobiernan cuatro tecnomantes que fueron personas y ya no lo son: cambiaron su parte biológica por mecánica hasta quedar como conciencias mecánicas. Su gobierno es expansionista porque uno de los tecnomantes vaticinó que esa era la respuesta para acabar con todas las guerras, y están convencidos.\n\nAnchoril, bien al sur, en una islita, funciona como un estado-ciudad y es el punto medio: los pueblos del sur, los chatarreros del sur. Más steampunk, con conocimientos mecánicos y lectura de planos, y una cultura de intercambio: te cambio la cosecha por esa máquina, y la máquina la mejoro. Empezaron a meter gemas en armas y defensas, no porque quieran sino porque lo ven necesario ante la amenaza constante de Sambar. Es la isla quebrada, donde la magia golpeó duro: tiene una fortaleza flotante e incluso minas flotantes.\n\nY al pie de todo eso, Ámbar: un pueblo muy grande para ser pueblo, no lo suficiente para ser ciudad. Un pueblo-ciudad en la órbita de Anchoril, portuario, con una gran planicie de riquezas y una montaña. El último puerto donde reabastecerse antes de entrar a los mares interiores y a las tierras faéricas: las junglas de Chult, donde la gente va a pedir consejo a los faéricos. Para llegar ahí hay que ganarse el favor de un faérico que te presente ante el más fuerte del momento: Alistair, el Gran Toro Blanco, una especie de minotauro colosal y muy sabio. Cada uno de nosotros, por sus motivos, cayó en Ámbar. Sobre todo por el comercio.",
+          "dialogo": []
+        },
+        {
+          "titulo": "Los Tres Dientes",
+          "texto": "Acá entra Durin Martillobre (todo junto, Martillobre): un enano barrilista, amable y terco, que fabrica las mejores barricas del lugar y anda rescatando viejas recetas de las cervezas enanas. Un enano vive entre mil y mil quinientos años; Durin está en su tercera edad y vio nacer y morir generaciones enteras de humanos en la ciudad. Es un referente: hay gente que viene nada más a tomar una cerveza y pedirle consejo. Alardeó durante tanto tiempo con que iba a abrir su posada que hubo quien vivió y murió de viejo esperándola. Hasta que invirtió hasta el último centavo en el viejo caserón del cruce de caminos, a las afueras de Ámbar: un edificio que fue templo de los viejos dioses, después casa de juego, mujerzuelas y malos hábitos, y que se vino abajo cuando murió el dueño. Durin lo levantó con arquitectura enana en madera, al estilo de los buscahuellas, esa estirpe de enanos montaraces que salió de las montañas a rastrear junto a los humanos. Y construyó toneles enormes, porque asegura que en sus bodegas van a estar algún día las mejores cervezas enanas. La gente dice que ni siquiera su dios se lo va a llevar antes de que cumpla esa promesa.\n\nCuando los Tres Dientes abrió, años de publicidad surtieron efecto de golpe y Durin tuvo que contratar gente. Así nos conocimos. El paladín venía del puerto, donde trabajaba para Trobe, el jefe de gremios: entró como guardia, y sigue yendo al Viejo Jarrito, el bodegón chungo del puerto, donde están sus amigos de toda la vida y donde ahora lo miran como al que salió del barrio bajo y trabaja en la gran posada de Durin. El historiador, un letrado, entró para llevar los números y los inventarios de la bodega. Y Vaegrant quedó a cargo del salón y de las compras: elegir las mejores frutas y verduras en la Plaza Central, conocer a todos los puesteros, y de paso a todos los chismosos.\n\nPasamos un año trabajando juntos. Durin no nos habla como empleados: habla de una sociedad, reconoce en voz alta el logro de cada uno y nos trata como extensiones de sí mismo. No muchos pueden gozar de la amistad férrea de un enano. De su pasado cuenta poco: perteneció al clan Rompetormentas, un linaje de enanos de las montañas del este. Durante las Guerras de los Magos, los magos hicieron una gran macana y despertaron cosas que no debían despertarse; hoy esas cavernas están tomadas por demonios, y Durin tuvo que irse de su tierra natal. Cuando habla de las montañas se le quiebra la voz, y lo arregla con un jarro de fondo blanco y una excusa: una basura en el ojo, el borde de la cerveza que da justo en la línea de los ojos. Sabemos que perdió más de lo que dice.\n\nDe mesa: el Master repartió bonificadores de +2 a Perspicacia, apilables con cualquier otro bono y a medida de cada historia: el paladín en todo lo referente al mar (rutas marinas, historias del mar, criaturas, comercio marítimo), Vaegrant en el comercio de tierra, y el historiador en los secretos de bibliotecas, libros y cortes.",
+          "dialogo": [
+            { "quien": "El Master", "texto": "No muchos pueden gozar de la amistad férrea de un enano." }
+          ]
+        },
+        {
+          "titulo": "Las murallas",
+          "texto": "Durante ese mismo año, Ámbar cambió de cara. Las amenazas expansionistas del norte del archipiélago empezaron a sentirse sin declaración de guerra ni invasión. Durin nos reunió un día de cierre para decirnos que el lugar ya no era seguro, que quizás todo su esfuerzo fue en vano, y que temía que Sambar tomara las islas de la noche a la mañana. El puerto de Ámbar, mientras tanto, fabricaba en secreto viejas barcazas flotantes.\n\nEl pueblo quedó en ascuas, expectante, sin saber si la invasión era real. Pero la milicia despertó: de la noche a la mañana el gobernador enlistó a más de cien personas y anunció que enlistaría cien por mes hasta llegar al número necesario para defender la soberanía. Empezó la instrucción militar de chicos de doce años. Y Durin vio con tristeza cómo Ámbar, antiguamente una perla en el océano, se fue tapando con las murallas que se construían, hasta que las murallas taparon por completo su belleza. Ahora es una pequeña ciudad amurallada.",
+          "dialogo": []
+        },
+        {
+          "titulo": "La muerte de Marcus",
+          "texto": "Una mañana Durin cerró la posada y nos volvió a reunir: el gobernador había fallecido esa mañana. Acá los linajes no garantizan el gobierno: la gente elige a sus gobernadores, y así iba a seguir siendo. Se abría una lista de candidatos, con unas cinco semanas de campaña hasta la elección, en las que cada aspirante debe demostrarle al pueblo que merece gobernar.\n\nA Durin le pidieron que se presente. Dijo que no: si gobernaba sobre Anchoril iba a volver a tomar el martillo, y Anchoril tomaría otro rumbo. Los que se estaban presentando solo iban a abrir las antiguas heridas: ya se hablaba de guerras y de respuestas antes de que ocurran. Pero conocía a alguien que sí podía. Pasando hacia el norte, por el Mar de las Espadas, en una vieja isla llamada Moray, en la isla del llano, hay un pequeño templo. En ese templo vive un gnomo: Zarif. Con zeta, y con efe al final.\n\nLa propuesta de Durin fue una decisión dura, con dos caminos: o él tomaba una barcaza al norte y nosotros cuidábamos la taberna, o nos daba la potestad de su barcaza y salíamos nosotros a buscar a Zarif. Nos veía jóvenes, impetuosos y con fuerza de voluntad para cualquiera de las dos. Elegimos el viaje.",
+          "dialogo": [
+            { "quien": "Durin", "texto": "Me dijeron que me presente, pero yo no voy a gobernar. Creo que si gobierno sobre Anchoril, volveré a tomar el martillo y Anchoril tomará otro rumbo. Pero sé quién lo puede hacer." },
+            { "quien": "Durin", "texto": "O me cuidan la posada, o van al norte por Zarif." },
+            { "quien": "Durin", "texto": "Es una decisión dura, pero no quiero ver cómo Anchoril cae en desgracia. No tenemos la fuerza para pelear contra Sambar. Y si atacamos primero, Sambar se va a defender." }
+          ]
+        },
+        {
+          "titulo": "El establo",
+          "texto": "Esa noche, un ruido en el granero del fondo. La puerta abierta. Durin peinaba con un rastrillo de mano a un viejo carnero robusto, del tamaño de una montura, y le hablaba bajo. Era su montura: todos sabemos que Durin, en su juventud, fue un guerrero que velaba por la justicia y la paz. Vaegrant se acercó, y la conversación que siguió fue la más importante de la noche.\n\nDurin venía atando cabos: comerciantes que operaron meses en la plaza central sin que nadie viera nunca su mercadería, luciendo el guante de hierro en la mano derecha como si nadie fuera a darse cuenta. Y de repente, Marcus muerto, y la Casa de Gobierno sitiada por guardias que ni siquiera son del pueblo. Para Durin no fue una muerte: lo sacaron del gobierno. Y esta vez, por primera vez, no cree que Sambar tenga mucho que ver: son expansionistas, pero no traicioneros. La traición viene de mucho más al norte. Los orcos están detrás; los Garra de Hierro, metidos hasta las narices. Y hay un lugar, muy al norte, donde cree que están las respuestas: Luskan.\n\nA Durin esto se le volvió personal: ya perdió su casa, sus cavernas y el clan entero por una traición en las montañas del este, y no va a permitir que le arrebaten su segundo hogar. Él se queda. El encargo para nosotros: juntar equipo, hablar con el jefe del puerto con una frase exacta (viejas deudas tienen que ser saldadas, y el enano reclama) para conseguir barco y tripulación, ir por Zarif, el único que puede limpiar tanto el nombre de Durin como el renombre de Ámbar. Y en el camino, llegar a Waterdeep y buscar a Gonagal Crestarroja, un enano que lo conoció mejor de lo que él lo conoció, para avisarle lo que pasa y pedirle que haga circular una vez más el estandarte de los enanos. Porque esto no termina acá: aunque los pisen y los hagan desaparecer, es la punta del hilo. De todo esto, ni una palabra a nadie: ningún guardia, ningún elfo, ningún enano. Solo los amigos.\n\nAntes de despedirse, Durin metió la mano entre sus barbas, arrancó un medallón sencillo (una piedra con una runa tallada, atada con un viejo cuero) y se lo puso a Vaegrant en la mano. Se sintió más como una despedida. Al salir del granero, Vaegrant lo vio apoyar otra vez la frente en la frente del carnero: un enano que reconoce que ya está viejo para una guerra, preparándose para un conflicto.",
+          "dialogo": [
+            { "quien": "Durin", "texto": "Las cosas van a cambiar. Elegí un mal momento para la posada." },
+            { "quien": "Durin", "texto": "Al principio iba a increparlos. Me sentía insultado, porque era como que vinieran a tomarme el pelo a mi propia casa, luciendo el guante de hierro en su mano derecha y haciéndome pensar que no me daría cuenta. Pero después quise oír más. Estuvieron un par de meses comerciando con la plaza central, pero nunca vi su mercadería. Y de repente Marcus muere. Decime por un momento que no viste lo que yo vi." },
+            { "quien": "Vaegrant", "texto": "Lo sacaron del gobierno. Sacaron a Marcus del gobierno." },
+            { "quien": "Durin", "texto": "Me temo que sí." },
+            { "quien": "Durin", "texto": "Juntá equipo. Hablá con el jefe del puerto. Decile que viejas deudas tienen que ser saldadas y que el enano reclama. Te va a dar uno de esos barcos y una tripulación. Yo me voy a quedar. Ya tomé mi decisión." },
+            { "quien": "Durin", "texto": "Algunos nos transformamos en villanos, depende de qué lado de la historia estés. Pero el gnomo que te mandé a buscar es el único que puede limpiar tanto mi nombre como el renombre de la ciudad de Ámbar. ¿Sabés por qué te elegí?" },
+            { "quien": "Vaegrant", "texto": "No, señor. Solamente hacía bien mi trabajo." },
+            { "quien": "Durin", "texto": "Tu metodología de trabajo. Cada vez que te veo en la barra o en el salón, tenés una metodología que me hace sentir en casa. Casi pensás como un enano. Pero bueno, nadie es perfecto, ¿verdad?" },
+            { "quien": "Durin", "texto": "Ya sufrí una traición en las montañas del este. Perdí mi casa, mis cavernas, las cuevas, el clan entero por medio de una traición. Esto se torna un poco personal. No me van a arrebatar mi hogar por segunda vez." },
+            { "quien": "Vaegrant", "texto": "¿Desconfía del norte?" },
+            { "quien": "Durin", "texto": "El norte está claramente implicado y los orcos están detrás de esto. Los Garra de Hierro están metidos hasta sus narices en esto." },
+            { "quien": "Durin", "texto": "Pensé que la traición venía de nuestros vecinos del norte. Y, sin embargo, no: viene de mucho más al norte. Hay un lugar muy al norte: Luskan. Creo que ahí vamos a encontrar respuestas." },
+            { "quien": "Durin", "texto": "Hay un lugar en el Mar de las Espadas llamado Waterdeep. Figura así en las viejas cartas. Andá a Waterdeep y hablá con Crestarroja. Gonagal Crestarroja. Decile que tiene que hacer circular una vez más el estandarte de los enanos, porque esto no va a terminar acá. Incluso si nos pisan a nosotros y nos hacen desaparecer, es simplemente la punta del hilo. Puedo olfatearlo." },
+            { "quien": "Durin", "texto": "Ten mucho cuidado, niño. Tu espada protege a la derecha y tu escudo al de tu izquierda. La formación cerrada siempre será por ese lado. Recordá siempre: protegé a los tuyos y defendé tus convicciones." },
+            { "quien": "Vaegrant", "texto": "Confío en que seguirá acá cuando volvamos. Dejaré una vela prendida esta noche para que sepa que nos fuimos hacia nuestra misión." },
+            { "quien": "Durin", "texto": "Hagan lo que tengan que hacer." }
+          ]
+        },
+        {
+          "titulo": "Preparativos y partida",
+          "texto": "El último desayuno largo de Durin se terminó y cada uno salió a lo suyo. El historiador se fue a la biblioteca de Ámbar a buscar información: barcos que hacen la ruta, geografía, clima. El paladín armó la logística: raciones de viaje, precios para cuidar la moneda, ropa para el clima del norte, y una pasada por el puerto a ver a sus conocidos y a su exjefe. Vaegrant se quedó a cerrarle el círculo a Durin: le comunicó la decisión del grupo y le dejó una lista de nombres, gente decente que va siempre a la posada, para que pueda contar con alguien si seguía abierta. Si no volvemos, ya los tiene.\n\nEn la Plaza Central, con una tirada de 20, Vaegrant levantó los chismes que faltaban: los puesteros hablan de barcos que llegan de noche, cuando los vigilantes no están, y hacen transacciones fuera de la ley. Al principio sonaba a contrabando común. Pero también hablan de banderas que nadie vio nunca en este puerto: banderas de gente de muy al norte.\n\nLa embarcación del viaje quedó definida: una urca mercante, un barquito del porte de los amarillos del puerto. Rumbo al norte, por el Mar de las Espadas, hacia Moray. Sobre la mesa de la posada, esa noche, quedó una vela prendida.",
+          "dialogo": []
+        }
+      ],
+      "nombres": [
+        { "nombre": "Durin Martillobre", "rol": "Enano barrilista del clan Rompetormentas, dueño de los Tres Dientes. Ex guerrero, referente de Ámbar. Se queda a defender su segundo hogar. Le dio a Vaegrant su encargo y un medallón rúnico." },
+        { "nombre": "Zarif", "rol": "Gnomo que vive en el templo de la isla del llano, en Moray. Para Durin, el único que puede gobernar bien Anchoril y limpiar el nombre de Ámbar. El objetivo del viaje." },
+        { "nombre": "Gonagal Crestarroja", "rol": "Enano de Waterdeep. Conoció a Durin mejor de lo que Durin lo conoció a él. Hay que avisarle que haga circular una vez más el estandarte de los enanos." },
+        { "nombre": "Marcus", "rol": "El gobernador. Murió de repente tras meses de comerciantes sospechosos en la plaza. Para Durin no murió: lo sacaron del gobierno." },
+        { "nombre": "Trobe", "rol": "Jefe de gremios del puerto de Ámbar. Ex jefe del paladín; sigue siendo su apoyo en el puerto." },
+        { "nombre": "Alistair, el Gran Toro Blanco", "rol": "La entidad faérica más fuerte del momento: un minotauro colosal y muy sabio, en las junglas de Chult. Mencionado, todavía lejos." },
+        { "nombre": "Los Garra de Hierro", "rol": "Facción orca del norte. Durin los cree metidos hasta las narices en la toma encubierta de Ámbar. El guante de hierro en la mano derecha de los comerciantes parece su marca." },
+        { "nombre": "Los tecnomantes de Sambar", "rol": "Cuatro conciencias mecánicas que fueron personas. Gobiernan la tecnocracia expansionista del centro de Lantan." },
+        { "nombre": "Los pacificadores", "rol": "Raza gestada por los elementales durante las Guerras de los Magos. Neutrales. Recolectan las reliquias que caen del semiplano." }
+      ],
+      "dudas": [
+        "Temfla, mencionada como la conciencia original de Zan (¿de Sambar?): nombre dudoso en la transcripción.",
+        "Los nombres exactos de los PJ compañeros (el historiador y el paladín): el jugador los pasa más adelante.",
+        "Las escenas de los compañeros sin Vaegrant presente no quedaron grabadas: esta crónica cubre lo que Vaegrant vio y lo que el Master narró para todos."
+      ]
+    }
+  ],
+  "mapa": {
+    "imagen": "/vaegrant-mapa/faerun.webp",
+    "titulo": "El mapa de la campaña",
+    "nota": "El mismo mapa de Faerûn que está pinchado en el salón del club. La historia es original del Master y pasa en otros años, pero los nombres son los del mapa real. La línea ámbar es el viaje que hay que hacer; la gris punteada, el encargo personal de Vaegrant (Waterdeep, opcional). Los pines aproximados son lugares originales del Master, ubicados a ojo.",
+    "party": {
+      "marcadorId": "ambar",
+      "texto": "Fin de la Sesión 1: el grupo está en Ámbar con la urca mercante lista, por zarpar al norte por el Mar de las Espadas, rumbo a Moray. En la posada quedó una vela prendida."
+    },
+    "marcadores": [
+      { "id": "lantan", "nombre": "Lantan", "x": 8.3, "y": 67.6, "tipo": "region", "sesiones": [1], "estado": "confirmado", "nota": "Las islas donde arranca la campaña: Sundrah al norte, Sambar en el centro, Anchoril al sur. Tres formas de convivir con la tecnología, y una tecnocracia expansionista que asusta a las otras dos." },
+      { "id": "sundrah", "nombre": "Sundrah", "x": 9.7, "y": 66.2, "tipo": "ciudad", "sesiones": [1], "estado": "confirmado", "nota": "La ciudad-estado del norte: pacifista y casi primitiva, maquinaria liviana, diálogo, y desconfianza del avance tecnológico." },
+      { "id": "sambar", "nombre": "Sambar", "x": 9.5, "y": 69.2, "tipo": "ciudad", "sesiones": [1], "estado": "confirmado", "nota": "La ciudad-estado del centro, la tecnocracia: cristal, magia, absorción de poderes, cyborgs voluntarios. Cuatro tecnomantes sin cuerpo la gobiernan, y se expande porque uno vaticinó que así terminan todas las guerras." },
+      { "id": "anchoril", "nombre": "Anchoril", "x": 10.56, "y": 71.88, "tipo": "ciudad", "sesiones": [1], "estado": "confirmado", "nota": "El estado-ciudad del sur, los chatarreros: steampunk, trueque y mejora de máquinas, gemas en las armas por necesidad. La isla quebrada, con fortaleza y minas flotantes. Acá se elige nuevo gobernante en cinco semanas." },
+      { "id": "ambar", "nombre": "Ámbar", "x": 10.15, "y": 73.25, "tipo": "ciudad", "sesiones": [1], "estado": "aproximado", "nota": "El hogar del grupo: pueblo-ciudad portuario en la órbita de Anchoril, en la última montaña del sur, última escala antes de los mares interiores y las tierras faéricas. Era una perla en el océano; hoy es una ciudad amurallada con la Casa de Gobierno tomada por guardias ajenos." },
+      { "id": "tres-dientes", "nombre": "Posada Tres Dientes", "x": 10.3, "y": 72.6, "tipo": "hito", "sesiones": [1], "estado": "aproximado", "nota": "El viejo caserón del cruce de caminos, a las afueras de Ámbar, apenas al norte del pueblo. Ex capilla, ex casa de juego, hoy la posada de Durin Martillobre y la casa del grupo. Esta noche tiene una vela prendida en una mesa." },
+      { "id": "chult", "nombre": "Junglas de Chult", "x": 15.9, "y": 85.3, "tipo": "region", "sesiones": [1], "estado": "confirmado", "nota": "Las tierras faéricas. Se entra ganándose el favor de un faérico, para llegar ante Alistair, el Gran Toro Blanco. Mencionadas en la Sesión 1; todavía lejos." },
+      { "id": "mar-espadas", "nombre": "Mar de las Espadas", "x": 17.3, "y": 48.3, "tipo": "mar", "sesiones": [1], "estado": "confirmado", "nota": "La ruta del viaje: subiendo por esta costa se llega a Moray, a Waterdeep y, mucho más arriba, a Luskan." },
+      { "id": "moray", "nombre": "Moray", "x": 5.2, "y": 46.8, "tipo": "isla", "sesiones": [1], "estado": "confirmado", "nota": "Vieja isla en las Moonshae: la de la montaña y la del llano. En la del llano, un pequeño templo donde vive Zarif, el gnomo que Durin quiere de gobernante. Destino del viaje." },
+      { "id": "waterdeep", "nombre": "Waterdeep", "x": 14.5, "y": 21.3, "tipo": "ciudad", "sesiones": [1], "estado": "confirmado", "nota": "Así figura en las viejas cartas. Encargo personal de Durin a Vaegrant, aparte de la misión: si el viaje lo permite, buscar a Gonagal Crestarroja y pedirle que haga circular una vez más el estandarte de los enanos. No es una parada obligada." },
+      { "id": "luskan", "nombre": "Luskan", "x": 8.6, "y": 9.8, "tipo": "ciudad", "sesiones": [1], "estado": "confirmado", "nota": "Muy al norte. La traición no vino de los vecinos: vino de acá, cree Durin. Orcos, los Garra de Hierro, banderas nunca vistas en el puerto de Ámbar. Por ahora es una pista, no una parada del viaje." }
+    ],
+    "rutas": [
+      { "sesion": 1, "estado": "planeado", "puntos": ["ambar", "moray"] },
+      { "sesion": 1, "estado": "opcional", "puntos": ["moray", "waterdeep"] }
+    ]
+  },
   "galeria": {
     "estiloBase": "Ilustración estilo anime de alta calidad, como fotograma de una película de fantasía animada moderna: línea limpia, cel shading suave, iluminación cinematográfica, fondos pintados con detalle. Nada de fotorrealismo. Vaegrant: alto elfo masculino de rasgos finos, expresión serena y distante. Pelo lacio blanco con reflejos azulados, hasta los hombros, con mechones sueltos sobre la cara. Ojos claros gris azulado grandes al estilo anime pero contenidos, muy detallados, con el iris luminoso y un cansancio antiguo en la mirada. Piel pálida de subtono frío, orejas élficas puntiagudas discretas. Ropa de viaje gris azulada sin adornos, de buena confección, mangas largas que cubren las muñecas, capa con capucha baja. Paleta fría (azules apagados, grises, penumbra) con una única fuente de calidez: luz de vela ámbar. Tono melancólico, digno, sin dramatismo ni poses heroicas. Sin texto en la imagen.",
     "prompts": [
@@ -285,7 +435,7 @@
         "prompt": "Formato horizontal 3:2. Una taberna llena y cálida, con gente riendo desenfocada en primer plano. Al fondo, nítido, Vaegrant lleva una bandeja entre las mesas: presente, eficiente e invisible para todos. Es el único elemento en foco de toda la imagen, y su pelo blanco azulado lo distingue entre la multitud que no lo mira."
       },
       {
-        "titulo": "Silverun, el mundo después de la Gran Guerra",
+        "titulo": "Silvapor, el mundo después de la Gran Guerra",
         "prompt": "Paisaje amplio en formato horizontal 16:9, estilo fondo pintado de película de animación de fantasía steampunk. Un mundo de posguerra: ruinas elegantes cubiertas de niebla, caminos rotos con vías y engranajes hundidos, y arriba una ciudad flotante enorme sostenida por cadenas colosales y maquinaria de vapor, con chimeneas de bronce, hélices y puertos que cuelgan sobre el vacío. Un dirigible pequeño cruza el cielo. Abajo, diminuto, Vaegrant camina solo por el camino, reconocible por la capa gris azulada y el pelo claro. Amanecer frío, con una sola franja de luz cálida en el horizonte."
       },
       {
@@ -390,7 +540,7 @@
       },
       {
         "url": "/vaegrant-galeria/vaegrant-7.jpg",
-        "prompt": "Silverun, el mundo después de la Gran Guerra",
+        "prompt": "Silvapor, el mundo después de la Gran Guerra",
         "fecha": "2026-07-07"
       },
       {

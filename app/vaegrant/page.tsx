@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { Cormorant_Garamond } from "next/font/google";
-import { VaegrantData, VImagen } from "@/types/vaegrant";
+import { VaegrantData, VImagen, VDialogoLinea } from "@/types/vaegrant";
 import EditableText from "@/components/EditableText";
 import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
@@ -27,6 +27,8 @@ const TABS = [
   { id: "perfil",   label: "Perfil" },
   { id: "hoja",     label: "Hoja" },
   { id: "historia", label: "Historia" },
+  { id: "sesiones", label: "Sesiones" },
+  { id: "mapa",     label: "Mapa" },
   { id: "mundo",    label: "El mundo" },
 ];
 
@@ -128,21 +130,36 @@ export default function VaegrantPage() {
           .vg-reflection { animation: none; opacity: 0.35; }
         }
         .vg-tab:focus-visible, .vg-btn:focus-visible { outline: 2px solid ${C.amber}; outline-offset: 2px; }
+        .vg-party-pin { animation: vgPulse 2.4s ease-out infinite; }
+        @keyframes vgPulse {
+          0% { box-shadow: 0 0 0 0 rgba(201,156,90,0.55); }
+          70% { box-shadow: 0 0 0 11px rgba(201,156,90,0); }
+          100% { box-shadow: 0 0 0 0 rgba(201,156,90,0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .vg-party-pin { animation: none; }
+        }
         .vg-row { border-top: 1px solid ${C.borderSoft}; }
         .vg-row:first-of-type { border-top: none; }
         .vg-thumb { transition: opacity 0.15s; }
         .vg-thumb:hover { opacity: 0.85; }
+        /* Las pestañas scrollean horizontal si no entran (6 tabs en mobile). */
+        .vg-tabs { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .vg-tabs::-webkit-scrollbar { display: none; }
         @media (max-width: 720px) {
           .vg-hero-inner { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; padding: 20px 1rem 18px !important; }
           .vg-grid-2 { grid-template-columns: 1fr !important; }
           .vg-gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .vg-content { padding: 1.2rem 1rem 3rem !important; }
           .vg-bar { padding: 0 0.6rem !important; }
-          .vg-tab { padding: 11px 10px !important; font-size: 11.5px !important; }
+          .vg-tab { padding: 11px 8px !important; font-size: 11px !important; }
           .vg-btn-label, .vg-nav-label { display: none; }
           .vg-bar-actions { gap: 6px !important; }
           .vg-bar-actions a, .vg-bar-actions button { padding: 5px 9px !important; }
           .vg-savedmsg { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); background: #161d26; border: 1px solid ${C.border}; border-radius: 4px; padding: 6px 14px; z-index: 200; }
+          /* Controles del mapa: botones con más dedo y la leyenda abajo, a lo ancho. */
+          .vg-mapa-controles button { padding: 7px 13px !important; }
+          .vg-mapa-leyenda { flex-basis: 100%; margin-left: 0 !important; order: 10; }
         }
       `}</style>
 
@@ -153,7 +170,7 @@ export default function VaegrantPage() {
         sectionTitle={aiModal.title}
         currentText={aiModal.currentText}
         tipo="personal"
-        context={`Personaje: ${data.meta.alias} (${data.meta.nombreReal}), brujo del Archifey en Silverun, el mundo que quedó de Faerûn tras la Gran Guerra. Tono: melancólico, contenido, sobrio; frases cortas; nada de dramatismo. PROHIBIDO usar la raya larga (—).`}
+        context={`Personaje: ${data.meta.alias} (${data.meta.nombreReal}), brujo del Archifey en Silvapor, el mundo que quedó de Faerûn tras la Gran Guerra. Tono: melancólico, contenido, sobrio; frases cortas; nada de dramatismo. PROHIBIDO usar la raya larga (—).`}
       />
       {lightbox && (
         <ImageLightbox
@@ -247,7 +264,7 @@ export default function VaegrantPage() {
       {/* ══ TABS (sticky) ═════════════════════════ */}
       <div style={{ position: "sticky", top: 0, zIndex: 100, background: C.bgDeep, borderBottom: `1px solid ${C.border}` }}>
         <div className="vg-bar" style={{ maxWidth: 960, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
-          <div style={{ display: "flex", minWidth: 0 }}>
+          <div className="vg-tabs" style={{ display: "flex", minWidth: 0 }}>
             {TABS.map((tab) => (
               <button
                 key={tab.id}
@@ -321,9 +338,11 @@ export default function VaegrantPage() {
         )}
         {activeTab === "hoja" && <TabHoja combateId={data.combateId} />}
         {activeTab === "historia" && <TabHistoria data={data} update={update} openAI={openAI} />}
+        {activeTab === "sesiones" && <TabSesiones data={data} />}
+        {activeTab === "mapa" && <TabMapa data={data} />}
         {activeTab === "mundo" && (
           <TabMundo data={data} update={update} openAI={openAI} estampas={estampas}
-            onOpen={(idx) => setLightbox({ imgs: estampas.map((i) => i.url), caps: estampas.map((i) => i.prompt.replace(/^Mundo · /, "")), idx, alt: "Silverun" })} />
+            onOpen={(idx) => setLightbox({ imgs: estampas.map((i) => i.url), caps: estampas.map((i) => i.prompt.replace(/^Mundo · /, "")), idx, alt: "Silvapor" })} />
         )}
       </div>
     </div>
@@ -930,6 +949,424 @@ function TabHistoria({ data, update, openAI }: { data: VaegrantData; update: Upd
   );
 }
 
+// ── Sesiones: crónica curada de cada partida, con el diálogo real de mesa ──
+
+function DialogoBlock({ lineas }: { lineas: VDialogoLinea[] }) {
+  const colorDe = (quien: string) =>
+    quien === "Vaegrant" ? C.steelStrong : quien === "El Master" ? C.faint : C.amber;
+  return (
+    <div style={{ borderLeft: `2px solid ${C.amberSoft}`, background: "rgba(201,156,90,0.04)", borderRadius: `0 ${R + 1}px ${R + 1}px 0`, padding: "12px 16px", margin: "4px 0 18px", display: "grid", gap: 12 }}>
+      <div style={{ ...labelStyle, marginBottom: 0, color: C.amber }}>De la mesa · textual</div>
+      {lineas.map((l, i) => (
+        <div key={i}>
+          <div style={{ fontSize: 9.5, fontWeight: 700, color: colorDe(l.quien), textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 2 }}>
+            {l.quien}
+          </div>
+          <p className={serif.className} style={{ fontSize: 17, fontStyle: "italic", color: C.muted, lineHeight: 1.5, margin: 0 }}>
+            {l.texto}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Índice tipo tabla (una fila por sesión) + vista de detalle al abrir.
+function TabSesiones({ data }: { data: VaegrantData }) {
+  const sesiones = data.cronica ?? [];
+  const [abiertaId, setAbiertaIdRaw] = useState<string | null>(null);
+  const abierta = sesiones.find((s) => s.id === abiertaId) ?? null;
+  // Al abrir o volver, subir al inicio: el detalle y el índice comparten scroll.
+  const setAbiertaId = (id: string | null) => {
+    setAbiertaIdRaw(id);
+    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+  };
+
+  if (sesiones.length === 0) {
+    return <p style={{ ...pStyle, fontStyle: "italic", color: C.faint }}>Todavía no hay sesiones cargadas en la crónica.</p>;
+  }
+
+  // ── Detalle ──
+  if (abierta) {
+    const s = abierta;
+    return (
+      <div>
+        <button
+          className="vg-btn"
+          onClick={() => setAbiertaId(null)}
+          style={{
+            display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 18,
+            padding: "5px 12px", fontSize: 11, fontWeight: 600, borderRadius: R + 1,
+            background: "transparent", color: C.steelStrong, border: `1px solid ${C.border}`, cursor: "pointer",
+          }}
+        >
+          <ArrowLeft size={13} /> Todas las sesiones
+        </button>
+
+        <p style={{ fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.16em", margin: "0 0 4px" }}>
+          Sesión {s.numero}{s.fecha ? ` · ${s.fecha}` : ""}
+        </p>
+        <h2 className={serif.className} style={{ fontSize: 34, fontWeight: 600, color: C.text, lineHeight: 1.1, margin: "0 0 12px" }}>
+          {s.titulo}
+        </h2>
+        <VQuote>{s.resumen}</VQuote>
+
+        {s.capitulos.map((c, i) => (
+          <div key={i} style={{ marginTop: 26 }}>
+            <VTitle size={21}>{c.titulo}</VTitle>
+            {c.texto.split(/\n{2,}/).map((p, j) => (
+              <p key={j} style={pStyle}>{p}</p>
+            ))}
+            {c.dialogo && c.dialogo.length > 0 && <DialogoBlock lineas={c.dialogo} />}
+          </div>
+        ))}
+
+        <VSecLabel>Nombres que dejó la sesión</VSecLabel>
+        <VDivider />
+        <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 28px" }}>
+          {s.nombres.map((n, i) => (
+            <div key={i} className="vg-row" style={{ padding: "11px 0" }}>
+              <div style={{ fontSize: 13, fontWeight: 600, color: C.steelStrong, marginBottom: 3 }}>{n.nombre}</div>
+              <div style={{ ...pStyle, fontSize: 12.5, margin: 0 }}>{n.rol}</div>
+            </div>
+          ))}
+        </div>
+
+        {s.dudas.length > 0 && (
+          <>
+            <VSecLabel>Pendiente de confirmar en mesa</VSecLabel>
+            <VDivider />
+            {s.dudas.map((d, i) => (
+              <div key={i} className="vg-row" style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "8px 0" }}>
+                <span style={{ fontSize: 12, color: C.amber, flexShrink: 0, lineHeight: 1.6 }}>?</span>
+                <p style={{ ...pStyle, fontSize: 12.5, margin: 0, color: C.faint }}>{d}</p>
+              </div>
+            ))}
+          </>
+        )}
+
+        <button
+          className="vg-btn"
+          onClick={() => setAbiertaId(null)}
+          style={{
+            display: "inline-flex", alignItems: "center", gap: 6, marginTop: 28,
+            padding: "5px 12px", fontSize: 11, fontWeight: 600, borderRadius: R + 1,
+            background: "transparent", color: C.steelStrong, border: `1px solid ${C.border}`, cursor: "pointer",
+          }}
+        >
+          <ArrowLeft size={13} /> Todas las sesiones
+        </button>
+      </div>
+    );
+  }
+
+  // ── Índice: tabla de sesiones ──
+  const ordenadas = [...sesiones].sort((a, b) => b.numero - a.numero);
+  return (
+    <div>
+      <VTitle size={26}>La crónica de la campaña</VTitle>
+      <p style={{ ...pStyle, fontSize: 13 }}>
+        Una fila por sesión. Cada una guarda la narración completa por capítulos, el diálogo real de mesa,
+        los nombres que aparecieron y lo pendiente de confirmar.
+      </p>
+
+      <div style={{ display: "flex", padding: "6px 0 4px", gap: 14 }}>
+        <span style={{ ...labelStyle, width: 64, marginBottom: 0 }}>Sesión</span>
+        <span style={{ ...labelStyle, flex: 1, marginBottom: 0 }}>Título</span>
+        <span className="vg-nav-label" style={{ ...labelStyle, width: 84, marginBottom: 0 }}>Fecha</span>
+        <span style={{ width: 64 }} />
+      </div>
+      <div style={{ height: 1, background: C.border }} />
+
+      {ordenadas.map((s) => (
+        <div
+          key={s.id}
+          className="vg-row"
+          onClick={() => setAbiertaId(s.id)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setAbiertaId(s.id); } }}
+          title={`Abrir la Sesión ${s.numero}`}
+          style={{ display: "flex", alignItems: "flex-start", gap: 14, padding: "14px 0", cursor: "pointer" }}
+        >
+          <div className={serif.className} style={{ width: 64, fontSize: 26, fontWeight: 600, color: C.amber, lineHeight: 1.15, flexShrink: 0 }}>
+            {String(s.numero).padStart(2, "0")}
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div className={serif.className} style={{ fontSize: 19, fontWeight: 600, color: C.text, lineHeight: 1.2 }}>
+              {s.titulo}
+            </div>
+            <p style={{
+              ...pStyle, fontSize: 12, margin: "3px 0 0", color: C.faint,
+              display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+            }}>
+              {s.resumen}
+            </p>
+            <div style={{ fontSize: 10.5, color: C.steel, marginTop: 5 }}>
+              {s.capitulos.length} capítulos · {s.nombres.length} nombres
+              {s.capitulos.some((c) => c.dialogo && c.dialogo.length > 0) ? " · diálogo de mesa" : ""}
+            </div>
+          </div>
+          <div className="vg-nav-label" style={{ width: 84, fontSize: 11, color: C.faint, paddingTop: 5, flexShrink: 0 }}>
+            {s.fecha ?? ""}
+          </div>
+          <button
+            className="vg-btn"
+            onClick={(e) => { e.stopPropagation(); setAbiertaId(s.id); }}
+            style={{
+              width: 64, padding: "5px 0", fontSize: 11, fontWeight: 700, borderRadius: R + 1,
+              background: C.amber, border: "none", color: "#10151c", cursor: "pointer", flexShrink: 0,
+            }}
+          >
+            Abrir
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ── Mapa: el mapa de Faerûn con los pines de la campaña ──────────
+// Réplica digital del mapa pinchado del salón del club: pines por sesión,
+// la ruta del viaje y el pin ámbar de dónde está el grupo ahora.
+
+function TabMapa({ data }: { data: VaegrantData }) {
+  const m = data.mapa;
+  const [zoom, setZoom] = useState(2.2);
+  const [sel, setSel] = useState<string>(m?.party.marcadorId ?? "");
+  const [agarrando, setAgarrando] = useState(false);
+  // Visibilidad de las etiquetas de los pines, para poder ver el mapa limpio.
+  const [etiquetas, setEtiquetas] = useState<"nitidas" | "tenues" | "ocultas">("nitidas");
+  const scrollRef = useRef<HTMLDivElement>(null);
+  // Arrastre con mouse en PC (el touch ya scrollea nativo). moved evita que
+  // soltar un arrastre dispare el click de un pin.
+  const drag = useRef({ x: 0, y: 0, sl: 0, st: 0, moved: false, activo: false });
+
+  const byId = useMemo(() => new Map((m?.marcadores ?? []).map((k) => [k.id, k])), [m]);
+
+  const ZOOM_MIN = 1, ZOOM_MAX = 14, ZOOM_PASO = 1.5;
+  const zoomIn  = () => setZoom((z) => Math.min(ZOOM_MAX, +(z * ZOOM_PASO).toFixed(2)));
+  const zoomOut = () => setZoom((z) => Math.max(ZOOM_MIN, +(z / ZOOM_PASO).toFixed(2)));
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    drag.current = { x: e.clientX, y: e.clientY, sl: el.scrollLeft, st: el.scrollTop, moved: false, activo: true };
+    setAgarrando(true);
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    const d = drag.current;
+    const el = scrollRef.current;
+    if (!d.activo || !el) return;
+    const dx = e.clientX - d.x, dy = e.clientY - d.y;
+    if (Math.abs(dx) + Math.abs(dy) > 5) d.moved = true;
+    el.scrollLeft = d.sl - dx;
+    el.scrollTop = d.st - dy;
+  };
+  const finDrag = () => {
+    drag.current.activo = false;
+    setAgarrando(false);
+  };
+  const onClickCapture = (e: React.MouseEvent) => {
+    if (drag.current.moved) {
+      e.preventDefault();
+      e.stopPropagation();
+      drag.current.moved = false;
+    }
+  };
+
+  const centerOn = useCallback((id: string, smooth: boolean) => {
+    const k = byId.get(id);
+    const el = scrollRef.current;
+    if (!k || !el) return;
+    el.scrollTo({
+      left: (k.x / 100) * el.scrollWidth - el.clientWidth / 2,
+      top: (k.y / 100) * el.scrollHeight - el.clientHeight / 2,
+      behavior: smooth ? "smooth" : "auto",
+    });
+  }, [byId]);
+
+  // Al cambiar el zoom, mantener la vista sobre el pin seleccionado.
+  useEffect(() => { centerOn(sel, false); }, [zoom]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (!m) return <p style={{ ...pStyle, fontStyle: "italic", color: C.faint }}>Todavía no hay mapa cargado.</p>;
+
+  const selM = byId.get(sel) ?? null;
+  const esParty = (id: string) => id === m.party.marcadorId;
+  const tipoLabel: Record<string, string> = { ciudad: "Ciudad", region: "Región", isla: "Isla", hito: "Hito", mar: "Mar" };
+
+  return (
+    <div>
+      <VTitle size={26}>{m.titulo}</VTitle>
+      <p style={{ ...pStyle, fontSize: 13 }}>{m.nota}</p>
+
+      {/* Controles */}
+      <div className="vg-mapa-controles" style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10, flexWrap: "wrap" }}>
+        <button className="vg-btn" onClick={zoomOut} disabled={zoom <= ZOOM_MIN} title="Alejar"
+          style={{ padding: "4px 14px", fontSize: 14, fontWeight: 700, borderRadius: R, background: "transparent", color: zoom <= ZOOM_MIN ? C.faint : C.steelStrong, border: `1px solid ${C.border}`, cursor: zoom <= ZOOM_MIN ? "default" : "pointer" }}>
+          −
+        </button>
+        <span style={{ fontSize: 11, color: C.faint, minWidth: 46, textAlign: "center" }}>{Math.round(zoom * 100)}%</span>
+        <button className="vg-btn" onClick={zoomIn} disabled={zoom >= ZOOM_MAX} title="Acercar"
+          style={{ padding: "4px 14px", fontSize: 14, fontWeight: 700, borderRadius: R, background: "transparent", color: zoom >= ZOOM_MAX ? C.faint : C.steelStrong, border: `1px solid ${C.border}`, cursor: zoom >= ZOOM_MAX ? "default" : "pointer" }}>
+          +
+        </button>
+        <button className="vg-btn" onClick={() => { setSel(m.party.marcadorId); centerOn(m.party.marcadorId, true); }}
+          style={{ padding: "4px 12px", fontSize: 11, fontWeight: 700, borderRadius: R, background: C.amberSoft, color: C.amber, border: `1px solid rgba(201,156,90,0.35)`, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 5 }}>
+          <Flame size={12} strokeWidth={2.2} /> Ir al grupo
+        </button>
+        <button className="vg-btn"
+          onClick={() => setEtiquetas((e) => (e === "nitidas" ? "tenues" : e === "tenues" ? "ocultas" : "nitidas"))}
+          title="Cambiar la visibilidad de los nombres sobre el mapa"
+          style={{ padding: "4px 12px", fontSize: 11, fontWeight: 600, borderRadius: R, background: "transparent", color: C.steelStrong, border: `1px solid ${C.border}`, cursor: "pointer" }}>
+          Etiquetas: {etiquetas === "nitidas" ? "nítidas" : etiquetas}
+        </button>
+        <span className="vg-mapa-leyenda" style={{ fontSize: 10.5, color: C.faint, marginLeft: "auto" }}>
+          ● lugar · ○ aproximado · <span style={{ color: C.amber }}>línea ámbar: el viaje</span> · <span style={{ color: C.steel }}>gris punteada: encargo personal</span>
+        </span>
+      </div>
+
+      {/* Mapa scrolleable con pines */}
+      <div
+        ref={scrollRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={finDrag}
+        onPointerLeave={finDrag}
+        onPointerCancel={finDrag}
+        onClickCapture={onClickCapture}
+        style={{
+          overflow: "auto", maxHeight: "68vh", border: `1px solid ${C.border}`, borderRadius: R + 1,
+          background: C.bgDeep, cursor: agarrando ? "grabbing" : "grab",
+          touchAction: "pan-x pan-y", userSelect: "none", WebkitUserSelect: "none",
+        }}
+      >
+        <div style={{ position: "relative", width: `${zoom * 100}%` }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={m.imagen}
+            alt="Mapa de Faerûn con los pines de la campaña"
+            onLoad={() => centerOn(m.party.marcadorId, false)}
+            draggable={false}
+            style={{ width: "100%", display: "block" }}
+          />
+          {/* Rutas */}
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
+            {m.rutas.map((r, i) => {
+              const pts = r.puntos
+                .map((id) => byId.get(id))
+                .filter((k): k is NonNullable<typeof k> => !!k)
+                .map((k) => `${k.x},${k.y}`)
+                .join(" ");
+              // recorrido: ámbar sólida · planeado (el viaje): ámbar punteada ·
+              // opcional (encargo personal): gris fina de puntos
+              const st = r.estado === "recorrido"
+                ? { stroke: C.amber, width: 0.24, dash: undefined, op: 0.9 }
+                : r.estado === "planeado"
+                ? { stroke: C.amber, width: 0.22, dash: "0.8 0.9", op: 0.85 }
+                : { stroke: C.steel, width: 0.16, dash: "0.22 0.6", op: 0.8 };
+              return (
+                <polyline key={i} points={pts} fill="none"
+                  stroke={st.stroke} strokeOpacity={st.op} strokeWidth={st.width}
+                  strokeDasharray={st.dash}
+                  strokeLinejoin="round" strokeLinecap="round" />
+              );
+            })}
+          </svg>
+          {/* Pines */}
+          {m.marcadores.map((k) => {
+            const party = esParty(k.id);
+            const isSel = sel === k.id;
+            const esMar = k.tipo === "mar";
+            const esRegion = k.tipo === "region";
+            const esHito = k.tipo === "hito";
+            // Marca según tipo: región = anillo, hito = rombo, mar = solo etiqueta,
+            // ciudad/isla = punto lleno (hueco si la ubicación es aproximada).
+            const marca = party ? (
+              <span className="vg-party-pin" style={{
+                display: "block", width: 13, height: 13, borderRadius: "50%",
+                background: C.amber, border: `2px solid #ffe9c9`,
+                outline: isSel ? `3px solid rgba(201,156,90,0.5)` : "none",
+              }} />
+            ) : esMar ? null : (
+              <span style={{
+                display: "block",
+                width: esRegion ? 15 : esHito ? 9 : 10,
+                height: esRegion ? 15 : esHito ? 9 : 10,
+                borderRadius: esHito ? 1.5 : "50%",
+                transform: esHito ? "rotate(45deg)" : "none",
+                background: esRegion ? "transparent" : k.estado === "confirmado" ? C.steelStrong : "rgba(16,21,28,0.4)",
+                border: `2px solid ${C.steelStrong}`,
+                borderStyle: k.estado === "aproximado" && !esHito ? "dashed" : "solid",
+                boxShadow: "0 0 5px rgba(0,0,0,0.7)",
+                outline: isSel ? `3px solid rgba(201,156,90,0.5)` : "none",
+              }} />
+            );
+            // El pin seleccionado y el del grupo mantienen su nombre visible siempre.
+            const etiquetaVisible = etiquetas !== "ocultas" || isSel || party;
+            const tenue = etiquetas !== "nitidas" && !isSel && !party;
+            return (
+              <button key={k.id} onClick={() => setSel(k.id)} title={k.nombre}
+                style={{ position: "absolute", left: `${k.x}%`, top: `${k.y}%`, transform: "translate(-50%, -50%)", background: "transparent", border: "none", cursor: "pointer", padding: 8, zIndex: isSel ? 3 : party ? 3 : 2 }}>
+                {marca}
+                {etiquetaVisible && (
+                  <span style={{
+                    position: esMar ? "static" : "absolute",
+                    // Los hitos llevan la etiqueta al costado derecho del rombo para
+                    // no pisarse con las ciudades que tienen justo arriba y abajo.
+                    ...(esHito ? { left: "100%", top: "50%" } : { top: "100%", left: "50%" }),
+                    transform: esMar ? "none" : esHito ? "translate(-2px, -50%)" : "translate(-50%, 1px)",
+                    display: "block",
+                    fontSize: esRegion || esMar ? 10.5 : 10, fontWeight: 700, letterSpacing: esMar ? "0.1em" : "0.02em",
+                    whiteSpace: "nowrap", fontStyle: esMar ? "italic" : "normal",
+                    textTransform: esMar ? "uppercase" : "none",
+                    color: party ? "#ffe9c9" : isSel ? "#ffe9c9" : "#eef2f6",
+                    background: esMar ? "transparent" : tenue ? "rgba(11,15,21,0.22)" : "rgba(11,15,21,0.72)",
+                    border: esMar ? "none" : `1px solid ${isSel || party ? "rgba(201,156,90,0.55)" : tenue ? "rgba(141,163,184,0.12)" : "rgba(141,163,184,0.3)"}`,
+                    borderRadius: 3, padding: esMar ? 0 : "1px 7px",
+                    opacity: tenue ? 0.55 : 1,
+                    textShadow: esMar ? "0 1px 3px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7)" : "none",
+                  }}>
+                    {k.nombre}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Ficha del pin seleccionado */}
+      {selM && (
+        <div style={{ background: C.subtle, borderRadius: R + 1, borderLeft: `2px solid ${esParty(selM.id) ? C.amber : C.borderSoft}`, padding: "14px 16px", marginTop: 12 }}>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap", marginBottom: 4 }}>
+            <span className={serif.className} style={{ fontSize: 20, fontWeight: 600, color: C.text }}>{selM.nombre}</span>
+            <span style={{ fontSize: 10, color: C.steel, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+              {tipoLabel[selM.tipo] ?? selM.tipo}{selM.estado === "aproximado" ? " · ubicación aproximada" : ""}
+            </span>
+            <span style={{ marginLeft: "auto", display: "flex", gap: 5 }}>
+              {selM.sesiones.map((n) => (
+                <span key={n} style={{ fontSize: 9.5, fontWeight: 700, color: C.amber, border: `1px solid rgba(201,156,90,0.35)`, borderRadius: R, padding: "1px 7px" }}>
+                  Sesión {n}
+                </span>
+              ))}
+            </span>
+          </div>
+          <p style={{ ...pStyle, margin: 0, fontSize: 13 }}>{selM.nota}</p>
+          {esParty(selM.id) && (
+            <p style={{ ...pStyle, margin: "8px 0 0", fontSize: 12.5, color: C.amber, display: "flex", gap: 8, alignItems: "flex-start" }}>
+              <Flame size={13} strokeWidth={2} style={{ flexShrink: 0, marginTop: 3 }} />
+              <span>{m.party.texto}</span>
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function TabMundo({ data, update, openAI, estampas, onOpen }: {
   data: VaegrantData; update: UpdateFn; openAI: OpenAIFn;
   estampas: VImagen[]; onOpen: (idx: number) => void;
@@ -973,7 +1410,7 @@ function TabMundo({ data, update, openAI, estampas, onOpen }: {
       ))}
 
       {estampas.length > 0 && (
-        <Galeria titulo="Estampas de Silverun" imagenes={estampas} todas={data.galeria.imagenes}
+        <Galeria titulo="Estampas de Silvapor" imagenes={estampas} todas={data.galeria.imagenes}
           portada={data.galeria.portada} update={update} onOpen={onOpen} tipoMundo={true} />
       )}
     </div>
