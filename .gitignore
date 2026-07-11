@@ -51,3 +51,7 @@ data/characters/
 
 # PNG originales de la galeria (pesados; en el repo van los .jpg optimizados)
 /public/datas-vaegrant/*.png
+/public/datas-vaegrant/**/*.png
+
+# Imágenes de referencia de terceros (estilo L'Éther); no van al repo
+/public/examples/
