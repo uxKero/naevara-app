@@ -77,7 +77,7 @@ export default function CombatePage() {
       <header style={{ background: "var(--hero-bg)", borderBottom: "1px solid var(--border)", padding: "16px 0" }}>
         <div style={{ maxWidth: 980, margin: "0 auto", padding: "0 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
           <div>
-            <Link href="/" style={{ fontSize: 11, color: "var(--accent)", textDecoration: "none" }}>← Volver al perfil</Link>
+            <Link href="/naevara" style={{ fontSize: 11, color: "var(--accent)", textDecoration: "none" }}>← Volver al perfil</Link>
             <h1 className="hero-name" style={{ fontSize: 26, fontWeight: 600, color: "#fff", margin: "4px 0 0" }}>
               Hoja de combate — Naevara
             </h1>

@@ -284,7 +284,7 @@ export default function VaegrantPage() {
           </div>
           <div className="vg-bar-actions" style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
             {savedMsg && <span className="vg-savedmsg" style={{ fontSize: 11, fontWeight: savedMsg.startsWith("⚠") ? 600 : 400, color: savedMsg.startsWith("⚠") ? "#e07a5f" : C.steel }}>{savedMsg}</span>}
-            <a href="/" title="Volver al perfil de Naevara" style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, color: C.faint, textDecoration: "none", whiteSpace: "nowrap", padding: "5px 2px" }}>
+            <a href="/naevara" title="Volver al perfil de Naevara" style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, color: C.faint, textDecoration: "none", whiteSpace: "nowrap", padding: "5px 2px" }}>
               <ArrowLeft size={13} /> <span className="vg-nav-label">Naevara</span>
             </a>
             <a

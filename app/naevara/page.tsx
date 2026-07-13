@@ -122,7 +122,7 @@ export default function Home() {
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "transparent" }}>
+    <div className="theme-naevara" style={{ minHeight: "100vh", background: "transparent" }}>
 
       {/* ── Modales globales ─────────────────── */}
       <AIModal

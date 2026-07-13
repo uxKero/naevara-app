@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Cinzel, Spectral } from "next/font/google";
+import { Cinzel, Spectral, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -18,8 +21,8 @@ const spectral = Spectral({
 });
 
 export const metadata: Metadata = {
-  title: "Naevara Tirael",
-  description: "Perfil de personaje: Naevara Tirael, Brujo del Gran Antiguo",
+  title: "Tirael — Naevara & Vaegrant",
+  description: "Elegí un personaje: Naevara Tirael (Brujo del Gran Antiguo) o Vaegrant (Brujo del Archifey).",
 };
 
 export default function RootLayout({
@@ -28,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${cinzel.variable} ${spectral.variable}`}>
+    <html lang="es" className={cn("dark", cinzel.variable, spectral.variable, "font-sans", geist.variable)}>
       <body>{children}</body>
     </html>
   );
