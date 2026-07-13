@@ -10,7 +10,7 @@
     ],
     "eyebrow": "Brujo del Gran Antiguo · Pacto del Tomo · Semielfa",
     "lastName": "Tirael",
-    "subtitle": "Nivel 5 · Brujo del Gran Antiguo · Pacto del Tomo",
+    "subtitle": "Nivel 6 · Brujo del Gran Antiguo · Pacto del Tomo",
     "firstName": "Naevara",
     "subsubtitle": "Semielfa · Trasfondo: Ermitaña · Alineamiento: Neutral Buena"
   },
@@ -142,7 +142,7 @@
     "combate": [
       {
         "label": "Puntos de vida",
-        "valor": "44"
+        "valor": "51"
       },
       {
         "label": "CD de hechizos",
@@ -471,7 +471,7 @@
     "equipamientoNota": "CA final: 13 — Armadura de Cuero (11) + modificador Destreza (+2). Con Armor of Agathys (lanzado con espacio de 3.er nivel): 15 vida temporal y 15 de frío a quien la golpee cuerpo a cuerpo."
   },
   "hechizos": {
-    "nota": "Regla del Brujo: 2 espacios de hechizo de 3.er nivel, recuperados con cada descanso corto (1 hora). Todo hechizo se lanza al 3.er nivel (se sube solo). Los trucos no cuestan espacio. Las invocaciones son permanentes y pasivas. Los hechizos de patrón (Gran Antiguo) están siempre disponibles y no ocupan tus 6 conocidos.",
+    "nota": "Regla del Brujo: 2 espacios de hechizo de 3.er nivel, recuperados con cada descanso corto (1 hora). Todo hechizo se lanza al 3.er nivel (se sube solo). Los trucos no cuestan espacio. Las invocaciones son permanentes y pasivas. Los hechizos de patrón (Gran Antiguo) están siempre disponibles y no ocupan tus 7 conocidos.",
     "patron": [
       {
         "dado": {
@@ -638,6 +638,12 @@
         "descripcion": "Paralizás hasta 2 humanoides (lo lanzás con espacio de 3.er nivel). Inmóviles, no actúan, y los ataques cuerpo a cuerpo contra ellos son críticos automáticos. Salvación de Sabiduría CD 16 al inicio de cada turno. Guardalo para el momento clave."
       },
       {
+        "badge": "Nivel 2 · control social · nuevo (niv 6)",
+        "nombre": "Suggestion",
+        "destacado": true,
+        "descripcion": "Le das una orden razonable de una o dos frases a una criatura que te oiga y entienda (salvación de Sabiduría CD 16). Si falla, obedece lo mejor que puede hasta 8 horas o hasta cumplir la orden. Concentración. Aprovecha tu Carisma 20 y tu perfil de cara: resuelve encuentros sin tirar un solo hechizo de daño. No pidas nada obviamente dañino o rompe el efecto."
+      },
+      {
         "dado": {
           "tipo": "frío",
           "caras": 6,
@@ -670,7 +676,7 @@
         "descripcion": "Reacción: cuando ves a una criatura lanzando un hechizo, lo anulás (automático hasta 3.er nivel; superior requiere prueba de Carisma CD 10 + nivel del hechizo). No usa concentración, así que convive con Hex. Tu seguro contra los rituales e invocaciones de los cultistas de Tiamat."
       }
     ],
-    "loopCombate": "Hex (acción adicional) sobre el más peligroso → Eldritch Blast cada turno (2 rayos, +5 c/u) sobre el mismo. Para frenar a un grupo o bloquear un pasillo → Hunger of Hadar. Contra un jefe humanoide → Hold Person y avisale al grupo para aprovechar los críticos. Guardá Counterspell para cuando un cultista lance un ritual o invocación. Fly para reposicionarte o alcanzar lo inalcanzable. Toll the Dead cuando un enemigo ya está herido. Armor of Agathys (15 vida temp / 15 de frío) si esperás recibir golpes. Guidance en cada tirada de habilidad del grupo fuera de combate.",
+    "loopCombate": "Hex (acción adicional) sobre el más peligroso → Eldritch Blast cada turno (2 rayos, +5 c/u) sobre el mismo. Para frenar a un grupo o bloquear un pasillo → Hunger of Hadar. Contra un jefe humanoide → Hold Person y avisale al grupo para aprovechar los críticos. Guardá Counterspell para cuando un cultista lance un ritual o invocación. Entropic Ward (reacción, 1 vez por descanso) para imponer desventaja al ataque que amenace tu concentración; si falla, tu próximo Eldritch Blast contra ese enemigo va con ventaja. Fly para reposicionarte o alcanzar lo inalcanzable. Toll the Dead cuando un enemigo ya está herido. Armor of Agathys (15 vida temp / 15 de frío) si esperás recibir golpes. Suggestion para desactivar a un enemigo o resolver una escena social sin pelear. Guidance en cada tirada de habilidad del grupo fuera de combate.",
     "invocaciones": [
       {
         "badge": "Permanente",
@@ -683,6 +689,12 @@
         "nombre": "Eyes of the Rune Keeper",
         "destacado": true,
         "descripcion": "Podés leer cualquier escritura en cualquier idioma. La base mecánica de la Escritura del Umbral — no hay texto oculto para Naevara."
+      },
+      {
+        "badge": "Nivel 6 · Gran Antiguo · nuevo",
+        "nombre": "Entropic Ward",
+        "destacado": true,
+        "descripcion": "Reacción: cuando una criatura te hace una tirada de ataque, le imponés desventaja. Si el ataque falla, tu próxima tirada de ataque contra esa criatura tiene ventaja (antes del final de tu siguiente turno). 1 uso por descanso corto o largo. Tu seguro defensivo con CA 13: úsalo contra el golpe que te rompería la concentración de Hex o Hunger of Hadar, o para negar el ataque de un enemigo clave."
       },
       {
         "badge": "Permanente · nueva",
@@ -700,13 +712,13 @@
         "titulo": "Naevara observa, aprende, contiene"
       },
       {
-        "fase": "Niveles 3–5 · Grieta (fase actual)",
-        "texto": "Fase actual. Un hechizo que sale diferente. Una visión que comparte sin querer. La voz que menciona en voz alta por primera vez. Quizá los pies que se elevan solos. El grupo empieza a ver que lo que contenía era mucho más grande de lo que parecía.",
+        "fase": "Niveles 3–5 · Grieta",
+        "texto": "Un hechizo que sale diferente. Una visión que comparte sin querer. La voz que menciona en voz alta por primera vez. Quizá los pies que se elevan solos. El grupo empieza a ver que lo que contenía era mucho más grande de lo que parecía.",
         "titulo": "Algo empieza a filtrarse"
       },
       {
-        "fase": "Niveles 5–7 · Elección",
-        "texto": "Tiene información. Tiene poder. Tiene un vínculo con algo que el grupo probablemente querría saber. La pregunta ya no es qué pasa — es qué hace ella al respecto.",
+        "fase": "Niveles 5–7 · Elección (fase actual)",
+        "texto": "Fase actual. Tiene información. Tiene poder. Tiene un vínculo con algo que el grupo probablemente querría saber. La pregunta ya no es qué pasa, es qué hace ella al respecto.",
         "titulo": "Naevara elige qué hacer con lo que sabe"
       },
       {
@@ -754,7 +766,7 @@
   "heroStats": [
     {
       "label": "Nivel",
-      "value": "5"
+      "value": "6"
     },
     {
       "label": "Clase",

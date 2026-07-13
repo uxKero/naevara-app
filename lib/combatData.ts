@@ -1,6 +1,6 @@
 // ════════════════════════════════════════════════════════════════
 //  Hoja de combate de Naevara — referencia curada de reglas (D&D 5e)
-//  Brujo del Gran Antiguo · Pacto del Tomo · Nivel 5
+//  Brujo del Gran Antiguo · Pacto del Tomo · Nivel 6
 //
 //  Los NÚMEROS de vitales/salvaciones se leen en vivo desde
 //  character.json (ver vitalesDesde / salvacionesDesde más abajo).
@@ -257,6 +257,32 @@ export const COMBAT: CombatAction[] = [
       "Solo funciona en humanoides (no bestias, no muertos vivientes, no dragones).",
   },
   {
+    id: "suggestion",
+    nombre: "Suggestion",
+    grupo: "accion",
+    coste: "1 espacio (3er nivel)",
+    usaEspacio: true,
+    accion: "Acción",
+    alcance: "9 m",
+    destacado: true,
+    queHace:
+      "Le das a UNA criatura que te oiga y entienda una orden razonable de una o dos frases (ej. 'bajá el arma y salí de la sala', 'llevanos con tu jefe'). Si falla, la cumple lo mejor que puede sin darse cuenta de que la manipulaste. Sin daño: control social puro que exprime tu Carisma 20.",
+    tirada: {
+      tipo: "salvacion",
+      stat: "Sabiduría",
+      cd: 16,
+      fallo: "obedece la orden hasta cumplirla (o hasta 8 horas).",
+      exito: "no le afecta.",
+      nota: "Una sola salvación al lanzarlo, NO repite cada turno como Hold Person. La orden tiene que sonar plausible.",
+    },
+    concentracion: true,
+    duracion: "hasta 8 horas (concentración)",
+    cuando:
+      "Para desactivar a un enemigo, dispersar a un guardia o cerrar una escena social sin pelear. La orden más simple y creíble es la que mejor aguanta.",
+    ojo:
+      "La orden no puede ser obviamente suicida o dañina (eso rompe el efecto). Si vos o tus aliados le hacen daño a la criatura, el hechizo termina. Solo criaturas que entiendan lo que decís (no bestias ni autómatas).",
+  },
+  {
     id: "hunger-of-hadar",
     nombre: "Hunger of Hadar",
     grupo: "accion",
@@ -326,6 +352,28 @@ export const COMBAT: CombatAction[] = [
     duracion: "Instantáneo",
     cuando:
       "Guardá un espacio para cuando un cultista lance un ritual o una invocación peligrosa. No usa concentración, así que convive con Hex.",
+  },
+  {
+    id: "entropic-ward",
+    nombre: "Entropic Ward",
+    grupo: "reaccion",
+    coste: "Rasgo del Gran Antiguo · 1 uso por descanso (corto o largo)",
+    accion: "Reacción",
+    alcance: "Vos misma (contra quien te ataca)",
+    destacado: true,
+    queHace:
+      "Nuevo a nivel 6. Cuando una criatura te hace una tirada de ataque, imponés DESVENTAJA a ESE ataque: el enemigo tira 2d20 y se queda con el resultado más bajo, así que es mucho más probable que falle. Y si el ataque falla, tu PRÓXIMA tirada de ataque contra esa criatura tiene VENTAJA (vos tirás 2d20 y te quedás con el mejor), siempre que la hagas antes del final de tu siguiente turno.",
+    tirada: {
+      tipo: "especial",
+      texto:
+        "No tirás vos para activarlo: modificás la tirada del enemigo a desventaja (2d20, se queda con el menor). El 'contraataque con ventaja' se aplica después a tu propio Eldritch Blast contra ese enemigo.",
+    },
+    duracion: "Instantáneo · se recarga con un descanso corto o largo",
+    cuando:
+      "Contra el golpe que te bajaría o te rompería la concentración de Hex / Hunger / Hold Person. Como es tu único uso hasta el próximo descanso, gastalo en el ataque que más te importa negar.",
+    ojo:
+      "Es una reacción: en un mismo turno no podés usar Entropic Ward Y Counterspell (solo tenés una reacción). 1 uso por descanso.",
+    delBuild: true,
   },
 
   // ── DEFENSA ───────────────────────────────────────────────────
