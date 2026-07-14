@@ -1,6 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from "react";
+
+// useLayoutEffect real en el cliente, useEffect en SSR (evita el warning de Next).
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 import { Cormorant_Garamond } from "next/font/google";
 import { VaegrantData, VImagen, VDialogoLinea } from "@/types/vaegrant";
 import EditableText from "@/components/EditableText";
@@ -8,7 +11,7 @@ import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
 import AddSessionModal from "@/components/AddSessionModal";
 import type { SessionEntry } from "@/types/character";
-import { Swords, Flame, ArrowLeft, ScrollText, Download } from "lucide-react";
+import { Swords, Flame, ArrowLeft, ScrollText, Download, User, Map as MapIcon, Globe, BookOpen, CalendarDays, MoreHorizontal, Save } from "lucide-react";
 import { descargarImagen } from "@/lib/descargar";
 import { BuilderCharacter } from "@/types/builder";
 import {
@@ -146,17 +149,35 @@ export default function VaegrantPage() {
         /* Las pestañas scrollean horizontal si no entran (6 tabs en mobile). */
         .vg-tabs { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
         .vg-tabs::-webkit-scrollbar { display: none; }
+        /* La barra de navegación inferior es solo para mobile. */
+        .vg-bottomnav { display: none; }
         @media (max-width: 720px) {
-          .vg-hero-inner { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; padding: 20px 1rem 18px !important; }
+          .vg-bottomnav { display: flex !important; }
+          /* En mobile todo se navega desde la barra inferior (secciones + Más):
+             ocultamos la barra superior entera para dejar el top limpio. */
+          .vg-topbar { display: none !important; }
+          /* Header: retrato + identidad arriba (lado a lado), tags+stats a lo ancho debajo. */
+          .vg-hero-inner {
+            grid-template-areas: "img id" "meta meta" !important;
+            column-gap: 1rem !important; row-gap: 14px !important;
+            padding: 20px 1rem 18px !important;
+            align-items: center !important;
+          }
+          .vg-portrait-img { width: 116px !important; height: 150px !important; }
+          .vg-hero-name { font-size: 30px !important; }
+          .vg-hero-real { font-size: 15px !important; }
+          .vg-hero-sub  { font-size: 10.5px !important; }
+          .vg-hero-meta { align-self: start !important; }
           .vg-grid-2 { grid-template-columns: 1fr !important; }
-          .vg-gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .vg-content { padding: 1.2rem 1rem 3rem !important; }
+          .vg-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+          /* Espacio abajo para que la barra inferior fija no tape el contenido. */
+          .vg-content { padding: 1.2rem 1rem calc(72px + env(safe-area-inset-bottom)) !important; }
           .vg-bar { padding: 0 0.6rem !important; }
           .vg-tab { padding: 11px 8px !important; font-size: 11px !important; }
           .vg-btn-label, .vg-nav-label { display: none; }
           .vg-bar-actions { gap: 6px !important; }
           .vg-bar-actions a, .vg-bar-actions button { padding: 5px 9px !important; }
-          .vg-savedmsg { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); background: #161d26; border: 1px solid ${C.border}; border-radius: 4px; padding: 6px 14px; z-index: 200; }
+          .vg-savedmsg { position: fixed; bottom: calc(76px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); background: #161d26; border: 1px solid ${C.border}; border-radius: 4px; padding: 6px 14px; z-index: 200; }
           /* Controles del mapa: botones con más dedo y la leyenda abajo, a lo ancho. */
           .vg-mapa-controles button { padding: 7px 13px !important; }
           .vg-mapa-leyenda { flex-basis: 100%; margin-left: 0 !important; order: 10; }
@@ -190,9 +211,13 @@ export default function VaegrantPage() {
         }} />
         <div className="vg-hero-inner" style={{
           maxWidth: 960, margin: "0 auto", padding: "28px 2rem 24px",
-          position: "relative", display: "flex", gap: "1.8rem", alignItems: "flex-end",
+          position: "relative", display: "grid",
+          gridTemplateColumns: "auto minmax(0, 1fr)",
+          gridTemplateAreas: '"img id" "img meta"',
+          columnGap: "1.8rem", rowGap: 14, alignItems: "end",
         }}>
-          <div style={{ flexShrink: 0 }}>
+          {/* Retrato */}
+          <div className="vg-hero-portrait" style={{ gridArea: "img", alignSelf: "end" }}>
             {portada ? (
               <div
                 onClick={() => setLightbox({ imgs: retratos.map((i) => i.url), caps: retratos.map((i) => i.prompt), idx: Math.max(0, retratos.findIndex((i) => i.url === portada.url)), alt: data.meta.alias })}
@@ -201,6 +226,7 @@ export default function VaegrantPage() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  className="vg-portrait-img"
                   src={portada.url}
                   alt={data.meta.alias}
                   style={{
@@ -210,7 +236,7 @@ export default function VaegrantPage() {
                 />
               </div>
             ) : (
-              <div style={{
+              <div className="vg-portrait-img" style={{
                 width: 175, height: 225, borderRadius: R + 1,
                 border: `1px dashed rgba(141,163,184,0.35)`, background: "rgba(141,163,184,0.05)",
                 display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
@@ -222,22 +248,27 @@ export default function VaegrantPage() {
             )}
           </div>
 
-          <div style={{ flex: 1, paddingBottom: 2 }}>
+          {/* Identidad */}
+          <div className="vg-hero-id" style={{ gridArea: "id", alignSelf: "end", minWidth: 0 }}>
             <p style={{ fontSize: 10, fontWeight: 500, color: C.steel, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 6 }}>
               <EditableText value={data.meta.eyebrow} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, eyebrow: v } }))} />
             </p>
-            <h1 className={serif.className} style={{ fontSize: 46, fontWeight: 600, color: C.text, lineHeight: 1, letterSpacing: "0.01em", margin: 0 }}>
+            <h1 className={`vg-hero-name ${serif.className}`} style={{ fontSize: 46, fontWeight: 600, color: C.text, lineHeight: 1, letterSpacing: "0.01em", margin: 0 }}>
               <EditableText value={data.meta.alias} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, alias: v } }))} />
             </h1>
-            <div className={`vg-reflection ${serif.className}`} style={{ fontSize: 19, fontStyle: "italic", color: C.steel, marginTop: 2, marginBottom: 10 }} title="El nombre que guarda">
+            <div className={`vg-reflection vg-hero-real ${serif.className}`} style={{ fontSize: 19, fontStyle: "italic", color: C.steel, marginTop: 2 }} title="El nombre que guarda">
               {data.meta.nombreReal}
             </div>
-            <div style={{ fontSize: 11, color: C.muted, marginBottom: 10, lineHeight: 1.5 }}>
+            <div className="vg-hero-sub" style={{ fontSize: 11, color: C.muted, marginTop: 10, lineHeight: 1.5 }}>
               <EditableText value={data.meta.subtitle} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, subtitle: v } }))} />
               <br />
               <EditableText value={data.meta.subsubtitle} onChange={(v) => update((d) => ({ ...d, meta: { ...d.meta, subsubtitle: v } }))} />
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 12 }}>
+          </div>
+
+          {/* Tags + stats (a lo ancho debajo) */}
+          <div className="vg-hero-meta" style={{ gridArea: "meta", alignSelf: "end", minWidth: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
               {data.meta.tags.map((tag, i) => (
                 <span key={i} style={{ fontSize: 10, padding: "2px 9px", borderRadius: R, fontWeight: 500, background: "rgba(141,163,184,0.10)", color: C.muted, border: `1px solid ${C.border}` }}>
                   {tag}
@@ -262,7 +293,7 @@ export default function VaegrantPage() {
       </div>
 
       {/* ══ TABS (sticky) ═════════════════════════ */}
-      <div style={{ position: "sticky", top: 0, zIndex: 100, background: C.bgDeep, borderBottom: `1px solid ${C.border}` }}>
+      <div className="vg-topbar" style={{ position: "sticky", top: 0, zIndex: 100, background: C.bgDeep, borderBottom: `1px solid ${C.border}` }}>
         <div className="vg-bar" style={{ maxWidth: 960, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
           <div className="vg-tabs" style={{ display: "flex", minWidth: 0 }}>
             {TABS.map((tab) => (
@@ -345,7 +376,168 @@ export default function VaegrantPage() {
             onOpen={(idx) => setLightbox({ imgs: estampas.map((i) => i.url), caps: estampas.map((i) => i.prompt.replace(/^Mundo · /, "")), idx, alt: "Silvapor" })} />
         )}
       </div>
+
+      {/* Navegación inferior (solo mobile): secciones + hoja de acciones */}
+      <BottomNav
+        active={activeTab}
+        onSelect={setActiveTab}
+        combateId={data.combateId}
+        onGuardar={() => save(data)}
+        saving={saving}
+        savedMsg={savedMsg}
+      />
     </div>
+  );
+}
+
+// Barra de navegación inferior (solo mobile): siempre visible. Agrupa las
+// secciones + un botón "Más" que abre una hoja con las acciones. Todo abajo, al
+// alcance del pulgar; el top queda limpio.
+function BottomNav({ active, onSelect, combateId, onGuardar, saving, savedMsg }: {
+  active: string; onSelect: (id: string) => void;
+  combateId: string; onGuardar: () => void; saving: boolean; savedMsg: string;
+}) {
+  const [mas, setMas] = useState(false);
+
+  const ICONOS: Record<string, React.ReactNode> = {
+    perfil:   <User size={18} strokeWidth={2} />,
+    hoja:     <Swords size={18} strokeWidth={2} />,
+    historia: <BookOpen size={18} strokeWidth={2} />,
+    sesiones: <CalendarDays size={18} strokeWidth={2} />,
+    mapa:     <MapIcon size={18} strokeWidth={2} />,
+    mundo:    <Globe size={18} strokeWidth={2} />,
+  };
+  // Etiquetas cortas para que entren siete celdas angostas.
+  const LABELS: Record<string, string> = { mundo: "Mundo", historia: "Historia" };
+
+  const itemStyle = (on: boolean): React.CSSProperties => ({
+    flex: 1, minWidth: 0, position: "relative",
+    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+    gap: 3, padding: "8px 1px 7px",
+    background: "transparent", border: "none", cursor: "pointer",
+    color: on ? C.amber : C.faint, transition: "color 0.15s",
+  });
+  const labelStyle = (on: boolean): React.CSSProperties => ({
+    fontSize: 9, fontWeight: on ? 700 : 500, letterSpacing: "0.01em",
+    whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "100%", lineHeight: 1,
+  });
+
+  // Acciones de la hoja "Más".
+  const acciones: { icon: React.ReactNode; label: string; href?: string; onClick?: () => void; disabled?: boolean; primary?: boolean }[] = [
+    { icon: <Save size={18} strokeWidth={2} />, label: saving ? "Guardando…" : "Guardar cambios", onClick: onGuardar, disabled: saving, primary: true },
+    { icon: <Swords size={18} strokeWidth={2.2} />, label: "Hoja de combate", href: `/combate/c/${combateId}` },
+    { icon: <ScrollText size={18} strokeWidth={2} />, label: "Leer como diario", href: "/vaegrant/diario" },
+    { icon: <ArrowLeft size={18} strokeWidth={2} />, label: "Ir a Naevara", href: "/naevara" },
+  ];
+
+  return (
+    <>
+      {/* Toast de guardado (mobile) */}
+      {savedMsg && (
+        <div
+          className="vg-bottomnav"
+          style={{
+            position: "fixed", left: "50%", transform: "translateX(-50%)",
+            bottom: "calc(72px + env(safe-area-inset-bottom))", zIndex: 160,
+            fontSize: 12, fontWeight: savedMsg.startsWith("⚠") ? 600 : 500,
+            color: savedMsg.startsWith("⚠") ? "#e07a5f" : C.text,
+            background: "#161d26", border: `1px solid ${C.border}`, borderRadius: R + 2,
+            padding: "7px 14px", boxShadow: "0 6px 20px rgba(0,0,0,0.45)", pointerEvents: "none",
+          }}
+        >
+          {savedMsg}
+        </div>
+      )}
+
+      {/* Hoja "Más" */}
+      {mas && (
+        <div className="vg-bottomnav" onClick={() => setMas(false)}
+          style={{ position: "fixed", inset: 0, zIndex: 158, background: "rgba(6,9,13,0.5)" }} />
+      )}
+      <div
+        className="vg-bottomnav"
+        style={{
+          position: "fixed", left: 8, right: 8, zIndex: 159,
+          bottom: mas ? "calc(66px + env(safe-area-inset-bottom))" : "calc(46px + env(safe-area-inset-bottom))",
+          display: "flex", flexDirection: "column", gap: 4,
+          background: "#12181f", border: `1px solid ${C.border}`, borderRadius: R + 4,
+          padding: 8, boxShadow: "0 -8px 28px rgba(0,0,0,0.5)",
+          opacity: mas ? 1 : 0, pointerEvents: mas ? "auto" : "none",
+          transform: mas ? "translateY(0)" : "translateY(12px)",
+          transition: "opacity 0.2s ease, transform 0.2s ease, bottom 0.2s ease",
+        }}
+      >
+        {acciones.map((a) => {
+          const inner = (
+            <>
+              <span style={{
+                width: 34, height: 34, borderRadius: R + 1, flexShrink: 0,
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+                background: a.primary ? C.amberSoft : "rgba(141,163,184,0.08)",
+                color: a.primary ? C.amber : C.steelStrong,
+                border: `1px solid ${a.primary ? "rgba(201,156,90,0.4)" : C.border}`,
+              }}>{a.icon}</span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: C.text }}>{a.label}</span>
+            </>
+          );
+          const rowStyle: React.CSSProperties = {
+            display: "flex", alignItems: "center", gap: 12, width: "100%",
+            padding: "9px 10px", borderRadius: R + 2, textDecoration: "none",
+            background: "transparent", border: "none", cursor: a.disabled ? "not-allowed" : "pointer",
+            opacity: a.disabled ? 0.55 : 1, textAlign: "left",
+          };
+          return a.href ? (
+            <a key={a.label} href={a.href} style={rowStyle} onClick={() => setMas(false)}>{inner}</a>
+          ) : (
+            <button key={a.label} disabled={a.disabled}
+              onClick={() => { if (!a.disabled) { a.onClick?.(); setMas(false); } }} style={rowStyle}>
+              {inner}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Barra inferior */}
+      <nav
+        className="vg-bottomnav"
+        aria-label="Navegación"
+        style={{
+          position: "fixed", left: 0, right: 0, bottom: 0, zIndex: 160,
+          display: "flex", alignItems: "stretch",
+          background: "rgba(16,21,26,0.94)", backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)", borderTop: `1px solid ${C.border}`,
+          boxShadow: "0 -6px 24px rgba(0,0,0,0.4)",
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
+      >
+        {TABS.map((t) => {
+          const on = active === t.id && !mas;
+          return (
+            <button
+              key={t.id}
+              onClick={() => { setMas(false); onSelect(t.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              aria-current={on ? "page" : undefined}
+              style={itemStyle(on)}
+            >
+              {on && <span style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: 24, height: 2, borderRadius: 2, background: C.amber }} />}
+              {ICONOS[t.id]}
+              <span style={labelStyle(on)}>{LABELS[t.id] ?? t.label}</span>
+            </button>
+          );
+        })}
+        {/* Más */}
+        <button
+          onClick={() => setMas((v) => !v)}
+          aria-expanded={mas}
+          aria-label="Más acciones"
+          style={itemStyle(mas)}
+        >
+          {mas && <span style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: 24, height: 2, borderRadius: 2, background: C.amber }} />}
+          <MoreHorizontal size={18} strokeWidth={2} />
+          <span style={labelStyle(mas)}>Más</span>
+        </button>
+      </nav>
+    </>
   );
 }
 
@@ -447,12 +639,12 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
     <section>
       <VSecLabel>{titulo} ({imagenes.length})</VSecLabel>
       <VDivider />
-      <div className="vg-gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
+      <div className="vg-gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 10 }}>
         {imagenes.map((img, i) => {
           const gi = globalIdx(img);
           const esPortada = !tipoMundo && gi === portada;
           return (
-            <figure key={img.url} style={{ margin: 0 }}>
+            <figure key={img.url} style={{ margin: 0, minWidth: 0 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="vg-thumb"
@@ -465,7 +657,7 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
                   border: `1px solid ${esPortada ? "rgba(201,156,90,0.55)" : C.borderSoft}`,
                 }}
               />
-              <figcaption style={{ display: "flex", alignItems: "center", gap: 6, padding: "5px 2px 0" }}>
+              <figcaption style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 6, padding: "5px 2px 0" }}>
                 <span style={{ fontSize: 9.5, color: C.faint, lineHeight: 1.3, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={img.prompt}>
                   {img.prompt.replace(/^Mundo · /, "")}
                 </span>
@@ -1138,36 +1330,117 @@ function TabMapa({ data }: { data: VaegrantData }) {
   // Visibilidad de las etiquetas de los pines, para poder ver el mapa limpio.
   const [etiquetas, setEtiquetas] = useState<"nitidas" | "tenues" | "ocultas">("nitidas");
   const scrollRef = useRef<HTMLDivElement>(null);
-  // Arrastre con mouse en PC (el touch ya scrollea nativo). moved evita que
-  // soltar un arrastre dispare el click de un pin.
+  // Arrastre (mouse o un dedo). moved evita que soltar un arrastre dispare el
+  // click de un pin.
   const drag = useRef({ x: 0, y: 0, sl: 0, st: 0, moved: false, activo: false });
+  // Punteros activos (para el pellizco de dos dedos).
+  const pointers = useRef<Map<number, { x: number; y: number }>>(new Map());
+  // Estado del pellizco: distancia y zoom al empezar + el punto del mapa (0..1)
+  // que está bajo los dedos, para mantenerlo fijo mientras se hace zoom.
+  const pinch = useRef({ dist: 0, zoom: 0, fx: 0.5, fy: 0.5 });
+  // Ancla a aplicar tras cambiar el zoom: qué punto del mapa (fx, fy) debe caer
+  // en qué pixel del viewport (vx, vy). Si es null, se centra en el pin activo.
+  const anchor = useRef<{ fx: number; fy: number; vx: number; vy: number } | null>(null);
+  const lastTap = useRef(0);
 
   const byId = useMemo(() => new Map((m?.marcadores ?? []).map((k) => [k.id, k])), [m]);
 
   const ZOOM_MIN = 1, ZOOM_MAX = 14, ZOOM_PASO = 1.5;
-  const zoomIn  = () => setZoom((z) => Math.min(ZOOM_MAX, +(z * ZOOM_PASO).toFixed(2)));
-  const zoomOut = () => setZoom((z) => Math.max(ZOOM_MIN, +(z / ZOOM_PASO).toFixed(2)));
+  const clampZoom = (z: number) => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, +z.toFixed(2)));
+  const zoomIn  = () => setZoom((z) => clampZoom(z * ZOOM_PASO));
+  const zoomOut = () => setZoom((z) => clampZoom(z / ZOOM_PASO));
+
+  const dist = (a: { x: number; y: number }, b: { x: number; y: number }) =>
+    Math.hypot(a.x - b.x, a.y - b.y);
 
   const onPointerDown = (e: React.PointerEvent) => {
-    if (e.pointerType !== "mouse" || e.button !== 0) return;
     const el = scrollRef.current;
     if (!el) return;
-    drag.current = { x: e.clientX, y: e.clientY, sl: el.scrollLeft, st: el.scrollTop, moved: false, activo: true };
-    setAgarrando(true);
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    el.setPointerCapture?.(e.pointerId);
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+    if (pointers.current.size === 1) {
+      drag.current = { x: e.clientX, y: e.clientY, sl: el.scrollLeft, st: el.scrollTop, moved: false, activo: true };
+      setAgarrando(true);
+    } else if (pointers.current.size === 2) {
+      // Empieza el pellizco: cortamos el arrastre de un dedo.
+      drag.current.activo = false;
+      const [a, b] = [...pointers.current.values()];
+      const rect = el.getBoundingClientRect();
+      const mx = (a.x + b.x) / 2 - rect.left, my = (a.y + b.y) / 2 - rect.top;
+      pinch.current = {
+        dist: dist(a, b),
+        zoom,
+        fx: el.scrollWidth  ? (el.scrollLeft + mx) / el.scrollWidth  : 0.5,
+        fy: el.scrollHeight ? (el.scrollTop  + my) / el.scrollHeight : 0.5,
+      };
+    }
   };
+
   const onPointerMove = (e: React.PointerEvent) => {
-    const d = drag.current;
     const el = scrollRef.current;
-    if (!d.activo || !el) return;
-    const dx = e.clientX - d.x, dy = e.clientY - d.y;
-    if (Math.abs(dx) + Math.abs(dy) > 5) d.moved = true;
-    el.scrollLeft = d.sl - dx;
-    el.scrollTop = d.st - dy;
+    if (!el || !pointers.current.has(e.pointerId)) return;
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    const pts = [...pointers.current.values()];
+
+    if (pts.length >= 2) {
+      // Pellizco: el zoom sigue la separación de los dedos, anclado al punto medio.
+      const d = dist(pts[0], pts[1]);
+      if (pinch.current.dist > 0) {
+        const rect = el.getBoundingClientRect();
+        const mx = (pts[0].x + pts[1].x) / 2 - rect.left, my = (pts[0].y + pts[1].y) / 2 - rect.top;
+        anchor.current = { fx: pinch.current.fx, fy: pinch.current.fy, vx: mx, vy: my };
+        setZoom(clampZoom(pinch.current.zoom * (d / pinch.current.dist)));
+      }
+      return;
+    }
+
+    const dch = drag.current;
+    if (!dch.activo) return;
+    const dx = e.clientX - dch.x, dy = e.clientY - dch.y;
+    if (Math.abs(dx) + Math.abs(dy) > 5) dch.moved = true;
+    el.scrollLeft = dch.sl - dx;
+    el.scrollTop = dch.st - dy;
   };
-  const finDrag = () => {
-    drag.current.activo = false;
-    setAgarrando(false);
+
+  // Doble tap: acerca de golpe sobre el punto tocado; si ya está cerca del
+  // máximo, vuelve al zoom base.
+  const dobleTap = (clientX: number, clientY: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const vx = clientX - rect.left, vy = clientY - rect.top;
+    anchor.current = {
+      fx: el.scrollWidth  ? (el.scrollLeft + vx) / el.scrollWidth  : 0.5,
+      fy: el.scrollHeight ? (el.scrollTop  + vy) / el.scrollHeight : 0.5,
+      vx, vy,
+    };
+    setZoom((z) => (z >= ZOOM_MAX - 0.01 ? 2.2 : clampZoom(z * 2)));
   };
+
+  const finDrag = (e: React.PointerEvent) => {
+    const el = scrollRef.current;
+    pointers.current.delete(e.pointerId);
+    if (pointers.current.size < 2) pinch.current.dist = 0;
+    if (pointers.current.size === 0) {
+      // Detección de doble tap (touch), solo si no fue un arrastre.
+      if (e.pointerType !== "mouse" && !drag.current.moved) {
+        const now = Date.now();
+        if (now - lastTap.current < 300) { dobleTap(e.clientX, e.clientY); lastTap.current = 0; }
+        else lastTap.current = now;
+      }
+      drag.current.activo = false;
+      setAgarrando(false);
+    } else if (pointers.current.size === 1 && el) {
+      // Quedó un dedo: reanudar el arrastre desde su posición actual.
+      const p = [...pointers.current.values()][0];
+      drag.current = { x: p.x, y: p.y, sl: el.scrollLeft, st: el.scrollTop, moved: true, activo: true };
+    }
+  };
+
+  const onDblClick = (e: React.MouseEvent) => dobleTap(e.clientX, e.clientY);
+
   const onClickCapture = (e: React.MouseEvent) => {
     if (drag.current.moved) {
       e.preventDefault();
@@ -1187,8 +1460,20 @@ function TabMapa({ data }: { data: VaegrantData }) {
     });
   }, [byId]);
 
-  // Al cambiar el zoom, mantener la vista sobre el pin seleccionado.
-  useEffect(() => { centerOn(sel, false); }, [zoom]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Al cambiar el zoom, reposicionar el scroll: al ancla del gesto (pellizco /
+  // doble tap) si hay, o si no centrando el pin activo.
+  useIsoLayoutEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const a = anchor.current;
+    if (a) {
+      el.scrollLeft = a.fx * el.scrollWidth - a.vx;
+      el.scrollTop = a.fy * el.scrollHeight - a.vy;
+      anchor.current = null;
+    } else {
+      centerOn(sel, false);
+    }
+  }, [zoom]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!m) return <p style={{ ...pStyle, fontStyle: "italic", color: C.faint }}>Todavía no hay mapa cargado.</p>;
 
@@ -1233,13 +1518,13 @@ function TabMapa({ data }: { data: VaegrantData }) {
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={finDrag}
-        onPointerLeave={finDrag}
         onPointerCancel={finDrag}
+        onDoubleClick={onDblClick}
         onClickCapture={onClickCapture}
         style={{
           overflow: "auto", maxHeight: "68vh", border: `1px solid ${C.border}`, borderRadius: R + 1,
           background: C.bgDeep, cursor: agarrando ? "grabbing" : "grab",
-          touchAction: "pan-x pan-y", userSelect: "none", WebkitUserSelect: "none",
+          touchAction: "none", userSelect: "none", WebkitUserSelect: "none", overscrollBehavior: "contain",
         }}
       >
         <div style={{ position: "relative", width: `${zoom * 100}%` }}>
