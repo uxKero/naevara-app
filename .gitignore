@@ -55,3 +55,7 @@ data/characters/
 
 # Imágenes de referencia de terceros (estilo L'Éther); no van al repo
 /public/examples/
+
+# Imágenes fuente de sesiones de Vaegrant (originales PNG + 4K pesados):
+# fuera del repo; se optimizan a JPG en /public/vaegrant-galeria (eso sí va).
+/sources/Vaegrant/**/Images/

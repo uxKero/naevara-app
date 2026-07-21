@@ -260,6 +260,36 @@
         "tipo": "Del borrador personal · por reconciliar con el canon",
         "texto": "Grietas que la guerra dejó en el mundo. A veces escupen cosas; a veces, personas. Vaegrant cruzó por uno, y algo cruzó con él. Sigue siendo la historia íntima del personaje; cómo encaja en el mundo del Master queda por verse en mesa.",
         "destacado": false
+      },
+      {
+        "nombre": "Ioma (Sesión 2 · la isla factoría)",
+        "tipo": "Isla · las Nelanther Isles",
+        "texto": "Una isla de las Nelanther Isles, al sur de las Moonshae, vuelta ciudad factoría de pesca: sacan, procesan y enlatan pescado por toneladas, y la población vive entregada a tareas mínimas. El grupo hizo escala para repostar, desviándose un poco al este de la ruta a Moray. Los recibió el aristócrata Ismael Lesser y quedaron en el muelle catorce.",
+        "destacado": true
+      },
+      {
+        "nombre": "El Albatros (Sesión 2 · el barco)",
+        "tipo": "Nave · el correo que vuela",
+        "texto": "Una carabela chica y veloz que supo llevar correo, modificada en secreto durante dos meses: acero forjado en frío en la quilla, una habitación tapiada, armas escondidas como coles y un motor que le permite volar. Se camufla con una bruma de cristales de sal que en el cielo simula nubes. Al cierre de la sesión el motor quedó reparado.",
+        "destacado": true
+      },
+      {
+        "nombre": "Los gremios del norte (Sesión 2)",
+        "tipo": "Política · hacia donde van",
+        "texto": "Las islas de más al norte funcionan como una agrupación de gremios que casi no conoció guerras: se manejan por acuerdos diplomáticos, con tensiones de territorio y mucho chusmerío alrededor de accidentes, pero siempre llegan a buen puerto por la palabra.",
+        "destacado": false
+      },
+      {
+        "nombre": "El Mar de las Sombras (Sesión 2)",
+        "tipo": "Mar · el origen de los galeones",
+        "texto": "Según lo hablado en mesa, de ahí vienen los galeones de bandera negra que tomaron Ámbar, del señor oscuro. En el puerto se los vio con uniformes de Sundrah y túnicas de mucho más al norte, de Luskan.",
+        "destacado": false
+      },
+      {
+        "nombre": "Iron Keep, en la Isla de Omán (Sesión 2)",
+        "tipo": "Fortaleza · nombre escuchado",
+        "texto": "La fortaleza de acero de Iron Keep, sobre la Isla de Omán, en las Moonshae, junto a Moray. Fue capital del viejo reino nórdico de Omán. El grupo escuchó el nombre entre los ocupantes de Ámbar, hacia donde los lleva el viaje.",
+        "destacado": false
       }
     ],
     "ganchos": [
@@ -290,6 +320,22 @@
       {
         "label": "Lo que dejan los quebrados",
         "texto": "Por qué los que cruzaron el portal desprenden resultados mejores es una pregunta abierta de la campaña: ¿traen algo del otro lado? ¿El mundo roto los reconoce como remiendo? Para Vaegrant conecta directo con lo que cruzó con él, y con la sospecha de que el Testigo no es el único que mira."
+      },
+      {
+        "label": "La espina del corazón",
+        "texto": "El frasco con la espina negra de punta roja que le sacaron a Marcus del pecho. La bibliotecaria lo documentó, y por eso la persiguen. Es la prueba de que al gobernador lo envenenaron."
+      },
+      {
+        "label": "La habitación tapiada",
+        "texto": "Dos metros de madera maciza al fondo de la bodega del Albatros, escondiendo algo que el grupo no logró abrir. El barco esconde más de lo que muestra."
+      },
+      {
+        "label": "Quién los vendió",
+        "texto": "Nada de la fuga fue suerte: alguien se les adelantó. Todo estaba preparado desde hacía dos meses, y sin embargo alguien filtró el momento."
+      },
+      {
+        "label": "El tubo y la llave",
+        "texto": "Durin le dejó a Vaegrant un tubo cerrado con un criptek. En Ioma, el Paladín consiguió la llave que lo abre. Ninguno de los dos puede abrirlo todavía: quien podrá hacerlo es la persona que van a buscar, el gnomo Zarif en Moray. Es el corazón del encargo de Durin."
       }
     ]
   },
@@ -468,10 +514,178 @@
         }
       ],
       "dudas": [
-        "Temfla, mencionada como la conciencia original de Zan (¿de Sambar?): nombre dudoso en la transcripción.",
-        "Los nombres exactos de los PJ compañeros (el historiador y el paladín): el jugador los pasa más adelante.",
-        "Las escenas de los compañeros sin Vaegrant presente no quedaron grabadas: esta crónica cubre lo que Vaegrant vio y lo que el Master narró para todos."
+        "Temfla, mencionada como la conciencia original de Zan (¿de Sambar?): nombre dudoso en la transcripción."
       ]
+    },
+    {
+      "id": "sesion-2",
+      "numero": 2,
+      "titulo": "Ámbar vive",
+      "fecha": "2026-07-14",
+      "resumen": "El grupo huye de Ámbar por mar. La ciudad ya no está de luto: está tomada. Nueve galeones de bandera negra bloquean el puerto, Durin cae preso y Trobe escapa al norte con la bibliotecaria. Con salvoconductos conseguidos por Trobe y un motín de fondo (Ámbar vive), zarpan en el Albatros, un viejo correo que esconde más de lo que aparenta: lo modificaron en secreto durante dos meses, lleva armas disfrazadas de coles, una habitación tapiada y un motor que le permite volar. En el mar descubren que a Marcus lo envenenaron, que alguien los vendió, y que la misión es más grande de lo que Durin contó. En Ioma, mientras Vaegrant solo repone provisiones, el Paladín consigue una llave para el tubo sellado que Durin le dejó, que únicamente podrá abrir la persona que van a buscar. La sesión cierra en la isla factoría, listos para partir a Moray al amanecer.",
+      "capitulos": [
+        {
+          "titulo": "El bloqueo",
+          "texto": "La sesión abrió con el norte. El Master contó cómo funcionan las islas de más arriba: una agrupación de gremios que a lo largo de la historia casi no conoció guerras. Se manejan por acuerdos diplomáticos, con tensiones por territorios y mucho chusmerío alrededor de accidentes y rencillas, pero siempre terminan llegando a buen puerto por la vía de la palabra. Esa es la política hacia la que el grupo se dirige sin saberlo todavía.\n\nEn Ámbar, en cambio, la palabra ya no alcanza. Unos hombres cubiertos de artilugios llegaron a la posada Tres Dientes buscando al dueño. El que hablaba se presentó como Rimble. Vaegrant salió a atenderlos y los despachó con la excusa del duelo: hoy está cerrado, hay un difunto que respetar. No les dio nada, apenas los mandó a volver al día siguiente a preguntar por Durin, y apenas se fueron dejó una nota de aviso para el enano donde sabía que iba a leerse.\n\nCaminando de vuelta, el grupo leyó la ciudad. Cada vez menos vecinos en las calles y cada vez más guardias que no son de Ámbar: escuadras cerradas, mejores vigilancias en las esquinas, un líder de rango con anotaciones detrás de cada grupo de diez. La guardia de la ciudad ya obedece a alguien que no es de la ciudad. Con una tirada de perspicacia entendieron el resto: el puerto intervenido, la biblioteca intervenida, el traslado de materias primas cortado. No es luto. Es un bloqueo, y abarca todo Ámbar. O buscan algo, o quieren que algo no salga.\n\nEntre los murmullos de una escuadra alcanzaron a pescar un nombre: Iron Keep, la fortaleza de acero, en las islas de Omán. Justo hacia donde el viaje los lleva.",
+          "dialogo": [
+            {
+              "quien": "Rimble",
+              "texto": "Mi nombre es Rimble. ¿Quién es el dueño del lugar?"
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Hoy estamos cerrados, sabrá entender el duelo que se está pasando. Sin faltar el respeto, lo invito a que se retire."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Vamos a ir lo más callados posible a la posada. Si te preguntan, trabajamos aquí, nada de información, porque esto no me cierra por ningún lado."
+            },
+            {
+              "quien": "El Master",
+              "texto": "El luto con la banda no frena el mundo para ellos. Acá hay un bloqueo."
+            }
+          ]
+        },
+        {
+          "titulo": "El campanel",
+          "texto": "A lo lejos sonó el campanel del puerto, el que anuncia bajo la niebla la llegada de una barca de gran bandera. Hacía cerca de diez años que no sonaba. Esta vez sonó.\n\nAntes de bajar al puerto, en su cuarto, Vaegrant encontró algo que Durin había dejado a propósito: un tubo cerrado con un criptek, un sello que pertenecía al enano. No estaba ahí por casualidad. Se lo guardó, se colgó el amuleto al cuello y salieron.\n\nEl puerto era otra cosa. Las barcazas que anunciaba el campanel no eran barcazas: nueve galeones artillados estacionados en las afueras, y una fragata insignia de banderas negras y desconocidas tocando muelle. Se movieron como gente de puerto y sortearon a los guardias hasta el astillero. Pero Trobe, el jefe de gremios, no estaba. En su lugar los recibió un elfo insoportable, pañuelo en mano y mirada de desprecio: el almirante Goldsmayer.\n\nGoldsmayer hablaba un común tosco y prefería el élfico. Iscandar, que también maneja la lengua élfica, le habló en su idioma y se presentó con todo el peso de su casa: Iscandar Selindar, de la familia Selindar, protectores de la Fetron. El almirante se ablandó apenas escuchó élfico. Se dijeron elegancias con filo y quedaron en una tregua de mutua indiferencia: Goldsmayer no iba a meterse en lo que ellos hicieran, no era lo que había venido a buscar.",
+          "dialogo": [
+            {
+              "quien": "Goldsmayer",
+              "texto": "Me parece correcto que al menos haya algo de sutileza y de delicadeza en este lugar."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "Algunas de las viejas maneras deben ser conservadas."
+            },
+            {
+              "quien": "Goldsmayer",
+              "texto": "¿Aunque tengas que mancharte en el barro?"
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "¿Qué es un poco de barro frente a un poco de sangre?"
+            }
+          ]
+        },
+        {
+          "titulo": "El Albatros",
+          "texto": "En el astillero encontraron gente conocida, estibadores leales a Trobe. Uno los sumó a la cuadrilla de carga como tapadera y les dio a elegir barco entre cuatro. El Albatros, ligero y rápido, una vieja carabela de correo con buen camuflaje. La Tortuga, un tanque blindado y lento. El Lobo Gris, un drakkar artillado de manufactura élfica, enana y gnoma, hecho para atacar y salir. Y el Goliath, un galeón mercante de artillería pesada y velocidad intermedia. Pesaron el viaje, cerca de una semana y media hasta el Mar de las Espadas, y eligieron el Albatros: el más veloz, y en estos días cualquiera de los barcos podía pasar por comercial.\n\nCargaron como mercancía de tapadera lo que mejor abre puertas más adelante: vinos finos (no los caseros de Durin, sino vino de alta clase de las provincias de Anglori, moneda de favores más que de cambio), especias y cueros de alta manufactura, que sí se producen en Ámbar. Vaegrant sumó un par de botellas viejas del propio Durin, por las dudas.\n\nEn un recodo de la bodega, el contacto los apartó y les dio los papeles: salvoconductos originales, válidos en todo el Mar de las Espadas, que a Trobe le costó mucho conseguir. Y con los papeles, las noticias. Durin fue el primero en caer: está preso. Trobe ya se fue al norte con la bibliotecaria. Los uniformes de los que tomaron el puerto son de Sundrah, y las túnicas que se ven mezcladas vienen de mucho más al norte, de Luskan, más allá de Neverwinter. La señal para partir estaría en el cielo.",
+          "dialogo": [
+            {
+              "quien": "El contacto",
+              "texto": "Trobe tuvo que mover cielo y tierra para conseguir esto. No sé dónde van ni qué hacen, pero espero que tengan éxito."
+            },
+            {
+              "quien": "El contacto",
+              "texto": "Durin fue el primero en caer. No sé qué busca esta gente. Durin está preso."
+            },
+            {
+              "quien": "El contacto",
+              "texto": "Trobe se fue al norte con la bibliotecaria."
+            },
+            {
+              "quien": "El contacto",
+              "texto": "Cuando la señal esté en el cielo, corten amarras y simplemente váyanse. No miren hacia atrás."
+            }
+          ]
+        },
+        {
+          "titulo": "Ámbar vive",
+          "texto": "Terminaron de cargar ya de noche. El Albatros no parece un barco de grandes travesías: es una carabela chica y veloz que supo usarse para llevar correo, aunque esta vez lo notaron más pesado, con mejoras encima. Cerca de las nueve, en los muelles empezaron los primeros choques de espada. El contacto disparó una bengala y gritó lo que era a la vez consigna y sentencia: Ámbar vive. Era un motín.\n\nLos tres marinos que iban con ellos cortaron las amarras a hachazos y se pusieron corazas de cuero. El bloqueo de los galeones esperaba a la salida. Entonces, desde atrás de Ámbar, un bote con globo aerostático y propulsor cruzó a toda velocidad por encima de ellos: el Caravan que usaba Durin. Se estrelló contra uno de los galeones de Goldsmayer y lo abrió en pedazos. Había gente adentro. Con esa brecha, y ese sacrificio, el Albatros giró y salió. Las maniobras de los galeones eran demasiado lentas: cuando dispararon, el grupo ya estaba fuera de alcance.\n\nA lo lejos, sobre la ciudad, empezaron a encenderse bengalas en distintas partes. Ámbar entera se levantaba mientras ellos se perdían en el mar nocturno.",
+          "dialogo": [
+            {
+              "quien": "El contacto",
+              "texto": "¡Ámbar vive!"
+            }
+          ]
+        },
+        {
+          "titulo": "El barco que esconde",
+          "texto": "Con Ámbar reducida a un halo de luz en la popa, los marinos se calmaron, acongojados por el tamaño del sacrificio. Le dieron nombre y forma a la tripulación: un capitán, un navegante, un encargado de arsenal y uno de bodega. Los tres marinos eran hombres de puerto que años atrás le llevaban a Durin lo mejor de la primera pesca, por la complicidad que había entre Trobe y el enano. No eran improvisados.\n\nRepartiéndose las tareas, el grupo empezó a leer el barco. Vaegrant, como oficial diplomático, se hundió en las cartas náuticas de la oficina del capitán. Jeremy, en la despensa y la bodega, abría la bitácora. Iscandar reforzaba la cubierta y el arsenal. Y lo que encontraron no cerraba por ningún lado. El Albatros había estado dos meses parado en el fondo del astillero, y en esos dos meses lo reforzaron entero, con acero forjado en frío en la quilla. En la caja fuerte de la bodega había cuatrocientas treinta piezas de oro, el dinero inicial. Cajas rotuladas como coles que no eran coles: eran armas y engranajes para montar cañones. Y al fondo de la bodega, una pared que no debería estar, dos metros de madera maciza tapando una habitación secreta que todavía no lograron abrir.\n\nLas cartas guardaban lo más raro. Registraban viajes a lugares donde no hay mar: desiertos interiores, un sitio llamado Quetzala. La única explicación posible la dijeron sin querer creerla: el barco vuela. En Ámbar nunca habían visto una nave así, pero se sabe que las grandes ciudades tienen barcas voladoras.\n\nAhí apareció el capitán, sin que lo vieran llegar. Hakon, el bastardo del mar, un hombre de puerto orgulloso al que no se le dice cómo navegar: él dice hacia dónde va y uno más o menos lo sigue. Confirmó lo que sospechaban. Trobe fue muy específico, habló de ellos, dijo que el enano iba a interceder por Vaegrant. Con eso le alcanzaba para confiar. Más adelante, dos galeones asomaron en el horizonte, y el barco mostró otro secreto: desde abajo del casco empezó a burbujear una bruma que envolvió una zona enorme del mar. Funciona con cristales de sal, y en el cielo simula nubes. Con unas gafas de soldar para ver a través de la niebla, giraron el timón y dejaron atrás a los galeones sin ser vistos.",
+          "dialogo": [
+            {
+              "quien": "Iscandar",
+              "texto": "Hakon, el bastardo del mar, no es un tipo al que vos le decís cómo navega. Él te dice hacia dónde va y vos más o menos vas."
+            },
+            {
+              "quien": "El Master",
+              "texto": "Hay cajas que dicen ser coles y no son coles. Son armas."
+            },
+            {
+              "quien": "Hakon",
+              "texto": "No creés mucho en las coincidencias, ¿verdad? Trobe fue muy específico, me habló sobre ustedes. Me dijo que el enano iba a interceder por vos. Así que yo en vos confío."
+            }
+          ]
+        },
+        {
+          "titulo": "La espina",
+          "texto": "El barco vuela, pero todavía no: no llegaron a terminar el motor, y hasta repararlo no puede elevarse. Nada de esto fue suerte. Alguien los vendió, alguien se les adelantó. Tenían más tiempo y lo perdieron.\n\nEl capitán soltó lo que sabía. A Marcus, el gobernador, no lo mató una casualidad: lo envenenaron. El viejo zorro de mar que consiguió los papeles le pasó a Hakon un frasco de vidrio con algo adentro, una especie de espina negra de punta roja. Se la sacaron del corazón al gobernador. La bibliotecaria lo documentó, y por eso la persiguen. Cada una de las tres personas de confianza, la bibliotecaria, Trobe y Durin, eligió a su mejor hombre para una misión, y nada de esto es casual.\n\nHakon puso las cartas sobre la mesa. Él los lleva en salvoconducto, arriesgando la vida, hasta Moray. Ahí baja: tiene una misión propia y el barco queda entero para el grupo. No sabe a quién van a ver, y prefiere no saberlo. Lo único cierto, para los dos bandos a bordo, los tres del grupo y el capitán con sus dos marinos, es que la meta es llegar a Moray.",
+          "dialogo": [
+            {
+              "quien": "Hakon",
+              "texto": "Al gobernador lo han matado. Lo han envenenado."
+            },
+            {
+              "quien": "Hakon",
+              "texto": "Me dijo que al gobernador le habían sacado esto del corazón."
+            },
+            {
+              "quien": "Hakon",
+              "texto": "Alguien nos vendió."
+            },
+            {
+              "quien": "Hakon",
+              "texto": "Ahora, para los dos bandos, ustedes tres y los otros tres, la misión principal es llegar a Moray."
+            }
+          ]
+        },
+        {
+          "titulo": "Ioma",
+          "texto": "Dos días de navegación disfrazados de pesquero, con las redes colgando de los costados. Cruzaron barcos en el horizonte, incluso uno de banderas negras que los miró como a una barcaza más. Después del segundo día se anunció el puerto de Ioma.\n\nIoma es una isla entera vuelta ciudad factoría dedicada a la pesca: sacan pescado del mar por toneladas, lo procesan, lo enlatan y lo envían, y la multitud de trabajadores vive entregada a tareas mínimas y puntuales. Al tomar amarre los recibió Ismael Lesser, un aristócrata bajito y regordete de cara feliz, chaleco verde, saco azul, gorro con pluma, monóculo y un bastón que es más símbolo de estatus que otra cosa. Les asignó el muelle catorce. El capitán les dio hasta la mañana siguiente: comprar lo que necesiten, abrigarse, pasar inadvertidos, y a las ocho arriba.\n\nEn tierra, el grupo se separó. Vaegrant, terco y con la misión clavada en la cabeza, apenas bajó a comprar atún para comer a bordo: quería llegar cuanto antes al destino y no perder el tiempo en nada más. Iscandar y Jeremy salieron a buscar información. De las cartas de Ioma salían los lugares donde preguntar: tabernas de pescadores como Quinta Gris, El Viejo Escualo y El Triple Anzuelo, y sobre todo lo de Ballantines, una taberna hecha con un navío que bajó de los cielos y nunca volvió a subir, donde para la gente de mando del puerto y a la que solo se entra con membresía. Jeremy no sacó nada en limpio. Iscandar, en cambio, logró entrar a lo de Ballantines, y ahí conoció a alguien que conocía a Durin y a Trobe.\n\nEsa persona le dio una llave, y le aclaró que era para el elfo del grupo, para Vaegrant. La llave abre el tubo sellado con criptek que Durin le había dejado en su cuarto, aunque no acá: quien podrá abrirlo con ella es la persona que van a buscar. De vuelta en el barco, Iscandar discutió con Vaegrant sobre lo que vale conseguir información por los medios que hagan falta, y le entregó la llave explicándole lo que era. Revisaron también los papeles que preparó Trobe: documentación real que habilita a transitar todo el mar con valor comercial y científico, difícil de conseguir, de las que llevan estudiosos y diplomáticos, y que abren lugares donde hasta el cielo está restringido. Quedaba el espacio para poner su nombre y su firma.\n\nLa sesión cerró con el barco casi listo. La tripulación, más animada que al salir de Ámbar, cargaba pintura, parches y madera tarareando canciones de alta mar. El capitán y los dos marinos terminaron de arreglar el motor, para poder volar si hace falta. Al amanecer, a las ocho, el Albatros parte a Moray.",
+          "dialogo": [
+            {
+              "quien": "Hakon",
+              "texto": "En un día a más tardar partimos. Compren lo que necesiten, pasen inadvertidos, no se metan en problemas. Mañana a las ocho estamos arriba."
+            }
+          ]
+        }
+      ],
+      "nombres": [
+        {
+          "nombre": "Rimble",
+          "rol": "Uno de los hombres cubiertos de artilugios que llegó a la posada Tres Dientes buscando al dueño. La primera cara del bloqueo."
+        },
+        {
+          "nombre": "Almirante Goldsmayer",
+          "rol": "Elfo insoportable al mando en el puerto de Ámbar cuando llegaron los galeones. Habla un común tosco y prefiere el élfico. Iscandar lo desactivó con cortesía."
+        },
+        {
+          "nombre": "Hakon, el bastardo del mar",
+          "rol": "Capitán del Albatros, hombre de puerto orgulloso y leal a Trobe. Los lleva a Moray arriesgando la vida; ahí baja a cumplir una misión propia y el barco queda para el grupo."
+        },
+        {
+          "nombre": "Ismael Lesser",
+          "rol": "Aristócrata que recibe al grupo en Ioma, la isla factoría. Bajito, regordete, monóculo y bastón de estatus. Les asignó el muelle catorce."
+        },
+        {
+          "nombre": "La bibliotecaria",
+          "rol": "Documentó lo de la espina del corazón del gobernador. Huyó al norte con Trobe y ahora la persiguen."
+        },
+        {
+          "nombre": "El contacto del puerto",
+          "rol": "Hombre leal a Trobe que dio al grupo los salvoconductos y las noticias antes de zarpar. Disparó la bengala del motín."
+        },
+        {
+          "nombre": "La flota de bandera negra",
+          "rol": "Nueve galeones artillados que tomaron Ámbar. Uniformes de Sundrah y túnicas de Luskan; según lo hablado en mesa, vienen del Mar de las Sombras, del señor oscuro."
+        },
+        {
+          "nombre": "El Caravan de Durin",
+          "rol": "Bote con globo aerostático y propulsor que se sacrificó estrellándose contra un galeón para abrir la brecha por la que escapó el Albatros."
+        }
+      ],
+      "dudas": []
     }
   ],
   "mapa": {
@@ -479,8 +693,8 @@
     "titulo": "El mapa de la campaña",
     "nota": "El mismo mapa de Faerûn que está pinchado en el salón del club. La historia es original del Master y pasa en otros años, pero los nombres son los del mapa real. La línea ámbar es el viaje que hay que hacer; la gris punteada, el encargo personal de Vaegrant (Waterdeep, opcional). Los pines aproximados son lugares originales del Master, ubicados a ojo.",
     "party": {
-      "marcadorId": "ambar",
-      "texto": "Fin de la Sesión 1: el grupo está en Ámbar con la urca mercante lista, por zarpar al norte por el Mar de las Espadas, rumbo a Moray. En la posada quedó una vela prendida."
+      "marcadorId": "ioma",
+      "texto": "Fin de la Sesión 2: el Albatros está amarrado en el muelle catorce de Ioma, la isla factoría, repostando. Durin quedó preso en Ámbar y Trobe huyó al norte con la bibliotecaria. Al amanecer, a las ocho, el barco parte a Moray, con el motor de vuelo ya reparado por si hace falta elevarse. En Moray baja el capitán Hakon y el Albatros queda para el grupo."
     },
     "marcadores": [
       {
@@ -502,7 +716,8 @@
         "y": 66.2,
         "tipo": "ciudad",
         "sesiones": [
-          1
+          1,
+          2
         ],
         "estado": "confirmado",
         "nota": "La ciudad-estado del norte: pacifista y casi primitiva, maquinaria liviana, diálogo, y desconfianza del avance tecnológico."
@@ -538,7 +753,8 @@
         "y": 73.25,
         "tipo": "ciudad",
         "sesiones": [
-          1
+          1,
+          2
         ],
         "estado": "aproximado",
         "nota": "El hogar del grupo: pueblo-ciudad portuario en la órbita de Anchoril, en la última montaña del sur, última escala antes de los mares interiores y las tierras faéricas. Era una perla en el océano; hoy es una ciudad amurallada con la Casa de Gobierno tomada por guardias ajenos."
@@ -574,7 +790,8 @@
         "y": 48.3,
         "tipo": "mar",
         "sesiones": [
-          1
+          1,
+          2
         ],
         "estado": "confirmado",
         "nota": "La ruta del viaje: subiendo por esta costa se llega a Moray, a Waterdeep y, mucho más arriba, a Luskan."
@@ -586,7 +803,8 @@
         "y": 46.8,
         "tipo": "isla",
         "sesiones": [
-          1
+          1,
+          2
         ],
         "estado": "confirmado",
         "nota": "Vieja isla en las Moonshae: la de la montaña y la del llano. En la del llano, un pequeño templo donde vive Zarif, el gnomo que Durin quiere de gobernante. Destino del viaje."
@@ -610,27 +828,98 @@
         "y": 9.8,
         "tipo": "ciudad",
         "sesiones": [
-          1
+          1,
+          2
         ],
         "estado": "confirmado",
         "nota": "Muy al norte. La traición no vino de los vecinos: vino de acá, cree Durin. Orcos, los Garra de Hierro, banderas nunca vistas en el puerto de Ámbar. Por ahora es una pista, no una parada del viaje."
+      },
+      {
+        "id": "ioma",
+        "nombre": "Ioma",
+        "x": 13.4,
+        "y": 58.1,
+        "tipo": "isla",
+        "sesiones": [
+          2
+        ],
+        "estado": "confirmado",
+        "nota": "Isla de las Nelanther Isles, al sur de las Moonshae. En la mesa es una ciudad factoría dedicada a la pesca. El grupo hizo escala acá para repostar, desviándose un poco al este de la ruta a Moray. Los recibió el aristócrata Ismael Lesser en el muelle catorce."
+      },
+      {
+        "id": "nemeser",
+        "nombre": "Nemesser",
+        "x": 14.7,
+        "y": 59.9,
+        "tipo": "isla",
+        "sesiones": [
+          2
+        ],
+        "estado": "confirmado",
+        "nota": "Isla de las Nelanther Isles, al sureste de Ioma. En la mesa es una ciudad chatarrera, un conjunto de gremios con menos ley y más silencio. La consideraron para repostar y la descartaron por Ioma."
+      },
+      {
+        "id": "iron-keep",
+        "nombre": "Iron Keep (Isla de Omán)",
+        "x": 7.8,
+        "y": 43.2,
+        "tipo": "hito",
+        "sesiones": [
+          2
+        ],
+        "estado": "confirmado",
+        "nota": "La fortaleza y ciudad de Iron Keep, sobre la Isla de Omán (Oman's Isle), en las Moonshae, cerca de Moray. Capital del viejo reino nórdico de Omán. El grupo pescó el nombre entre los murmullos de los ocupantes de Ámbar."
       }
     ],
     "rutas": [
-      {
-        "sesion": 1,
-        "estado": "planeado",
-        "puntos": [
-          "ambar",
-          "moray"
-        ]
-      },
       {
         "sesion": 1,
         "estado": "opcional",
         "puntos": [
           "moray",
           "waterdeep"
+        ],
+        "via": [
+          {
+            "x": 4,
+            "y": 38
+          },
+          {
+            "x": 7,
+            "y": 29
+          }
+        ]
+      },
+      {
+        "sesion": 2,
+        "estado": "recorrido",
+        "puntos": [
+          "ambar",
+          "ioma"
+        ],
+        "via": [
+          {
+            "x": 12,
+            "y": 66
+          }
+        ]
+      },
+      {
+        "sesion": 2,
+        "estado": "planeado",
+        "puntos": [
+          "ioma",
+          "moray"
+        ],
+        "via": [
+          {
+            "x": 8.8,
+            "y": 56.7
+          },
+          {
+            "x": 5,
+            "y": 51.7
+          }
         ]
       }
     ]
@@ -1015,8 +1304,123 @@
         "url": "/vaegrant-galeria/mundo-23.jpg",
         "prompt": "Mundo · Chult, donde los faéricos guardan la espesura",
         "fecha": "2026-07-11"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-28.jpg",
+        "prompt": "Cubierta de noche · Sesión 2",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-29.jpg",
+        "prompt": "Vaegrant en cubierta · Sesión 2",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-30.jpg",
+        "prompt": "La travesía · Sesión 2",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/vaegrant-31.jpg",
+        "prompt": "Vaegrant en la proa, de noche · Sesión 2",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-24.jpg",
+        "prompt": "Mundo · Ioma, la isla factoría",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-25.jpg",
+        "prompt": "Mundo · La huida del Albatros",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-27.jpg",
+        "prompt": "Mundo · El Albatros",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-28.jpg",
+        "prompt": "Mundo · La bruma de sal",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-29.jpg",
+        "prompt": "Mundo · La llegada de los galeones",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-30.jpg",
+        "prompt": "Mundo · Hakon, el bastardo del mar",
+        "fecha": "2026-07-21"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-31.jpg",
+        "prompt": "Mundo · La revuelta de Ámbar",
+        "fecha": "2026-07-21"
       }
     ],
     "portada": 0
-  }
+  },
+  "personajes": [
+    {
+      "id": "iscandar",
+      "nombre": "Iscandar Selindar",
+      "arquetipo": "Paladín",
+      "linea": "Hombre del gremio del puerto, de la casa Selindar. Habla como noble y trabaja como estibador.",
+      "imagen": "/vaegrant-galeria/personaje-iscandar.jpg",
+      "rasgos": [
+        {
+          "label": "Casa",
+          "texto": "De la familia Selindar, protectores de la Fetron. No es elfo, pero maneja la lengua élfica con soltura de cuna."
+        },
+        {
+          "label": "Antes",
+          "texto": "Del puerto de Ámbar, del gremio de Trobe. Entró de guardia y sigue yendo al Viejo Jarrito, con sus amigos de siempre."
+        },
+        {
+          "label": "En el barco",
+          "texto": "Cubierta y arsenal: el trabajo pesado, las amarras, el músculo. Sabe de mar, de rutas y de tripulaciones."
+        },
+        {
+          "label": "Señas",
+          "texto": "Cree que la información se busca por los medios que hagan falta. Filoso y leal por partes iguales; suelta sentencias de sobremesa entre golpe y golpe."
+        }
+      ],
+      "descripcion": [
+        "En el puerto lo conocen desde abajo, pero cuando hace falta se pone la voz de la casa Selindar y negocia de igual a igual: así, en élfico, desactivó al almirante Goldsmayer sin desenvainar.",
+        "Es el que discute con Vaegrant cuando lo ve demasiado clavado en la misión. Para él, parar a averiguar quién es quién y qué se dice en las tabernas no es perder tiempo, es sobrevivir. En Ioma fue el único que entró a lo de Ballantines, y de ahí volvió con una llave."
+      ]
+    },
+    {
+      "id": "jeremy",
+      "nombre": "Jeremy",
+      "arquetipo": "Historiador · Artífice",
+      "linea": "Letrado y ex periodista. Cree que la información es poder, y la junta como quien arma una máquina.",
+      "imagen": "/vaegrant-galeria/personaje-jeremy.jpg",
+      "rasgos": [
+        {
+          "label": "Oficio",
+          "texto": "Llevaba los números y los inventarios de la bodega de Durin. Antes fue periodista, de diario: de ahí su nexo con la biblioteca de Ámbar."
+        },
+        {
+          "label": "Origen",
+          "texto": "Como el resto del grupo, cruzó por un portal. Un viajero que aprende y anota la historia de cada lugar al que llega."
+        },
+        {
+          "label": "En el barco",
+          "texto": "La despensa y la bodega: bitácora, provisiones y secretos de carga. Fue él quien encontró el oro, las armas disfrazadas de coles y la pared que no debería estar."
+        },
+        {
+          "label": "Señas",
+          "texto": "Quiere escribir una serie de libros sobre este mundo visto por los viajeros, y hasta ofreció escribir las biografías del grupo."
+        }
+      ],
+      "descripcion": [
+        "Si algo hay para leer, contar o inventariar, es lo suyo. En el Albatros abrió la bitácora y ató los cabos: dos meses de reformas en secreto, acero forjado en frío, una habitación tapiada. Casi todo lo que el barco esconde salió de su curiosidad.",
+        "En Ioma salió a buscar información y no tuvo suerte, pero no es de rendirse: para él, quien tiene la información maneja todo lo demás."
+      ]
+    }
+  ]
 }

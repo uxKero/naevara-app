@@ -5,13 +5,13 @@ import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } fr
 // useLayoutEffect real en el cliente, useEffect en SSR (evita el warning de Next).
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 import { Cormorant_Garamond } from "next/font/google";
-import { VaegrantData, VImagen, VDialogoLinea } from "@/types/vaegrant";
+import { VaegrantData, VImagen, VDialogoLinea, VPersonaje } from "@/types/vaegrant";
 import EditableText from "@/components/EditableText";
 import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
 import AddSessionModal from "@/components/AddSessionModal";
 import type { SessionEntry } from "@/types/character";
-import { Swords, Flame, ArrowLeft, ScrollText, Download, User, Map as MapIcon, Globe, BookOpen, CalendarDays, MoreHorizontal, Save } from "lucide-react";
+import { Swords, Flame, ArrowLeft, ScrollText, Download, User, Users, Map as MapIcon, Globe, BookOpen, CalendarDays, MoreHorizontal, Save } from "lucide-react";
 import { descargarImagen } from "@/lib/descargar";
 import { BuilderCharacter } from "@/types/builder";
 import {
@@ -27,12 +27,13 @@ import type { CombatAction } from "@/lib/combatData";
 const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"], style: ["normal", "italic"] });
 
 const TABS = [
-  { id: "perfil",   label: "Perfil" },
-  { id: "hoja",     label: "Hoja" },
-  { id: "historia", label: "Historia" },
-  { id: "sesiones", label: "Sesiones" },
-  { id: "mapa",     label: "Mapa" },
-  { id: "mundo",    label: "El mundo" },
+  { id: "perfil",     label: "Perfil" },
+  { id: "hoja",       label: "Hoja" },
+  { id: "personajes", label: "Personajes" },
+  { id: "historia",   label: "Historia" },
+  { id: "sesiones",   label: "Sesiones" },
+  { id: "mapa",       label: "Mapa" },
+  { id: "mundo",      label: "El mundo" },
 ];
 
 // Paleta fría de Vaegrant. El ámbar es la única calidez de la página y se
@@ -368,6 +369,10 @@ export default function VaegrantPage() {
             onOpen={(idx) => setLightbox({ imgs: retratos.map((i) => i.url), caps: retratos.map((i) => i.prompt), idx, alt: data.meta.alias })} />
         )}
         {activeTab === "hoja" && <TabHoja combateId={data.combateId} />}
+        {activeTab === "personajes" && (
+          <TabPersonajes data={data} update={update}
+            onOpenImg={(url, alt) => setLightbox({ imgs: [url], caps: [alt], idx: 0, alt })} />
+        )}
         {activeTab === "historia" && <TabHistoria data={data} update={update} openAI={openAI} />}
         {activeTab === "sesiones" && <TabSesiones data={data} />}
         {activeTab === "mapa" && <TabMapa data={data} />}
@@ -400,15 +405,16 @@ function BottomNav({ active, onSelect, combateId, onGuardar, saving, savedMsg }:
   const [mas, setMas] = useState(false);
 
   const ICONOS: Record<string, React.ReactNode> = {
-    perfil:   <User size={18} strokeWidth={2} />,
-    hoja:     <Swords size={18} strokeWidth={2} />,
-    historia: <BookOpen size={18} strokeWidth={2} />,
-    sesiones: <CalendarDays size={18} strokeWidth={2} />,
-    mapa:     <MapIcon size={18} strokeWidth={2} />,
-    mundo:    <Globe size={18} strokeWidth={2} />,
+    perfil:     <User size={18} strokeWidth={2} />,
+    hoja:       <Swords size={18} strokeWidth={2} />,
+    personajes: <Users size={18} strokeWidth={2} />,
+    historia:   <BookOpen size={18} strokeWidth={2} />,
+    sesiones:   <CalendarDays size={18} strokeWidth={2} />,
+    mapa:       <MapIcon size={18} strokeWidth={2} />,
+    mundo:      <Globe size={18} strokeWidth={2} />,
   };
-  // Etiquetas cortas para que entren siete celdas angostas.
-  const LABELS: Record<string, string> = { mundo: "Mundo", historia: "Historia" };
+  // Etiquetas cortas para que entren las celdas angostas del mobile.
+  const LABELS: Record<string, string> = { mundo: "Mundo", historia: "Historia", personajes: "Grupo" };
 
   const itemStyle = (on: boolean): React.CSSProperties => ({
     flex: 1, minWidth: 0, position: "relative",
@@ -621,6 +627,9 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
   tipoMundo: boolean;
 }) {
   const [nuevaUrl, setNuevaUrl] = useState("");
+  const [verTodas, setVerTodas] = useState(false);
+  const LIMITE = 8; // preview corto; el resto se despliega con "Ver galería completa"
+  const visibles = verTodas ? imagenes : imagenes.slice(0, LIMITE);
   const globalIdx = (img: VImagen) => todas.findIndex((t) => t.url === img.url);
 
   const agregar = () => {
@@ -640,7 +649,7 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
       <VSecLabel>{titulo} ({imagenes.length})</VSecLabel>
       <VDivider />
       <div className="vg-gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 10 }}>
-        {imagenes.map((img, i) => {
+        {visibles.map((img, i) => {
           const gi = globalIdx(img);
           const esPortada = !tipoMundo && gi === portada;
           return (
@@ -700,6 +709,17 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
           );
         })}
       </div>
+      {imagenes.length > LIMITE && (
+        <div style={{ display: "flex", justifyContent: "center", marginTop: 16 }}>
+          <button
+            className="vg-btn"
+            onClick={() => setVerTodas((v) => !v)}
+            style={{ padding: "8px 18px", fontSize: 11, fontWeight: 700, borderRadius: R + 1, background: "transparent", color: C.amber, border: `1px solid rgba(201,156,90,0.4)`, cursor: "pointer" }}
+          >
+            {verTodas ? "Ver menos" : `Ver galería completa (${imagenes.length})`}
+          </button>
+        </div>
+      )}
       <div style={{ display: "flex", gap: 8, marginTop: 14, alignItems: "center" }}>
         <input
           value={nuevaUrl}
@@ -723,6 +743,214 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
         </button>
       </div>
     </section>
+  );
+}
+
+// ── Personajes: fichas breves del grupo (sin Vaegrant) ───────────
+// Cards compactas; el detalle completo se abre en un modal ("Ver más").
+function TabPersonajes({ data, update, onOpenImg }: {
+  data: VaegrantData; update: UpdateFn; onOpenImg: (url: string, alt: string) => void;
+}) {
+  const personajes = data.personajes ?? [];
+  const [abierto, setAbierto] = useState<number | null>(null);
+  return (
+    <div>
+      <VTitle size={26}>El grupo</VTitle>
+      <p style={{ ...pStyle, fontSize: 13 }}>
+        Los compañeros de Vaegrant: los que cruzaron un portal con él y comparten el encargo de Durin.
+        Tocá &ldquo;Ver más&rdquo; para abrir la ficha completa.
+      </p>
+      {personajes.length === 0 ? (
+        <p style={{ ...pStyle, fontStyle: "italic", color: C.faint }}>Todavía no hay compañeros cargados.</p>
+      ) : (
+        <div style={{ marginTop: 6 }}>
+          {personajes.map((p, i) => (
+            <PersonajeRow key={p.id ?? i} p={p} onVerMas={() => setAbierto(i)} />
+          ))}
+        </div>
+      )}
+      {abierto !== null && personajes[abierto] && (
+        <PersonajeModal
+          p={personajes[abierto]} i={abierto} update={update}
+          onClose={() => setAbierto(null)} onOpenImg={onOpenImg}
+        />
+      )}
+    </div>
+  );
+}
+
+// Card compacta: retrato chico + nombre/arquetipo/línea + botón Ver más.
+function PersonajeRow({ p, onVerMas }: { p: VPersonaje; onVerMas: () => void }) {
+  return (
+    <div
+      className="vg-row"
+      style={{ display: "flex", alignItems: "center", gap: 14, padding: "13px 0", borderTop: `1px solid ${C.borderSoft}` }}
+    >
+      {/* Retrato mini */}
+      {p.imagen ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={p.imagen} alt={p.nombre}
+          style={{ width: 50, height: 66, objectFit: "cover", borderRadius: R + 1, border: `1px solid ${C.border}`, flexShrink: 0 }} />
+      ) : (
+        <div style={{
+          width: 50, height: 66, borderRadius: R + 1, border: `1px dashed ${C.border}`, background: C.subtle,
+          display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+        }}>
+          <User size={20} strokeWidth={1.5} color={C.faint} />
+        </div>
+      )}
+
+      {/* Texto */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: 9.5, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.14em", marginBottom: 2 }}>
+          {p.arquetipo}
+        </div>
+        <div className={serif.className} style={{ fontSize: 19, fontWeight: 600, color: C.text, lineHeight: 1.15 }}>
+          {p.nombre}
+        </div>
+        <p style={{
+          ...pStyle, fontSize: 12, margin: "3px 0 0", color: C.faint,
+          display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
+        }}>
+          {p.linea}
+        </p>
+      </div>
+
+      <button
+        className="vg-btn"
+        onClick={onVerMas}
+        style={{
+          flexShrink: 0, padding: "6px 12px", fontSize: 11, fontWeight: 700, borderRadius: R + 1,
+          background: "transparent", color: C.amber, border: `1px solid rgba(201,156,90,0.4)`, cursor: "pointer",
+        }}
+      >
+        Ver más
+      </button>
+    </div>
+  );
+}
+
+// Modal con la ficha completa y editable del compañero.
+function PersonajeModal({ p, i, update, onClose, onOpenImg }: {
+  p: VPersonaje; i: number; update: UpdateFn; onClose: () => void; onOpenImg: (url: string, alt: string) => void;
+}) {
+  const [url, setUrl] = useState("");
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  const setField = (field: "nombre" | "arquetipo" | "linea" | "imagen", value: string) =>
+    update((d) => {
+      const ps = [...(d.personajes ?? [])];
+      ps[i] = { ...ps[i], [field]: value };
+      return { ...d, personajes: ps };
+    });
+  const setRasgo = (ri: number, key: "label" | "texto", value: string) =>
+    update((d) => {
+      const ps = [...(d.personajes ?? [])];
+      const rasgos = [...ps[i].rasgos];
+      rasgos[ri] = { ...rasgos[ri], [key]: value };
+      ps[i] = { ...ps[i], rasgos };
+      return { ...d, personajes: ps };
+    });
+  const setParrafo = (pi: number, value: string) =>
+    update((d) => {
+      const ps = [...(d.personajes ?? [])];
+      const descripcion = [...ps[i].descripcion];
+      descripcion[pi] = value;
+      ps[i] = { ...ps[i], descripcion };
+      return { ...d, personajes: ps };
+    });
+
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: "fixed", inset: 0, zIndex: 200, background: "rgba(6,9,13,0.72)",
+        display: "flex", alignItems: "flex-start", justifyContent: "center",
+        padding: "5vh 12px", overflowY: "auto",
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: "min(580px, 100%)", background: C.bg, border: `1px solid ${C.border}`,
+          borderRadius: R + 4, boxShadow: "0 20px 60px rgba(0,0,0,0.6)", padding: "22px 22px 26px",
+          position: "relative",
+        }}
+      >
+        <button
+          className="vg-btn" onClick={onClose} aria-label="Cerrar"
+          style={{ position: "absolute", top: 12, right: 12, width: 30, height: 30, borderRadius: R + 1, background: "transparent", color: C.faint, border: `1px solid ${C.borderSoft}`, cursor: "pointer", fontSize: 15, lineHeight: 1 }}
+        >
+          ×
+        </button>
+
+        {/* Encabezado: retrato + identidad */}
+        <div className="vg-pj-head" style={{ display: "grid", gridTemplateColumns: "clamp(100px, 32%, 132px) 1fr", gap: 18, alignItems: "start" }}>
+          <div>
+            {p.imagen ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={p.imagen} alt={p.nombre}
+                onClick={() => onOpenImg(p.imagen, p.nombre)}
+                style={{ width: "100%", aspectRatio: "2 / 3", objectFit: "cover", display: "block", cursor: "zoom-in", borderRadius: R + 1, border: `1px solid ${C.border}` }} />
+            ) : (
+              <div style={{ width: "100%", aspectRatio: "2 / 3", borderRadius: R + 1, border: `1px dashed ${C.border}`, background: C.subtle, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, textAlign: "center", padding: 10 }}>
+                <User size={24} strokeWidth={1.5} color={C.faint} />
+                <span style={{ fontSize: 10, color: C.faint, lineHeight: 1.4 }}>Retrato pendiente</span>
+              </div>
+            )}
+            <div style={{ display: "flex", gap: 5, marginTop: 8 }}>
+              <input
+                value={url} onChange={(e) => setUrl(e.target.value)} placeholder="URL del retrato"
+                style={{ flex: 1, minWidth: 0, background: C.subtle, color: C.text, border: `1px solid ${C.borderSoft}`, borderRadius: R, padding: "5px 7px", fontSize: 10.5, fontFamily: "inherit" }} />
+              <button
+                className="vg-btn" onClick={() => { if (url.trim()) { setField("imagen", url.trim()); setUrl(""); } }} disabled={!url.trim()}
+                style={{ padding: "5px 8px", fontSize: 10, fontWeight: 700, borderRadius: R, background: url.trim() ? C.amber : "transparent", border: url.trim() ? "none" : `1px solid ${C.borderSoft}`, color: url.trim() ? "#10151c" : C.faint, cursor: url.trim() ? "pointer" : "not-allowed", flexShrink: 0 }}>
+                {p.imagen ? "Cambiar" : "Poner"}
+              </button>
+            </div>
+          </div>
+
+          <div style={{ minWidth: 0, paddingRight: 26 }}>
+            <div style={{ fontSize: 10, fontWeight: 600, color: C.steel, textTransform: "uppercase", letterSpacing: "0.16em", marginBottom: 4 }}>
+              <EditableText value={p.arquetipo} onChange={(v) => setField("arquetipo", v)} />
+            </div>
+            <h3 className={serif.className} style={{ fontSize: 26, fontWeight: 600, color: C.text, lineHeight: 1.1, margin: "0 0 8px" }}>
+              <EditableText value={p.nombre} onChange={(v) => setField("nombre", v)} />
+            </h3>
+            <p className={serif.className} style={{ fontSize: 15, fontStyle: "italic", color: C.muted, lineHeight: 1.4, borderLeft: `2px solid ${C.amber}`, padding: "2px 0 2px 12px", margin: 0 }}>
+              <EditableText value={p.linea} multiline onChange={(v) => setField("linea", v)} />
+            </p>
+          </div>
+        </div>
+
+        {/* Rasgos */}
+        <div style={{ marginTop: 18 }}>
+          {p.rasgos.map((r, ri) => (
+            <div key={ri} style={{ padding: "9px 0", borderTop: `1px solid ${C.borderSoft}` }}>
+              <div style={{ fontSize: 10, fontWeight: 700, color: C.steel, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 3 }}>
+                <EditableText value={r.label} onChange={(v) => setRasgo(ri, "label", v)} />
+              </div>
+              <div style={{ ...pStyle, fontSize: 13, margin: 0 }}>
+                <EditableText value={r.texto} multiline onChange={(v) => setRasgo(ri, "texto", v)} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Descripción */}
+        <div style={{ marginTop: 16 }}>
+          {p.descripcion.map((par, pi) => (
+            <p key={pi} style={pStyle}>
+              <EditableText value={par} multiline onChange={(v) => setParrafo(pi, v)} />
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -1540,11 +1768,14 @@ function TabMapa({ data }: { data: VaegrantData }) {
           <svg viewBox="0 0 100 100" preserveAspectRatio="none"
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
             {m.rutas.map((r, i) => {
-              const pts = r.puntos
-                .map((id) => byId.get(id))
-                .filter((k): k is NonNullable<typeof k> => !!k)
-                .map((k) => `${k.x},${k.y}`)
-                .join(" ");
+              // Secuencia: primer marcador, waypoints de mar (via), luego el resto.
+              // Así la línea sigue la costa en vez de cruzar tierra en recto.
+              const seq: { x: number; y: number }[] = [];
+              const first = r.puntos[0] ? byId.get(r.puntos[0]) : undefined;
+              if (first) seq.push({ x: first.x, y: first.y });
+              (r.via ?? []).forEach((v) => seq.push({ x: v.x, y: v.y }));
+              r.puntos.slice(1).forEach((id) => { const k = byId.get(id); if (k) seq.push({ x: k.x, y: k.y }); });
+              const pts = seq.map((k) => `${k.x},${k.y}`).join(" ");
               // recorrido: ámbar sólida · planeado (el viaje): ámbar punteada ·
               // opcional (encargo personal): gris fina de puntos
               const st = r.estado === "recorrido"

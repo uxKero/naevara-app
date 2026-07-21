@@ -1,8 +1,8 @@
 // Empuja a la fila `vaegrant` de Supabase los campos nuevos y actualizados
-// de la Sesión 1, leyéndolos de data/vaegrant.json (la semilla):
+// de las sesiones (Sesión 1 y 2), leyéndolos de data/vaegrant.json (la semilla):
 //   - cronica  (crónica de sesiones, campo nuevo)
 //   - mapa     (mapa de campaña con pines, campo nuevo)
-//   - mundo.contexto y mundo.lugares (canon confirmado en mesa)
+//   - mundo.contexto, mundo.lugares y mundo.ganchos (canon confirmado en mesa)
 //   - historia.notaMesa
 // El resto de la fila (perfil, galería, ediciones hechas desde la UI) queda intacto.
 //
@@ -48,7 +48,7 @@ if (!row?.data) {
 const data = JSON.parse(JSON.stringify(row.data).replaceAll("Silverun", "Silvapor"));
 data.cronica = seed.cronica;
 data.mapa = seed.mapa;
-data.mundo = { ...data.mundo, contexto: seed.mundo.contexto, lugares: seed.mundo.lugares };
+data.mundo = { ...data.mundo, contexto: seed.mundo.contexto, lugares: seed.mundo.lugares, ganchos: seed.mundo.ganchos };
 data.historia = { ...data.historia, notaMesa: seed.historia.notaMesa };
 
 // Galería: agrega las imágenes nuevas de la semilla que la fila todavía no tiene

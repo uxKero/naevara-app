@@ -20,6 +20,20 @@ export interface VImagen {
   fecha: string;
 }
 
+// ── Personajes del grupo ─────────────────────────────────────────
+// Fichas breves de los compañeros de Vaegrant (no incluye a Vaegrant,
+// que tiene su propio Perfil y Hoja). Pensadas como un documento, con
+// lugar para el retrato cuando se genere.
+export interface VPersonaje {
+  id: string;
+  nombre: string;
+  arquetipo: string;      // "Paladín", "Historiador · Artífice"
+  linea: string;          // una línea que lo pinta
+  imagen: string;         // URL del retrato; "" = pendiente
+  rasgos: VItem[];        // señas: casa, oficio, en el barco, etc.
+  descripcion: string[];  // párrafos
+}
+
 // ── Crónica de sesiones ──────────────────────────────────────────
 // Registro curado por sesión: narración por capítulos con el diálogo
 // real de mesa insertado donde vale la pena conservarlo textual.
@@ -66,6 +80,9 @@ export interface VRuta {
   // recorrido = ya viajado · planeado = el viaje comprometido · opcional = encargo personal, no obligatorio
   estado: "recorrido" | "planeado" | "opcional";
   puntos: string[]; // ids de marcadores, en orden
+  // Waypoints intermedios (en % del mapa) para que la línea siga el mar y no
+  // cruce tierra. Se insertan entre el primer y el segundo marcador.
+  via?: { x: number; y: number }[];
 }
 
 export interface VMapa {
@@ -122,6 +139,7 @@ export interface VaegrantData {
   // el GET las completa desde la semilla vía mergeConSeed.
   cronica?: VSesionCronica[];
   mapa?: VMapa;
+  personajes?: VPersonaje[];
   galeria: {
     estiloBase: string;
     prompts: { titulo: string; prompt: string }[];
