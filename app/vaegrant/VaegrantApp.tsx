@@ -59,9 +59,11 @@ type OpenAIFn = (title: string, currentText: string, onApply: (t: string) => voi
 
 const esMundo = (img: VImagen) => img.prompt.startsWith("Mundo");
 
-export default function VaegrantPage() {
-  const [data, setData]           = useState<VaegrantData | null>(null);
-  const [activeTab, setActiveTab] = useState("perfil");
+export default function VaegrantApp({ initialData, initialTab, initialSession }: {
+  initialData: VaegrantData; initialTab: string; initialSession?: string;
+}) {
+  const [data, setData]           = useState<VaegrantData | null>(initialData);
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [saving, setSaving]       = useState(false);
   const [savedMsg, setSavedMsg]   = useState("");
   const [lightbox, setLightbox]   = useState<{ imgs: string[]; caps: string[]; idx: number; alt: string } | null>(null);
@@ -69,8 +71,30 @@ export default function VaegrantPage() {
     open: boolean; title: string; currentText: string; onApply: (t: string) => void;
   }>({ open: false, title: "", currentText: "", onApply: () => {} });
 
+  // Los datos llegan renderizados desde el servidor (SSR, legible por crawlers y
+  // NotebookLM); no hace falta el fetch inicial en el cliente.
+
+  // Slug por sección: la pestaña activa se refleja en la URL (/vaegrant/<tab>),
+  // sin recargar. No corre en el primer render (la URL ya viene correcta del SSR).
+  const primerRender = useRef(true);
   useEffect(() => {
-    fetch("/api/vaegrant").then((r) => r.json()).then(setData).catch(console.error);
+    if (primerRender.current) { primerRender.current = false; return; }
+    if (typeof window === "undefined") return;
+    // Si hay una sesión abierta, su slug lo maneja TabSesiones: no lo pisamos.
+    if (activeTab === "sesiones" && window.location.pathname.startsWith("/vaegrant/sesiones/")) return;
+    const url = activeTab === "perfil" ? "/vaegrant" : `/vaegrant/${activeTab}`;
+    if (window.location.pathname !== url) window.history.pushState(null, "", url);
+  }, [activeTab]);
+
+  // Atrás/adelante del navegador: deriva la pestaña desde la URL.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onPop = () => {
+      const seg = window.location.pathname.replace(/^\/vaegrant\/?/, "").split("/")[0];
+      setActiveTab(TABS.some((t) => t.id === seg) ? seg : "perfil");
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
 
   const save = useCallback(async (d: VaegrantData) => {
@@ -374,7 +398,7 @@ export default function VaegrantPage() {
             onOpenImg={(url, alt) => setLightbox({ imgs: [url], caps: [alt], idx: 0, alt })} />
         )}
         {activeTab === "historia" && <TabHistoria data={data} update={update} openAI={openAI} />}
-        {activeTab === "sesiones" && <TabSesiones data={data} />}
+        {activeTab === "sesiones" && <TabSesiones data={data} initialSession={initialSession} />}
         {activeTab === "mapa" && <TabMapa data={data} />}
         {activeTab === "mundo" && (
           <TabMundo data={data} update={update} openAI={openAI} estampas={estampas}
@@ -1392,15 +1416,37 @@ function DialogoBlock({ lineas }: { lineas: VDialogoLinea[] }) {
 }
 
 // Índice tipo tabla (una fila por sesión) + vista de detalle al abrir.
-function TabSesiones({ data }: { data: VaegrantData }) {
+function TabSesiones({ data, initialSession }: { data: VaegrantData; initialSession?: string }) {
   const sesiones = data.cronica ?? [];
-  const [abiertaId, setAbiertaIdRaw] = useState<string | null>(null);
+  // La sesión abierta se refleja en la URL (/vaegrant/sesiones/<id>). Se toma de
+  // la URL en el cliente (o del prop en SSR) para no reabrir una vieja al volver.
+  const [abiertaId, setAbiertaIdRaw] = useState<string | null>(() => {
+    if (typeof window !== "undefined") {
+      const parts = window.location.pathname.replace(/^\/vaegrant\/?/, "").split("/");
+      return parts[0] === "sesiones" && parts[1] ? parts[1] : null;
+    }
+    return initialSession ?? null;
+  });
   const abierta = sesiones.find((s) => s.id === abiertaId) ?? null;
   // Al abrir o volver, subir al inicio: el detalle y el índice comparten scroll.
   const setAbiertaId = (id: string | null) => {
     setAbiertaIdRaw(id);
-    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+    if (typeof window !== "undefined") {
+      const url = id ? `/vaegrant/sesiones/${id}` : "/vaegrant/sesiones";
+      if (window.location.pathname !== url) window.history.pushState(null, "", url);
+      window.scrollTo({ top: 0 });
+    }
   };
+  // Atrás/adelante: sincroniza la sesión abierta con la URL.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onPop = () => {
+      const parts = window.location.pathname.replace(/^\/vaegrant\/?/, "").split("/");
+      setAbiertaIdRaw(parts[0] === "sesiones" && parts[1] ? parts[1] : null);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
 
   if (sesiones.length === 0) {
     return <p style={{ ...pStyle, fontStyle: "italic", color: C.faint }}>Todavía no hay sesiones cargadas en la crónica.</p>;
@@ -1557,6 +1603,10 @@ function TabMapa({ data }: { data: VaegrantData }) {
   const [agarrando, setAgarrando] = useState(false);
   // Visibilidad de las etiquetas de los pines, para poder ver el mapa limpio.
   const [etiquetas, setEtiquetas] = useState<"nitidas" | "tenues" | "ocultas">("nitidas");
+  // Regla de coordenadas: overlay opcional para leer/decir posiciones X-Y (% del mapa).
+  const [regla, setRegla] = useState(false);
+  const [puntoRegla, setPuntoRegla] = useState<{ x: number; y: number } | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   // Arrastre (mouse o un dedo). moved evita que soltar un arrastre dispare el
   // click de un pin.
@@ -1627,7 +1677,9 @@ function TabMapa({ data }: { data: VaegrantData }) {
     const dch = drag.current;
     if (!dch.activo) return;
     const dx = e.clientX - dch.x, dy = e.clientY - dch.y;
-    if (Math.abs(dx) + Math.abs(dy) > 5) dch.moved = true;
+    // Umbral tap/arrastre: 12px (Manhattan) para que un tap con micro-movimiento
+    // en mobile no se interprete como arrastre y cancele la selección del pin.
+    if (Math.abs(dx) + Math.abs(dy) > 12) dch.moved = true;
     el.scrollLeft = dch.sl - dx;
     el.scrollTop = dch.st - dy;
   };
@@ -1677,6 +1729,19 @@ function TabMapa({ data }: { data: VaegrantData }) {
     }
   };
 
+  // Regla: al tocar el mapa (si no fue un arrastre) calcula la coordenada X-Y en %
+  // relativa a la imagen, para leerla y poder decir dónde ubicar un pin.
+  const onMapClick = (e: React.MouseEvent) => {
+    if (!regla || drag.current.moved) return;
+    const el = contentRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    if (x < 0 || x > 100 || y < 0 || y > 100) return;
+    setPuntoRegla({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 });
+  };
+
   const centerOn = useCallback((id: string, smooth: boolean) => {
     const k = byId.get(id);
     const el = scrollRef.current;
@@ -1707,7 +1772,7 @@ function TabMapa({ data }: { data: VaegrantData }) {
 
   const selM = byId.get(sel) ?? null;
   const esParty = (id: string) => id === m.party.marcadorId;
-  const tipoLabel: Record<string, string> = { ciudad: "Ciudad", region: "Región", isla: "Isla", hito: "Hito", mar: "Mar" };
+  const tipoLabel: Record<string, string> = { ciudad: "Ciudad", region: "Región", isla: "Isla", hito: "Hito", mar: "Mar", portal: "Portal primigenio" };
 
   return (
     <div>
@@ -1735,6 +1800,17 @@ function TabMapa({ data }: { data: VaegrantData }) {
           style={{ padding: "4px 12px", fontSize: 11, fontWeight: 600, borderRadius: R, background: "transparent", color: C.steelStrong, border: `1px solid ${C.border}`, cursor: "pointer" }}>
           Etiquetas: {etiquetas === "nitidas" ? "nítidas" : etiquetas}
         </button>
+        <button className="vg-btn"
+          onClick={() => setRegla((v) => !v)}
+          title="Mostrar una grilla de coordenadas X-Y (%) para leer y decir posiciones sobre el mapa"
+          style={{ padding: "4px 12px", fontSize: 11, fontWeight: 600, borderRadius: R, background: regla ? "rgba(154,99,216,0.16)" : "transparent", color: regla ? "#d8bcff" : C.steelStrong, border: `1px solid ${regla ? "rgba(216,188,255,0.45)" : C.border}`, cursor: "pointer" }}>
+          Regla{regla ? ": on" : ""}
+        </button>
+        {regla && (
+          <span style={{ fontSize: 10.5, color: "#d8bcff", fontWeight: 700 }}>
+            {puntoRegla ? `x ${puntoRegla.x} · y ${puntoRegla.y}` : "tocá el mapa para leer X-Y"}
+          </span>
+        )}
         <span className="vg-mapa-leyenda" style={{ fontSize: 10.5, color: C.faint, marginLeft: "auto" }}>
           ● lugar · ○ aproximado · <span style={{ color: C.amber }}>línea ámbar: el viaje</span> · <span style={{ color: C.steel }}>gris punteada: encargo personal</span>
         </span>
@@ -1749,13 +1825,14 @@ function TabMapa({ data }: { data: VaegrantData }) {
         onPointerCancel={finDrag}
         onDoubleClick={onDblClick}
         onClickCapture={onClickCapture}
+        onClick={onMapClick}
         style={{
           overflow: "auto", maxHeight: "68vh", border: `1px solid ${C.border}`, borderRadius: R + 1,
           background: C.bgDeep, cursor: agarrando ? "grabbing" : "grab",
           touchAction: "none", userSelect: "none", WebkitUserSelect: "none", overscrollBehavior: "contain",
         }}
       >
-        <div style={{ position: "relative", width: `${zoom * 100}%` }}>
+        <div ref={contentRef} style={{ position: "relative", width: `${zoom * 100}%` }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={m.imagen}
@@ -1791,6 +1868,18 @@ function TabMapa({ data }: { data: VaegrantData }) {
               );
             })}
           </svg>
+          {/* Regla: grilla de coordenadas (líneas cada 10%) */}
+          {regla && (
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none"
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
+              {[10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => (
+                <g key={v}>
+                  <line x1={v} y1={0} x2={v} y2={100} stroke="rgba(216,188,255,0.28)" strokeWidth={0.1} />
+                  <line x1={0} y1={v} x2={100} y2={v} stroke="rgba(216,188,255,0.28)" strokeWidth={0.1} />
+                </g>
+              ))}
+            </svg>
+          )}
           {/* Pines */}
           {m.marcadores.map((k) => {
             const party = esParty(k.id);
@@ -1798,15 +1887,24 @@ function TabMapa({ data }: { data: VaegrantData }) {
             const esMar = k.tipo === "mar";
             const esRegion = k.tipo === "region";
             const esHito = k.tipo === "hito";
+            const esPortal = k.tipo === "portal";
             // Marca según tipo: región = anillo, hito = rombo, mar = solo etiqueta,
-            // ciudad/isla = punto lleno (hueco si la ubicación es aproximada).
+            // portal = orbe violeta faérico, ciudad/isla = punto lleno (hueco si aproximada).
             const marca = party ? (
               <span className="vg-party-pin" style={{
                 display: "block", width: 13, height: 13, borderRadius: "50%",
                 background: C.amber, border: `2px solid #ffe9c9`,
                 outline: isSel ? `3px solid rgba(201,156,90,0.5)` : "none",
               }} />
-            ) : esMar ? null : (
+            ) : esMar ? null : esPortal ? (
+              <span style={{
+                display: "block", width: 12, height: 12, borderRadius: "50%",
+                background: "radial-gradient(circle at 50% 38%, #ecd8ff 0%, #9a63d8 55%, #5b3a94 100%)",
+                border: "2px solid #d8bcff",
+                boxShadow: "0 0 8px rgba(150,95,215,0.85)",
+                outline: isSel ? `3px solid rgba(201,156,90,0.5)` : "none",
+              }} />
+            ) : (
               <span style={{
                 display: "block",
                 width: esRegion ? 15 : esHito ? 9 : 10,
@@ -1851,6 +1949,25 @@ function TabMapa({ data }: { data: VaegrantData }) {
               </button>
             );
           })}
+          {/* Regla: etiquetas de ejes y marca de la coordenada tocada */}
+          {regla && (
+            <>
+              {[10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => (
+                <span key={`gx${v}`} style={{ position: "absolute", left: `${v}%`, top: 0, transform: "translate(-50%, 0)", fontSize: 9, fontWeight: 700, color: "#d8bcff", background: "rgba(11,15,21,0.72)", padding: "0 3px", borderRadius: 2, pointerEvents: "none", zIndex: 4 }}>{v}</span>
+              ))}
+              {[10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => (
+                <span key={`gy${v}`} style={{ position: "absolute", left: 0, top: `${v}%`, transform: "translate(0, -50%)", fontSize: 9, fontWeight: 700, color: "#d8bcff", background: "rgba(11,15,21,0.72)", padding: "0 3px", borderRadius: 2, pointerEvents: "none", zIndex: 4 }}>{v}</span>
+              ))}
+              {puntoRegla && (
+                <span style={{ position: "absolute", left: `${puntoRegla.x}%`, top: `${puntoRegla.y}%`, transform: "translate(-50%, -50%)", pointerEvents: "none", zIndex: 5 }}>
+                  <span style={{ display: "block", width: 11, height: 11, borderRadius: "50%", border: "2px solid #ecd8ff", background: "rgba(154,99,216,0.55)", boxShadow: "0 0 6px rgba(150,95,215,0.9)" }} />
+                  <span style={{ position: "absolute", left: "50%", top: "100%", transform: "translate(-50%, 2px)", whiteSpace: "nowrap", fontSize: 9.5, fontWeight: 700, color: "#ecd8ff", background: "rgba(11,15,21,0.85)", border: "1px solid rgba(216,188,255,0.5)", borderRadius: 3, padding: "1px 5px" }}>
+                    x {puntoRegla.x} · y {puntoRegla.y}
+                  </span>
+                </span>
+              )}
+            </>
+          )}
         </div>
       </div>
 

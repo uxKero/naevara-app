@@ -59,3 +59,8 @@ data/characters/
 # Imágenes fuente de sesiones de Vaegrant (originales PNG + 4K pesados):
 # fuera del repo; se optimizan a JPG en /public/vaegrant-galeria (eso sí va).
 /sources/Vaegrant/**/Images/
+
+# Sesiones: audios y backups crudos NO se commitean (los .txt de transcripción sí)
+/sources/Vaegrant/**/images/
+/sources/Vaegrant/**/*.ogg
+/sources/Vaegrant/**/*.ogg.json

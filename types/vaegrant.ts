@@ -69,7 +69,7 @@ export interface VMarcador {
   nombre: string;
   x: number; // % desde la izquierda
   y: number; // % desde arriba
-  tipo: "ciudad" | "region" | "isla" | "hito" | "mar";
+  tipo: "ciudad" | "region" | "isla" | "hito" | "mar" | "portal";
   sesiones: number[]; // en qué sesiones apareció o se mencionó
   nota: string;
   estado: "confirmado" | "aproximado"; // aproximado = lugar original del Master, ubicado a ojo
