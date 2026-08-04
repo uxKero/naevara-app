@@ -234,7 +234,7 @@
       {
         "nombre": "Moray",
         "tipo": "Sesión 1 · destino del viaje · islas Moonshae",
-        "texto": "Vieja isla al norte, yendo por el Mar de las Espadas, en las Moonshae. Son dos: la de la montaña y la del llano. En la del llano hay un pequeño templo, y en el templo vive Zarif, el gnomo que Durin cree que puede gobernar bien Anchoril.",
+        "texto": "Vieja isla al norte, yendo por el Mar de las Espadas, en las Moonshae. Son dos: la de la montaña y la del llano. En la del llano hay un pequeño templo, y en el templo vive Zariff, el gnomo que Durin cree que puede gobernar bien Anchoril.",
         "destacado": true
       },
       {
@@ -308,6 +308,30 @@
         "tipo": "Sesión 3 · islas Moonshae",
         "texto": "Una de las dos Moray, la del llano, con estilo de Turquía medieval: barro, teja y una sociedad que eligió estancar su tecnología para no acelerar como el hombre, valorando escritos y cultura. Teocracia de Moradin en las montañas y Freya en la base, y monarquía de un rey justo que gobierna el archipiélago desde Caer Callidyr, con Iron Keep para leyes y milicia. Muchos gnomos y enanos entre humanos, y toda la ciudad funciona como una feria. Existe gracias a Ámbar y sería su espejo de origen: si los de bandera negra no consiguen lo suyo en Ámbar, podrían venir por Moray, que no tiene con qué defenderse.",
         "destacado": true
+      },
+      {
+        "nombre": "Las islas de Val (Sesión 4)",
+        "tipo": "Islas · el destino del encargo · al norte",
+        "texto": "El norte al que los manda Zariff, a un día más de navegación que el tramo Ioma-Moray y a la altura de Waterdeep pero mar adentro. Hay una formación rocosa primigenia que fue el hogar original de la isla que salió de una tortuga, lo que la ata directo a Magraje. Ahí está la piedra y está la púrpura. Hace mucho que la gente del sur no sube a esas islas: antes tenían mucha incidencia de humanos, orcos y enanos casi en forma igualitaria, y hoy no se sabe nada del lugar.",
+        "destacado": true
+      },
+      {
+        "nombre": "El Claro Lunar (Sesión 4)",
+        "tipo": "Hito · el ojo faérico · dentro de Val",
+        "texto": "El lugar por donde se puede comunicar con el pueblo faérico, según Zariff. Es el primer paso del encargo, porque el cryptex de Durin solo lo abre un ser faérico o un representante del orden faérico. Sin pasar por ahí, el resto no arranca.",
+        "destacado": true
+      },
+      {
+        "nombre": "Las Nueve Rosas (Sesión 4)",
+        "tipo": "Historia · una familia aniquilada · mito y leyenda",
+        "texto": "Familia sin títulos nobiliarios pero de nombre sonante, anterior y contemporánea a las Guerras de los Magos. Se dedicaban a sacar objetos de poder de las manos de quienes no los merecían. Tuvieron que escapar y fueron aniquilados sistemáticamente, y con ellos se perdieron los objetos. Hoy sobreviven como mitos y leyendas chicos. El encargo del grupo es literalmente terminar lo que ellos empezaron y no pudieron mantener en secreto.",
+        "destacado": true
+      },
+      {
+        "nombre": "El Socavón (Sesión 4)",
+        "tipo": "Posada · Moray · la mesa de la reunión",
+        "texto": "La posada de Moray donde Río citó al grupo con Zariff. La atiende el viejo Gal, humano de un metro noventa y entrado en kilos, con un ojo de vidrio mecánico y la mano izquierda mecánica. En su puerta esperó Haddrek tres días con un banquito y una pipa, y adentro se cerró el trato que reorienta toda la campaña.",
+        "destacado": false
       }
     ],
     "ganchos": [
@@ -345,7 +369,7 @@
       },
       {
         "label": "La habitación tapiada",
-        "texto": "Dos metros de madera maciza al fondo de la bodega del Albatros, escondiendo algo que el grupo no logró abrir. El barco esconde más de lo que muestra."
+        "texto": "Dos metros de madera maciza al fondo de la bodega del Albatros. En la Sesión 4 Zariff lo dijo al pasar y se armó: la llave que Iscandar consiguió en Ioma es la que abre ese compartimiento del alcázar. Falta abrirlo."
       },
       {
         "label": "Quién los vendió",
@@ -353,7 +377,7 @@
       },
       {
         "label": "El tubo y la llave",
-        "texto": "Durin le dejó a Vaegrant un tubo cerrado con un criptek. En Ioma, el Paladín consiguió la llave que lo abre. Ninguno de los dos puede abrirlo todavía: quien podrá hacerlo es la persona que van a buscar, el gnomo Zarif en Moray. Es el corazón del encargo de Durin."
+        "texto": "Resuelto a medias en la Sesión 4. Zariff no puede abrir el cryptex: solo lo abre un ser faérico o un representante del orden faérico, y por eso metió a Brina en la mesa. Adentro debería estar el mapa que necesitan y los mapas de transición entre planos, entre portales artificiales y naturales. La llave era otra cosa distinta: abre el compartimiento del alcázar del Albatros."
       },
       {
         "label": "El juicio de Njröun",
@@ -365,11 +389,31 @@
       },
       {
         "label": "Luskan movió primero",
-        "texto": "Río, de parte de Zarif, filtró que hay gente de Luskan revisando libros e informes en la biblioteca de Moray. El tablero está en movimiento, y confirma la sospecha de Durin sobre el norte."
+        "texto": "Río, de parte de Zariff, filtró que hay gente de Luskan revisando libros e informes en la biblioteca de Moray. El tablero está en movimiento, y confirma la sospecha de Durin sobre el norte."
       },
       {
         "label": "Moray en la mira",
         "texto": "Moray existe gracias a Ámbar y no tiene sociedad belicosa para defenderse. Si los de bandera negra no consiguen lo que buscan en Ámbar, el próximo objetivo lógico es Moray."
+      },
+      {
+        "label": "Las siete piedras primigenias",
+        "texto": "Siete piezas, una por cada día de la semana, ligadas a los objetos de poder que perdieron las Nueve Rosas. Hay que juntarlas y después esconderlas donde los magos no las encuentren. Si los portales están activos, los magos ya saben buscarlas; Zariff no dijo que las hayan encontrado."
+      },
+      {
+        "label": "Probar la inocencia",
+        "texto": "Si los pacificadores se enteran de que los velas negras siguen el designio de los nueve magos, van a venir a liberarlos. Hasta entonces, ante el mundo, los que esconden reliquias son ladrones de reliquias. El grupo tiene que probar lo contrario, y Zariff admite que la diferencia es fina."
+      },
+      {
+        "label": "Durin, sometido",
+        "texto": "A Durin no lo van a retener en Ámbar. Se lo llevan a que le quiebren la voluntad y le saquen lo que tiene en la cabeza, hasta dejarlo como una cáscara vacía. Hay métodos científicos para eso y otros mágicos, mucho más crueles. La cuenta regresiva ya empezó."
+      },
+      {
+        "label": "Los quince",
+        "texto": "El grupo creía que eran tres los del pacto viejo, después cuatro, después cinco, después seis. Zariff dejó caer que eran quince en total. Faltan nueve nombres y ninguno apareció todavía."
+      },
+      {
+        "label": "Piedra lunar en las armas",
+        "texto": "Alara, la armera de Moray, lleva un trabuco con un cristal en la punta en vez de boca: piedra lunar fusionada directamente con el arma, no solo con magia. Ni Vaegrant ni Iscandar habían visto eso, ni siquiera en Sambar. Si es legal o no, dijo ella, depende de quién pregunte."
       }
     ]
   },
@@ -417,7 +461,7 @@
         },
         {
           "titulo": "La muerte de Marcus",
-          "texto": "Una mañana Durin cerró la posada y nos volvió a reunir: el gobernador había fallecido esa mañana. Acá los linajes no garantizan el gobierno: la gente elige a sus gobernadores, y así iba a seguir siendo. Se abría una lista de candidatos, con unas cinco semanas de campaña hasta la elección, en las que cada aspirante debe demostrarle al pueblo que merece gobernar.\n\nA Durin le pidieron que se presente. Dijo que no: si gobernaba sobre Anchoril iba a volver a tomar el martillo, y Anchoril tomaría otro rumbo. Los que se estaban presentando solo iban a abrir las antiguas heridas: ya se hablaba de guerras y de respuestas antes de que ocurran. Pero conocía a alguien que sí podía. Pasando hacia el norte, por el Mar de las Espadas, en una vieja isla llamada Moray, en la isla del llano, hay un pequeño templo. En ese templo vive un gnomo: Zarif. Con zeta, y con efe al final.\n\nLa propuesta de Durin fue una decisión dura, con dos caminos: o él tomaba una barcaza al norte y nosotros cuidábamos la taberna, o nos daba la potestad de su barcaza y salíamos nosotros a buscar a Zarif. Nos veía jóvenes, impetuosos y con fuerza de voluntad para cualquiera de las dos. Elegimos el viaje.",
+          "texto": "Una mañana Durin cerró la posada y nos volvió a reunir: el gobernador había fallecido esa mañana. Acá los linajes no garantizan el gobierno: la gente elige a sus gobernadores, y así iba a seguir siendo. Se abría una lista de candidatos, con unas cinco semanas de campaña hasta la elección, en las que cada aspirante debe demostrarle al pueblo que merece gobernar.\n\nA Durin le pidieron que se presente. Dijo que no: si gobernaba sobre Anchoril iba a volver a tomar el martillo, y Anchoril tomaría otro rumbo. Los que se estaban presentando solo iban a abrir las antiguas heridas: ya se hablaba de guerras y de respuestas antes de que ocurran. Pero conocía a alguien que sí podía. Pasando hacia el norte, por el Mar de las Espadas, en una vieja isla llamada Moray, en la isla del llano, hay un pequeño templo. En ese templo vive un gnomo: Zariff. Con zeta, y con efe al final.\n\nLa propuesta de Durin fue una decisión dura, con dos caminos: o él tomaba una barcaza al norte y nosotros cuidábamos la taberna, o nos daba la potestad de su barcaza y salíamos nosotros a buscar a Zariff. Nos veía jóvenes, impetuosos y con fuerza de voluntad para cualquiera de las dos. Elegimos el viaje.",
           "dialogo": [
             {
               "quien": "Durin",
@@ -425,7 +469,7 @@
             },
             {
               "quien": "Durin",
-              "texto": "O me cuidan la posada, o van al norte por Zarif."
+              "texto": "O me cuidan la posada, o van al norte por Zariff."
             },
             {
               "quien": "Durin",
@@ -435,7 +479,7 @@
         },
         {
           "titulo": "El establo",
-          "texto": "Esa noche, un ruido en el granero del fondo. La puerta abierta. Durin peinaba con un rastrillo de mano a un viejo carnero robusto, del tamaño de una montura, y le hablaba bajo. Era su montura: todos sabemos que Durin, en su juventud, fue un guerrero que velaba por la justicia y la paz. Vaegrant se acercó, y la conversación que siguió fue la más importante de la noche.\n\nDurin venía atando cabos: comerciantes que operaron meses en la plaza central sin que nadie viera nunca su mercadería, luciendo el guante de hierro en la mano derecha como si nadie fuera a darse cuenta. Y de repente, Marcus muerto, y la Casa de Gobierno sitiada por guardias que ni siquiera son del pueblo. Para Durin no fue una muerte: lo sacaron del gobierno. Y esta vez, por primera vez, no cree que Sambar tenga mucho que ver: son expansionistas, pero no traicioneros. La traición viene de mucho más al norte. Los orcos están detrás; los Garra de Hierro, metidos hasta las narices. Y hay un lugar, muy al norte, donde cree que están las respuestas: Luskan.\n\nA Durin esto se le volvió personal: ya perdió su casa, sus cavernas y el clan entero por una traición en las montañas del este, y no va a permitir que le arrebaten su segundo hogar. Él se queda. El encargo para nosotros: juntar equipo, hablar con el jefe del puerto con una frase exacta (viejas deudas tienen que ser saldadas, y el enano reclama) para conseguir barco y tripulación, ir por Zarif, el único que puede limpiar tanto el nombre de Durin como el renombre de Ámbar. Y en el camino, llegar a Waterdeep y buscar a Gonagal Crestarroja, un enano que lo conoció mejor de lo que él lo conoció, para avisarle lo que pasa y pedirle que haga circular una vez más el estandarte de los enanos. Porque esto no termina acá: aunque los pisen y los hagan desaparecer, es la punta del hilo. De todo esto, ni una palabra a nadie: ningún guardia, ningún elfo, ningún enano. Solo los amigos.\n\nAntes de despedirse, Durin metió la mano entre sus barbas, arrancó un medallón sencillo (una piedra con una runa tallada, atada con un viejo cuero) y se lo puso a Vaegrant en la mano. Se sintió más como una despedida. Al salir del granero, Vaegrant lo vio apoyar otra vez la frente en la frente del carnero: un enano que reconoce que ya está viejo para una guerra, preparándose para un conflicto.",
+          "texto": "Esa noche, un ruido en el granero del fondo. La puerta abierta. Durin peinaba con un rastrillo de mano a un viejo carnero robusto, del tamaño de una montura, y le hablaba bajo. Era su montura: todos sabemos que Durin, en su juventud, fue un guerrero que velaba por la justicia y la paz. Vaegrant se acercó, y la conversación que siguió fue la más importante de la noche.\n\nDurin venía atando cabos: comerciantes que operaron meses en la plaza central sin que nadie viera nunca su mercadería, luciendo el guante de hierro en la mano derecha como si nadie fuera a darse cuenta. Y de repente, Marcus muerto, y la Casa de Gobierno sitiada por guardias que ni siquiera son del pueblo. Para Durin no fue una muerte: lo sacaron del gobierno. Y esta vez, por primera vez, no cree que Sambar tenga mucho que ver: son expansionistas, pero no traicioneros. La traición viene de mucho más al norte. Los orcos están detrás; los Garra de Hierro, metidos hasta las narices. Y hay un lugar, muy al norte, donde cree que están las respuestas: Luskan.\n\nA Durin esto se le volvió personal: ya perdió su casa, sus cavernas y el clan entero por una traición en las montañas del este, y no va a permitir que le arrebaten su segundo hogar. Él se queda. El encargo para nosotros: juntar equipo, hablar con el jefe del puerto con una frase exacta (viejas deudas tienen que ser saldadas, y el enano reclama) para conseguir barco y tripulación, ir por Zariff, el único que puede limpiar tanto el nombre de Durin como el renombre de Ámbar. Y en el camino, llegar a Waterdeep y buscar a Gonagal Crestarroja, un enano que lo conoció mejor de lo que él lo conoció, para avisarle lo que pasa y pedirle que haga circular una vez más el estandarte de los enanos. Porque esto no termina acá: aunque los pisen y los hagan desaparecer, es la punta del hilo. De todo esto, ni una palabra a nadie: ningún guardia, ningún elfo, ningún enano. Solo los amigos.\n\nAntes de despedirse, Durin metió la mano entre sus barbas, arrancó un medallón sencillo (una piedra con una runa tallada, atada con un viejo cuero) y se lo puso a Vaegrant en la mano. Se sintió más como una despedida. Al salir del granero, Vaegrant lo vio apoyar otra vez la frente en la frente del carnero: un enano que reconoce que ya está viejo para una guerra, preparándose para un conflicto.",
           "dialogo": [
             {
               "quien": "Durin",
@@ -515,7 +559,7 @@
           "rol": "Enano barrilista del clan Rompetormentas, dueño de los Tres Dientes. Ex guerrero, referente de Ámbar. Se queda a defender su segundo hogar. Le dio a Vaegrant su encargo y un medallón rúnico."
         },
         {
-          "nombre": "Zarif",
+          "nombre": "Zariff",
           "rol": "Gnomo que vive en el templo de la isla del llano, en Moray. Para Durin, el único que puede gobernar bien Anchoril y limpiar el nombre de Ámbar. El objetivo del viaje."
         },
         {
@@ -726,7 +770,7 @@
       "numero": 3,
       "titulo": "La semilla de los sueños",
       "fecha": "2026-07-21",
-      "resumen": "Rumbo a Moray, el Albatros cruza un mar plagado de barcos de bandera negra y encuentra a mitad de camino un islote volcánico que no figura en las cartas. Vaegrant y Jeremy bajan a explorarlo, atados con una soga, y descubren que la isla es más grande por dentro que por fuera: es el sueño de Kyro, un titán primigenio dormido que despierta y les habla del albor del mundo, de la guerra de los magos, de los cuatro titanes y de los tres portales que comunican los planos. Como juicio, Kyro les entrega Njröun, la semilla de los sueños: si la mantienen viva serán dignos de los portales y de su ayuda, pero antes deben averiguar por qué Ámbar cayó y probar que la balanza está torcida. De vuelta al mar, Hakon y los tripulantes bajan en el Ojo de Arena llevándose el armamento para meter mano por Ámbar, y el barco queda para el grupo. En Moray los recibe Río, el del muelle, formado bajo Trobe y leal a Zarif, que les confía una noticia fea: hay gente de Luskan revisando la biblioteca. La sesión cierra con la reunión con Zarif preparada y pendiente.",
+      "resumen": "Rumbo a Moray, el Albatros cruza un mar plagado de barcos de bandera negra y encuentra a mitad de camino un islote volcánico que no figura en las cartas. Vaegrant y Jeremy bajan a explorarlo, atados con una soga, y descubren que la isla es más grande por dentro que por fuera: es el sueño de Kyro, un titán primigenio dormido que despierta y les habla del albor del mundo, de la guerra de los magos, de los cuatro titanes y de los tres portales que comunican los planos. Como juicio, Kyro les entrega Njröun, la semilla de los sueños: si la mantienen viva serán dignos de los portales y de su ayuda, pero antes deben averiguar por qué Ámbar cayó y probar que la balanza está torcida. De vuelta al mar, Hakon y los tripulantes bajan en el Ojo de Arena llevándose el armamento para meter mano por Ámbar, y el barco queda para el grupo. En Moray los recibe Río, el del muelle, formado bajo Trobe y leal a Zariff, que les confía una noticia fea: hay gente de Luskan revisando la biblioteca. La sesión cierra con la reunión con Zariff preparada y pendiente.",
       "capitulos": [
         {
           "titulo": "Banderas negras y una isla que no existe",
@@ -822,7 +866,7 @@
         },
         {
           "titulo": "Moray",
-          "texto": "Moray es una de las islas Moonshae, y son dos en una: la de la montaña y la del llano. La ciudad parece Turquía medieval, casas de barro y teja, tecnológicamente atrasada por elección propia: una sociedad que prefiere estancarse antes que acelerar como el hombre, que valora los escritos y la cultura por encima de la máquina. Es una teocracia, se venera a Moradin en las montañas y a Freya en la base, y una monarquía: un rey justo gobierna el archipiélago desde Caer Callidyr, con Iron Keep para las leyes y lo militar. Hay muchos gnomos y enanos entre los humanos, y la ciudad entera funciona como una feria enorme. Punto clave de mesa: Moray existe gracias a Ámbar, sería el Ámbar de sus principios, y por eso mismo, si los de bandera negra no consiguen lo que buscan allá, podrían venir por acá, que no tiene con qué defenderse.\n\nEn el muelle los recibió Río, un humano flaco de unos sesenta años, sobretodo negro y boina, el encargado de los amarres. Vaegrant se presentó con su nombre y cerró el trato: una pieza de oro por día con patrullaje y peones de carga. Río resultó ser mucho más que un portuario: se formó en los puertos de Ámbar bajo Trobe, el capitán del gremio, conoce a Durin y su Posada Tres Dientes, y se preocupó cuando supo que Durin cerró la taberna y que el gobernador de Ámbar, Marcus, está muerto. Es leal a Zarif, el gnomo que el grupo busca de parte de Durin. Les dio cobertura para hacerse pasar por comerciantes hasta hablar con él, mandó duplicar la guardia sobre el Albatros y los invitó al Socavón, la posada del lugar, donde va a mandar a Zarif esa noche. De paso soltó lo que pesa: vio gente de Luskan en la biblioteca, revisando libros e informes. Luskan movió primero. Planearon llevarle a Zarif una caja de vino ámbar, uno de los tres mejores del mundo junto a la sangre del cuervo y el gato negro, y la sesión cerró con la reunión preparada y pendiente.",
+          "texto": "Moray es una de las islas Moonshae, y son dos en una: la de la montaña y la del llano. La ciudad parece Turquía medieval, casas de barro y teja, tecnológicamente atrasada por elección propia: una sociedad que prefiere estancarse antes que acelerar como el hombre, que valora los escritos y la cultura por encima de la máquina. Es una teocracia, se venera a Moradin en las montañas y a Freya en la base, y una monarquía: un rey justo gobierna el archipiélago desde Caer Callidyr, con Iron Keep para las leyes y lo militar. Hay muchos gnomos y enanos entre los humanos, y la ciudad entera funciona como una feria enorme. Punto clave de mesa: Moray existe gracias a Ámbar, sería el Ámbar de sus principios, y por eso mismo, si los de bandera negra no consiguen lo que buscan allá, podrían venir por acá, que no tiene con qué defenderse.\n\nEn el muelle los recibió Río, un humano flaco de unos sesenta años, sobretodo negro y boina, el encargado de los amarres. Vaegrant se presentó con su nombre y cerró el trato: una pieza de oro por día con patrullaje y peones de carga. Río resultó ser mucho más que un portuario: se formó en los puertos de Ámbar bajo Trobe, el capitán del gremio, conoce a Durin y su Posada Tres Dientes, y se preocupó cuando supo que Durin cerró la taberna y que el gobernador de Ámbar, Marcus, está muerto. Es leal a Zariff, el gnomo que el grupo busca de parte de Durin. Les dio cobertura para hacerse pasar por comerciantes hasta hablar con él, mandó duplicar la guardia sobre el Albatros y los invitó al Socavón, la posada del lugar, donde va a mandar a Zariff esa noche. De paso soltó lo que pesa: vio gente de Luskan en la biblioteca, revisando libros e informes. Luskan movió primero. Planearon llevarle a Zariff una caja de vino ámbar, uno de los tres mejores del mundo junto a la sangre del cuervo y el gato negro, y la sesión cerró con la reunión preparada y pendiente.",
           "dialogo": [
             {
               "quien": "Vaegrant",
@@ -858,12 +902,286 @@
         },
         {
           "nombre": "Río",
-          "rol": "Encargado del muelle de Moray, humano de unos sesenta años. Se formó en los puertos de Ámbar bajo Trobe, conoce a Durin y es leal a Zarif. Sincero en el trato. Les dio cobertura, dobló la guardia del barco y les pasó la pista de Luskan."
+          "rol": "Encargado del muelle de Moray, humano de unos sesenta años. Se formó en los puertos de Ámbar bajo Trobe, conoce a Durin y es leal a Zariff. Sincero en el trato. Les dio cobertura, dobló la guardia del barco y les pasó la pista de Luskan."
         }
       ],
       "dudas": [
         "Las grafías y ubicaciones exactas de Vaasa, Delhalls y Veldorn en el mapa de campaña quedan por cotejar (los portales están un poco por encima de esos nombres).",
         "La cuenta de días del tramo Ioma-Moray quedó difusa en mesa (se habló de tres, de cinco y de nueve a once días); el Master admitió un salto de tiempo."
+      ]
+    },
+    {
+      "id": "sesion-4",
+      "numero": 4,
+      "titulo": "El gnomo que hablaba demasiado",
+      "fecha": "2026-07-28",
+      "resumen": "Moray se prepara para el festival de la luna nueva y el puerto está lleno de guardia de Iron Keep. Mientras hacen tiempo y compras, el grupo interroga a un semiorco enorme sentado en un banquito contra la puerta del Socavón: es Haddrek, cobrador de impuestos de Iron Keep, que lleva tres días esperando que Zariff aparezca a pagar. Zariff aparece disfrazado con un capote de cuero, cruza la calle, se compra una testigo por una pieza de plata la hora —Brina Argentea, druida y comerciante de los pueblos arbóreos— y recién ahí se sienta a hablar. Lo que suelta cambia el encargo entero: Ámbar fue tomada por alcazas de bandera negra que están robando objetos de poder bajo la excusa de auditar linajes; Durin está preso y se lo van a llevar a que le quiebren la voluntad; el cryptex de Durin no lo abre él, solo lo puede abrir un ser faérico; y la llave que Iscandar consiguió en Ioma abre la puerta tapiada del alcázar del Albatros. Zariff no va a ir a Ámbar: los contrata. El trabajo es navegar al norte, a las islas de Val, llegar al Claro Lunar —el ojo por donde se habla con el pueblo faérico—, abrir el cryptex y juntar las siete piedras primigenias antes que los velas negras, para terminar lo que la familia de las Nueve Rosas empezó y no pudo sostener. La sesión cierra con el reparto de oficios del barco, el día de la luna aprovechado para el kit inicial y dos cabillas nuevas cargadas por trolls hasta la cubierta.",
+      "capitulos": [
+        {
+          "titulo": "Día de luna nueva en Moray",
+          "texto": "Moray estaba a horas del festival de la luna nueva y el puerto tenía más acero del que un mercado necesita. El grupo preguntó lo obvio: si tanta seguridad era por el volumen de comercio o porque el lugar es realmente inseguro. Las dos cosas. Va a haber un caudal enorme de dinero moviéndose y están en el medio del tránsito de las islas piratas, sobre el Mar de las Espadas: siempre se espera algo malo, a veces pasa y a veces no. Desde Iron Keep mandan mucha guardia para estas fechas, igual que la mandan a las otras islas en sus propias festividades. La luna nueva no es una fiesta menor: es importante para ambos reinos.\n\nCon la reunión recién a la noche, el día se fue en pasear y comprar. El Albatros venía disfrazado de urca mercante y ellos de comerciantes, así que se movieron con eso puesto: preguntas de mostrador, precios y mercadería, sin soltar más datos de los necesarios sobre de dónde venían. Vaegrant hizo cuentas de qué convenía cargar y qué se podía conseguir en la isla misma.",
+          "dialogo": [
+            {
+              "quien": "Vaegrant",
+              "texto": "¿Entendemos que la seguridad es por el comercio, o realmente es inseguro el lugar?"
+            },
+            {
+              "quien": "El Master",
+              "texto": "Va a haber un gran caudal de dinero moviéndose. Están en el medio del tránsito de las islas piratas, del Mar de las Espadas. Siempre se espera algo malo. A veces pasa, a veces no."
+            },
+            {
+              "quien": "El Master",
+              "texto": "De Iron Keep mandan mucha guardia para estos lugares. La luna nueva es muy importante para ambos reinos."
+            }
+          ]
+        },
+        {
+          "titulo": "El semiorco de la puerta",
+          "texto": "Ya lo habían cruzado antes, con el bolsito: un semiorco de dos metros noventa y ciento noventa kilos, con uniforme de cobrador de Iron Keep. Ahora había agarrado un banquito, lo había puesto contra la puerta y estaba ahí sentado, estirado, mirando para enfrente, con la pipa encendida y cara de cansado. Jeremy quiso ir a preguntarle cosas, porque no hay muchos como él: los semiorcos fueron usados por los humanos como guerreros en las Guerras de los Magos, por su fuerza y su fortaleza, y en esas guerras casi se extinguen. Quedan muy pocos en el mundo.\n\nEl interrogatorio salió sorprendentemente bien, porque el semiorco estaba aburridísimo y le vino bien la charla; si no, ya los hubiese mandado a la mierda. Contó que antiguamente su gente era mucho más salvaje y sus ancestros bastante hambrientos, pero que con el tiempo se amoldaron a un carácter más caballeresco y a rituales más normales. Las decisiones grandes se siguen tomando por justas o por combate cuerpo a cuerpo —juicio por espada—, porque resulta más sencillo que una votación de mucha gente que puede tener intereses propios. Sobre la descendencia, lo recomendable para los suyos es tener más de una pareja para criar. Y sobre el futuro de la raza: acá en la isla crece; el problema son los que salen, que no tienen mucha suerte, más que nada por las costumbres.\n\nDel oficio se entendió el resto. Los cobradores de Iron Keep andan prácticamente solos en barcazas chicas y son los que llevan el oro de la recaudación, así que tienen que tener aguante: camisa de malla corta y encima cuero tachonado, todo bien apretujado. Y este en particular estaba clavado en esa puerta por una razón concreta: hacía tres días que esperaba a que apareciera Zariff a pagar sus impuestos.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "Los semiorcos fueron utilizados por los humanos como guerreros, por su fuerza y su fortaleza, en las guerras de los magos, y ahí casi se extinguen. Hay muy pocos en el mundo."
+            },
+            {
+              "quien": "Jeremy",
+              "texto": "¿Y cómo son las costumbres en su raza? ¿Algún ritual, alguna celebración particular?"
+            },
+            {
+              "quien": "Haddrek",
+              "texto": "Muchas decisiones se toman mediante combate, por justas o cuerpo a cuerpo. Suele ser más sencillo decidirlo así que por una votación de mucha gente que puede tener intereses en su propuesta."
+            },
+            {
+              "quien": "Jeremy",
+              "texto": "Juicio por espada."
+            },
+            {
+              "quien": "Haddrek",
+              "texto": "Acá en la isla sí crece. El tema es que los que salen no tienen mucha suerte, más que nada por las costumbres."
+            }
+          ]
+        },
+        {
+          "titulo": "Zariff, por fin apareciste",
+          "texto": "Un hombre con capote de cuero se acercó al semiorco, disimulado. No le dejó verle la cara: se puso al lado, silbó bajo, y Haddrek siguió la conversación mirándolo de reojo, como los caballos. El tipo le hizo una seña hacia adentro. El cobrador cortó la charla con excusas —tengo algo pendiente, gracias por tanta información— y entró.\n\nAdentro, cuando se sacó el capote, era Zariff. Tres días de espera y la misma excusa de siempre, porque el gnomo siempre tarda más de lo requerido, pero también siempre paga lo que debe. Esta vez traía la deuda del fisco, la compensación por la demora y una razón de peso: sus hermanos del sur están teniendo problemas graves. Ámbar está siendo sumergida. Acá todavía no se enteraron, y Zariff teme que a estas islas les pase lo mismo, una por una. Le duele el mote: un punto de comercio de toda la vida, y ahora el hazmerreír de medio mundo.\n\nLos presentó con el viejo Gal, el tabernero: un humano entrado en kilos y también en altura, un metro noventa, gordo, prácticamente un ogro pero humano, con un ojo de vidrio mecánico y la mano izquierda mecánica. Faltaban veinte minutos para abrir, así que lo que tuvieran que arreglar, que lo apuraran. Gal les puso un barrilito de cinco litros sobre la mesa y jarros chicos de madera, y ahí Zariff soltó lo que nadie sabía todavía: Ámbar fue tomada. Alcazas con banderas negras, sin saber a qué intereses representan, y están buscando algo. Hace mucho tiempo él tuvo tres amigos, y entre todos guardaron ciertas reliquias repartidas por el mundo. Cree que es eso lo que vienen a buscar las carabelas de velas oscuras. La gran información, dijo, la tiene al sur una bibliotecaria.",
+          "dialogo": [
+            {
+              "quien": "Haddrek",
+              "texto": "Zariff, por fin apareciste. Hace tres días que te estoy esperando."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Yo siempre pago lo que debo."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "En Ámbar están pasando cosas. Están siendo sumergidos. Acá todavía no saben, pero quizás pase lo mismo con esta maldita isla, con cada una de estas malditas islas."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Ámbar fue tomada. Alcazas con banderas negras. Todavía no sabemos a qué intereses representan. Y están buscando algo."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Yo tuve tres amigos hace mucho tiempo y guardamos ciertas reliquias alrededor del mundo. Creo que es eso lo que tienen de interés estas carabelas de banderas oscuras."
+            }
+          ]
+        },
+        {
+          "titulo": "Una testigo comprada en la calle",
+          "texto": "Antes de sentarse a hablar, Zariff salió, cruzó la calle y la eligió a ella. El grupo se dio cuenta en el momento de que de imparcial no tenía nada, porque fue directo, sin dudar. Le pidió una hora de sus servicios como testigo. Ella le puso precio de oficio, una pieza de plata por hora, y el gnomo aceptó y de paso ató el cabo de la media hora de más. Trato hecho.\n\nAsí entró Brina Argentea: humana, druida, comerciante de los pueblos arbóreos del sur, esas islas de vestigios de mundos antiguos donde todavía hay biomas de ents. Viene todos los años al festival por trabajo y todos los años la agarran para algo. Es fiel creyente de Alistair, el minotauro blanco colosal, el líder faérico del que Kyro les había hablado en Magraje; sus tierras son el verde del sur, y acercarse a Ámbar es estar a un cruce de su dios.\n\nLo reconocieron por la descripción que les había dado Río en el muelle, aunque en una feria llena de gnomos eso sirve menos de lo que parece. Zariff entró estirándose los tirantes, se sacó la capa, hizo el gesto de colgarla y se le cayó al piso. Vino caminando hasta la mesa. Estaban los tres sentados —Vaegrant, Jeremy e Iscandar—, más Haddrek con su barrilito y Brina de testigo. Seis alrededor de una mesa, veinte minutos antes de que la taberna abriera.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "Se cruza la calle y la elige a ella. Ustedes se dan cuenta en el momento de que de imparcial no tiene nada, porque fue directo."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Necesito sus servicios. Una reunión durará no más de una hora, pero necesito un testigo."
+            },
+            {
+              "quien": "Brina",
+              "texto": "Una pieza de plata por hora."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "¿Y si me paso una hora y media? Tenemos un trato."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Lo que yo diga va a ser determinado por ustedes, escuchado por el señor que me viene a cobrar los impuestos y legalizado por la señorita."
+            }
+          ]
+        },
+        {
+          "titulo": "El cryptex y las Nueve Rosas",
+          "texto": "Zariff arrancó midiendo. Tomó a Iscandar por guardaespaldas de Vaegrant y el paladín lo corrigió: no es su guardaespaldas, es su compañero de viaje. Después puso la regla de la charla: necesitaba saber cuánto sabían ellos, porque lo que sepan determina lo que él diga.\n\nVaegrant fue de frente: Durin y Torve los mandaron, y la misión es llevarlo a Ámbar. Zariff cortó eso de raíz. Si Durin ya está preso, eso no va a suceder, y el que esté preso cambia las cosas. No lo agarraron por hacer cosas por su cuenta: lo agarraron porque el enano fue lento, como siempre; el jefe del puerto de Ámbar no está preso justamente porque es más rápido. Y remató con algo que dejó a todos incómodos: Durin les dio la orden porque no tenía el libro con él.\n\nIscandar sacó unos papeles mojados y sucios con un nombre garabateado, Babruk. Zariff lo reconoció y eso terminó de convencerlo de que él no tiene que ir a Ámbar. Entonces Vaegrant puso el tubo sobre la mesa. El gnomo lo miró y dijo que eso no debería estar ahí. Después vio la llave. La llave abre un compartimiento en el alcázar, y la necesita en su arco el que se encargue de las bodegas. El cryptex es otra cosa: solo lo puede abrir un ser faérico o un representante del orden faérico. Ni siquiera él sabe qué tiene adentro; sabe qué debería tener, el mapa que necesitan y los mapas de transición entre planos, entre los portales artificiales y los naturales.\n\nY explicó la trampa de Ámbar. La auditoría de la biblioteca no era de números: la bibliotecaria le contó que estaban buscando los libros de historia de la nobleza, los linajes. Lo que está naciendo en Ámbar es un saqueo sistemático. Están robando los objetos de poder.\n\nDe ahí salió la historia vieja. Antes de las Guerras de los Magos y durante ellas hubo una familia sin títulos nobiliarios pero con el nombre sonando en todos lados: la familia de las Nueve Rosas. Se dedicaban a sacar objetos de poder de las manos de quienes no los merecían. Tuvieron que escapar y fueron aniquilados sistemáticamente, y esos objetos se perdieron. Hoy sobreviven como mitos y leyendas chicos. Zariff lo cuenta de memoria y no de libro: más allá de que lo vean como un gnomo joven y apuesto, tiene más de seiscientos años.\n\nTambién quedó claro por qué no está en Ámbar. Dicen que sus dedos ligeros se meten donde no deben. Él lo pone al revés: ladrón te convertís cuando te atrapan. Sacó los libros bancarios mucho antes de que todo esto pasara, y avisó siete años atrás, cuando era simplemente el raro que actuaba raro. Se metió con artículos que Durin no quería que tocara, y jura que fue curiosidad, no traición.\n\nLo último fue lo peor. Si a Durin ya lo agarraron, ni siquiera lo van a retener en Ámbar: se lo llevan a ser sometido. Le van a quebrar la voluntad para sacarle lo que tiene en la cabeza y lo van a dejar como una cáscara vacía. Existen métodos científicos para eso, y otros mágicos que son mucho más crueles.",
+          "dialogo": [
+            {
+              "quien": "Zariff",
+              "texto": "Calculo que usted debe ser una especie de guardaespaldas."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "No soy su guardaespaldas, soy su compañero de viaje."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Necesito saber qué tanto saben ustedes. Qué tanto saben ustedes va a determinar lo que yo diga."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Durin nos mandó a buscarte."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Eso no va a suceder si Durin ya está preso. Está preso porque lo atraparon, porque el enano fue lento, como siempre."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "El cryptex. Eso no debería estar acá."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Escuchen claramente: el cryptex solamente lo pueden abrir seres faéricos. Tiene el mapa de lo que ustedes necesitan y los mapas de transición entre planos."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "La auditoría no era de números. Estaban buscando los libros de historia de la nobleza. Lo que está naciendo en Ámbar es un saqueo sistemático: están robando los objetos de poder."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Más allá de que me vean como un gnomo joven y apuesto, la verdad es que tengo más de seiscientos años."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Van a quebrar su voluntad para sacar lo que tiene en su cabeza y lo van a dejar como una cáscara vacía."
+            }
+          ]
+        },
+        {
+          "titulo": "Las siete piedras",
+          "texto": "A mitad de charla Zariff dejó de hacerse el gran señor y el payaso, y cambió la voz. El viejo Durin tiene razón, admitió: a él lo sacaron de Ámbar porque hablaba demasiado, pero le encargaron armar una sucursal de Ámbar por si todo se pudría. Y todo se pudrió.\n\nEl encargo quedó así. Deben navegar al norte, a las islas de Val. Ahí hay una formación rocosa primigenia que fue el hogar original de aquello que Haddrek conoce como la isla Tortuga: no una isla llamada Tortuga, sino una isla que salió de una tortuga, lo que ató un cabo directo con Magraje. En Val está la piedra y está la púrpura, y hay un lugar llamado el Claro Lunar, que es el ojo por donde se puede comunicar con el pueblo faérico. Van a necesitar contexto faérico y, sobre todo, a las hordas: los humanos, lamenta informar, ya no son muy confiables.\n\nEl trabajo concreto: abrir el cryptex, recolectar las piezas primigenias —siete piedras en total, una por cada día de la semana— y después terminar lo que los de las Nueve Rosas iniciaron y no pudieron mantener en secreto, esconderlas en un lugar donde los magos no las encuentren. Porque si los portales están activos, los magos ya las están buscando; Zariff no dijo que las hayan encontrado, dijo que sabrían buscarlas.\n\nY hay una razón que no es de tesoro sino de tablero. Si los pacificadores se enteran de que los velas negras están siguiendo el designio de los nueve magos, van a venir a liberarlos. Hay que probar la inocencia, o ante el mundo son ladrones de reliquias. Vaegrant le retrucó si acaso no lo son, y el gnomo contestó con la única defensa que tiene: si escondés una reliquia para que un mago poderoso no destruya una aldea entera, sos un ladrón igual.\n\nEl reparto que hizo fue de oficinista. La señorita sabrá cómo arreglar lo del otro tiempo. La llave la necesita el que se encargue de las bodegas, da lo mismo quién sea. Y Haddrek es su llave en los ministerios y en los asuntos exteriores. Ya no están asumiendo que tienen que contratarlo: están asumiendo que ahora van a ser contratados por él. Trabajan para Zariff y Zariff les paga el sueldo. Y la deuda que Haddrek le venía reclamando hace tres días la va a ir a pagar él mismo a Omán, en persona, que para eso son amigos: Omán va a entender.\n\nIscandar hizo la cuenta en voz alta, cansado: primero eran tres, después con usted cuatro, después cinco, ahora seis, mañana siete. Zariff le devolvió una que pesa más de lo que parece: se van a enterar tarde o temprano de que eran quince en total. Tarde o temprano caen presos todos; cuando vengan por Omán, estas tierras se van a defender, y hay que prepararse para la guerra. Los corsarios del norte serán los primeros en atacar y los velas negras van a estar ya diseminados por todos lados.\n\nVaegrant sumó lo suyo: si van al norte tiene que pasar por Waterdeep a buscar a Gonagal Crestarroja, el encargo personal de Durin, y decirle que se prepare. Zariff entendió al toque lo que eso significa. Durin está alertando a los clanes. Y cerró: tomará una de sus barcazas, y ellos navegarán al norte.",
+          "dialogo": [
+            {
+              "quien": "Zariff",
+              "texto": "Me sacaron de Ámbar porque hablaba demasiado. Pero me dijeron que tenía que armar una sucursal de Ámbar por si todo se pudría."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Deberán dirigirse a las islas de Val, al norte. Ahí hay una formación rocosa. Es primigenia."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Ahí hay un lugar llamado el Claro Lunar. El Claro Lunar es el ojo por donde se puede comunicar con el pueblo faérico."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Abrirán el cryptex y tendrán que recolectar ustedes las piezas primigenias. Siete piedras en total. Una por cada día de la semana."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Y después terminar lo que los de las Nueve Rosas iniciaron y no pudieron mantener en secreto: esconder las piedras en un lugar donde no sean encontradas por los magos."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "¿Y no lo son? Ladrones de reliquias, digo."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Si yo te digo que tenés que esconder una reliquia para que un mago poderoso no destruya toda una aldea, y vos la escondés, sos un ladrón."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Trabajarán para mí. Yo les pagaré su sueldo."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "Juro que cada charla son más. Primero eran tres, después con usted eran cuatro, después me hicieron cinco. ¿Ahora son seis? ¿Mañana van a ser siete?"
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Se enterará tarde o temprano que éramos quince en total."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Durin me dijo que le diga que se prepare."
+            },
+            {
+              "quien": "Zariff",
+              "texto": "Eso quiere decir que Durin está alertando a los clanes."
+            }
+          ]
+        },
+        {
+          "titulo": "El Albatros como oficio",
+          "texto": "Con el trato cerrado, la mesa se puso a ordenar el barco, porque esta campaña tiene una faceta de economía. El Albatros es enteramente suyo y funciona como una aldea chica: hay un dinero común, aparte del de cada uno, y también hay gastos, porque el combustible se compra, las roturas se arreglan y el casco se limpia. El barco es la base, y es totalmente mejorable. Eligieron en su momento una nave de velocidad y sigilo: no está muy artillada y un cañonazo de costado la hace pedazos, pero está mejorada, vuela, y tiene una nube de sigilo que levanta nubes sobre el mar para que no la vean. En los registros tiene unos doce años de navegación, casi todos del Mar de las Espadas y el mar interior.\n\nCada uno tomó un oficio, con bonificadores en todo lo que se relacione con él. Iscandar al timón, capitán y navegante. Jeremy en el depósito, con la cartografía y la historia, que le anuda directo la economía: hay que saber de eso para saber con quién comerciar y con quién no. Vaegrant como oficial diplomático en puertos, con comercio en tierra y conocimiento de rutas marinas. Brina de encargada de comercio y tesorería, aprendiendo a tasar y a vender, con bonificación a la diplomacia con los órdenes faéricos. Haddrek al mantenimiento del barco y la artillería, con la mano metida en los bajos fondos cuando haya que averiguar algo. El método quedó fijado en mesa: al llegar a un lugar, cada uno tira por lo suyo y saca su porción de información, y entre todos arman la información completa.\n\nEn el medio se filtró algo que Vaegrant pensaba llevarse a la tumba: la puerta tapiada del fondo de la bodega, esos dos metros de madera maciza que nadie pudo abrir, es el compartimiento del alcázar del que habló Zariff. La llave que Iscandar consiguió en Ioma es la que la abre.\n\nHubo también una clase de comercio con el gnomo de conejillo de indias. Vaegrant le sacó precio al vino ámbar de la bodega —uno de los tres mejores del mundo— y Zariff se lo fue bajando a una pieza de oro, después dos, después tres, hasta dejarle el punto claro: Ámbar hace mucho que no comercia, y si ellos sacaron eso de ahí, son contrabandistas. Ese vino sirve más de diplomacia que de venta. En la bodega quedaron los vinos lujosos, los cueros finos y las especias, raciones para medio mes, herramientas de mantenimiento y el hierro forjado. Del oro del barco quedaban unas cuatrocientas monedas y bajaron treinta por cabeza; el alojamiento y la comida los cubre Río.\n\nEl Master abrió la puerta a que inventen: en plena era industrial, si a un personaje se le ocurre una receta o un artefacto con contexto, se gestiona el plano y queda hecho. Avisó también que los barriles de pólvora contra una puerta son lo primero que se le ocurre a todo el mundo y tienen daño colateral de metralla. Y con Njröun a bordo, el kit de herboristería puede montarse como laboratorio en el barco; Brina se ofreció a averiguar si el brote toma agua dulce o salada, porque si el árbol se muere, algo malo pasa.\n\nAprovecharon el día de la luna para el kit inicial. En unas bodegas grandes, con cava enorme y gente armando cajas y preparando armas de fuego, cerraron con Alara dos cabillas y veinticuatro balas por noventa monedas de oro. Vaegrant pagó con diez de platino y Alara devolvió una: lo justo es justo, a menos que esté queriendo sobornarme. Al guardar el dinero en la bandolera se le vio el arma, y valía la pena verla: parece un trabuco, pero en vez de boca tiene un cristal en la punta. Piedra lunar fusionada directamente con un arma, no solo con magia; ninguno de los dos había visto eso antes, ni siquiera en Sambar. Dos trolls salieron de las sombras, levantaron las cajas y las llevaron hasta el Albatros —la mano de obra barata que en ese puerto ya conocen— y de yapa vino la carta de recomendación, que era parte del trato.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "El barco funciona como una pequeña aldea. Tienen un dinero común, pero también gastos. El barco en sí es la base, pero es totalmente mejorable."
+            },
+            {
+              "quien": "El Master",
+              "texto": "De esa manera cada uno tiene una porción de la información, y entre todos tienen la información completa."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Si no lo decía el gnomo, me lo iba a guardar hasta la tumba."
+            },
+            {
+              "quien": "Alara",
+              "texto": "Lo justo es justo. A menos que esté queriendo sobornarme."
+            },
+            {
+              "quien": "El Master",
+              "texto": "Es la primera vez que ven que están fusionando las piedras lunares con armas directamente. No solamente magia."
+            },
+            {
+              "quien": "Brina",
+              "texto": "No sabemos si el brote consume agua dulce o salada. Eso me lo puedo fijar yo."
+            }
+          ]
+        }
+      ],
+      "nombres": [
+        {
+          "nombre": "Zariff",
+          "rol": "El gnomo que Durin mandó a buscar. Más de seiscientos años, dedos ligeros y verborragia de payaso que usa como escudo. Fue sacado de Ámbar por hablar demasiado, con el encargo de armar una sucursal por si todo se pudría. Es uno de los que escondieron las reliquias, sacó los libros bancarios de Ámbar antes del saqueo y avisó siete años antes de que pasara. No va a ir a Ámbar: contrata al grupo y les paga sueldo."
+        },
+        {
+          "nombre": "Gal",
+          "rol": "Tabernero del Socavón, en Moray. Humano de un metro noventa, gordo, prácticamente un ogro pero humano, con un ojo de vidrio mecánico y la mano izquierda mecánica. Le cobra impuestos a todo el mundo y a él también."
+        },
+        {
+          "nombre": "La familia de las Nueve Rosas",
+          "rol": "Familia sin títulos nobiliarios pero de nombre sonante, anterior y contemporánea a las Guerras de los Magos. Se dedicaban a sacar objetos de poder de las manos de quienes no los merecían. Tuvieron que escapar y fueron aniquilados sistemáticamente; los objetos se perdieron. Hoy son mitos y leyendas chicos. El encargo del grupo es terminar lo que ellos empezaron."
+        },
+        {
+          "nombre": "Babruk",
+          "rol": "El nombre que aparece en los papeles mojados que trae Iscandar, asociado al señor de la oscuridad detrás de los velas negras. Zariff lo reconoció al instante, y reconocerlo fue lo que terminó de convencerlo de no volver a Ámbar."
+        },
+        {
+          "nombre": "Las siete piedras primigenias",
+          "rol": "Las piezas que hay que recolectar, una por cada día de la semana. Están ligadas a los objetos de poder que perdieron las Nueve Rosas. Si los portales están activos, los magos ya saben buscarlas. El trabajo no termina al juntarlas: hay que esconderlas donde no las encuentren."
+        },
+        {
+          "nombre": "Las islas de Val y el Claro Lunar",
+          "rol": "El destino al norte, a un día más de navegación que el tramo Ioma-Moray. Una formación rocosa primigenia que fue el hogar original de la isla que salió de una tortuga. Ahí está la piedra y está la púrpura, y el Claro Lunar es el ojo por donde se habla con el pueblo faérico. Hace mucho que la gente del sur no sube; antes convivían humanos, orcos y enanos casi en forma igualitaria."
+        },
+        {
+          "nombre": "El designio de los nueve magos",
+          "rol": "Lo que los velas negras estarían siguiendo, según Zariff. Si los pacificadores se enteran, vendrán a liberarlos. Por eso el grupo tiene que probar la inocencia: si no, ante el mundo son ladrones de reliquias."
+        },
+        {
+          "nombre": "Alara",
+          "rol": "Armera de las bodegas de Moray, con trolls de carga a sueldo. Cobró noventa monedas por dos cabillas y veinticuatro balas y devolvió el vuelto sin que se lo pidieran. Lleva un arma como un trabuco pero con un cristal en la punta: piedra lunar fusionada directamente con el arma, cosa que el grupo no había visto ni en Sambar."
+        }
+      ],
+      "dudas": [
+        "Los transcripts llegaron concatenados y no uno por nota de voz: veintiún archivos con reinicio de reloj para treinta y cuatro audios, así que varias notas venían pegadas. Los saltos de la narración son entonces cortes naturales de la mesa y no material perdido.",
+        "Aun así, no quedó registrado el arranque de la sesión, el momento en que Haddrek acepta subir al Albatros ni el cierre de la noche. Puede haber pasado fuera de micrófono.",
+        "El orden de los audios no es del todo cronológico: el tramo en que Zariff interroga a Brina parece ir antes del tramo en que se despide de la mesa."
       ]
     }
   ],
@@ -873,7 +1191,7 @@
     "nota": "El mismo mapa de Faerûn que está pinchado en el salón del club. La historia es original del Master y pasa en otros años, pero los nombres son los del mapa real. La línea ámbar es el viaje que hay que hacer; la gris punteada, el encargo personal de Vaegrant (Waterdeep, opcional). Los pines aproximados son lugares originales del Master, ubicados a ojo.",
     "party": {
       "marcadorId": "moray",
-      "texto": "Fin de la Sesión 3: el Albatros está amarrado en Moray, al mando de los tres PJ. Hakon y los tripulantes bajaron en el Ojo de Arena con el armamento del barco para meter mano por Ámbar. El grupo lleva a Njröun, la semilla que les dio el titán Kyro en la isla de Magraje, y una condición: averiguar qué pasa de verdad en Ámbar. Río los cubre en el muelle y esa noche los espera Zarif en el Socavón."
+      "texto": "Fin de la Sesión 4: el Albatros sigue amarrado en Moray y ahora son cinco a bordo, con Haddrek y Brina sumados. Zariff no va a ir a Ámbar: los contrató a ellos y les paga sueldo. El encargo es navegar al norte, a las islas de Val, llegar al Claro Lunar, abrir ahí el cryptex y juntar las siete piedras primigenias antes que los velas negras. Durin está preso y camino a que le quiebren la voluntad. La sesión cierra con el día de la luna nueva gastado en el kit inicial: dos cabillas, veinticuatro balas y una carta de recomendación."
     },
     "marcadores": [
       {
@@ -933,7 +1251,8 @@
         "tipo": "ciudad",
         "sesiones": [
           1,
-          2
+          2,
+          4
         ],
         "estado": "aproximado",
         "nota": "El hogar del grupo: pueblo-ciudad portuario en la órbita de Anchoril, en la última montaña del sur, última escala antes de los mares interiores y las tierras faéricas. Era una perla en el océano; hoy es una ciudad amurallada con la Casa de Gobierno tomada por guardias ajenos."
@@ -970,7 +1289,8 @@
         "tipo": "mar",
         "sesiones": [
           1,
-          2
+          2,
+          4
         ],
         "estado": "confirmado",
         "nota": "La ruta del viaje: subiendo por esta costa se llega a Moray, a Waterdeep y, mucho más arriba, a Luskan."
@@ -983,10 +1303,11 @@
         "tipo": "isla",
         "sesiones": [
           1,
-          2
+          2,
+          4
         ],
         "estado": "confirmado",
-        "nota": "Vieja isla en las Moonshae: la de la montaña y la del llano. En la del llano, un pequeño templo donde vive Zarif, el gnomo que Durin quiere de gobernante. Destino del viaje."
+        "nota": "Vieja isla en las Moonshae: la de la montaña y la del llano. En la del llano, un pequeño templo donde vive Zariff, el gnomo que Durin quiere de gobernante. Destino del viaje."
       },
       {
         "id": "waterdeep",
@@ -995,10 +1316,11 @@
         "y": 21.3,
         "tipo": "ciudad",
         "sesiones": [
-          1
+          1,
+          4
         ],
         "estado": "confirmado",
-        "nota": "Así figura en las viejas cartas. Encargo personal de Durin a Vaegrant, aparte de la misión: si el viaje lo permite, buscar a Gonagal Crestarroja y pedirle que haga circular una vez más el estandarte de los enanos. No es una parada obligada."
+        "nota": "Así figura en las viejas cartas. Encargo personal de Durin a Vaegrant, aparte de la misión: si el viaje lo permite, buscar a Gonagal Crestarroja y pedirle que haga circular una vez más el estandarte de los enanos. No es una parada obligada. En la Sesión 4, Zariff leyó el encargo al vuelo: si Durin manda a decirle a Crestarroja que se prepare, es que Durin está alertando a los clanes."
       },
       {
         "id": "luskan",
@@ -1008,7 +1330,8 @@
         "tipo": "ciudad",
         "sesiones": [
           1,
-          2
+          2,
+          4
         ],
         "estado": "confirmado",
         "nota": "Muy al norte. La traición no vino de los vecinos: vino de acá, cree Durin. Orcos, los Garra de Hierro, banderas nunca vistas en el puerto de Ámbar. Por ahora es una pista, no una parada del viaje."
@@ -1044,10 +1367,11 @@
         "y": 43.2,
         "tipo": "hito",
         "sesiones": [
-          2
+          2,
+          4
         ],
         "estado": "confirmado",
-        "nota": "La fortaleza y ciudad de Iron Keep, sobre la Isla de Omán (Oman's Isle), en las Moonshae, cerca de Moray. Capital del viejo reino nórdico de Omán. El grupo pescó el nombre entre los murmullos de los ocupantes de Ámbar."
+        "nota": "La fortaleza y ciudad de Iron Keep, sobre la Isla de Omán (Oman's Isle), en las Moonshae, cerca de Moray. Capital del viejo reino nórdico de Omán. El grupo pescó el nombre entre los murmullos de los ocupantes de Ámbar. De ahí sale Haddrek, el cobrador de impuestos que se suma al grupo en la Sesión 4, y de ahí manda Omán la guardia que cubre el festival de la luna nueva en Moray."
       },
       {
         "id": "magraje",
@@ -1096,6 +1420,30 @@
         ],
         "estado": "aproximado",
         "nota": "Pequeña islita de pura arena pegada a Moray, por el oeste. Ahí bajaron Hakon y los tripulantes, que se llevaron el armamento del barco para meter mano por Ámbar antes de que el Albatros entrara a puerto."
+      },
+      {
+        "id": "islas-val",
+        "nombre": "Islas de Val",
+        "x": 4.3,
+        "y": 21.8,
+        "tipo": "isla",
+        "sesiones": [
+          4
+        ],
+        "nota": "El destino que fija Zariff: al norte, a un día más de navegación que el tramo Ioma-Moray, a la misma altura que Waterdeep pero mar adentro. Hay una formación rocosa primigenia que fue el hogar original de aquello que en estas islas llaman la isla Tortuga: no una isla llamada Tortuga, sino una isla que salió de una tortuga. Ahí está la piedra y está la púrpura. Hace mucho que la gente del sur no sube; antes convivían humanos, orcos y enanos casi en forma igualitaria, y hoy no se sabe nada del lugar.",
+        "estado": "aproximado"
+      },
+      {
+        "id": "claro-lunar",
+        "nombre": "El Claro Lunar",
+        "x": 5.9,
+        "y": 23.6,
+        "tipo": "hito",
+        "sesiones": [
+          4
+        ],
+        "nota": "Dentro de las islas de Val. Zariff lo llamó el ojo por donde se puede comunicar con el pueblo faérico. Es el primer paso del encargo: sin contexto faérico no hay forma de abrir el cryptex.",
+        "estado": "aproximado"
       }
     ],
     "rutas": [
@@ -1158,6 +1506,28 @@
           {
             "x": 3.6,
             "y": 49.1
+          }
+        ]
+      },
+      {
+        "sesion": 4,
+        "estado": "planeado",
+        "puntos": [
+          "moray",
+          "islas-val"
+        ],
+        "via": [
+          {
+            "x": 3.9,
+            "y": 41.5
+          },
+          {
+            "x": 3.2,
+            "y": 34
+          },
+          {
+            "x": 3.4,
+            "y": 27.5
           }
         ]
       }
@@ -1261,6 +1631,18 @@
       {
         "titulo": "Mundo · El puesto de chatarra (closeup)",
         "prompt": "Escena de mundo: Vaegrant NO aparece en esta imagen (la descripción del personaje es solo referencia de estilo). Formato horizontal 3:2, vista cercana a nivel de mesa. Un puesto de mercado de chatarra steampunk: la mesa desborda de manos mecánicas, lentes de aumento, relojes de bolsillo abiertos, válvulas, brújulas rotas y un pájaro autómata sin un ala. Un gnomo comerciante con visor de relojero le muestra una pieza a un cliente encapuchado (solo se ven las manos de ambos). Faroles de gas cálidos contra el atardecer frío, etiquetas de precio colgando con hilo."
+      },
+      {
+        "titulo": "Sesión 4 · El cobrador en la puerta",
+        "prompt": "Formato horizontal 3:2. Calle de puerto en fiesta previa a la luna nueva, casas de barro y teja, guirnaldas y puestos al fondo. Contra la puerta de una posada, un semiorco enorme y robusto sentado en un banquito demasiado chico, estirado, mirando al frente, pipa encendida, uniforme de cobrador y un bolsito de recaudación al lado. Cara de tres días de espera. Vaegrant, de pie a un costado, lo observa sin acercarse del todo."
+      },
+      {
+        "titulo": "Sesión 4 · El trato del Socavón",
+        "prompt": "Formato horizontal 3:2. Interior de taberna todavía cerrada, luz baja de velas, sillas sobre las mesas menos una. Alrededor de esa mesa: un gnomo de tirantes gesticulando de pie sobre el banco, un barrilito chico de cerveza y jarros de madera, un tubo metálico cerrado y una llave sobre la madera. Vaegrant escucha con la mano en el tubo, un paladín cruzado de brazos, una mujer joven de ropa de viaje tomando nota como testigo y un semiorco enorme en la punta. Tensión contenida, nadie levanta la voz."
+      },
+      {
+        "titulo": "Sesión 4 · El Claro Lunar",
+        "prompt": "Formato vertical 2:3. Islas del norte, frías y sin gente: una formación rocosa primigenia, negra y gastada, abriéndose en un claro circular. En el centro, un espejo de agua quieta que refleja una luna que no está en el cielo. Vegetación vieja, líquenes, niebla baja. Escala grande y silenciosa, sin figuras humanas o con una silueta mínima al borde para dar tamaño."
       }
     ],
     "imagenes": [
@@ -1719,6 +2101,64 @@
       "descripcion": [
         "Si algo hay para leer, contar o inventariar, es lo suyo. En el Albatros abrió la bitácora y ató los cabos: dos meses de reformas en secreto, acero forjado en frío, una habitación tapiada. Casi todo lo que el barco esconde salió de su curiosidad.",
         "En Ioma salió a buscar información y no tuvo suerte, pero no es de rendirse: para él, quien tiene la información maneja todo lo demás."
+      ]
+    },
+    {
+      "id": "haddrek",
+      "nombre": "Haddrek",
+      "arquetipo": "Semiorco · Cobrador de Iron Keep",
+      "linea": "Recaudador de impuestos de Iron Keep. Banquito contra la puerta, pipa encendida y cara de cansado, esperando que le paguen.",
+      "imagen": "",
+      "rasgos": [
+        {
+          "label": "Oficio",
+          "texto": "Cobrador de Iron Keep. Los de su oficio andan casi solos en barcazas chicas llevando el oro de la recaudación, así que viajan con malla corta y cuero tachonado encima. Tienen que tener aguante."
+        },
+        {
+          "label": "Raza",
+          "texto": "Dos metros noventa y ciento noventa kilos de semiorco, de los pocos que quedan. Los humanos usaron a los suyos como guerreros en las Guerras de los Magos, por su fuerza y su fortaleza, y ahí casi se extinguen."
+        },
+        {
+          "label": "Costumbres",
+          "texto": "Su gente pasó de salvaje a caballeresca. Las decisiones grandes se toman por justas o cuerpo a cuerpo, juicio por espada, porque sale más limpio que una votación de gente con intereses. Y se recomienda más de una pareja para criar."
+        },
+        {
+          "label": "En el barco",
+          "texto": "Mantenimiento y artillería del Albatros, con la mano metida en los bajos fondos cuando hay que averiguar algo. Escudo, espada larga y jabalina."
+        }
+      ],
+      "descripcion": [
+        "El grupo lo vio antes de saber quién era: dos metros noventa de semiorco sentados en un banquito contra la puerta del Socavón, estirado, mirando para enfrente, con la pipa encendida y el bolsito del cobro al lado. Llevaba tres días ahí, aburrido y de mal humor, esperando que Zariff apareciera a pagar sus impuestos. Fue Jeremy el que se acercó a interrogarlo, y le vino bien la charla: si no, ya los hubiese mandado a la mierda.",
+        "Cuando Zariff por fin llegó, disfrazado con un capote de cuero, fue a buscarlo a él primero. Haddrek quedó dentro de la reunión como la parte que escucha y da fe del cobro, y salió con un puesto que no pidió: Zariff lo nombró su llave en los ministerios y en los asuntos exteriores."
+      ]
+    },
+    {
+      "id": "brina",
+      "nombre": "Brina Argentea",
+      "arquetipo": "Druida · Humana",
+      "linea": "Comerciante de los pueblos arbóreos y fiel de Alistair. Entró a la reunión como testigo alquilada por una pieza de plata la hora.",
+      "imagen": "",
+      "rasgos": [
+        {
+          "label": "De dónde",
+          "texto": "Del archipiélago de Colín, en los pueblos arbóreos del sur: islas donde todavía hay biomas de ents y vestigios de mundos antiguos. Es nativa de este plano y vive de esos vestigios."
+        },
+        {
+          "label": "Fe",
+          "texto": "Fiel creyente de Alistair, el minotauro blanco colosal, líder faérico. Sus tierras son el verde del sur del mapa: acercarse a Ámbar es estar a un cruce de su dios."
+        },
+        {
+          "label": "Oficio",
+          "texto": "Comerciante. La mandan todos los años al festival de la luna nueva y todos los años la agarran para algo. En el Albatros lleva comercio y tesorería, con tasación y bonificación a la diplomacia con los órdenes faéricos."
+        },
+        {
+          "label": "Equipo",
+          "texto": "Bastón y armadura de cuero, clase de armadura 11. Trae kit de herboristería, que a bordo puede montarse como laboratorio: es la que se va a ocupar de mantener vivo a Njröun."
+        }
+      ],
+      "descripcion": [
+        "Zariff la eligió de la calle. Cruzó, fue directo a ella y le pidió una hora de sus servicios como testigo, y el grupo se dio cuenta en el acto de que de imparcial no tenía nada. Ella le puso precio de oficio, una pieza de plata por hora, y el gnomo aceptó y hasta ató el cabo de la media hora de más.",
+        "Quedó adentro de la reunión legalizando lo que se decía, y salió de ahí con trabajo. No fue casualidad: el cryptex solo lo puede abrir un faérico o un representante del orden faérico, y Zariff confía en los pueblos arbóreos. Como él mismo admitió a mitad de charla, fue mucha casualidad haber llamado justo a la señorita que puede comerciar con eso."
       ]
     }
   ]
