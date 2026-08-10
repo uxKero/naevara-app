@@ -60,7 +60,14 @@ data/characters/
 # fuera del repo; se optimizan a JPG en /public/vaegrant-galeria (eso sí va).
 /sources/Vaegrant/**/Images/
 
-# Sesiones: audios y backups crudos NO se commitean (los .txt de transcripción sí)
+# Sesiones: nada del material crudo de mesa va al repo (es público).
+# Ni audios, ni backups, ni transcripciones: son la charla real de la mesa,
+# con nombres de pila y todo lo off-rol adentro. Viven solo en local.
 /sources/Vaegrant/**/images/
 /sources/Vaegrant/**/*.ogg
 /sources/Vaegrant/**/*.ogg.json
+/sources/Vaegrant/**/*.txt
+/sources/Vaegrant/**/Audio*.md
+
+# Prompts de generación de imágenes: se trabajan en local, no se publican.
+/Vaegrant_Prompts*.md

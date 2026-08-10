@@ -332,6 +332,30 @@
         "tipo": "Posada · Moray · la mesa de la reunión",
         "texto": "La posada de Moray donde Río citó al grupo con Zariff. La atiende el viejo Gal, humano de un metro noventa y entrado en kilos, con un ojo de vidrio mecánico y la mano izquierda mecánica. En su puerta esperó Haddrek tres días con un banquito y una pipa, y adentro se cerró el trato que reorienta toda la campaña.",
         "destacado": false
+      },
+      {
+        "nombre": "El archipiélago de Korinn",
+        "tipo": "Sesión 5 · el norte de las Moonshae · la casa de Brina",
+        "texto": "El archipiélago del extremo norte de las Moonshae, de donde viene Brina. Es la última escala en la que la bandera interna de Moray todavía alcanza para pasar: de ahí en adelante hacen falta permisos de Iron Keep o gestionarlos en la mar abierta. El Albatros repostó acá camino a Waterdeep, sin bajar a hacer nada.",
+        "destacado": false
+      },
+      {
+        "nombre": "Puerto Corona y la Corona del Norte",
+        "tipo": "Sesión 5 · uno de los puertos de Waterdeep",
+        "texto": "Puerto Corona está en una ciudad llamada la Corona del Norte, más grande que Ámbar, y es solamente uno de los puertos de Waterdeep. La población es sesenta y cuatro por ciento humana, diez por ciento enanos, diez elfos, cinco medianos, cinco medio elfos, tres gnomos y dos semiorcos. El gobernador vive en el puerto, se llama Zhentarim y es un monigote puesto ahí para firmar y para ir preso si algo se pudre. El que maneja el puerto es Lerald Silverhand, con una guardia de coraceros con alabardas y armas de pólvora que protege los muelles y no sube a los barcos. Llegan barcos comerciantes todo el tiempo, así que no llamaron la atención.",
+        "destacado": true
+      },
+      {
+        "nombre": "Waterdeep, por dentro",
+        "tipo": "Sesión 5 · gremios, bajo mundo y una alianza tensa",
+        "texto": "Waterdeep está gobernada por la Alianza de los Señores: los señores de cada gremio, que se juntan y deciden los próximos pasos. Siguen aliados, pero la alianza está tensa porque cada gremio tiene sus propios intereses, y sobre todo porque Bragan, el jefe del gremio de los enanos, está enemistado con el jefe del gremio de los magos, un elfo oscuro que está tomando demasiado poder. Los enanos viven y trabajan en la Orden del Guantelete, en el distrito de manufacturas pasando el puerto, y todos le responden a Bragan. Debajo de toda la ciudad hay un pueblo entero repartido por las alcantarillas, el bajo mundo, gobernado por un solo lord al que nadie le conoce la cara, desde un lugar llamado Alabasto; una de las bocas de entrada es el callejón Goldenfield, al final del mercado troll. La tecnología varía según el barrio y en la parte agroganadera, manejada por humanos, llega a la altura de Sambar. Waterdeep está al borde de la guerra con Calimshan, y en Neverwinter, al norte, hay conflicto abierto: para pasar por sus aguas hay que gestionar permisos. El poder tendrá sus guerras, pero el pueblo hace su vida y no hay militares en la calle.",
+        "destacado": true
+      },
+      {
+        "nombre": "Los barcos con alma",
+        "tipo": "Sesión 5 · cómo funciona una nave faérica",
+        "texto": "Todo barco que vuela tiene una entidad adentro; los que no vuelan son siempre barcos y nada más. Un barco es un solo organismo formado por varios: el casco, un gólem guardián, sus barriles-constructo y el alma que lo mueve. Esa alma se alimenta de piedra lunar cargada con uno de los cinco elementos —fuego, agua, tierra, aire y vacío—, y el elemento le define el carácter y la forma de pelear. Cuando el alma muere, el barco deja de ser faérico y pasa a ser común, y va al astillero a comparecer ante Alistair, igual que un paladín rehace sus juicios. En el jardín de Alistair crecen unos lotos de cristal y en cada uno duerme un alma en estado de crisálida, a veces desde hace mil años; él elige una y la pone. Por eso las almas de barco nacen con cuerpo ya crecido y sin pasado: son vidas nuevas, no personas que existían antes. Hay tres barcos legendarios: el Albatros, la Tortuga Veloz y el Varón Rojo.",
+        "destacado": true
       }
     ],
     "ganchos": [
@@ -423,7 +447,7 @@
       "numero": 1,
       "titulo": "El enano reclama",
       "fecha": "2026-07",
-      "resumen": "La sesión que lo puso todo en marcha. El Master abrió el mundo: las Guerras de los Magos, el archipiélago de Lantan, la vida en la posada Tres Dientes. Y la cerró con una despedida: Marcus muerto, Ámbar tomada por dentro, y Durin entregándole a Vaegrant un medallón rúnico y una misión que va mucho más al norte de lo que ninguno viajó jamás.",
+      "resumen": "Durin Martillobre reclama. Marcus muerto, Ámbar tomada por dentro, y el enano entregándole a Vaegrant un medallón rúnico y una misión que va mucho más al norte de lo que ninguno viajó jamás. Antes de eso, el Master abrió el mundo: las Guerras de los Magos, el archipiélago de Lantan y la vida en la posada Tres Dientes.",
       "capitulos": [
         {
           "titulo": "Las Guerras de los Magos",
@@ -600,7 +624,7 @@
       "numero": 2,
       "titulo": "Ámbar vive",
       "fecha": "2026-07-14",
-      "resumen": "El grupo huye de Ámbar por mar. La ciudad ya no está de luto: está tomada. Nueve galeones de bandera negra bloquean el puerto, Durin cae preso y Trobe escapa al norte con la bibliotecaria. Con salvoconductos conseguidos por Trobe y un motín de fondo (Ámbar vive), zarpan en el Albatros, un viejo correo que esconde más de lo que aparenta: lo modificaron en secreto durante dos meses, lleva armas disfrazadas de coles, una habitación tapiada y un motor que le permite volar. En el mar descubren que a Marcus lo envenenaron, que alguien los vendió, y que la misión es más grande de lo que Durin contó. En Ioma, mientras Vaegrant solo repone provisiones, el Paladín consigue una llave para el tubo sellado que Durin le dejó, que únicamente podrá abrir la persona que van a buscar. La sesión cierra en la isla factoría, listos para partir a Moray al amanecer.",
+      "resumen": "El grupo huye de Ámbar por mar: nueve galeones de bandera negra bloquean el puerto, Durin cae preso y Trobe escapa al norte. Zarpan en el Albatros, un viejo correo que esconde armas disfrazadas de coles, una habitación tapiada y un motor que le permite volar. En el mar descubren que a Marcus lo envenenaron y que alguien los vendió. En Ioma, Iscandar consigue una llave sin saber todavía qué abre.",
       "capitulos": [
         {
           "titulo": "El bloqueo",
@@ -770,7 +794,7 @@
       "numero": 3,
       "titulo": "La semilla de los sueños",
       "fecha": "2026-07-21",
-      "resumen": "Rumbo a Moray, el Albatros cruza un mar plagado de barcos de bandera negra y encuentra a mitad de camino un islote volcánico que no figura en las cartas. Vaegrant y Jeremy bajan a explorarlo, atados con una soga, y descubren que la isla es más grande por dentro que por fuera: es el sueño de Kyro, un titán primigenio dormido que despierta y les habla del albor del mundo, de la guerra de los magos, de los cuatro titanes y de los tres portales que comunican los planos. Como juicio, Kyro les entrega Njröun, la semilla de los sueños: si la mantienen viva serán dignos de los portales y de su ayuda, pero antes deben averiguar por qué Ámbar cayó y probar que la balanza está torcida. De vuelta al mar, Hakon y los tripulantes bajan en el Ojo de Arena llevándose el armamento para meter mano por Ámbar, y el barco queda para el grupo. En Moray los recibe Río, el del muelle, formado bajo Trobe y leal a Zariff, que les confía una noticia fea: hay gente de Luskan revisando la biblioteca. La sesión cierra con la reunión con Zariff preparada y pendiente.",
+      "resumen": "A mitad de camino a Moray, el Albatros encuentra un islote volcánico que no figura en ninguna carta y que por dentro es más grande que por fuera. Es el sueño de Kyro, un titán primigenio que despierta, les cuenta el albor del mundo y les entrega Njröun, la semilla de los sueños: si la mantienen viva serán dignos de los tres portales. De vuelta al mar, Hakon baja con su tripulación y el barco queda para el grupo.",
       "capitulos": [
         {
           "titulo": "Banderas negras y una isla que no existe",
@@ -915,7 +939,7 @@
       "numero": 4,
       "titulo": "El gnomo que hablaba demasiado",
       "fecha": "2026-07-28",
-      "resumen": "Moray se prepara para el festival de la luna nueva y el puerto está lleno de guardia de Iron Keep. Mientras hacen tiempo y compras, el grupo interroga a un semiorco enorme sentado en un banquito contra la puerta del Socavón: es Haddrek, cobrador de impuestos de Iron Keep, que lleva tres días esperando que Zariff aparezca a pagar. Zariff aparece disfrazado con un capote de cuero, cruza la calle, se compra una testigo por una pieza de plata la hora —Brina Argentea, druida y comerciante de los pueblos arbóreos— y recién ahí se sienta a hablar. Lo que suelta cambia el encargo entero: Ámbar fue tomada por alcazas de bandera negra que están robando objetos de poder bajo la excusa de auditar linajes; Durin está preso y se lo van a llevar a que le quiebren la voluntad; el cryptex de Durin no lo abre él, solo lo puede abrir un ser faérico; y la llave que Iscandar consiguió en Ioma abre la puerta tapiada del alcázar del Albatros. Zariff no va a ir a Ámbar: los contrata. El trabajo es navegar al norte, a las islas de Val, llegar al Claro Lunar —el ojo por donde se habla con el pueblo faérico—, abrir el cryptex y juntar las siete piedras primigenias antes que los velas negras, para terminar lo que la familia de las Nueve Rosas empezó y no pudo sostener. La sesión cierra con el reparto de oficios del barco, el día de la luna aprovechado para el kit inicial y dos cabillas nuevas cargadas por trolls hasta la cubierta.",
+      "resumen": "Zariff aparece por fin, disfrazado y con una testigo comprada en la calle por una pieza de plata la hora, después de tres días de hacer esperar al cobrador de Iron Keep que le pisa la puerta. Lo que suelta cambia el encargo entero: Durin está preso, su cryptex solo lo abre un ser faérico, y la llave de Ioma abre la habitación tapiada del Albatros. No va a ir a Ámbar; los contrata a ellos.",
       "capitulos": [
         {
           "titulo": "Día de luna nueva en Moray",
@@ -1183,6 +1207,241 @@
         "Aun así, no quedó registrado el arranque de la sesión, el momento en que Haddrek acepta subir al Albatros ni el cierre de la noche. Puede haber pasado fuera de micrófono.",
         "El orden de los audios no es del todo cronológico: el tramo en que Zariff interroga a Brina parece ir antes del tramo en que se despide de la mesa."
       ]
+    },
+    {
+      "id": "sesion-5",
+      "numero": 5,
+      "titulo": "La niña que mueve el barco",
+      "fecha": "2026-08-04",
+      "resumen": "La llave de Ioma abre por fin la pared que achicaba la bodega, y adentro está el motor del Albatros: una chica de dieciséis años suspendida en una cápsula de cristal. El barco está vivo, tiene nombre —Gunnlod— y come agua. Lo custodia Caja, un gólem consciente desde hace dos mil quinientos años que además recuerda quién armó el motín en el que murió el alma anterior: un drow que hoy tiene puerto en Waterdeep.",
+      "capitulos": [
+        {
+          "titulo": "Las noticias del puerto",
+          "texto": "Moray todavía no está bloqueada, pero los velas negras ya están adentro y la pregunta que se hace todo el mundo en el puerto es cuánto pueden tardar en cerrarla. Moray es muy comercial y no tiene con qué defenderse. Ámbar ya está tomada. Anchoril tiene su propia guerra civil, con una resistencia peleando adentro. Y lo que nadie sabe todavía es qué están buscando: se sigue barajando que sea nada más que una conquista expansionista de un pueblo emergente con demasiado poder político para lo nuevo que es.\n\nCon eso encima, la mesa se puso a discutir el rumbo sobre el mapa y no se puso de acuerdo enseguida. Estaban las islas de Val y el Claro Lunar al norte, estaba volver tres días para atrás a Magraje —donde también hay un portal primigenio y un titán que ya los conoce—, y estaba Waterdeep, donde Vaegrant tiene que entregar el mensaje que Durin le encargó para un enano. Terminó ganando Waterdeep por acumulación: hay que dejar la carta, hay mercadería de Ámbar para vender a precio de plaza bloqueada, y del norte es de donde vienen los velas negras, así que es donde va a haber información.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "Están buscando cosas. ¿Qué están buscando? No saben, pero siguen con la idea de que podría ser simplemente una conquista expansionista de algún pueblo. Todavía no saben bien."
+            },
+            {
+              "quien": "Haddrek",
+              "texto": "Yo diría de que nos vayamos a la mierda lo más rápido de acá."
+            },
+            {
+              "quien": "Jeremy",
+              "texto": "Patitas, ¿pa qué las tenemos?"
+            }
+          ]
+        },
+        {
+          "titulo": "La pared que achicaba la bodega",
+          "texto": "Jeremy quería hacer inventario y saber cuánto combustible quedaba, y nadie sabía dónde estaba el motor. En los planos del barco figura la palabra motor y no figura la flecha que diga dónde. Bajaron a la bodega y volvieron a la misma conclusión que ya habían sacado al principio: la bodega mide menos de lo que dicen los planos. Al fondo hay una pared de madera baja que suena hueca, la que Jeremy ya había visto y nunca había podido revisar porque en ese momento viajaban con tripulación ajena.\n\nEsta vez tenían la llave. La que consiguieron en Ioma, la que les habían dicho que abría algo del barco. Hay una cerradura chica, entra, y la puerta empieza a desgranarse sola; cuando sacás la llave, se reintegra.\n\nAdentro hay una esfera de cristal grande con un humanoide flotando en posición fetal, con un par de mangueras saliéndole de la espalda, del tamaño del cuerpo de un chico de quince años. Al fondo, una maquinaria llena de engranajes. Adelante, unas cajas de suministro y diez barriles. Haddrek desenfundó por las dudas y los barriles se levantaron: les salieron cabecitas, brazos, lancitas de plata y escuditos, y se pusieron en falange. Después habló una caja.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "Introduce una llave y esa puerta comienza a desgranarse. Se desgrana. Cuando saca la llave, se reintegra."
+            },
+            {
+              "quien": "Haddrek",
+              "texto": "Yo saco la espada por las dudas. Vos abrí."
+            },
+            {
+              "quien": "Haddrek",
+              "texto": "Guardo la espada. Parley."
+            },
+            {
+              "quien": "Caja",
+              "texto": "Tranquilos, muchachos, bajen las armas."
+            }
+          ]
+        },
+        {
+          "titulo": "Caja y los diez barriles",
+          "texto": "El cajón se desarmó como un autobot y se rearmó en un constructo de maderas y engranajes que apenas entra en la bodega, encorvado, sin armas y sin necesitarlas: pega dos veces por turno y si confirma los dos golpes, agarra. Su nombre es Caja, así, y su trabajo es proteger bodega y motor. Los barriles son Barry uno, Barry dos, Barry tres y así hasta diez; son grumetes, limpiacubiertas y luchadores a la vez, hablan, se comunican entre ellos y tienen una inteligencia limitada.\n\nLo primero que quiso saber Caja fue quién era el capitán, porque tenía otro nombre grabado. Iscandar le contestó que Hakon se bajó y que ahora el capitán es él. Lo segundo que dijo, sin que se lo preguntaran, fue que no va a volver a haber un motín en su barco. De ahí salió todo lo demás: ya hubo uno, y en ese motín mataron a la entidad anterior.\n\nCaja explicó cómo hay que mirar esto. Cada barco es un solo organismo formado por varios organismos, una especie de microbioma: el casco, él, sus barriles y la entidad que le da vida. Él es consciente desde que se construyó el barco, y el barco tiene dos mil quinientos años, o sea que viene de antes de las Guerras de los Magos. No puede traicionar al capitán porque está escrito en su genoma. Y hay tres barcos legendarios en el mundo: el Albatros, la Tortuga Veloz y el Varón Rojo.",
+          "dialogo": [
+            {
+              "quien": "Caja",
+              "texto": "No va a volver a haber un motín en mi barco."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "¿Porque no querés o porque tenés algún tipo de pacto?"
+            },
+            {
+              "quien": "Caja",
+              "texto": "Porque no quiero, y porque está escrito en mi genoma servir al capitán."
+            },
+            {
+              "quien": "Caja",
+              "texto": "Puedo salir. Claro que no quiero, es diferente. Si algo le pasa a ella, sería un fallo mío. Y yo, señor, no fallo."
+            }
+          ]
+        },
+        {
+          "titulo": "Gunnlod",
+          "texto": "La chica de la cápsula se llama Gunnlod. Es el barco: vive, respira, se traslada y tiene sentimientos, y los expresa a través del casco. Es consciente de todo lo que pasa. Cuando la encontraron hacía dos días que no comía y estaba de un humor de perros, y lo primero que hizo el grupo fue darle de comer: los barriles de piedra lunar cargada se meten debajo de la burbuja, en una boca dentada que no es metálica sino orgánica. Un barril entero da tres o cuatro días exigiendo la nave, y bastante más si se va tranquilo.\n\nCada barco que vuela tiene su propia entidad adentro; los que no vuelan son siempre barcos y nada más. Cuando el alma de un barco muere, el barco deja de ser faérico y pasa a ser común, y comparece ante Alistair igual que un paladín rehace sus juicios para recuperar sus poderes. Alistair tiene un jardín donde crecen unos lotos de cristal, y en cada loto duerme un alma en estado de crisálida, a veces desde hace mil años. Cuando hace falta, él elige una y la pone. Por eso Gunnlod tiene cuerpo de dieciséis años y sólo dos meses de existencia: no es una persona que existía antes, es una vida nueva. La anterior era Loki, que comía vacío y trabajaba con pasión, y a la que le tocó una tripulación que se amotinó.\n\nLas órdenes sólo se las da el capitán. El resto puede hablarle desde cualquier parte del barco y ella escucha, pero obedece a uno solo. Y quedó definido de qué se alimenta: agua. De ahí le salen los rasgos —emociones profundas, intuición, sensibilidad, cambios de carácter repentinos, y una creatividad notable a la hora de causar dolor cuando se enoja—, su flor, que es la flor de lis, y su forma de pelear. En el timón hay una brújula que lleva a donde uno quiere ir, salvo que ella tenga algo en contra tuya.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "Creo que no se dieron cuenta de que el barco en sí es un ser vivo. Vive, respira, se traslada, tiene sus sentimientos."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "¿Sentimientos como hablar con plantas o...?"
+            },
+            {
+              "quien": "Caja",
+              "texto": "Sentimientos como hablar con una niña de diecisiete años en plena etapa de su rebeldía."
+            },
+            {
+              "quien": "Gunnlod",
+              "texto": "Si fueses capitán, me hubieses dado de comer antes."
+            }
+          ]
+        },
+        {
+          "titulo": "Lo que Caja recuerda",
+          "texto": "Caja no sale de la bodega, así que todo lo que sabe es lo que se habló ahí abajo, pero escuchó bastante. Cuando le nombraron los velas negras se acordó del alférez que arrancó el motín: siempre vestido de negro, piel oscura, orejas en punta y ojos blancos, un drow. Su nombre era Belkyn y le decían Daga de Sal. Un alférez al lado de un capitán no es nada, así que estaba claro que venía armando la cosa desde mucho antes, y que no era realmente un alférez: estaba disfrazado. Pertenece a una orden, la de los Vigilantes, que nuclea en forma de gremio a los magos y a los protectores de la magia. Es Mhair, y tiene puerto en Waterdeep.\n\nEl Albatros era de Trobe, que tenía siete barcos. Caja también recuerda una bandera de fondo azul con una media luna apuntando hacia arriba, en el pecho de un hombre. Y recuerda que mientras reparaban el barco, Trobe se reunió a bordo con un enano al que llamaba viejo amigo, y que hablaron de esconder el corazón de Ámbar. Qué es el corazón de Ámbar, no lo sabe: debe ser un corazón de ámbar, dice, y eso es todo el conocimiento que tiene.\n\nLa última cosa que soltó fue una advertencia suelta, sin desarrollar: cuidado con el guardián en Waterdeep. Quedó anotada.",
+          "dialogo": [
+            {
+              "quien": "Caja",
+              "texto": "Recuerdo la ropa del alférez. Siempre vestía de negro. Su nombre era Belkyn. Le decían Daga de Sal."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Entonces podemos relacionarlo a que la persona que inició el motín tiene algún tipo de relación con los velas negras."
+            },
+            {
+              "quien": "Caja",
+              "texto": "Ah, eso lo dice usted, señor. Yo digo que es una coincidencia."
+            },
+            {
+              "quien": "Caja",
+              "texto": "Recuerdo un enano al que le decía viejo amigo, pero nunca escuché su nombre. Hablaron de que tenían que esconder el corazón de Ámbar."
+            }
+          ]
+        },
+        {
+          "titulo": "Iron Keep y el estandarte",
+          "texto": "Dejaron a Njröun en la bodega, con Caja y con Gunnlod: crece más rápido cerca de energía faérica, y ella se puso contenta de tener compañía. Zarparon quince minutos después de abrir la puerta, y desde cubierta alcanzaron a ver puntitos en el cielo, muy lejos. Los que venían por mar ya habían hecho boca de playa; la flota estaba llegando a Moray por aire. Salieron justo antes del bloqueo. Las cabillas que habían comprado en Moray amanecieron enraizadas a la cubierta, con florcitas.\n\nLas cartas de navegación que traían sólo sirven para el Mar de las Espadas, así que hicieron una parada técnica en Iron Keep, en el estrecho que separa Norland de la isla de Omán. Ahí a Haddrek lo recibe Telgar, el segundo hermano, el general que maneja todo el puerto, con una escolta llamada la Guardia de Hierro: orcos metidos en armaduras vivientes a los que no se les ve la piel. La ciudad se está fortificando y esperan un ataque. De Ámbar, lo último que se sabe es que está sitiada y bajo control de los velas negras; las comunicaciones se cortaron.\n\nTelgar no quiso saber los detalles de la misión —bajo tortura prefiere no saber— y resolvió lo que podía: dos redes de profundidad a estribor y babor que no sirven para pescar pero sirven de pantalla, y un permiso que los declara pescadores de altamar de recursos valiosos con destino comercial a Puerto Corona. Ahí salió también el encargo que Zariff le había pasado a Haddrek en un sobre supuestamente firmado por Omán: recuperar la fortaleza de la montaña, que en Iron Keep ya daban por perdida. La tomaron desde adentro, en un día, después de un año de trabajo silencioso; hay unos doscientos soldados presos ahí dentro y una guarnición rebelde de quince. Cuando Haddrek habló de negociar con las tribus orcas de las afueras de Waterdeep, uno de los orcos de la escolta golpeó el hacha contra el piso y habló pasando por encima de su capitán.",
+          "dialogo": [
+            {
+              "quien": "Telgar",
+              "texto": "No te voy a pedir detalles de tu misión. Bajo tortura prefiero no saber lo que van a hacer."
+            },
+            {
+              "quien": "Telgar",
+              "texto": "Infestaron la fortaleza desde adentro, la tomaron, y eso les habrá tomado mínimo un año. La revuelta empezó ayer y en un día la completaron."
+            },
+            {
+              "quien": "Un orco de la Guardia de Hierro",
+              "texto": "En las afueras de las tierras de Iron Keep, en las orillas de los volcanes, hay una pequeña legión. Mis hermanos esperan ahí. No necesitan armaduras, no necesitan de grandes elementos. Pero si el estandarte flamea, ya es una causa para la lucha."
+            },
+            {
+              "quien": "Un orco de la Guardia de Hierro",
+              "texto": "Iron Keep nos dio respeto y una identidad. Nos permitió cultivar sus tierras y alimentarnos de los frutos de sus mares. Nuestra lealtad está para Iron Keep."
+            }
+          ]
+        },
+        {
+          "titulo": "El pesquero",
+          "texto": "Son tres días hasta Waterdeep. Iscandar se fue a dormir por primera vez desde que tomó el barco —apagó la vela del camarote y la vela se volvió a encender sola, hasta que entendió que era un barril acomodándosela en la mesa de luz— y quedó Haddrek al timón. Haddrek es el que se puso el tricornio que le ofreció Caja, y con el tricornio puesto siente lo que siente ella.\n\nGunnlod estaba enojada porque los velas negras los habían tenido a tiro y no hicieron nada. Explicó que controla el agua en todos sus estados y que la escala depende: crece con la ira. Haddrek le pidió una demostración. Las raíces de las cabillas se soltaron, se trasladaron hasta la proa y se entretejieron en una balista enorme; ella señaló un barco de pesca cercano con los candiles prendidos, preguntó si lo veían, y disparó una saeta de hielo que lo hundió en un segundo. El ruido del virote suena como una ola fuerte golpeando el casco, así que el capitán no se despertó.\n\nCon el capitán durmiendo, los que estaban en cubierta acordaron contarle de lo que ella es capaz y guardarse el barco hundido. Que una demostración se puede hacer contra una pared de hielo y no contra un pesquero inocente. Ella insistió con demostrar algo que no lastimara a nadie: hizo que un barril le tirara una lanza a Haddrek y materializó un escudo de hielo delante de él. Mientras estén en el barco, puede defenderlos.\n\nIscandar se despertó al otro día, descansado como no lo estaba desde que subió. Gunnlod resolvió que a papá sí o sí hay que decirle la verdad, aunque se puedan omitir detalles: le contó lo del escudo y se guardó el pesquero. De ahí salió la conversación que ordenó las cosas. Iscandar le puso el límite en lastimar a otros y le explicó que preguntar antes que disparar no es cobardía sino aritmética, porque son pocos y se necesitan todos. Después subió Caja a preguntar qué habían hecho, y quedó encargado de vigilarlos.",
+          "dialogo": [
+            {
+              "quien": "Gunnlod",
+              "texto": "¿Ves el barco de pesca que hay acá cerca? Aquel que tiene los candiles prendidos. ¿Lo ves? Ahora ya no."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "En ningún momento hablamos de hacerle daño a otros barcos, ni aunque tengas que demostrarlo."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "Mi límite es lastimar a otros."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "¿Entendés? Son pocos y los necesitamos todos."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "Necesito que los vigilen completamente y constantemente, porque son de tomar acciones de riesgo."
+            }
+          ]
+        },
+        {
+          "titulo": "Puerto Corona",
+          "texto": "Repostaron en el archipiélago de Korinn, que es de donde viene Brina, y siguieron ya en alta mar. Los bloqueos del Mar de las Espadas los abordaron un par de veces, les pidieron papeles y los dejaron seguir. Antes de tocar puerto, tanto Haddrek como Gunnlod sintieron lo mismo: la certeza de estar viajando a la boca del lobo sin saber lo suficiente.\n\nPuerto Corona está en una ciudad llamada la Corona del Norte y es más grande que Ámbar, y es solamente uno de los puertos de Waterdeep. Sesenta y cuatro por ciento de humanos, diez de enanos, diez de elfos, cinco de medianos, cinco de medio elfos, tres de gnomos y dos de semiorcos. El gobernador vive en el puerto, los recibe, y se nota enseguida que no tiene idea ni de qué bandera lleva: se llama Zhentarim y está puesto ahí para firmar cosas y para ir preso si algo se pudre. El que maneja el puerto de verdad es Lerald Silverhand, con una guardia de coraceros con alabardas y armas de pólvora que no suben a los barcos y se ocupan de que no haya ladrones en los muelles.\n\nDos veintes naturales destaparon el resto. Waterdeep está gobernada por la Alianza de los Señores, los señores de cada gremio, y la alianza está tensa: Bragan, jefe del gremio de los enanos, está enemistado con el jefe del gremio de los magos, un elfo oscuro que está tomando demasiado poder. Los enanos viven y trabajan en la Orden del Guantelete, en el distrito de manufacturas pasando el puerto, y todos responden a Bragan, incluido el que Durin mandó a buscar. El mercado negro es un pueblo entero repartido por las alcantarillas debajo de todo Waterdeep, y una de las bocas es el callejón Goldenfield, al final del mercado troll; lo gobierna un solo lord al que nadie le conoce la cara, en un lugar llamado Alabasto. Waterdeep está al borde de la guerra con Calimshan, en Neverwinter hay conflicto abierto, y los orcos están a las afueras.\n\nLa sesión cierra repartiendo tareas y discutiendo quién puede bajar a dónde sin cantar. Un elfo muy blanco y muy derecho preguntando de más en el bajo mundo resalta al toque, sobre todo con una cofradía que tiene miles de espías.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "El poder tendrá sus guerras, el pueblo tiene su realidad."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "La idea es que no resaltemos, que pasemos como cinco personas que vinieron a repostar y hacer cosas."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Mi misión es un mensaje. Conocer a esa persona, comunicarle lo que tengo que decir, y volver a mi lugar y a mi trabajo."
+            }
+          ]
+        }
+      ],
+      "nombres": [
+        {
+          "nombre": "Gunnlod",
+          "rol": "El alma del Albatros y su motor. Cuerpo de chica de dieciséis años suspendido en una cápsula de cristal en la bodega, con dos meses de existencia. Se alimenta de piedra lunar cargada con agua, y de ahí le vienen los rasgos: emociones profundas, intuición, sensibilidad, cambios de carácter y mucha creatividad para causar dolor cuando se enoja. Controla el agua en todos sus estados y la escala crece con la ira. Su flor es la flor de lis. Sólo recibe órdenes del capitán, pero escucha desde cualquier parte del barco."
+        },
+        {
+          "nombre": "Caja",
+          "rol": "Gólem de maderas y engranajes que custodia la bodega y el motor, consciente desde que se construyó el Albatros: dos mil quinientos años, de antes de las Guerras de los Magos. Se llama Caja, así, y a los barriles les puso Barry uno, Barry dos y así hasta diez. Es el más fuerte del barco y no usa armas. No puede traicionar al capitán porque está escrito en su genoma. Con la niña se comporta con una docilidad que no le sale con nadie más."
+        },
+        {
+          "nombre": "Los diez barriles",
+          "rol": "Constructos que hacen de grumetes, limpiacubiertas y falange defensiva. Se levantan armados con lancita de plata y escudito en cuanto alguien desenfunda a bordo. Hablan, se comunican entre ellos y responden órdenes, con una inteligencia limitada."
+        },
+        {
+          "nombre": "Loki",
+          "rol": "La entidad anterior del Albatros. Comía vacío y trabajaba con fuego, y murió cuando la tripulación se amotinó. Gunnlod va a terminar heredando toda su memoria a medida que la procese."
+        },
+        {
+          "nombre": "Belkyn, Daga de Sal",
+          "rol": "El alférez que arrancó el motín en el Albatros, aunque venía armándolo desde mucho antes. Drow de piel oscura, orejas en punta, ojos blancos y ropa siempre negra. No era realmente un alférez: estaba disfrazado. Es Mhair, y pertenece a una orden."
+        },
+        {
+          "nombre": "Mhair",
+          "rol": "El mismo que Belkyn. De la Orden de los Vigilantes, el gremio que nuclea a los magos y a los protectores de la magia, y uno de los velas negras. Tiene puerto en Waterdeep y es el jefe del gremio de los magos que está tomando demasiado poder. Caja recuerda su bandera: fondo azul con una media luna apuntando hacia arriba. Mató al hermano de Gunnlod."
+        },
+        {
+          "nombre": "El corazón de Ámbar",
+          "rol": "Lo que Trobe y un enano al que llamaba viejo amigo hablaron de esconder, a bordo del Albatros, mientras el barco estaba en reparaciones. Caja escuchó la conversación pero no sabe qué es ni oyó el nombre del enano."
+        },
+        {
+          "nombre": "Telgar",
+          "rol": "El segundo hermano, general al mando de todo el puerto de Iron Keep, tanto defensa como comercio, y con quien Haddrek tiene confianza. En este momento responde más que Omán, que es el burócrata de la capital. Fortifica la ciudad esperando el ataque de los velas negras. Les dio las redes de pantalla, el permiso a Puerto Corona y el estandarte de los Grandes Fauces."
+        },
+        {
+          "nombre": "Los Grandes Fauces",
+          "rol": "El estandarte orco que Telgar le entrega a Haddrek: fondo rojo con un círculo de colmillos hacia adentro. En las orillas de los volcanes, a las afueras de Iron Keep, espera una legión de orcos que no necesita armaduras ni grandes elementos: si el estandarte flamea, ya es causa para la lucha. Las hordas se están juntando y nadie sabe por qué."
+        },
+        {
+          "nombre": "La Alianza de los Señores",
+          "rol": "Los señores de cada gremio, que son quienes gobiernan Waterdeep de verdad. Siguen aliados pero la alianza está tensa, porque cada gremio tiene sus propios valores e intereses. Bragan, el jefe de los enanos de la Orden del Guantelete, está enemistado con el jefe del gremio de los magos."
+        },
+        {
+          "nombre": "Alabasto",
+          "rol": "El lugar desde el que se gobierna el bajo mundo de Waterdeep, un pueblo entero repartido por las alcantarillas debajo de toda la ciudad. Lo maneja un solo lord al que nadie le conoce la cara. Una de las bocas de entrada es el callejón Goldenfield, al final del mercado troll."
+        },
+        {
+          "nombre": "Los tres barcos legendarios",
+          "rol": "El Albatros, la Tortuga Veloz y el Varón Rojo. Y una escuadra legendaria, las Brujas, que está del lado de los drow bajo la capitanía de un capitán de los velas negras."
+        }
+      ],
+      "dudas": [
+        "Esta vez los transcripts salieron uno por nota de voz —cincuenta y un audios, cincuenta y una transcripciones, con la hora real en el nombre de cada archivo—, así que el orden cronológico es exacto. Lo que el transcriptor no resuelve es quién habla: numera las voces por audio y no a lo largo de la sesión, así que las líneas de los personajes jugadores hay que confirmarlas en mesa.",
+        "La crónica de la sesión 4 dice que Zariff llegó al Socavón con la deuda del fisco ya saldada. En esta sesión Haddrek dice tres veces que no llegó a cobrarle y que lo que Zariff dijo fue que iría a pagarle a Omán directamente. Queda para preguntar en la próxima sesión."
+      ]
     }
   ],
   "mapa": {
@@ -1190,8 +1449,8 @@
     "titulo": "El mapa de la campaña",
     "nota": "El mismo mapa de Faerûn que está pinchado en el salón del club. La historia es original del Master y pasa en otros años, pero los nombres son los del mapa real. La línea ámbar es el viaje que hay que hacer; la gris punteada, el encargo personal de Vaegrant (Waterdeep, opcional). Los pines aproximados son lugares originales del Master, ubicados a ojo.",
     "party": {
-      "marcadorId": "moray",
-      "texto": "Fin de la Sesión 4: el Albatros sigue amarrado en Moray y ahora son cinco a bordo, con Haddrek y Brina sumados. Zariff no va a ir a Ámbar: los contrató a ellos y les paga sueldo. El encargo es navegar al norte, a las islas de Val, llegar al Claro Lunar, abrir ahí el cryptex y juntar las siete piedras primigenias antes que los velas negras. Durin está preso y camino a que le quiebren la voluntad. La sesión cierra con el día de la luna nueva gastado en el kit inicial: dos cabillas, veinticuatro balas y una carta de recomendación."
+      "marcadorId": "puerto-corona",
+      "texto": "Fin de la Sesión 5: el Albatros está amarrado en Puerto Corona, uno de los puertos de Waterdeep, disfrazado de pesquero de altamar con dos redes de profundidad y un permiso de Iron Keep. Son cuatro a bordo —Brina no viajó— más Caja, los diez barriles y Gunnlod, el alma del barco, que ahora tiene nombre y come agua. Njröun crece en la bodega. Pendiente: el mensaje de Durin para Crestarroja, que responde a Bragan en la Orden del Guantelete; el bajo mundo por el callejón Goldenfield; y Mhair, que tiene puerto acá. El encargo de Zariff sigue siendo el norte, las islas de Val y el Claro Lunar."
     },
     "marcadores": [
       {
@@ -1317,7 +1576,8 @@
         "tipo": "ciudad",
         "sesiones": [
           1,
-          4
+          4,
+          5
         ],
         "estado": "confirmado",
         "nota": "Así figura en las viejas cartas. Encargo personal de Durin a Vaegrant, aparte de la misión: si el viaje lo permite, buscar a Gonagal Crestarroja y pedirle que haga circular una vez más el estandarte de los enanos. No es una parada obligada. En la Sesión 4, Zariff leyó el encargo al vuelo: si Durin manda a decirle a Crestarroja que se prepare, es que Durin está alertando a los clanes."
@@ -1363,15 +1623,16 @@
       {
         "id": "iron-keep",
         "nombre": "Iron Keep (Isla de Omán)",
-        "x": 7.8,
-        "y": 43.2,
+        "x": 7.1,
+        "y": 43.8,
         "tipo": "hito",
         "sesiones": [
           2,
-          4
+          4,
+          5
         ],
         "estado": "confirmado",
-        "nota": "La fortaleza y ciudad de Iron Keep, sobre la Isla de Omán (Oman's Isle), en las Moonshae, cerca de Moray. Capital del viejo reino nórdico de Omán. El grupo pescó el nombre entre los murmullos de los ocupantes de Ámbar. De ahí sale Haddrek, el cobrador de impuestos que se suma al grupo en la Sesión 4, y de ahí manda Omán la guardia que cubre el festival de la luna nueva en Moray."
+        "nota": "La fortaleza de acero sobre la isla de Omán, en las Moonshae, junto a Moray, capital del viejo reino nórdico de Omán. En la sesión 5 el Albatros hace escala acá, en el estrecho que separa Norland de la isla de Omán: la ciudad se está fortificando esperando a los velas negras y manda Telgar, el segundo hermano. De acá salen las redes de pantalla, el permiso a Puerto Corona y el estandarte de los Grandes Fauces. La fortaleza de la montaña, en cambio, ya cayó: la tomaron desde adentro en un día, con doscientos soldados presos."
       },
       {
         "id": "magraje",
@@ -1424,8 +1685,8 @@
       {
         "id": "islas-val",
         "nombre": "Islas de Val",
-        "x": 4.3,
-        "y": 21.8,
+        "x": 0.9,
+        "y": 3,
         "tipo": "isla",
         "sesiones": [
           4
@@ -1436,13 +1697,37 @@
       {
         "id": "claro-lunar",
         "nombre": "El Claro Lunar",
-        "x": 5.9,
-        "y": 23.6,
+        "x": 1.9,
+        "y": 4.6,
         "tipo": "hito",
         "sesiones": [
           4
         ],
         "nota": "Dentro de las islas de Val. Zariff lo llamó el ojo por donde se puede comunicar con el pueblo faérico. Es el primer paso del encargo: sin contexto faérico no hay forma de abrir el cryptex.",
+        "estado": "aproximado"
+      },
+      {
+        "id": "korinn",
+        "nombre": "Archipiélago de Korinn",
+        "x": 9.5,
+        "y": 32,
+        "tipo": "isla",
+        "sesiones": [
+          5
+        ],
+        "estado": "aproximado",
+        "nota": "El archipiélago del extremo norte de las Moonshae, de donde viene Brina. Última escala donde la bandera interna de Moray todavía sirve: para cruzar más allá hacen falta permisos. El Albatros repostó acá camino a Waterdeep."
+      },
+      {
+        "id": "puerto-corona",
+        "nombre": "Puerto Corona",
+        "x": 15.4,
+        "y": 23,
+        "tipo": "ciudad",
+        "sesiones": [
+          5
+        ],
+        "nota": "Uno de los puertos de Waterdeep, en una ciudad llamada la Corona del Norte, más grande que Ámbar. Sesenta y cuatro por ciento de humanos, diez de enanos, diez de elfos, cinco de medianos, cinco de medio elfos, tres de gnomos y dos de semiorcos. El gobernador, Zhentarim, es un monigote; el que maneja el puerto es Lerald Silverhand, con una guardia de coraceros. Ahí termina la sesión 5.",
         "estado": "aproximado"
       }
     ],
@@ -1528,6 +1813,60 @@
           {
             "x": 3.4,
             "y": 27.5
+          },
+          {
+            "x": 2,
+            "y": 15
+          }
+        ]
+      },
+      {
+        "sesion": 5,
+        "estado": "recorrido",
+        "puntos": [
+          "moray",
+          "iron-keep"
+        ],
+        "via": [
+          {
+            "x": 5.6,
+            "y": 45.3
+          }
+        ]
+      },
+      {
+        "sesion": 5,
+        "estado": "recorrido",
+        "puntos": [
+          "iron-keep",
+          "korinn"
+        ],
+        "via": [
+          {
+            "x": 7.4,
+            "y": 39
+          },
+          {
+            "x": 8.5,
+            "y": 35
+          }
+        ]
+      },
+      {
+        "sesion": 5,
+        "estado": "recorrido",
+        "puntos": [
+          "korinn",
+          "puerto-corona"
+        ],
+        "via": [
+          {
+            "x": 12,
+            "y": 28
+          },
+          {
+            "x": 13.2,
+            "y": 25.4
           }
         ]
       }
@@ -2136,12 +2475,12 @@
       "id": "brina",
       "nombre": "Brina Argentea",
       "arquetipo": "Druida · Humana",
-      "linea": "Comerciante de los pueblos arbóreos y fiel de Alistair. Entró a la reunión como testigo alquilada por una pieza de plata la hora.",
+      "linea": "Comerciante del archipiélago de Korinn y fiel de Alistair. Entró a la reunión como testigo alquilada por una pieza de plata la hora.",
       "imagen": "",
       "rasgos": [
         {
           "label": "De dónde",
-          "texto": "Del archipiélago de Colín, en los pueblos arbóreos del sur: islas donde todavía hay biomas de ents y vestigios de mundos antiguos. Es nativa de este plano y vive de esos vestigios."
+          "texto": "Del archipiélago de Korinn, en el extremo norte de las Moonshae: islas rocosas y ventosas, última escala antes de la mar abierta camino a Waterdeep. Es nativa de este plano y vive de los vestigios de mundos antiguos."
         },
         {
           "label": "Fe",
