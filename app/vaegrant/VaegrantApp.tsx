@@ -11,7 +11,7 @@ import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
 import AddSessionModal from "@/components/AddSessionModal";
 import type { SessionEntry } from "@/types/character";
-import { Swords, Flame, ArrowLeft, ScrollText, Download, User, Users, Map as MapIcon, Globe, BookOpen, CalendarDays, MoreHorizontal, Save } from "lucide-react";
+import { Swords, Flame, ArrowLeft, ScrollText, Download, User, Users, Map as MapIcon, Globe, BookOpen, CalendarDays, MoreHorizontal, Save, Ship } from "lucide-react";
 import { descargarImagen } from "@/lib/descargar";
 import { BuilderCharacter } from "@/types/builder";
 import {
@@ -356,6 +356,18 @@ export default function VaegrantApp({ initialData, initialTab, initialSession }:
               <ScrollText size={14} strokeWidth={2.2} /> <span className="vg-btn-label">Diario</span>
             </a>
             <a
+              href="/vaegrant/albatros"
+              title="Plano y modelo 3D navegable del Albatros"
+              style={{
+                padding: "5px 12px", fontSize: 11, fontWeight: 700,
+                background: "transparent", border: `1px solid rgba(201,156,90,0.45)`,
+                borderRadius: R + 2, color: C.amber, textDecoration: "none",
+                whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5,
+              }}
+            >
+              <Ship size={14} strokeWidth={2.2} /> <span className="vg-btn-label">Albatros</span>
+            </a>
+            <a
               href={`/combate/c/${data.combateId}`}
               style={{
                 padding: "5px 12px", fontSize: 11, fontWeight: 700,
@@ -457,6 +469,7 @@ function BottomNav({ active, onSelect, combateId, onGuardar, saving, savedMsg }:
     { icon: <Save size={18} strokeWidth={2} />, label: saving ? "Guardando…" : "Guardar cambios", onClick: onGuardar, disabled: saving, primary: true },
     { icon: <Swords size={18} strokeWidth={2.2} />, label: "Hoja de combate", href: `/combate/c/${combateId}` },
     { icon: <ScrollText size={18} strokeWidth={2} />, label: "Leer como diario", href: "/vaegrant/diario" },
+    { icon: <Ship size={18} strokeWidth={2} />, label: "El Albatros en 3D", href: "/vaegrant/albatros" },
     { icon: <ArrowLeft size={18} strokeWidth={2} />, label: "Ir a Naevara", href: "/naevara" },
   ];
 

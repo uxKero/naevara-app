@@ -2379,6 +2379,71 @@
         "url": "/vaegrant-galeria/mundo-43.jpg",
         "prompt": "Mundo · Moray, el pueblo de barro",
         "fecha": "2026-07-22"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-44.jpg",
+        "prompt": "Mundo · Gunnlod, el alma del Albatros",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-45.jpg",
+        "prompt": "Mundo · Caja, el guardián de la bodega",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-46.jpg",
+        "prompt": "Mundo · Los diez barriles",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-47.jpg",
+        "prompt": "Mundo · Haddrek, cobrador de Iron Keep",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-48.jpg",
+        "prompt": "Mundo · La puerta que se desgrana",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-49.jpg",
+        "prompt": "Mundo · «¿Waterdeep?»",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-50.jpg",
+        "prompt": "Mundo · Njröun en la bodega",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-51.jpg",
+        "prompt": "Mundo · Zarpar mientras llegan",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-52.jpg",
+        "prompt": "Mundo · El puerto de Iron Keep",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-53.jpg",
+        "prompt": "Mundo · La balista de proa",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-54.jpg",
+        "prompt": "Mundo · El pesquero",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-55.jpg",
+        "prompt": "Mundo · El escudo de hielo",
+        "fecha": "2026-08-10"
+      },
+      {
+        "url": "/vaegrant-galeria/mundo-56.jpg",
+        "prompt": "Mundo · Puerto Corona",
+        "fecha": "2026-08-10"
       }
     ],
     "portada": 0
@@ -2447,7 +2512,7 @@
       "nombre": "Haddrek",
       "arquetipo": "Semiorco · Cobrador de Iron Keep",
       "linea": "Recaudador de impuestos de Iron Keep. Banquito contra la puerta, pipa encendida y cara de cansado, esperando que le paguen.",
-      "imagen": "",
+      "imagen": "/vaegrant-galeria/personaje-haddrek.jpg",
       "rasgos": [
         {
           "label": "Oficio",

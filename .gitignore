@@ -71,3 +71,8 @@ data/characters/
 
 # Prompts de generación de imágenes: se trabajan en local, no se publican.
 /Vaegrant_Prompts*.md
+
+# Skills de agentes: herramientas locales de quien desarrolla, no del proyecto.
+# Se instalan con `npx skills add ...` y .claude/skills son symlinks a .agents.
+/.agents/
+/.claude/skills/
