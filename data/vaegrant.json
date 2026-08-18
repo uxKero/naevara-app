@@ -1442,6 +1442,200 @@
         "Esta vez los transcripts salieron uno por nota de voz —cincuenta y un audios, cincuenta y una transcripciones, con la hora real en el nombre de cada archivo—, así que el orden cronológico es exacto. Lo que el transcriptor no resuelve es quién habla: numera las voces por audio y no a lo largo de la sesión, así que las líneas de los personajes jugadores hay que confirmarlas en mesa.",
         "La crónica de la sesión 4 dice que Zariff llegó al Socavón con la deuda del fisco ya saldada. En esta sesión Haddrek dice tres veces que no llegó a cobrarle y que lo que Zariff dijo fue que iría a pagarle a Omán directamente. Queda para preguntar en la próxima sesión."
       ]
+    },
+    {
+      "id": "sesion-6",
+      "numero": 6,
+      "titulo": "El barco de al lado",
+      "fecha": "2026-08-11",
+      "resumen": "En Puerto Corona el grupo se separa por primera vez: Vaegrant y Jeremy a buscar al enano de Durin, Iscandar a las talabarterías de la ciudad media, Haddrek a las alcantarillas donde sobreviven los orcos. Los tres vuelven con hilos que se anudan solos. Y esa noche, amarrado al lado del Albatros, los espera el capitán de la Tortuga Veloz: un vampiro que conoce a Durin hace cuatrocientos años y que llegó siguiendo el destello de la saeta de hielo.",
+      "capitulos": [
+        {
+          "titulo": "La ciudad que están asfixiando",
+          "texto": "Puerto Corona los recibe bien. Entran con bandera de las Moonshae, ya hay antecedentes de comercio, el trámite de permisos es rápido y a cada uno le dan un pendón para el pecho que lo identifica como mercader y hace que la guardia no lo moleste. Es un puerto enorme, algo así como Nassau pero más civilizado y mucho más grande, defendido por arrecifes que lo vuelven fácil de defender y fácil de bloquear.\n\nLa ciudad sube en mesetas: abajo el puerto y el comercio, en el medio las viviendas y los microemprendimientos, arriba lo aristocrático, las tiendas finas y el palacio de gobierno. Nadie impide cruzar de un nivel a otro y hay escaleras abiertas al público, pero la gente no se mezcla, y al que sube desde el puerto lo miran de reojo.\n\nLo que se entiende rápido es la situación de fondo. Waterdeep está tratando de hacer colapsar a Puerto Corona para absorberla: le interesan los tratos que Corona tiene tierra adentro, así que fomenta la corrupción, la violencia y la delincuencia hasta generar el caos social que justifique meterse a regular. Primero presencia, después posesión. Las separa una muralla de cinco metros de alto por tres de ancho y una franja de trescientos metros, y nada más.\n\nEn la plaza central hay un cadalso permanente. Los juicios se definen en el día y terminan en la horca, y los administran dos ex pacificadores gemelos, Juno y Maui, que perdieron el título pero siguen luciendo el eslabón.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "Generan situaciones en donde crece la corrupción, la violencia y la delincuencia para que haya un caos social y así poder meterse ellos a regular. Y tener una excusa de posesión, o de presencia y después posesión."
+            },
+            {
+              "quien": "El Master",
+              "texto": "Waterdeep y Puerto Corona están separadas simplemente por una muralla y un territorio de más o menos unos trescientos metros. La medianera es una gran muralla de cinco metros de alto por tres metros de ancho."
+            }
+          ]
+        },
+        {
+          "titulo": "El hermano de Crestarroja",
+          "texto": "Vaegrant y Jeremy salen a buscar al enano al que Durin mandó el mensaje. Casi a la salida de la parte baja, a doscientos metros de donde termina el puerto y muy cerca del muro, está el galpón de Bragan: racks hasta el techo, acopio de material, mucha pieza mecánica y de vehículo, y un negocio que a simple vista no es del todo legal.\n\nBragan sale con jardinero azul, botas de trabajo, guantes pesados y un puro encendido. Cuando le preguntan por Gonagal Crestarroja, aprieta un botón del apoyabrazos y la pila de chatarra sobre la que estaba sentado se cierra a su alrededor: no era un trono, era un exoesqueleto mecánico. Los apunta con el brazo y les hace tres preguntas de las que depende si salen o no salen. Quién gobierna Waterdeep, quién manda en el bajo mundo, y de dónde vienen.\n\nLas contestan a medias —del bajo mundo no saben nada— pero la última la contestan bien, y con eso alcanza. El exoesqueleto se abre y Bragan se disculpa: no era por los modales. Llegaron sabiendo su nombre y el de su hermano, y esa información no la tiene cualquiera.\n\nPorque Crestarroja es su hermano. Bragan tiene prohibida la entrada a Waterdeep desde que una noche de copas terminó mal, así que hace meses que no puede contactarlo. Escribe una carta, la lacra y se las da con dos indicaciones: que crucen por un pasaje de bribón marcado en la muralla, que solo se ve con la luz de la luna, porque Waterdeep está cortando las comunicaciones; y que a su hermano lo saluden con la carta en la mano.",
+          "dialogo": [
+            {
+              "quien": "Bragan",
+              "texto": "Me van a contestar un par de preguntas, y de esas preguntas va a depender si salen o no salen."
+            },
+            {
+              "quien": "Vaegrant",
+              "texto": "Solamente es comunicarle algo. No es que vamos por él puntualmente: es un mensaje, y hay que hacerle llegar el mensaje de alguna manera."
+            },
+            {
+              "quien": "Bragan",
+              "texto": "Espero que sepan disculparme algún día este exabrupto, pero tengo que proteger a mi hermano y él me protege a mí."
+            },
+            {
+              "quien": "Bragan",
+              "texto": "Recuerde: si va a saludar, salúdelo con la carta en la mano. Mi hermano no suele preguntar antes de disparar."
+            }
+          ]
+        },
+        {
+          "titulo": "Arriba, donde no se mezclan",
+          "texto": "Iscandar sube a la parte media a encargarse un pendón de cuero con el símbolo de su orden. La primera talabartería es la de Sigma, una enana de trenza rojiza y piel demasiado blanca para su raza, que trabaja muy bien y le pide dos piezas de oro. Es un robo, y recién en la tienda siguiente entiende por qué: Sigma tiene una cruzada personal con los humanos y no pensaba atenderlo.\n\nLa segunda es la de Aldo, un elfo de unos seiscientos años que vive pobre pero digno, con pocas herramientas y todas pulidas. Pide cinco piezas de plata y cierra en cuatro más una recomendación, mitad por adelantado y veinticuatro horas de trabajo.\n\nDe ahí sale lo importante. Waterdeep intercepta los cargamentos y no deja que Corona haga compras grandes: se tienen que conformar con la materia prima que les dejan pasar. Iscandar le ofrece cueros finos y algo más útil que dinero —un trato para que el elfo le pase novedades de la ciudad— y a cambio Aldo le deja el medallón gratis. Queda armada la cobertura: un comerciante que busca rutas nuevas, y una contraseña de contacto, que quien venga con la insignia de su dios pregunte por él.\n\nY se lleva el dato que buscaba. Los drow no son bien vistos en Puerto Corona —a veces los asesinan y la guardia no hace nada— pero la mayoría tiene relaciones con la gente de la parte alta. Lo que significa que el que están evitando puede tener bastante más que poder militar.",
+          "dialogo": [
+            {
+              "quien": "Aldo",
+              "texto": "Waterdeep sigue interceptando los cargamentos, no nos deja hacer compras grandes. Nos tenemos que conformar con la materia prima que ellos deciden que nosotros tengamos."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "Me serviría tener en esta zona alguien en quien confiar y en dónde recaudar información de la ciudad. No solo para saber qué sucede, sino para saber quién sucede."
+            }
+          ]
+        },
+        {
+          "titulo": "Los que viven abajo",
+          "texto": "Haddrek pregunta por los barrios bajos y nadie le contesta, hasta que alguien le chista desde un pasillo. Es Wine, un muchacho de veintisiete años, desprolijo y decolorado, que le vende la información por media pieza de cobre. Antes de guiarlo le tuerce la mano y se la pone en el cuello contra la pared, para que dos guardias que pasan vean a un orco golpeando y no a un orco negociando. Los guardias miran y siguen de largo.\n\nLa entrada es una boca de tormenta con una palanca en forma de antorcha de piedra. Abajo hay una enrejada enorme de túneles y desagües donde viven los orcos y los semiorcos de Puerto Corona, tratados literalmente como desechos. La guardia sabe que están ahí y no se mete: saben que es un caldo de cultivo y prefieren no tener problemas. El lugar se sostiene con apuestas ilegales y una jaula de peleas donde a veces se muere gente.\n\nEl jefe de los semiorcos de abajo es Kada, elegantemente vestido, que se sienta frente a él y lo deja cinco segundos en silencio antes de hablar. Cuando Haddrek dice que viene de Iron Keep y que una fortaleza cayó, el semblante le cambia: pensaba que eran habladurías. Acepta acudir al llamado, pero con su condición dicha de frente —libera a sus hermanos y se vuelve a Corona— y con su desconfianza también.\n\nDe ahí sale el mapa de los clanes que faltan. Gorko y Morko, dos hermanos que controlan el espectáculo legal del otro lado del muro, fáciles de convencer con las palabras justas. Grun, de los Grandes Fauces, mucho más difícil: los Grandes Fauces creen que Iron Keep entregó el volcán extinto para salvarse. Y un chamán orco de esa misma gente que tiene contacto con los Garra de Hierro, en los Picos Perdidos del High Forest.",
+          "dialogo": [
+            {
+              "quien": "Wine",
+              "texto": "Es mejor que vean que un orco golpea antes que haga diplomacia, más en estos lugares."
+            },
+            {
+              "quien": "Haddrek",
+              "texto": "Erlac, puede decirme Ed."
+            },
+            {
+              "quien": "Kada",
+              "texto": "Los pieles verdes tienen que volver a tener ese lugar. Era el único lugar donde éramos tratados con respeto. Acá somos basura de alcantarilla, como verás."
+            },
+            {
+              "quien": "Kada",
+              "texto": "Pensá por un momento: Iron Keep sigue siendo de humanos, y los humanos no dan puntada sin hilo. Algo van a pedir a cambio."
+            },
+            {
+              "quien": "Kada",
+              "texto": "Si tomaron Iron Keep es porque están buscando lo que hay en sus profundidades, y eso no es nada bueno. Quien haya tomado Iron Keep está buscando lo que está debajo del volcán extinto."
+            }
+          ]
+        },
+        {
+          "titulo": "Los Vientos de Cambio",
+          "texto": "Cuando se reencuentran en el astillero hay un tumulto de marineros hablando de lo mismo: se despertó una bestia en alta mar y se devoró un pesquero. Unos dicen que es una gran sierpe, otros que un kraken, otros que un pulpo, y el ron circula de mano en mano mientras nace la leyenda urbana.\n\nEl barco tenía nombre. Se llamaba Los Vientos de Cambio, había salido de Elturel —uno de los puertos protegidos de Baldur's Gate— y llevaba diecisiete personas a bordo, entre ellas el diplomático Volgani. No quedó rastro: lo deshicieron.\n\nNo hubo bestia. Fue la saeta de hielo que Gunnlod disparó desde la balista de proa la noche anterior, para demostrar de lo que era capaz. El grupo escucha la historia entera desde afuera, sin decir nada.",
+          "dialogo": [
+            {
+              "quien": "El Master",
+              "texto": "Inocentes que estaban trabajando para alimentar a sus familias."
+            }
+          ]
+        },
+        {
+          "titulo": "El capitán de la Tortuga Veloz",
+          "texto": "De noche, alguien llama desde el muelle con un farol. Se presenta como John Arthur Benetton, capitán del barco amarrado al lado: la Cruz Dorada, de aguas profundas, con bandera de fondo azul, una cruz dorada a la izquierda y tres cruces blancas a la derecha, de un lugar llamado Evermors. Los invita a una posada de capitanes, una de tres que llevan tres hermanos: Tres Dedos, Tres Ojos y Tres Dientes.\n\nCuando se acerca hace una reverencia demasiado antigua para la época. Tiene el torso desnudo bajo el saco, bigotes finos, la piel muy blanca y los ojos completamente rojos. Lo acompaña una criatura igual de pálida cargando una espada del tamaño de quien la esgrime. Es un vampiro, y no lo esconde.\n\nSu barco es la Tortuga Veloz. Cada corazón de montaña produce naves de a tres, y las suyas son las tres legendarias: el Albatros, la Tortuga Veloz y el Barón Rojo, más la escuadra de las Brujas, que todavía hay que encontrar. Está tratando de reunirlas en una sola flota. El alma de su barco se llama Piros y se alimenta de fuego, salida de la misma montaña que Gunnlod.\n\nLlegó siguiendo un destello en alta mar. Fue hacia él, encontró al Albatros en el horizonte y lo siguió sin saber a quién iba a encontrar arriba: esperaba a Trobe, al que conoce desde que era grumete. A Trobe lo destituyó un motín, precisamente porque bajo alcohol habla demasiado; perdió barco y tripulación y terminó atendiendo un puerto chico y elegante muy al sur. A Durin lo conoce hace unos cuatrocientos años.",
+          "dialogo": [
+            {
+              "quien": "John Benetton",
+              "texto": "Después del destello me di cuenta de que algo andaba mal. Hubo un destello en alta mar y fui hacia el destello. Mi sorpresa cuando vi un barco del Albatros en el horizonte. Así que los seguí."
+            },
+            {
+              "quien": "John Benetton",
+              "texto": "Si quien puso este barco en sus manos es quien yo pienso, entonces disparamos los cañones en el mismo sentido."
+            },
+            {
+              "quien": "Iscandar",
+              "texto": "Lo que nos preocupa es la cantidad de información sobre nosotros que maneja una persona que no conocemos."
+            }
+          ]
+        },
+        {
+          "titulo": "Ni buenos ni malos",
+          "texto": "Lo que cuenta Benetton reordena la campaña entera. Durin, Trobe, la bibliotecaria y él peleaban juntos. Cuando la guerra de los magos terminó allá arriba, los magos se quedaron gobernando el semiplano y dejaron que abajo se pudrieran, pero de esa guerra llovieron objetos de poder que quedaron desparramados por el mundo. Durin y Trobe se propusieron terminar lo que las Nueve Rosas habían empezado: juntarlos y hacerlos desaparecer. Juntaron muchos, escondieron o destruyeron otros, y muchos quedaron dando vueltas. Esos son los que salieron a buscar los velas negras.\n\nLos velas negras vienen de mucho más atrás. Habían levantado algo llamado el Banco de Hierro: conquistaron casi todas las minas de hierro frío y de electrum, acuñaron su propia moneda y asfixiaron al mundo con impuestos y comercio, hasta que hubo pueblos enteros donde solo se podía comerciar con esa moneda. Y hay un consejo de tres vampiros en Icewind Dale, muy antiguos, convencidos de que todas estas tierras les pertenecen.\n\nCuando le preguntan de frente si están del lado bueno, Benetton no les da el gusto. Nunca dijo que ellos fueran los buenos. En una guerra no hay buenos ni malos sino bandos, y quién fue cuál lo decide la historia que se cuenta después. La única vara es la de las propias decisiones. Y cierra con lo único que le da certeza: se arrodilló ante Alistair y le prometió terminar el trabajo.\n\nAntes de irse deja un trabuco con bengalas. Si se ven en peligro, que disparen al aire, que va a estar cerca. Y deja una advertencia para el volcán extinto: si recuperan la fortaleza, que tapen los túneles. Debajo hay criaturas que no pueden emerger solas, y que no tienen que salir.",
+          "dialogo": [
+            {
+              "quien": "John Benetton",
+              "texto": "Los reinos se pelean y se masacran entre sí por poder. Si hay un solo reino, las guerras se terminan. Con esa convicción, ¿quién es bueno y quién es malo?"
+            },
+            {
+              "quien": "John Benetton",
+              "texto": "En una guerra no hay buenos ni malos, hay bandos. Se transforman en buenos o en malos según la historia que cuentan después."
+            },
+            {
+              "quien": "John Benetton",
+              "texto": "Yo sigo pensando que hacemos un bien para este mundo, sobre todo porque me arrodillé ante Alistair y le prometí que íbamos a terminar el trabajo."
+            },
+            {
+              "quien": "John Benetton",
+              "texto": "La guerra ya vino para con ustedes. Ustedes no la están buscando: la guerra los está buscando a ustedes."
+            },
+            {
+              "quien": "John Benetton",
+              "texto": "Si recuperan el control del volcán extinto, tapen los túneles. Los ilícidos no tienen que salir de ahí."
+            }
+          ]
+        }
+      ],
+      "nombres": [
+        {
+          "nombre": "John Arthur Benetton",
+          "rol": "Capitán de la Tortuga Veloz, una de las tres naves legendarias. Vampiro: piel muy blanca, ojos completamente rojos y modales demasiado antiguos para la época. Peleó junto a Durin, Trobe y la bibliotecaria, y conoce a Durin hace unos cuatrocientos años. Llegó a Puerto Corona siguiendo el destello de la saeta de hielo. Quiere reunir las tres naves en una sola flota, y va camino al desierto de Anauroch, a su gran biblioteca, a buscar dónde están las hermanas."
+        },
+        {
+          "nombre": "Piros",
+          "rol": "El alma de la Tortuga Veloz, salida de la misma montaña que Gunnlod. Su elemento es el fuego."
+        },
+        {
+          "nombre": "Bragan",
+          "rol": "Enano de Puerto Corona, jefe del gremio de la Orden del Guantelete y hermano de Gonagal Crestarroja. Maneja un galpón de acopio con un negocio no del todo legal y un exoesqueleto mecánico armado que se pliega hasta parecer una pila de chatarra. Tiene prohibida la entrada a Waterdeep por una pelea de taberna, así que hace meses que no puede contactar a su hermano."
+        },
+        {
+          "nombre": "Kada",
+          "rol": "Jefe de los semiorcos del bajo mundo de Puerto Corona. Elegantemente vestido y con la calma del que maneja el lugar. Acepta acudir al llamado de Iron Keep para retomar la fortaleza, pero desconfía: no cree que un gobierno de humanos junte a todos los clanes sin pedir algo a cambio."
+        },
+        {
+          "nombre": "Wine",
+          "rol": "Muchacho de unos veintisiete años, desprolijo y decolorado, el carismático de las alcantarillas: el que saluda a todos y lleva y trae. Vende información por monedas de cobre y sabe exactamente cómo tiene que verse un orco en los barrios bajos para que la guardia mire hacia otro lado."
+        },
+        {
+          "nombre": "Juno y Maui",
+          "rol": "Gemelos, ex pacificadores que perdieron el título pero siguen luciendo el eslabón. Administran los juicios y los castigos en la plaza central de Puerto Corona, donde hay un cadalso permanente y las causas se definen en el día."
+        },
+        {
+          "nombre": "Sigma y Aldo",
+          "rol": "Los dos talabarteros de Puerto Corona. Sigma es una enana de trenza rojiza y piel demasiado blanca para su raza, de muy buena mano, que le cobra el doble a los humanos porque tiene una cruzada personal con ellos. Aldo es un elfo de unos seiscientos años, pobre pero digno, que termina siendo el primer informante del grupo en la ciudad."
+        },
+        {
+          "nombre": "Los Vientos de Cambio",
+          "rol": "El pesquero que Gunnlod hundió con la balista de proa. Había salido de Elturel, uno de los puertos protegidos de Baldur's Gate, con diecisiete personas a bordo, entre ellas el diplomático Volgani. En el puerto ya circula que fue una bestia marina despertada."
+        },
+        {
+          "nombre": "El Banco de Hierro",
+          "rol": "Lo que los velas negras levantaron mucho antes de esta guerra: conquistaron casi todas las minas de hierro frío y de electrum, acuñaron su propia moneda y asfixiaron al mundo con impuestos y comercio, hasta que hubo pueblos enteros donde solo se podía comerciar con esa moneda."
+        },
+        {
+          "nombre": "El Consejo de los Tres",
+          "rol": "Tres vampiros muy antiguos, guarnecidos en Icewind Dale, convencidos de que todas estas tierras les pertenecen por derecho de antigüedad. Benetton los nombra junto a los velas negras como los que buscan los objetos de poder para dominarlo todo."
+        },
+        {
+          "nombre": "Gorko, Morko y Grun",
+          "rol": "Los clanes que faltan del otro lado del muro. Gorko y Morko son dos hermanos que controlan el espectáculo y las apuestas legales de Waterdeep, y van a ser fáciles de convencer. Grun pertenece a los Grandes Fauces, que creen que Iron Keep entregó el volcán extinto para salvarse, así que con él no hay nada garantizado."
+        },
+        {
+          "nombre": "Los ilícidos",
+          "rol": "Las criaturas oscuras selladas en las cavernas debajo del volcán extinto de Iron Keep. No pueden emerger solas. Quien tomó la fortaleza está buscando justamente eso, y la advertencia de Benetton es tapar los túneles si la recuperan."
+        }
+      ],
+      "dudas": [
+        "Los pacificadores no cierran con lo registrado en la sesión 1. Acá el Master los define como inquisidores que dejaron la Inquisición y quedaron regulando la justicia del plano; en la sesión 1 quedaron anotados como una raza gestada por los elementales durante las Guerras de los Magos, que recolecta las reliquias caídas del semiplano. Pueden ser dos cosas distintas con el mismo nombre: queda para preguntarle al Master.",
+        "Benetton nombra al Consejo de los Tres junto a los velas negras, y por otro lado describe un consejo de tres vampiros guarnecido en Icewind Dale. No queda claro si son lo mismo, ni cómo encaja ahí Babruk, que en la sesión 4 figuraba como el señor oscuro detrás de los velas negras y uno de los nueve magos.",
+        "De los ilícidos no se sabe casi nada: solo que son criaturas oscuras selladas bajo el volcán extinto, que no pueden emerger solas y que no tienen que salir."
+      ]
     }
   ],
   "mapa": {
@@ -1450,7 +1644,7 @@
     "nota": "El mismo mapa de Faerûn que está pinchado en el salón del club. La historia es original del Master y pasa en otros años, pero los nombres son los del mapa real. La línea ámbar es el viaje que hay que hacer; la gris punteada, el encargo personal de Vaegrant (Waterdeep, opcional). Los pines aproximados son lugares originales del Master, ubicados a ojo.",
     "party": {
       "marcadorId": "puerto-corona",
-      "texto": "Fin de la Sesión 5: el Albatros está amarrado en Puerto Corona, uno de los puertos de Waterdeep, disfrazado de pesquero de altamar con dos redes de profundidad y un permiso de Iron Keep. Son cuatro a bordo —Brina no viajó— más Caja, los diez barriles y Gunnlod, el alma del barco, que ahora tiene nombre y come agua. Njröun crece en la bodega. Pendiente: el mensaje de Durin para Crestarroja, que responde a Bragan en la Orden del Guantelete; el bajo mundo por el callejón Goldenfield; y Mhair, que tiene puerto acá. El encargo de Zariff sigue siendo el norte, las islas de Val y el Claro Lunar."
+      "texto": "Fin de la Sesión 6: el Albatros sigue amarrado en Puerto Corona, ahora con la Tortuga Veloz al lado y su capitán vampiro como aliado declarado. Son cuatro a bordo. Pendiente: cruzar a Waterdeep a pie por el pasaje de bribón que solo se ve con luz de luna, entregarle a Gonagal Crestarroja la carta de su hermano Bragan y el mensaje de Durin, y sumar a Gorko, Morko y Grun a la leva de clanes para retomar la fortaleza del volcán extinto. El cryptex sigue sin abrirse: hace falta un faérico."
     },
     "marcadores": [
       {
@@ -1577,7 +1771,8 @@
         "sesiones": [
           1,
           4,
-          5
+          5,
+          6
         ],
         "estado": "confirmado",
         "nota": "Así figura en las viejas cartas. Encargo personal de Durin a Vaegrant, aparte de la misión: si el viaje lo permite, buscar a Gonagal Crestarroja y pedirle que haga circular una vez más el estandarte de los enanos. No es una parada obligada. En la Sesión 4, Zariff leyó el encargo al vuelo: si Durin manda a decirle a Crestarroja que se prepare, es que Durin está alertando a los clanes."
@@ -1725,9 +1920,10 @@
         "y": 23,
         "tipo": "ciudad",
         "sesiones": [
-          5
+          5,
+          6
         ],
-        "nota": "Uno de los puertos de Waterdeep, en una ciudad llamada la Corona del Norte, más grande que Ámbar. Sesenta y cuatro por ciento de humanos, diez de enanos, diez de elfos, cinco de medianos, cinco de medio elfos, tres de gnomos y dos de semiorcos. El gobernador, Zhentarim, es un monigote; el que maneja el puerto es Lerald Silverhand, con una guardia de coraceros. Ahí termina la sesión 5.",
+        "nota": "Uno de los puertos de Waterdeep, en una ciudad llamada la Corona del Norte, más grande que Ámbar. Sesenta y cuatro por ciento de humanos, diez de enanos, diez de elfos, cinco de medianos, cinco de medio elfos, tres de gnomos y dos de semiorcos. El gobernador, Zhentarim, es un monigote; el que maneja el puerto es Lerald Silverhand, con una guardia de coraceros. Ahí termina la sesión 5. En la sesión 6 aparece lo de fondo: Waterdeep la está asfixiando para absorberla, y las separa solo una muralla de cinco metros y una franja de trescientos.",
         "estado": "aproximado"
       }
     ],
@@ -2509,11 +2705,15 @@
     },
     {
       "id": "haddrek",
-      "nombre": "Haddrek",
+      "nombre": "Erlac Haddrek",
       "arquetipo": "Semiorco · Cobrador de Iron Keep",
       "linea": "Recaudador de impuestos de Iron Keep. Banquito contra la puerta, pipa encendida y cara de cansado, esperando que le paguen.",
       "imagen": "/vaegrant-galeria/personaje-haddrek.jpg",
       "rasgos": [
+        {
+          "label": "Nombre",
+          "texto": "Erlac Haddrek. En Puerto Corona se presentó como Erlac y ofreció que le dijeran Ed; el grupo lo llama Haddrek."
+        },
         {
           "label": "Oficio",
           "texto": "Cobrador de Iron Keep. Los de su oficio andan casi solos en barcazas chicas llevando el oro de la recaudación, así que viajan con malla corta y cuero tachonado encima. Tienen que tener aguante."
@@ -2534,35 +2734,6 @@
       "descripcion": [
         "El grupo lo vio antes de saber quién era: dos metros noventa de semiorco sentados en un banquito contra la puerta del Socavón, estirado, mirando para enfrente, con la pipa encendida y el bolsito del cobro al lado. Llevaba tres días ahí, aburrido y de mal humor, esperando que Zariff apareciera a pagar sus impuestos. Fue Jeremy el que se acercó a interrogarlo, y le vino bien la charla: si no, ya los hubiese mandado a la mierda.",
         "Cuando Zariff por fin llegó, disfrazado con un capote de cuero, fue a buscarlo a él primero. Haddrek quedó dentro de la reunión como la parte que escucha y da fe del cobro, y salió con un puesto que no pidió: Zariff lo nombró su llave en los ministerios y en los asuntos exteriores."
-      ]
-    },
-    {
-      "id": "brina",
-      "nombre": "Brina Argentea",
-      "arquetipo": "Druida · Humana",
-      "linea": "Comerciante del archipiélago de Korinn y fiel de Alistair. Entró a la reunión como testigo alquilada por una pieza de plata la hora.",
-      "imagen": "",
-      "rasgos": [
-        {
-          "label": "De dónde",
-          "texto": "Del archipiélago de Korinn, en el extremo norte de las Moonshae: islas rocosas y ventosas, última escala antes de la mar abierta camino a Waterdeep. Es nativa de este plano y vive de los vestigios de mundos antiguos."
-        },
-        {
-          "label": "Fe",
-          "texto": "Fiel creyente de Alistair, el minotauro blanco colosal, líder faérico. Sus tierras son el verde del sur del mapa: acercarse a Ámbar es estar a un cruce de su dios."
-        },
-        {
-          "label": "Oficio",
-          "texto": "Comerciante. La mandan todos los años al festival de la luna nueva y todos los años la agarran para algo. En el Albatros lleva comercio y tesorería, con tasación y bonificación a la diplomacia con los órdenes faéricos."
-        },
-        {
-          "label": "Equipo",
-          "texto": "Bastón y armadura de cuero, clase de armadura 11. Trae kit de herboristería, que a bordo puede montarse como laboratorio: es la que se va a ocupar de mantener vivo a Njröun."
-        }
-      ],
-      "descripcion": [
-        "Zariff la eligió de la calle. Cruzó, fue directo a ella y le pidió una hora de sus servicios como testigo, y el grupo se dio cuenta en el acto de que de imparcial no tenía nada. Ella le puso precio de oficio, una pieza de plata por hora, y el gnomo aceptó y hasta ató el cabo de la media hora de más.",
-        "Quedó adentro de la reunión legalizando lo que se decía, y salió de ahí con trabajo. No fue casualidad: el cryptex solo lo puede abrir un faérico o un representante del orden faérico, y Zariff confía en los pueblos arbóreos. Como él mismo admitió a mitad de charla, fue mucha casualidad haber llamado justo a la señorita que puede comerciar con eso."
       ]
     }
   ]
