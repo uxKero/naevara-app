@@ -64,6 +64,7 @@ data/characters/
 # Ni audios, ni backups, ni transcripciones: son la charla real de la mesa,
 # con nombres de pila y todo lo off-rol adentro. Viven solo en local.
 /sources/Vaegrant/**/images/
+/sources/Vaegrant/**/img/
 /sources/Vaegrant/**/*.ogg
 /sources/Vaegrant/**/*.ogg.json
 /sources/Vaegrant/**/*.txt
