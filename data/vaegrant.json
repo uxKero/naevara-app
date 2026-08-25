@@ -376,21 +376,21 @@
         "destacado": false
       },
       {
-        "nombre": "El Gran Árbol Padre y los Garrahierro (Sesión 7)",
+        "nombre": "El Gran Árbol Padre y los Garradehierro (Sesión 7)",
         "tipo": "Sesión 7 · al noreste de los Picos Perdidos",
-        "texto": "Junto al gran árbol sabio del High Forest vive el clan de los Garrahierro: orcos, goblins, hobgoblins y trolls, bajo el mando de Krenko. Krenko nació en libertad, así que no le debe nada a Omán y desconoce su historia. Está en guerra con los constructos de Hellgate y no está en condiciones de responder a ningún llamado. El precio para que empiece a confiar lo puso el chamán de los Grandes Fauces: que en Waterdeep los orcos pesen más que el elfo que trama todo, y que a ese elfo lo saquen del escondite.",
+        "texto": "Junto al gran árbol sabio del High Forest vive el clan de los Garradehierro: orcos, goblins, hobgoblins y trolls, bajo el mando de Krenko. Krenko nació en libertad, así que no le debe nada a Omán y desconoce su historia. Está en guerra con los constructos de Hellgate y no está en condiciones de responder a ningún llamado. El precio para que empiece a confiar lo puso Grun, de los Grandes Fauces: que en Waterdeep los orcos pesen más que el elfo que trama todo, y que a ese elfo lo saquen del escondite.",
         "destacado": false
       },
       {
         "nombre": "Puerto Corona por arriba (Sesión 7)",
         "tipo": "Sesión 7 · la meseta de los que no se mezclan",
-        "texto": "La parte alta está sobre una meseta y no tiene bloqueo, pero los guardias reales memorizan las caras de los que suben. Las reglas son tres —no faltar el respeto, no delinquir, no armar alboroto— y no son las mismas que rigen en el puerto. Arriba se ostenta: fuentes, animales exóticos, salamandras del tamaño de ponis, y talleres de máquinas de vapor operados por decenas de gnomos, que en esta ciudad son mano de obra barata sin que nadie lo disimule. Es el nivel donde vive Korvon y donde la información se negocia con refrigerios y no con monedas.",
+        "texto": "La parte alta está sobre una meseta y no tiene bloqueo, pero los guardias reales memorizan las caras de los que suben. Las reglas son tres —no faltar el respeto, no delinquir, no armar alboroto— y no son las mismas que rigen en el puerto. Arriba se ostenta: fuentes, animales exóticos, salamandras del tamaño de ponis, y talleres de máquinas de vapor operados por decenas de gnomos, que en esta ciudad son mano de obra barata sin que nadie lo disimule. Es el nivel donde vive Corben y donde la información se negocia con refrigerios y no con monedas.",
         "destacado": false
       },
       {
         "nombre": "Waterdeep por debajo (Sesión 7)",
         "tipo": "Sesión 7 · lo que hay que evitar y a quién hay que buscar",
-        "texto": "Los bajos mundos de Waterdeep están dados vuelta: las leyes cambian y las maneja un solo jefe de gremio, un hombre esquivo del que muchos dicen que no es un hombre, y el que le ve la cara verdadera o le es leal o no vuelve a ver el cielo. Ahí abajo está guardado Cinnungaga, el alma del vacío, y en un astillero escondido le están rearmando el galeón con magia oscura. El único nombre que sirve para moverse es José Antonio de Castel, de las Hojas de la Noche, cuyo emblema es una daga con una media luna encima.",
+        "texto": "Los bajos mundos de Waterdeep están dados vuelta: las leyes cambian y las maneja un solo jefe de gremio, un hombre esquivo del que muchos dicen que no es un hombre, y el que le ve la cara verdadera o le es leal o no vuelve a ver el cielo. Ahí abajo está guardado Ginnungagap, el alma del vacío, y en un astillero escondido le están rearmando el galeón con magia oscura. El único nombre que sirve para moverse es José Antonio de Castel, de las Hojas de la Noche, cuyo emblema es una daga con una media luna encima.",
         "destacado": true
       }
     ],
@@ -1524,10 +1524,10 @@
         },
         {
           "titulo": "Arriba, donde no se mezclan",
-          "texto": "Iscandar sube a la parte media a encargarse un pendón de cuero con el símbolo de su orden. La primera talabartería es la de Sigma, una enana de trenza rojiza y piel demasiado blanca para su raza, que trabaja muy bien y le pide dos piezas de oro. Es un robo, y recién en la tienda siguiente entiende por qué: Sigma tiene una cruzada personal con los humanos y no pensaba atenderlo.\n\nLa segunda es la de Aldo, un elfo de unos seiscientos años que vive pobre pero digno, con pocas herramientas y todas pulidas. Pide cinco piezas de plata y cierra en cuatro más una recomendación, mitad por adelantado y veinticuatro horas de trabajo.\n\nDe ahí sale lo importante. Waterdeep intercepta los cargamentos y no deja que Corona haga compras grandes: se tienen que conformar con la materia prima que les dejan pasar. Iscandar le ofrece cueros finos y algo más útil que dinero —un trato para que el elfo le pase novedades de la ciudad— y a cambio Aldo le deja el medallón gratis. Queda armada la cobertura: un comerciante que busca rutas nuevas, y una contraseña de contacto, que quien venga con la insignia de su dios pregunte por él.\n\nY se lleva el dato que buscaba. Los drow no son bien vistos en Puerto Corona —a veces los asesinan y la guardia no hace nada— pero la mayoría tiene relaciones con la gente de la parte alta. Lo que significa que el que están evitando puede tener bastante más que poder militar.",
+          "texto": "Iscandar sube a la parte media a encargarse un pendón de cuero con el símbolo de su orden. La primera talabartería es la de Sigma, una enana de trenza rojiza y piel demasiado blanca para su raza, que trabaja muy bien y le pide dos piezas de oro. Es un robo, y recién en la tienda siguiente entiende por qué: Sigma tiene una cruzada personal con los humanos y no pensaba atenderlo.\n\nLa segunda es la de Aldor, un elfo de unos seiscientos años que vive pobre pero digno, con pocas herramientas y todas pulidas. Pide cinco piezas de plata y cierra en cuatro más una recomendación, mitad por adelantado y veinticuatro horas de trabajo.\n\nDe ahí sale lo importante. Waterdeep intercepta los cargamentos y no deja que Corona haga compras grandes: se tienen que conformar con la materia prima que les dejan pasar. Iscandar le ofrece cueros finos y algo más útil que dinero —un trato para que el elfo le pase novedades de la ciudad— y a cambio Aldor le deja el medallón gratis. Queda armada la cobertura: un comerciante que busca rutas nuevas, y una contraseña de contacto, que quien venga con la insignia de su dios pregunte por él.\n\nY se lleva el dato que buscaba. Los drow no son bien vistos en Puerto Corona —a veces los asesinan y la guardia no hace nada— pero la mayoría tiene relaciones con la gente de la parte alta. Lo que significa que el que están evitando puede tener bastante más que poder militar.",
           "dialogo": [
             {
-              "quien": "Aldo",
+              "quien": "Aldor",
               "texto": "Waterdeep sigue interceptando los cargamentos, no nos deja hacer compras grandes. Nos tenemos que conformar con la materia prima que ellos deciden que nosotros tengamos."
             },
             {
@@ -1538,7 +1538,7 @@
         },
         {
           "titulo": "Los que viven abajo",
-          "texto": "Haddrek pregunta por los barrios bajos y nadie le contesta, hasta que alguien le chista desde un pasillo. Es Wine, un muchacho de veintisiete años, desprolijo y decolorado, que le vende la información por media pieza de cobre. Antes de guiarlo le tuerce la mano y se la pone en el cuello contra la pared, para que dos guardias que pasan vean a un orco golpeando y no a un orco negociando. Los guardias miran y siguen de largo.\n\nLa entrada es una boca de tormenta con una palanca en forma de antorcha de piedra. Abajo hay una enrejada enorme de túneles y desagües donde viven los orcos y los semiorcos de Puerto Corona, tratados literalmente como desechos. La guardia sabe que están ahí y no se mete: saben que es un caldo de cultivo y prefieren no tener problemas. El lugar se sostiene con apuestas ilegales y una jaula de peleas donde a veces se muere gente.\n\nEl jefe de los semiorcos de abajo es Kada, elegantemente vestido, que se sienta frente a él y lo deja cinco segundos en silencio antes de hablar. Cuando Haddrek dice que viene de Iron Keep y que una fortaleza cayó, el semblante le cambia: pensaba que eran habladurías. Acepta acudir al llamado, pero con su condición dicha de frente —libera a sus hermanos y se vuelve a Corona— y con su desconfianza también.\n\nDe ahí sale el mapa de los clanes que faltan. Gorko y Morko, dos hermanos que controlan el espectáculo legal del otro lado del muro, fáciles de convencer con las palabras justas. Grun, de los Grandes Fauces, mucho más difícil: los Grandes Fauces creen que Iron Keep entregó el volcán extinto para salvarse. Y un chamán orco de esa misma gente que tiene contacto con los Garra de Hierro, en los Picos Perdidos del High Forest.",
+          "texto": "Haddrek pregunta por los barrios bajos y nadie le contesta, hasta que alguien le chista desde un pasillo. Es Wine, un muchacho de veintisiete años, desprolijo y decolorado, que le vende la información por media pieza de cobre. Antes de guiarlo le tuerce la mano y se la pone en el cuello contra la pared, para que dos guardias que pasan vean a un orco golpeando y no a un orco negociando. Los guardias miran y siguen de largo.\n\nLa entrada es una boca de tormenta con una palanca en forma de antorcha de piedra. Abajo hay una enrejada enorme de túneles y desagües donde viven los orcos y los semiorcos de Puerto Corona, tratados literalmente como desechos. La guardia sabe que están ahí y no se mete: saben que es un caldo de cultivo y prefieren no tener problemas. El lugar se sostiene con apuestas ilegales y una jaula de peleas donde a veces se muere gente.\n\nEl jefe de los semiorcos de abajo es Kada, elegantemente vestido, que se sienta frente a él y lo deja cinco segundos en silencio antes de hablar. Cuando Haddrek dice que viene de Iron Keep y que una fortaleza cayó, el semblante le cambia: pensaba que eran habladurías. Acepta acudir al llamado, pero con su condición dicha de frente —libera a sus hermanos y se vuelve a Corona— y con su desconfianza también.\n\nDe ahí sale el mapa de los clanes que faltan. Gorko y Morko, dos hermanos que controlan el espectáculo legal del otro lado del muro, fáciles de convencer con las palabras justas. Grun, de los Grandes Fauces, mucho más difícil: los Grandes Fauces creen que Iron Keep entregó el volcán extinto para salvarse. Y un chamán orco de esa misma gente que tiene contacto con los Garradehierro, en los Picos Perdidos del High Forest.",
           "dialogo": [
             {
               "quien": "Wine",
@@ -1643,8 +1643,8 @@
           "rol": "Gemelos, ex pacificadores que perdieron el título pero siguen luciendo el eslabón. Administran los juicios y los castigos en la plaza central de Puerto Corona, donde hay un cadalso permanente y las causas se definen en el día."
         },
         {
-          "nombre": "Sigma y Aldo",
-          "rol": "Los dos talabarteros de Puerto Corona. Sigma es una enana de trenza rojiza y piel demasiado blanca para su raza, de muy buena mano, que le cobra el doble a los humanos porque tiene una cruzada personal con ellos. Aldo es un elfo de unos seiscientos años, pobre pero digno, que termina siendo el primer informante del grupo en la ciudad."
+          "nombre": "Sigma y Aldor",
+          "rol": "Los dos talabarteros de Puerto Corona. Sigma es una enana de trenza rojiza y piel demasiado blanca para su raza, de muy buena mano, que le cobra el doble a los humanos porque tiene una cruzada personal con ellos. Aldor es un elfo de unos seiscientos años, pobre pero digno, que termina siendo el primer informante del grupo en la ciudad."
         },
         {
           "nombre": "Los Vientos de Cambio",
@@ -1778,7 +1778,7 @@
         },
         {
           "titulo": "Un barco viejo y con flores",
-          "texto": "Amanece con movimiento portuario antes del alba: campanas anunciando los pesqueros, aves sobre la pesca nueva. Cuando se despiertan, el Albatros está otro. Los herrajes de hierro oscuro tienen óxido y descascarado, la pintura agrietada, percebes por todos lados, algas colgando de la proa. Y en cada hendija de la cubierta, brotes de manzanilla. El barco está desmejorado y huele a flor de durazno.\n\nHaddrek, con el tricornio puesto, siente lo que siente ella: incomodidad. A Gunnlod no le gusta vestirse mal, aunque entienda para qué.\n\nSuena un cuerno desde los barcos: la Tortuga Veloz parte al alba, como estaba dicho. Y con el cuerno se va también el único aliado que los podía cubrir en alta mar.\n\nRecién ahí Iscandar se entera de la noche. La conversación es larga y termina en una sola regla, que es la que se lleva la mesa: arriba del barco, cualquier acción se para cinco segundos y se piensa de nuevo. No es una discusión sobre culpas —el punto que insiste es que las cosas no pasan porque uno las permita o deje de permitirlas: pasan— y de ahí sale lo que a él le importa, que una mala decisión termina siempre en alguien que sufre.\n\nY entonces aparece lo que la noche había traído de verdad. El hermano del vacío, Cinnungaga, está en los bajos fondos de Waterdeep. No está su barco: está él, el núcleo, guardado. Su galeón fue destruido hace más de seiscientos años y del otro lado del muro están juntando los pedazos y reponiendo con magia oscura lo que falta, en un astillero escondido. Cinnungaga fue el primero de los cinco en nacer, antes que la tierra, que el fuego, que el viento y que el agua. No tiene el concepto de bien y de mal que tienen ellos. Es caprichoso y es voraz.\n\nEl plan no cambia, solo se pone más caro: siguen yendo a Waterdeep, y de acá en adelante hay que extremar la cautela.",
+          "texto": "Amanece con movimiento portuario antes del alba: campanas anunciando los pesqueros, aves sobre la pesca nueva. Cuando se despiertan, el Albatros está otro. Los herrajes de hierro oscuro tienen óxido y descascarado, la pintura agrietada, percebes por todos lados, algas colgando de la proa. Y en cada hendija de la cubierta, brotes de manzanilla. El barco está desmejorado y huele a flor de durazno.\n\nHaddrek, con el tricornio puesto, siente lo que siente ella: incomodidad. A Gunnlod no le gusta vestirse mal, aunque entienda para qué.\n\nSuena un cuerno desde los barcos: la Tortuga Veloz parte al alba, como estaba dicho. Y con el cuerno se va también el único aliado que los podía cubrir en alta mar.\n\nRecién ahí Iscandar se entera de la noche. La conversación es larga y termina en una sola regla, que es la que se lleva la mesa: arriba del barco, cualquier acción se para cinco segundos y se piensa de nuevo. No es una discusión sobre culpas —el punto que insiste es que las cosas no pasan porque uno las permita o deje de permitirlas: pasan— y de ahí sale lo que a él le importa, que una mala decisión termina siempre en alguien que sufre.\n\nY entonces aparece lo que la noche había traído de verdad. El hermano del vacío, Ginnungagap, está en los bajos fondos de Waterdeep. No está su barco: está él, el núcleo, guardado. Su galeón, la Virgen Marchita, fue destruido hace más de seiscientos años y del otro lado del muro están juntando los pedazos y reponiendo con magia oscura lo que falta, en un astillero escondido. Ginnungagap fue el primero de los cinco en nacer, antes que la tierra, que el fuego, que el viento y que el agua. No tiene el concepto de bien y de mal que tienen ellos. Es caprichoso y es voraz.\n\nEl plan no cambia, solo se pone más caro: siguen yendo a Waterdeep, y de acá en adelante hay que extremar la cautela.",
           "dialogo": [
             {
               "quien": "Iscandar",
@@ -1790,7 +1790,7 @@
             },
             {
               "quien": "Gunnlod",
-              "texto": "Cinnungaga no tiene el concepto de bien y mal como tienen ustedes. Es de carácter caprichoso y es voraz."
+              "texto": "Ginnungagap no tiene el concepto de bien y mal como tienen ustedes. Es de carácter caprichoso y es voraz."
             },
             {
               "quien": "Iscandar",
@@ -1800,14 +1800,14 @@
         },
         {
           "titulo": "El enano del reloj de arena",
-          "texto": "Se dividen en dos parejas: es más fácil juntarse de a dos que de a cuatro. Iscandar y Jeremy se quedan en Puerto Corona; Vaegrant y Haddrek cruzan el muro. Se citan a la caída del sol, siete u ocho de la tarde, en el pasaje.\n\nIscandar pasa primero por la talabartería de la zona media a buscar el pendón encargado. El trabajo es delicado y de muy buena calidad, y el elfo, curioso, pregunta por qué tanta gala. La respuesta es la doctrina entera del personaje: los ricos responden a una sola cosa, el buen gobierno, y si alguien que parece noble les muestra respeto, sueltan. Lo sabe porque su padre se pasó la vida haciendo exactamente eso.\n\nEl elfo le devuelve el favor con un nombre. Nadie tiene más información en una ciudad que la gente que la maneja: si van a hacer negocios en la zona alta, que hablen con Korvon, un hombre acaudalado que hizo su fortuna con las perlas y tiene el favor de los comerciantes finos. Que vaya de su parte.\n\nArriba, la parte alta está sobre una meseta y no hay bloqueo, pero los guardias reales memorizan caras. Un capitán de placa plateada con un león en el pecho los frena para darles la bienvenida y las tres reglas: no faltar el respeto, no delinquir y no armar alboroto. Las reglas del puerto y de la parte baja, aclara, no son las mismas de acá.\n\nLa casa de Korvon se reconoce desde lejos por la torre: un reloj de arena gigantesco, más grande que la casa, con un mecanismo que lo gira solo. En el patio hay fuentes, animales exóticos y salamandras del tamaño de ponis. Adentro, un taller de máquinas de vapor trabajando todas a la vez y decenas de gnomos operándolas: en esta ciudad el gnomo es mano de obra barata y nadie lo disimula.\n\nKorvon es el único enano de todo Faerûn vestido de forma ostentosa: anillos de piedra y plata, chaquetilla azul de botones dorados, pipa de marfil. Discuten sin ponerse de acuerdo sobre si lo bello y lo bien hecho son la misma cosa —para él, de dos barcos que flotan igual se vende primero el más bello— y pasan a la oficina, que es la única habitación austera de la casa.\n\nEl negocio que Iscandar le propone es una línea de comercio a lo largo del Mar de las Espadas hasta las Puertas de Baldur, con dos niveles: mercancías —telas, especias y gemas del sur— e información. Un correo marítimo, que no existe en la zona. Korvon le señala el agujero enseguida: para eso hace falta una flota, no uno o dos barcos. Iscandar le contesta con la pregunta que cierra el trato —cuánto pagaría por tener en una semana la información que su competencia va a tener en un mes y medio— y le promete el barco más rápido que vio el mar. Cuando el enano supone que habla de la Santa María y le dicen que no, el semblante le cambia.\n\nLa segunda mitad la cobra Korvon: quiere saber qué está pasando con Waterdeep, y sobre todo qué tan metida está ahí la cofradía de las velas negras. Iscandar le paga con el drow —veinte años atrás era un nadie en los gremios y hoy tiene poder— y el enano sabe de quién le hablan sin que le den el nombre.\n\nLo que devuelve vale más. El drow es perspicaz, huele el peligro y por eso va siempre adelante; y se dice que tiene un consejero al que nadie vio nunca, un oráculo capaz de profetizar una traición, llamado Anton de Lake. Que traten de eludirlo y de no transitar los mismos lugares. Y que no bajen jamás a los bajos mundos de Waterdeep, donde las leyes están dadas vuelta: eso lo maneja un solo jefe de gremio, un hombre esquivo que muchos dicen que no es un hombre, y el que le ve la cara verdadera ve el cielo por última vez.\n\nDe ahí sale el salvoconducto. Un nombre para tocar puertas del otro lado: José Antonio de Castel, de una pequeña sociedad llamada las Hojas de la Noche, cuyo emblema es una daga con una media luna encima. Que vaya de su parte, que va a entender.",
+          "texto": "Se dividen en dos parejas: es más fácil juntarse de a dos que de a cuatro. Iscandar y Jeremy se quedan en Puerto Corona; Vaegrant y Haddrek cruzan el muro. Se citan a la caída del sol, siete u ocho de la tarde, en el pasaje.\n\nIscandar pasa primero por la talabartería de la zona media a buscar el pendón encargado. El trabajo es delicado y de muy buena calidad, y el elfo, curioso, pregunta por qué tanta gala. La respuesta es la doctrina entera del personaje: los ricos responden a una sola cosa, el buen gobierno, y si alguien que parece noble les muestra respeto, sueltan. Lo sabe porque su padre se pasó la vida haciendo exactamente eso.\n\nEl elfo le devuelve el favor con un nombre. Nadie tiene más información en una ciudad que la gente que la maneja: si van a hacer negocios en la zona alta, que hablen con Corben, un hombre acaudalado que hizo su fortuna con las perlas y tiene el favor de los comerciantes finos. Que vaya de su parte.\n\nArriba, la parte alta está sobre una meseta y no hay bloqueo, pero los guardias reales memorizan caras. Un capitán de placa plateada con un león en el pecho los frena para darles la bienvenida y las tres reglas: no faltar el respeto, no delinquir y no armar alboroto. Las reglas del puerto y de la parte baja, aclara, no son las mismas de acá.\n\nLa casa de Corben se reconoce desde lejos por la torre: un reloj de arena gigantesco, más grande que la casa, con un mecanismo que lo gira solo. Los jardineros los frenan en el patio, entre fuentes, animales exóticos y salamandras del tamaño de ponis, y ahí Iscandar se presenta con todo el peso de la casa Selindar y del culto de la Fetron, que es la llave que abre la puerta. Adentro, un taller de máquinas de vapor trabajando todas a la vez y decenas de gnomos operándolas: en esta ciudad el gnomo es mano de obra barata y nadie lo disimula.\n\nCorben es el único enano de todo Faerûn vestido de forma ostentosa: anillos de piedra y plata, chaquetilla azul de botones dorados, pipa de marfil. Discuten sin ponerse de acuerdo sobre si lo bello y lo bien hecho son la misma cosa —para él, de dos barcos que flotan igual se vende primero el más bello— y pasan a la oficina, que es la única habitación austera de la casa. Iscandar presenta a Jeremy por su segundo nombre, James, y aclara que se puede hablar delante de él.\n\nEl negocio que Iscandar le propone es una línea de comercio a lo largo del Mar de las Espadas hasta las Puertas de Baldur, con dos niveles: mercancías —telas, especias y gemas del sur— e información. Un correo marítimo, que no existe en la zona. Corben le señala el agujero enseguida: para eso hace falta una flota, no uno o dos barcos. Iscandar le contesta con la pregunta que cierra el trato —cuánto pagaría por tener en una semana la información que su competencia va a tener en un mes y medio— y le promete el barco más rápido que vio el mar. Cuando el enano supone que habla de la Santa María y le dicen que no, el semblante le cambia.\n\nLa segunda mitad la cobra Corben: quiere saber qué está pasando con Waterdeep, y sobre todo qué tan metida está ahí la cofradía de las velas negras. Iscandar le paga con el drow —veinte años atrás era un nadie en los gremios y hoy tiene poder— y el enano sabe de quién le hablan sin que le den el nombre.\n\nLo que devuelve vale más. El drow es perspicaz, huele el peligro y por eso va siempre adelante; y se dice que tiene un consejero al que nadie vio nunca, un oráculo capaz de profetizar una traición, llamado Anton de Lake. Que traten de eludirlo y de no transitar los mismos lugares. Y que no bajen jamás a los bajos mundos de Waterdeep, donde las leyes están dadas vuelta: eso lo maneja un solo jefe de gremio, un hombre esquivo que muchos dicen que no es un hombre, y el que le ve la cara verdadera o le es leal, o ve el cielo por última vez.\n\nY después le da el nombre de ese mismo hombre, que es lo más caro que suelta en toda la tarde: José Antonio de Castel, de una pequeña sociedad llamada las Hojas de la Noche, cuyo emblema es una daga con una media luna encima. Que vaya de su parte, que va a entender. Ese es el salvoconducto para transitar Waterdeep, aclara, no una garantía de que ahí adentro les vaya bien.",
           "dialogo": [
             {
               "quien": "Iscandar",
               "texto": "Los ricos solo responden a una cuestión, que es el buen gobierno. Si alguien que parece noble les muestra respeto, van a soltar siempre. Lo sé porque mi padre pasó mucho tiempo haciendo eso."
             },
             {
-              "quien": "Korvon",
+              "quien": "Corben",
               "texto": "Cualquier barco es igual de eficiente, ambos flotan. Ahora, el más bello se va a vender primero."
             },
             {
@@ -1819,15 +1819,15 @@
               "texto": "Si veo las calles manchadas de sangre, compro propiedades."
             },
             {
-              "quien": "Korvon",
+              "quien": "Corben",
               "texto": "Se dice que tiene un consejero, nadie lo vio. Alguien que puede profetizar una traición. Anton de Lake. Es un oráculo."
             },
             {
-              "quien": "Korvon",
+              "quien": "Corben",
               "texto": "Nunca vaya a los bajos mundos. Ahí las leyes cambian y están de cabeza. Aquellos que ven su verdadero rostro son leales a él, o es la última vez que ven el cielo con sus propios ojos."
             },
             {
-              "quien": "Korvon",
+              "quien": "Corben",
               "texto": "El nombre del sujeto es José Antonio de Castel. Pertenece a una pequeña sociedad llamada Hojas de la Noche y su emblema es una daga con una media luna arriba."
             }
           ]
@@ -1856,30 +1856,30 @@
         },
         {
           "titulo": "La guerra vieja",
-          "texto": "En la casa principal los espera un orco entrado en años, trenzas largas ya canosas y un moño alto en la cabeza, más samurái que jefe de horda. Es el chamán de los Grandes Fauces.\n\nHaddrek se presenta como Erlak, dice que viene de Iron Keep, que lo manda Omán y saca el estandarte. No le hace falta explicar mucho más: el viejo ya sabe que Omán está en peligro. La fortaleza del volcán extinto cayó y él viene a juntar las hordas para recuperarla. Los Grandes Fauces estarán. La razón la dice sin adornos: son incondicionales ante Omán, que les regaló la libertad. No ante Iron Keep.\n\nY ahí se abre la historia que faltaba. Hellgate fue una ciudad élfica muy prominente hasta que la gente de Iron Keep empezó a tomar posiciones en el High Forest y en el Mar de las Espadas: así se formó Iron Keep. Al darles la libertad a los orcos se ganó la lealtad de los orcos, pero los elfos quedaron en contra —para ellos los orcos eran mano de obra barata y nada más—. Los orcos los estaban aplastando, así que los elfos cruzaron su conocimiento con el de los humanos y aparecieron con tecnología: empezaron a arrasar aldeas y clanes enteros hasta que se formó la resistencia de Krenko, que hizo guerra de guerrillas y les fue robando la tecnología a los propios elfos. Iron Keep, mientras tanto, se desarrolló sola en el mar y dejó todo eso como tierra de nadie. De ahí que haya muchos orcos a favor de Omán y muy pocos a favor de Iron Keep.\n\nLa guerra sigue abierta y ahora es peor. Hellgate está tomada por una raza de constructos que está conquistando el High Forest de a pedazos, y Krenko está resistiendo. Por eso el clan que Haddrek necesita no está en condiciones de responder a ningún llamado: son los Garrahierro, orcos, goblins, hobgoblins y trolls, y viven al noreste de los Picos Perdidos, junto al gran árbol sabio, el Gran Árbol Padre. Krenko nació en libertad, así que la historia de Omán le queda lejos.\n\nEl chamán también tiene el mapa completo de la cofradía. Los velas negras empezaron siendo simples barcazas de comercio y su punto fuerte es el hierro frío. Quieren Waterdeep; necesitan Puerto Corona por los yacimientos de sus minas; quieren Iron Keep por el control de los mares; y necesitan un puerto fuerte en el sur para poder llegar tranquilos a Chult y destruir Chult. Por aire todavía no pueden: no controlan los pasos voladores. Solo tienen al Barón Rojo, que está en manos de las brujas, y de las brujas se dice que están controladas por algo más. Los jefes de cabecera de medio mundo están enterados de todo esto y no se mueve nadie: están esperando a que otro haga el primer movimiento.\n\nY entonces le pone precio a Krenko. Que le muevan el piso al elfo que está tramando todo en Waterdeep, que lo saquen del escondite y le hagan perder su poder de ocultación; que logren que los orcos de adentro tengan más peso que él. Si eso pasa, Krenko va a empezar a confiar.\n\nLes presta un par de soldados con monturas para volver rápido a Puerto Corona antes de que caiga el sol. Antes de irse, Vaegrant pide recorrer la fortaleza: le interesa el chamanismo orco, que es magia salvaje canalizada como la de un clérigo, y es la primera vez en su vida que está dentro de una fortaleza.",
+          "texto": "En la casa principal los espera un orco entrado en años, trenzas largas ya canosas y un moño alto en la cabeza, más samurái que jefe de horda. Es Grun, el chamán que dirige a los Grandes Fauces.\n\nHaddrek se presenta con su nombre, Erlac, dice que viene de Iron Keep, que lo manda Omán y saca el estandarte. No le hace falta explicar mucho más: el viejo ya sabe que Omán está en peligro. La fortaleza del volcán extinto cayó y él viene a juntar las hordas para recuperarla. Los Grandes Fauces estarán. La razón la dice sin adornos: son incondicionales ante Omán, que les regaló la libertad. No ante Iron Keep.\n\nY ahí se abre la historia que faltaba. Hellgate fue una ciudad élfica muy prominente hasta que la gente de Iron Keep empezó a tomar posiciones en el High Forest y en el Mar de las Espadas: así se formó Iron Keep. Al darles la libertad a los orcos se ganó la lealtad de los orcos, pero los elfos quedaron en contra —para ellos los orcos eran mano de obra barata y nada más—. Los orcos los estaban aplastando, así que los elfos cruzaron su conocimiento con el de los humanos y aparecieron con tecnología: empezaron a arrasar aldeas y clanes enteros hasta que se formó la resistencia de Krenko, que hizo guerra de guerrillas y les fue robando la tecnología a los propios elfos. Iron Keep, mientras tanto, se desarrolló sola en el mar y dejó todo eso como tierra de nadie. De ahí que haya muchos orcos a favor de Omán y muy pocos a favor de Iron Keep.\n\nLa guerra sigue abierta y ahora es peor. Hellgate está tomada por una raza de constructos que está conquistando el High Forest de a pedazos, y Krenko está resistiendo. Por eso el clan que Haddrek necesita no está en condiciones de responder a ningún llamado: son los Garradehierro, orcos, goblins, hobgoblins y trolls, y viven al noreste de los Picos Perdidos, junto al gran árbol sabio, el Gran Árbol Padre. Krenko nació en libertad, así que la historia de Omán le queda lejos.\n\nGrun también tiene el mapa completo de la cofradía. Los velas negras empezaron siendo simples barcazas de comercio y su punto fuerte es el hierro frío. Quieren Waterdeep; necesitan Puerto Corona por los yacimientos de sus minas; quieren Iron Keep por el control de los mares; y necesitan un puerto fuerte en el sur para poder llegar tranquilos a Chult y destruir Chult. Por aire todavía no pueden: no controlan los pasos voladores. Solo tienen al Barón Rojo, que está en manos de las brujas, y de las brujas se dice que están controladas por algo más. Los jefes de cabecera de medio mundo están enterados de todo esto y no se mueve nadie: están esperando a que otro haga el primer movimiento.\n\nY entonces le pone precio a Krenko. Que le muevan el piso al elfo que está tramando todo en Waterdeep, que lo saquen del escondite y le hagan perder su poder de ocultación; que logren que los orcos de adentro tengan más peso que él. Si eso pasa, Krenko va a empezar a confiar.\n\nLes presta un par de soldados con monturas para volver rápido a Puerto Corona antes de que caiga el sol. Antes de irse, Vaegrant pide recorrer la fortaleza: le interesa el chamanismo orco, que es magia salvaje canalizada como la de un clérigo, y es la primera vez en su vida que está dentro de una fortaleza.",
           "dialogo": [
             {
-              "quien": "El chamán",
+              "quien": "Grun",
               "texto": "Nosotros somos incondicionales ante Omán. Nos regalaron la libertad."
             },
             {
-              "quien": "El chamán",
+              "quien": "Grun",
               "texto": "Es una guerra muy antigua la que se está peleando. Al regalarle la libertad a los orcos lograron la lealtad de los orcos, pero los elfos estaban en contra. Decían que éramos solamente buena mano de obra barata."
             },
             {
-              "quien": "El chamán",
+              "quien": "Grun",
               "texto": "Iron Keep se desarrolló sola en el mar, dejando que acá sea tierra de nadie."
             },
             {
-              "quien": "El chamán",
+              "quien": "Grun",
               "texto": "El interés de los velas negras está en Waterdeep, pero también necesitan tomar Puerto Corona por los yacimientos de minerales. Y el interés sobre Iron Keep es el control de los mares. También necesitan algún puerto fuerte en el sur para poder llegar tranquilamente a Chult y destruir Chult."
             },
             {
-              "quien": "El chamán",
+              "quien": "Grun",
               "texto": "Todos están a la espera de que alguien mueva la primera pieza. Nadie quiere pisar en falso, nada más."
             },
             {
-              "quien": "El chamán",
+              "quien": "Grun",
               "texto": "Muevan el piso al elfo que está tramando todo. Háganlo salir de su escondite, pónganlo al descubierto. Y Krenko seguro va a aceptar algún trato."
             }
           ]
@@ -1899,36 +1899,36 @@
           "rol": "El hermano del viento, la oveja negra de los cinco. Anda girando en alta mar, hacia el norte o hacia el sur, sin interés en acercarse. Entre hermanos no hay palabras: solo se sienten."
         },
         {
-          "nombre": "Cinnungaga",
-          "rol": "El hermano del vacío y el primero de los cinco en nacer. No tiene el concepto de bien y de mal; es caprichoso y voraz. Su galeón fue destruido hace más de seiscientos años y en un astillero escondido de Waterdeep están juntando los pedazos y reponiendo con magia oscura lo que falta. Él, el núcleo, está guardado en los bajos fondos de la ciudad."
+          "nombre": "Ginnungagap",
+          "rol": "El hermano del vacío y el primero de los cinco en nacer. No tiene el concepto de bien y de mal; es caprichoso y voraz. Su galeón, la Virgen Marchita, fue destruido hace más de seiscientos años, y en un astillero escondido de Waterdeep están juntando los pedazos y reponiendo con magia oscura lo que falta. Él, el núcleo, está guardado en los bajos fondos de la ciudad."
         },
         {
           "nombre": "Alistair",
           "rol": "El nombre bajo el que están los cinco elementos: los tiene bajo control y dominio. Es el mismo ante el que Benetton se arrodilló para prometer que iba a terminar el trabajo."
         },
         {
-          "nombre": "Korvon",
+          "nombre": "Corben",
           "rol": "El enano más ostentoso de Faerûn: anillos de piedra y plata, chaquetilla azul de botones dorados y pipa de marfil. Hizo fortuna con las perlas y tiene el favor de los comerciantes finos de la parte alta de Puerto Corona. Su casa se reconoce por una torre con un reloj de arena más grande que la casa. Socio de Iscandar en una línea de comercio de mercancías e información."
         },
         {
           "nombre": "Anton de Lake",
-          "rol": "El consejero del drow de Waterdeep. Nadie lo vio nunca. Un oráculo capaz de profetizar una traición, y la razón por la que el drow siempre va un paso adelante."
+          "rol": "El consejero del drow de Waterdeep: un oráculo capaz de profetizar una traición. Nadie lo vio nunca, y es la razón por la que el drow siempre va un paso adelante y huele el peligro antes de que llegue."
         },
         {
           "nombre": "José Antonio de Castel · Hojas de la Noche",
-          "rol": "El contacto que dio Korvon para moverse en Waterdeep, de una pequeña sociedad llamada las Hojas de la Noche, cuyo emblema es una daga con una media luna encima. Es el salvoconducto para transitar, no una garantía de buenos negocios."
+          "rol": "El jefe del bajo mundo de Waterdeep, donde las leyes están dadas vuelta. Un hombre esquivo del que muchos dicen que no es un hombre: el que le ve la cara verdadera o le es leal, o no vuelve a ver el cielo. Manda una pequeña sociedad llamada las Hojas de la Noche, cuyo emblema es una daga con una media luna encima. Corben lo dio como salvoconducto para transitar Waterdeep, que no es lo mismo que una garantía."
         },
         {
           "nombre": "Argol y Ungor",
           "rol": "Dos hermanos orcos del pueblo de los Grandes Fauces. Retaron a Vaegrant a un combate por diez piezas de oro y, al quedar postergado, Ungor se cortó una trenza y se la entregó: mientras la tenga, el reto está pendiente y ningún otro orco puede lastimarlo antes. Si gana el elfo, mil piezas de oro; si gana el orco, cien."
         },
         {
-          "nombre": "El chamán de los Grandes Fauces",
-          "rol": "Orco entrado en años, trenzas canosas y moño alto, más samurái que jefe de horda. Dirige el pueblo orco del bosque y otorga los permisos. Responde al llamado de Omán sin dudarlo, pero deja clara la diferencia: son incondicionales ante Omán, no ante Iron Keep. Es quien pone precio a la alianza con Krenko."
+          "nombre": "Grun",
+          "rol": "El líder de los Grandes Fauces: orco entrado en años, trenzas canosas y moño alto, más samurái que jefe de horda. Dirige el pueblo orco del bosque y otorga los permisos. Responde al llamado de Omán sin dudarlo, pero deja clara la diferencia: son incondicionales ante Omán, no ante Iron Keep. Es quien pone precio a la alianza con Krenko."
         },
         {
-          "nombre": "Krenko y los Garrahierro",
-          "rol": "El clan del noreste de los Picos Perdidos, junto al Gran Árbol Padre, en el High Forest: orcos, goblins, hobgoblins y trolls. Krenko nació en libertad y no le debe nada a Omán. Levantó la resistencia contra los elfos con guerra de guerrillas y les fue robando la tecnología. Hoy está en guerra y no puede responder a ningún llamado."
+          "nombre": "Krenko y los Garradehierro",
+          "rol": "El clan del noreste de los Picos Perdidos, junto al Gran Árbol Padre, en el High Forest: orcos, goblins, hobgoblins y trolls. Krenko nació en libertad y no le debe nada a Omán. Levantó la resistencia contra los elfos con guerra de guerrillas y les fue robando la tecnología. Hoy está en guerra con los constructos de Hellgate y no puede responder a ningún llamado. No confundir con los Garra de Hierro del norte, que son otro clan."
         },
         {
           "nombre": "Hellgate y los constructos",
@@ -1936,14 +1936,10 @@
         }
       ],
       "dudas": [
-        "El nombre del hermano del vacío se escuchó como «Cinnungaga» y también como «Quinungaga»: queda escrito de la primera forma hasta confirmarlo en mesa. El nombre de su galeón destruido tampoco quedó claro (sonó como «la Virgen Manchita»). Y del quinto hermano, el de tierra, todavía no se dijo el nombre.",
-        "Sobre el hermano del viento hubo dos versiones en la misma noche: el Master deletreó «Illevor», pero antes se había mencionado «Hildebrand». Puede ser el nombre del hermano y el de su barco, o una confusión de mesa.",
-        "El talabartero elfo de la zona media viene anotado como «Aldo» desde la sesión 6, pero en la sesión 7 el Master lo llama «Aldor» de punta a punta. Igual el enano de la parte alta: primero suena «Corben» y después «Korvon» toda la escena. Hace falta fijar las dos grafías.",
-        "No quedó claro si Anton de Lake es el nombre del oráculo consejero o el del propio drow de Waterdeep. Y el jefe del bajo mundo de Waterdeep aparece dos veces sin cerrar: Korvon habla de un jefe de gremio esquivo «que muchos dicen que no es un hombre», y por otro lado da a José Antonio de Castel de las Hojas de la Noche. Puede ser la misma persona o dos distintas.",
-        "Al chamán de los Grandes Fauces no se le escuchó bien el nombre. En la sesión 6 quedó anotado «Grun» como el líder de ese clan, así que podría ser él mismo.",
-        "El clan del High Forest quedó como «Garra de Hierro» en la sesión 4 y como «Garrahierro» en la 7, cuando el Master corrigió la pronunciación en mesa. Igual con el pasaje de la muralla: «pasaje de bribón» en la sesión 6, «pasaje del hurón» en la 7.",
-        "Haddrek sigue dando nombres distintos según con quién habla: «Erlac, puede decirme Ed» en la sesión 6, «Herbert, puede decirme Herb» a Pyros, y «Erlak» al chamán. Falta saber cuál es el real y cuáles son coartada. Iscandar, por su lado, presentó a Jeremy como «James» ante Korvon, que es el alias que se había bajado del canon en la sesión 4 por ser joda de mesa: acá se usó en personaje.",
-        "En la presentación ante Korvon, Iscandar nombró su ciudad de origen, su familia y su dios, y las tres cosas sonaron distinto a lo registrado (se escuchó «Irpunta», «los Serith» y «el culto a Dron», contra la casa Selindar y la Fetron del canon). Puede ser coartada o transcripción."
+        "Del quinto hermano elemental, el de tierra, todavía no se dijo el nombre. De los otros cuatro ya están los cuatro: Ginnungagap el vacío, Pyros el fuego, Illevor el viento y Gunnlod el agua.",
+        "El pasaje de la muralla se escuchó como «del hurón» en esta sesión y como «de bribón» en la sesión 6. Queda «de bribón», que es lo registrado, hasta que alguien lo diga de nuevo en mesa.",
+        "Corben dijo que el drow tiene un consejero oráculo llamado Anton de Lake, y por otro lado Benetton había nombrado al Consejo de los Tres. No se sabe si hay relación entre el oráculo y ese consejo, ni cómo encaja Babruk, que en la sesión 4 figuraba como el señor oscuro detrás de los velas negras.",
+        "Grun mandó mover el piso al elfo de Waterdeep para que Krenko empiece a confiar, pero no dijo cómo se hace eso ni qué cuenta como suficiente. Tampoco quedó claro cuánto tiempo hay: en Iron Keep las cosas ya están pasando y el High Forest queda lejos y no se llega por mar."
       ]
     }
   ],
@@ -1953,7 +1949,7 @@
     "nota": "El mismo mapa de Faerûn que está pinchado en el salón del club. La historia es original del Master y pasa en otros años, pero los nombres son los del mapa real. La línea ámbar es el viaje que hay que hacer; la gris punteada, el encargo personal de Vaegrant (Waterdeep, opcional). Los pines aproximados son lugares originales del Master, ubicados a ojo.",
     "party": {
       "marcadorId": "puerto-corona",
-      "texto": "Fin de la Sesión 7: el Albatros sigue en Puerto Corona, camuflado de barco viejo —óxido, percebes, algas y manzanillas— y con Caja y los barriles armados por si hay que defenderlo. La Tortuga Veloz partió al alba. Los Grandes Fauces ya están comprometidos con la leva; los Garrahierro de Krenko no, y su precio es que en Waterdeep los orcos pesen más que el drow. Pendiente: cruzar por el pasaje, entregarle a Gonagal Crestarroja la carta de Bragan y el mensaje de Durin, buscar a José Antonio de Castel de las Hojas de la Noche, y no acercarse a los bajos fondos, donde está guardado Cinnungaga mientras le rearman el barco."
+      "texto": "Fin de la Sesión 7: el Albatros sigue en Puerto Corona, camuflado de barco viejo —óxido, percebes, algas y manzanillas— y con Caja y los barriles armados por si hay que defenderlo. La Tortuga Veloz partió al alba. Los Grandes Fauces ya están comprometidos con la leva; los Garradehierro de Krenko no, y su precio es que en Waterdeep los orcos pesen más que el drow. Pendiente: cruzar por el pasaje, entregarle a Gonagal Crestarroja la carta de Bragan y el mensaje de Durin, buscar a José Antonio de Castel de las Hojas de la Noche, y no acercarse a los bajos fondos, donde está guardado Ginnungagap mientras le rearman el barco."
     },
     "marcadores": [
       {
@@ -2259,7 +2255,7 @@
           7
         ],
         "estado": "confirmado",
-        "nota": "El gran árbol sabio del High Forest, al noreste de los Picos Perdidos. Ahí viven los Garrahierro de Krenko: orcos, goblins, hobgoblins y trolls. Están en guerra con los constructos de Hellgate."
+        "nota": "El gran árbol sabio del High Forest, al noreste de los Picos Perdidos. Ahí viven los Garradehierro de Krenko: orcos, goblins, hobgoblins y trolls. Están en guerra con los constructos de Hellgate."
       },
       {
         "id": "hellgate",
@@ -3071,7 +3067,7 @@
     },
     {
       "id": "jeremy",
-      "nombre": "Jeremy",
+      "nombre": "Jeremy James",
       "arquetipo": "Historiador · Artífice",
       "linea": "Letrado y ex periodista. Cree que la información es poder, y la junta como quien arma una máquina.",
       "imagen": "/vaegrant-galeria/personaje-jeremy.jpg",
