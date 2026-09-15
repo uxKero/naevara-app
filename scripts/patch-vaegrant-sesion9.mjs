@@ -295,9 +295,9 @@ const sesion9 = {
       ],
     },
     {
-      titulo: "Arañas y Fat Boys",
+      titulo: "Las arañas y los Fast Boy",
       texto:
-        "Antes de irse preguntan lo único práctico que les faltaba: cómo llegar rápido al High Forest sin llamar la atención y sin mover el Albatros, que está camuflado en Puerto Corona y es demasiado valioso para exponerlo.\n\nLe alcanza con verlos caminar para entender el problema. Les arma dos regalos.\n\nEl primero son los Fat Boys: ruedas motorizadas de una plaza, livianas, fáciles de cargar en una nave, con un huequito chico para llevar algo encima. Funcionan por fusión de gemas comunes, no lunares, y vienen con una cajita de seis cristales; después hay que comprarlos. Les toma medidas de espalda, altura y peso a cada uno, porque hay que adaptarlos, y avisa dos cosas: que para el amanecer los tiene listos, y que con nivel dos no los van a poder manejar, que van a tener que subir a tres. Son modificables, además, para el que tenga conocimientos de ingeniería o ganas de agregarles chatarra.\n\nEl segundo son las arañas mensajeras. Arañas de fase que entran en fase y se mueven por plano, llevan un mensaje con la voz de quien lo manda y tardan unos cinco minutos hasta Puerto Corona. Solo llevan, no traen. Y tienen un único requisito: hay que haber visto en persona al destinatario. Haddrek manda dos ahí mismo, a los clanes de Puerto Corona, avisando que el punto de encuentro cambió.",
+        "Antes de irse preguntan lo único práctico que les faltaba: cómo llegar rápido al High Forest sin llamar la atención y sin mover el Albatros, que está camuflado en Puerto Corona y es demasiado valioso para exponerlo.\n\nLe alcanza con verlos caminar para entender el problema. Les arma dos regalos.\n\nEl primero son los Fast Boy: ruedas motorizadas de una plaza, livianas, fáciles de cargar en una nave, con un huequito chico para llevar algo encima. Funcionan por fusión de gemas comunes, no lunares, y vienen con una cajita de seis cristales; después hay que comprarlos. Les toma medidas de espalda, altura y peso a cada uno, porque hay que adaptarlos, y avisa dos cosas: que para el amanecer los tiene listos, y que con nivel dos no los van a poder manejar, que van a tener que subir a tres. Son modificables, además, para el que tenga conocimientos de ingeniería o ganas de agregarles chatarra.\n\nEl segundo son las arañas mensajeras. Arañas de fase que entran en fase y se mueven por plano, llevan un mensaje con la voz de quien lo manda y tardan unos cinco minutos hasta Puerto Corona. Solo llevan, no traen. Y tienen un único requisito: hay que haber visto en persona al destinatario. Haddrek manda dos ahí mismo, a los clanes de Puerto Corona, avisando que el punto de encuentro cambió.",
       dialogo: [
         {
           quien: "Crestarroja",
@@ -367,7 +367,7 @@ const sesion9 = {
     {
       nombre: "Gonagal Crestarroja",
       rol:
-        "El enano prodigio, hermano de Bragan, dueño del deshuesadero de Waterdeep. Doscientos años de oficio empezados por curiosidad, uno de los artificieros más respetados del ancho mundo, y el único que muestra lo que hace para probar que no hace nada ilegal. Se sumó a la guerra contra los Velas Negras sin pedir nada a cambio más que pelearla y que el trato sea igualitario. Regaló Fat Boys, arañas mensajeras y la mitad del lore de la campaña.",
+        "El enano prodigio, hermano de Bragan, dueño del deshuesadero de Waterdeep. Doscientos años de oficio empezados por curiosidad, uno de los artificieros más respetados del ancho mundo, y el único que muestra lo que hace para probar que no hace nada ilegal. Se sumó a la guerra contra los Velas Negras sin pedir nada a cambio más que pelearla y que el trato sea igualitario. Regaló los Fast Boy, las arañas mensajeras y la mitad del lore de la campaña.",
     },
     {
       nombre: "Malva",
@@ -462,10 +462,10 @@ const lugares = [
     destacado: true,
   },
   {
-    nombre: "Fat Boys y arañas mensajeras (Sesión 9)",
+    nombre: "Los Fast Boy y las arañas mensajeras (Sesión 9)",
     tipo: "Sesión 9 · lo que regaló Crestarroja",
     texto:
-      "Los Fat Boys son ruedas motorizadas de una plaza, livianas, fáciles de cargar en una nave y con un hueco chico para llevar carga. Andan por fusión de gemas comunes, no lunares, y vienen con una caja de seis cristales; después hay que comprarlos. Se adaptan a la espalda, la altura y el peso de cada uno, se pueden modificar con ingeniería o chatarra, y hacen falta tres niveles para manejarlos. Las arañas mensajeras son arañas de fase: entran en fase y se mueven por plano, llevan un mensaje con la voz del que lo manda y tardan unos cinco minutos hasta Puerto Corona. Solo llevan, no traen, y hay que haber visto en persona al destinatario.",
+      "Los Fast Boy son ruedas motorizadas de una plaza, livianas, fáciles de cargar en una nave y con un hueco chico para llevar carga. Andan por fusión de gemas comunes, no lunares, y vienen con una caja de seis cristales; después hay que comprarlos. Se adaptan a la espalda, la altura y el peso de cada uno, se pueden modificar con ingeniería o chatarra, y hacen falta tres niveles para manejarlos. Las arañas mensajeras son arañas de fase: entran en fase y se mueven por plano, llevan un mensaje con la voz del que lo manda y tardan unos cinco minutos hasta Puerto Corona. Solo llevan, no traen, y hay que haber visto en persona al destinatario.",
     destacado: false,
   },
 ];
@@ -486,7 +486,7 @@ data.mapa.rutas.push({
 data.mapa.party = {
   marcadorId: "waterdeep",
   texto:
-    "Fin de la Sesión 9: siguen en Waterdeep, en el coliseo de Morko, con las apuestas cobradas y el plan dado vuelta. Ya no van directo al volcán: primero el High Forest, ayudar a los Garradehierro de Krenko, tomar Hellgate y quedarse con ella como punto fijo para juntar ahí a todos los clanes. Gorko ya está avisado y los espera con dos batallas prometidas; Crestarroja se sumó sin pedir nada y les deja los Fat Boys listos al amanecer; Morko quedó sin trato y con la puerta abierta. El Albatros sigue camuflado en Puerto Corona y las arañas ya salieron con el cambio de punto de encuentro. Pendiente: lo que duerme debajo del volcán, Xanatar, el capitán Lanza de Plata y subir a nivel tres.",
+    "Fin de la Sesión 9: siguen en Waterdeep, en el coliseo de Morko, con las apuestas cobradas y el plan dado vuelta. Ya no van directo al volcán: primero el High Forest, ayudar a los Garradehierro de Krenko, tomar Hellgate y quedarse con ella como punto fijo para juntar ahí a todos los clanes. Gorko ya está avisado y los espera con dos batallas prometidas; Crestarroja se sumó sin pedir nada y les deja los Fast Boy listos al amanecer; Morko quedó sin trato y con la puerta abierta. El Albatros sigue camuflado en Puerto Corona y las arañas ya salieron con el cambio de punto de encuentro. Pendiente: lo que duerme debajo del volcán, Xanatar, el capitán Lanza de Plata y subir a nivel tres.",
 };
 
 // ── 4. Escribir ──────────────────────────────────────────────────
