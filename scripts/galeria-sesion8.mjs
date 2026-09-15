@@ -20,7 +20,7 @@ const MAP = [
   { file: "ChatGPT Image 8 sept 2026, 12_33_37 a.m..png", prompt: 93, cap: "La Ciudad de los Muertos" },
   { file: "ChatGPT Image 8 sept 2026, 12_35_48 a.m..png", prompt: 95, cap: "A todos lados me atrevo a entrar" },
   { file: "ChatGPT Image 8 sept 2026, 12_33_51 a.m..png", prompt: 99, cap: "Los dos coliseos" },
-  { file: "ChatGPT Image 8 sept 2026, 12_33_19 a.m..png", prompt: 91, cap: "Morko" },
+  { file: "ChatGPT Image 8 sept 2026, 12_33_19 a.m..png", prompt: 91, cap: "Gorko" },
 ];
 
 const faltan = MAP.filter((m) => !fs.existsSync(`${srcDir}/${m.file}`));
