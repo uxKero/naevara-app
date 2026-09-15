@@ -4,7 +4,7 @@
     "alias": "Vaegrant",
     "nombreReal": "Aeril Tirael",
     "eyebrow": "Brujo del Archifey · Pacto abierto · Alto Elfo",
-    "subtitle": "Nivel 1 · Brujo · Patrón: el Testigo",
+    "subtitle": "Nivel 3 · Brujo · Patrón: el Testigo",
     "subsubtitle": "Alto Elfo · Trasfondo: Eremita · Alineamiento: Neutral Bueno",
     "tags": [
       "Alto Elfo",
@@ -19,7 +19,7 @@
   "heroStats": [
     {
       "label": "Nivel",
-      "value": "1"
+      "value": "3"
     },
     {
       "label": "Clase",
