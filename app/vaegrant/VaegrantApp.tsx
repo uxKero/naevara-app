@@ -16,11 +16,11 @@ import { descargarImagen } from "@/lib/descargar";
 import { BuilderCharacter } from "@/types/builder";
 import {
   loadAll, computeDerived, spellToAction, weaponToAction, spellSlotLevel,
-  ABILITY_ORDER, ABILITY_ES, ALL_SKILLS, skillES, skillTotal, fmtMod,
+  ABILITY_ORDER, ABILITY_ES, ABILITY_DESC, ALL_SKILLS, skillES, skillDesc, skillTotal, fmtMod,
   type Derived, type SrdClass, type SrdRace,
 } from "@/lib/srd";
 import { computeEffects, buildSubclassActions } from "@/lib/features";
-import { featureES, rasgoES, rasgoDescES } from "@/lib/traducciones";
+import { featureES, featureDescES, rasgoES, rasgoDescES } from "@/lib/traducciones";
 import type { CombatAction } from "@/lib/combatData";
 
 // Display serif propio de esta ruta: la identidad tipográfica de Vaegrant.
@@ -1110,9 +1110,32 @@ function TabPerfil({ data, update, openAI, retratos, onOpen }: {
   );
 }
 
+// Qué es cada número clave, para el interruptor "explicar todo".
+const NUM_DESC: Record<string, string> = {
+  Vida: "Los golpes que aguantás antes de caer. En 0 quedás inconsciente y empezás a tirar salvaciones de muerte.",
+  CA: "Clase de Armadura: el número que tu enemigo tiene que igualar o superar con su d20 para pegarte.",
+  "CD conjuros": "La dificultad que tienen que superar tus víctimas para zafar de tus conjuros. Sale de 8 + competencia + tu característica mágica.",
+  "Ataque mágico": "Lo que sumás al d20 cuando un conjuro pide tirada de ataque, como Eldritch Blast.",
+  Iniciativa: "Lo que sumás al d20 al empezar un combate, para ver en qué orden actúan todos.",
+  Competencia: "El bonificador que sumás a todo aquello en lo que sos competente. Sube con el nivel, no con las características.",
+  "Perc. pasiva": "Lo que notás sin buscar. El Master lo usa en secreto: si algo escondido tiene una dificultad menor a este número, lo ves sin tirar.",
+};
+
 // ── Hoja: stats y hechizos, leídos de la ficha real del builder ──
 // Fuente única: la misma fila de Supabase que usa la hoja de combate.
 function TabHoja({ combateId }: { combateId: string }) {
+  // Interruptor "explicar todo": apagado la hoja es para consultar en la mesa,
+  // prendido es para aprender. Se acuerda de cómo lo dejó.
+  const [explicar, setExplicar] = useState(false);
+  useEffect(() => {
+    try { setExplicar(localStorage.getItem("vaegrant-hoja-explicar") === "1"); } catch { /* */ }
+  }, []);
+  const alternarExplicar = useCallback(() => {
+    setExplicar((v) => {
+      try { localStorage.setItem("vaegrant-hoja-explicar", v ? "0" : "1"); } catch { /* */ }
+      return !v;
+    });
+  }, []);
   const [hoja, setHoja] = useState<{
     ch: BuilderCharacter; derived: Derived; cls: SrdClass; race: SrdRace | null;
     trucos: CombatAction[]; hechizos: CombatAction[]; armas: CombatAction[]; rasgosSub: CombatAction[];
@@ -1170,11 +1193,48 @@ function TabHoja({ combateId }: { combateId: string }) {
   const { ch, derived, race, trucos, hechizos, armas, rasgosSub, features } = hoja;
   const slotLvls = Object.entries(derived.slots).filter(([, n]) => n > 0);
 
-  const num = (label: string, v: string | number) => (
-    <div key={label} style={{ textAlign: "center", minWidth: 74 }}>
-      <div className={serif.className} style={{ fontSize: 26, fontWeight: 600, color: C.text, lineHeight: 1 }}>{v}</div>
-      <div style={{ fontSize: 9, color: C.steel, textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 4 }}>{label}</div>
-    </div>
+  const num = (label: string, v: string | number) =>
+    explicar ? (
+      <div key={label} className="vg-row" style={{ display: "flex", gap: 14, padding: "11px 0", width: "100%" }}>
+        <div className={serif.className} style={{ fontSize: 26, fontWeight: 600, color: C.text, lineHeight: 1.1, minWidth: 52, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{v}</div>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 9, color: C.steel, textTransform: "uppercase", letterSpacing: "0.08em" }}>{label}</div>
+          <div style={{ fontSize: 12.5, color: C.muted, lineHeight: 1.6, marginTop: 3 }}>{NUM_DESC[label]}</div>
+        </div>
+      </div>
+    ) : (
+      <div key={label} style={{ textAlign: "center", minWidth: 74 }}>
+        <div className={serif.className} style={{ fontSize: 26, fontWeight: 600, color: C.text, lineHeight: 1 }}>{v}</div>
+        <div style={{ fontSize: 9, color: C.steel, textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 4 }}>{label}</div>
+      </div>
+    );
+
+  // El interruptor. Sin bordes de acento al costado: solo tipografía.
+  const Interruptor = (
+    <button
+      type="button"
+      onClick={alternarExplicar}
+      aria-pressed={explicar}
+      style={{
+        display: "inline-flex", alignItems: "center", gap: 9, cursor: "pointer",
+        background: "transparent", border: `1px solid ${explicar ? C.amber : C.borderSoft}`,
+        borderRadius: R, padding: "6px 12px", color: explicar ? C.amber : C.faint,
+        fontSize: 11.5, letterSpacing: "0.03em", transition: "color .15s, border-color .15s",
+      }}
+    >
+      <span
+        aria-hidden
+        style={{
+          width: 24, height: 13, borderRadius: 999, flexShrink: 0,
+          border: `1px solid ${explicar ? C.amber : C.borderSoft}`,
+          display: "inline-flex", alignItems: "center",
+          justifyContent: explicar ? "flex-end" : "flex-start", padding: 1,
+        }}
+      >
+        <span style={{ width: 9, height: 9, borderRadius: 999, background: explicar ? C.amber : C.faint }} />
+      </span>
+      Explicar todo
+    </button>
   );
 
   const Accion = ({ a }: { a: CombatAction }) => (
@@ -1196,9 +1256,13 @@ function TabHoja({ combateId }: { combateId: string }) {
 
   return (
     <div>
+      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 4 }}>{Interruptor}</div>
+
       <VSecLabel>Números clave</VSecLabel>
       <VDivider />
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "18px 10px", justifyContent: "space-between", marginBottom: 8 }}>
+      <div style={explicar
+        ? { display: "block", marginBottom: 8 }
+        : { display: "flex", flexWrap: "wrap", gap: "18px 10px", justifyContent: "space-between", marginBottom: 8 }}>
         {num("Vida", derived.maxHp)}
         {num("CA", derived.ac)}
         {derived.spellSaveDC !== null ? num("CD conjuros", derived.spellSaveDC) : null}
@@ -1215,17 +1279,27 @@ function TabHoja({ combateId }: { combateId: string }) {
 
       <VSecLabel>Características y salvaciones</VSecLabel>
       <VDivider />
-      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0 24px" }}>
+      {explicar && (
+        <p style={{ fontSize: 12.5, color: C.muted, lineHeight: 1.6, margin: "0 0 10px" }}>
+          El número grande es la puntuación y el chico entre paréntesis es el modificador, que es lo que de verdad sumás a los dados.
+          Una <strong style={{ color: C.steelStrong, fontWeight: 600 }}>salvación</strong> es la tirada que hacés para resistir algo
+          que te pasa a vos: un veneno, un hechizo, una trampa. El punto ámbar marca las dos en las que sos competente.
+        </p>
+      )}
+      <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: explicar ? "1fr 1fr" : "repeat(3, 1fr)", gap: "0 24px" }}>
         {ABILITY_ORDER.map((k) => {
           const sv = derived.saves.find((s) => s.key === k)!;
           return (
-            <div key={k} className="vg-row" style={{ padding: "10px 0", display: "flex", alignItems: "center", gap: 12 }}>
+            <div key={k} className="vg-row" style={{ padding: "10px 0", display: "flex", alignItems: explicar ? "flex-start" : "center", gap: 12 }}>
               <span className={serif.className} style={{ fontSize: 24, fontWeight: 600, color: C.text, minWidth: 58 }}>
                 {ch.abilities[k]} <span style={{ fontSize: 14, color: C.steel }}>({fmtMod(derived.abilityMods[k])})</span>
               </span>
-              <span style={{ flex: 1 }}>
+              <span style={{ flex: 1, minWidth: 0 }}>
                 <span style={{ display: "block", fontSize: 11, color: C.muted }}>{ABILITY_ES[k]}</span>
                 <span style={{ fontSize: 10.5, color: sv.competente ? C.amber : C.faint }}>salvación {fmtMod(sv.valor)}{sv.competente ? " ●" : ""}</span>
+                {explicar && (
+                  <span style={{ display: "block", fontSize: 12, color: C.muted, lineHeight: 1.6, marginTop: 4 }}>{ABILITY_DESC[k]}</span>
+                )}
               </span>
             </div>
           );
@@ -1234,17 +1308,28 @@ function TabHoja({ combateId }: { combateId: string }) {
 
       <VSecLabel>Habilidades</VSecLabel>
       <VDivider />
+      {explicar && (
+        <p style={{ fontSize: 12.5, color: C.muted, lineHeight: 1.6, margin: "0 0 10px" }}>
+          Cuando el Master te pide una prueba, tirás 1d20 y sumás esto. El punto ámbar marca las cinco en las que sos competente,
+          que son las que llevan tu bonificador de competencia encima.
+        </p>
+      )}
       <div className="vg-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 28px" }}>
         {ALL_SKILLS.map((sk) => {
           const comp = ch.skillProf.includes(sk);
           return (
-            <div key={sk} className="vg-row" style={{ display: "flex", justifyContent: "space-between", padding: "7px 0" }}>
-              <span style={{ fontSize: 12.5, color: comp ? C.steelStrong : C.faint, fontWeight: comp ? 600 : 400 }}>
-                {comp ? "● " : ""}{skillES(sk)}
-              </span>
-              <span style={{ fontSize: 13, fontWeight: 600, color: comp ? C.text : C.faint, fontVariantNumeric: "tabular-nums" }}>
-                {fmtMod(skillTotal(ch, derived, sk))}
-              </span>
+            <div key={sk} className="vg-row" style={{ padding: "7px 0" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
+                <span style={{ fontSize: 12.5, color: comp ? C.steelStrong : C.faint, fontWeight: comp ? 600 : 400 }}>
+                  {comp ? "● " : ""}{skillES(sk)}
+                </span>
+                <span style={{ fontSize: 13, fontWeight: 600, color: comp ? C.text : C.faint, fontVariantNumeric: "tabular-nums" }}>
+                  {fmtMod(skillTotal(ch, derived, sk))}
+                </span>
+              </div>
+              {explicar && skillDesc(sk) && (
+                <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.6, marginTop: 3, paddingRight: 34 }}>{skillDesc(sk)}</div>
+              )}
             </div>
           );
         })}
@@ -1276,13 +1361,27 @@ function TabHoja({ combateId }: { combateId: string }) {
 
       <VSecLabel>Rasgos de clase y raza</VSecLabel>
       <VDivider />
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
-        {features.map((f, i) => (
-          <span key={i} style={{ fontSize: 11, color: C.muted, border: `1px solid ${C.borderSoft}`, borderRadius: R, padding: "3px 9px" }}>
-            {featureES(f.name)} <span style={{ color: C.faint }}>nv{f.lvl}</span>
-          </span>
-        ))}
-      </div>
+      {explicar ? (
+        <div style={{ marginBottom: 12 }}>
+          {features.map((f, i) => (
+            <div key={i} className="vg-row" style={{ padding: "9px 0" }}>
+              <span style={{ fontSize: 12, fontWeight: 600, color: C.steelStrong }}>
+                {featureES(f.name)} <span style={{ color: C.faint, fontWeight: 400 }}>nv{f.lvl}</span>
+                {featureDescES(f.name) ? ": " : ""}
+              </span>
+              <span style={{ fontSize: 12.5, color: C.muted, lineHeight: 1.6 }}>{featureDescES(f.name)}</span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
+          {features.map((f, i) => (
+            <span key={i} style={{ fontSize: 11, color: C.muted, border: `1px solid ${C.borderSoft}`, borderRadius: R, padding: "3px 9px" }}>
+              {featureES(f.name)} <span style={{ color: C.faint }}>nv{f.lvl}</span>
+            </span>
+          ))}
+        </div>
+      )}
       {race?.traits.map((t, i) => (
         <div key={i} className="vg-row" style={{ padding: "9px 0" }}>
           <span style={{ fontSize: 12, fontWeight: 600, color: C.steelStrong }}>{rasgoES(t.name)}: </span>

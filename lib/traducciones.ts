@@ -237,6 +237,33 @@ export const FEATURE_ES: Record<string, string> = {
 };
 export const featureES = (n: string) => FEATURE_ES[n] ?? n;
 
+// ── Qué hace cada rasgo de clase, en criollo ────────────────────
+// Solo lo que la mesa necesita entender. Lo que no está acá no muestra
+// descripción y se sigue viendo como etiqueta suelta.
+export const FEATURE_DESC: Record<string, string> = {
+  "Otherworldly Patron":
+    "La criatura con la que hiciste el pacto. La elegís a nivel 1 y no se cambia: de ella salen tus rasgos propios y una lista ampliada de conjuros que podés aprender como si fueran de tu clase.",
+  "Pact Magic":
+    "La magia del Brujo funciona distinta a la de todos los demás. Tenés muy pocos espacios, pero siempre son del nivel más alto que te toca, así que todo lo que lanzás sale potenciado. Y vuelven con un descanso corto, no con uno largo.",
+  "Eldritch Invocations":
+    "Mejoras permanentes que elegís de una lista y no gastan nada: están siempre encendidas o se usan a voluntad. En cada subida de nivel podés cambiar una por otra.",
+  "Pact Boon":
+    "El regalo del patrón, a nivel 3. Cadena: un familiar especial que espía por vos. Hoja: un arma mágica invocada. Tomo: tres trucos extra de cualquier lista.",
+  "Mystic Arcanum":
+    "Un conjuro de nivel alto que podés lanzar una vez por descanso largo, sin gastar espacios.",
+  "Eldritch Master":
+    "Una vez por descanso largo, suplicás a tu patrón y recuperás todos los espacios gastados.",
+  "Ability Score Improvement":
+    "Subís dos puntos de características, o uno y algo, o agarrás una dote si el Master las permite.",
+  "Spellcasting":
+    "Podés preparar y lanzar conjuros de tu lista gastando espacios, que vuelven con descanso largo.",
+  "Ritual Casting":
+    "Algunos conjuros se pueden lanzar como ritual: tardan diez minutos más y no gastan espacio.",
+  "Extra Attack":
+    "Cuando usás la acción de Atacar, atacás dos veces en vez de una.",
+};
+export const featureDescES = (n: string) => FEATURE_DESC[n] ?? "";
+
 // ── Rasgos raciales (nombre + descripción propia) ───────────────
 export const TRAIT_ES: Record<string, { n: string; d: string }> = {
   "Darkvision": { n: "Visión en la Oscuridad", d: "Ves en luz tenue a 18 m como si fuera luz brillante, y en la oscuridad como si fuera luz tenue (en grises, sin color)." },
