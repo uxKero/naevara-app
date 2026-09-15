@@ -40,6 +40,8 @@ export interface BuilderCharacter {
   // opciones / features
   fightingStyle?: string | null;     // id de estilo de combate
   invocations?: string[];            // ids de invocaciones místicas
+  pactBoon?: string | null;          // brujo nivel 3: "chain" | "blade" | "tome"
+  familiar?: string | null;          // Pacto de la Cadena: id de lib/familiar.ts
   overrides?: BuilderOverrides;      // valores forzados a mano
   notes?: string;
   createdAt?: string;

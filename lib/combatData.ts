@@ -43,7 +43,8 @@ export type Grupo =
   | "info"
   | "armas"
   | "riders"
-  | "pasiva";
+  | "pasiva"
+  | "familiar";
 
 export interface CombatAction {
   id: string;
@@ -74,6 +75,7 @@ export const GRUPOS: { id: Grupo; titulo: string; icono: string; desc: string }[
   { id: "armas",    titulo: "Armas",                          icono: "🗡", desc: "Ataques con arma." },
   { id: "riders",   titulo: "Daño extra y situacional",       icono: "✚", desc: "Se suma a un golpe cuando aplica." },
   { id: "pasiva",   titulo: "Pasivas y permanentes",         icono: "∞", desc: "Siempre activas. No se tiran." },
+  { id: "familiar", titulo: "Tu familiar",                    icono: "🐉", desc: "Solo pega si vos usás la acción de Atacar y renunciás a tu ataque." },
 ];
 
 // ════════════════════════════════════════════════════════════════

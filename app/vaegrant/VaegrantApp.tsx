@@ -20,6 +20,7 @@ import {
   type Derived, type SrdClass, type SrdRace,
 } from "@/lib/srd";
 import { computeEffects, buildSubclassActions } from "@/lib/features";
+import { familiarPorId, REGLAS_FAMILIAR, PACT_BOON_ES } from "@/lib/familiar";
 import { featureES, featureDescES, rasgoES, rasgoDescES } from "@/lib/traducciones";
 import type { CombatAction } from "@/lib/combatData";
 
@@ -1196,6 +1197,7 @@ function TabHoja({ combateId }: { combateId: string }) {
 
   const { ch, derived, race, trucos, hechizos, armas, rasgosSub, features } = hoja;
   const slotLvls = Object.entries(derived.slots).filter(([, n]) => n > 0);
+  const fam = familiarPorId(ch.familiar);
 
   const num = (label: string, v: string | number) =>
     explicar ? (
@@ -1361,6 +1363,51 @@ function TabHoja({ combateId }: { combateId: string }) {
         <VSecLabel>Rasgos del patrón</VSecLabel>
         <VDivider />
         {rasgosSub.map((a) => <Accion key={a.id} a={a} />)}
+      </>)}
+
+      {fam && (<>
+        <VSecLabel>El familiar · {fam.nombre}</VSecLabel>
+        <VDivider />
+        <p style={{ ...pStyle, fontSize: 13, marginTop: 0 }}>
+          {ch.pactBoon ? `${PACT_BOON_ES[ch.pactBoon] ?? ch.pactBoon}: ` : ""}{fam.paraQue}
+        </p>
+
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "14px 10px", justifyContent: "space-between", margin: "14px 0 10px" }}>
+          {num("Vida", fam.pv)}
+          {num("CA", fam.ca)}
+          {num("Sigilo", fam.habilidades.includes("Sigilo") ? fam.habilidades.split("Sigilo ")[1] : "—")}
+        </div>
+        <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.7, marginBottom: 12 }}>
+          <div><span style={{ color: C.steelStrong, fontWeight: 600 }}>Tamaño: </span>{fam.tipo}</div>
+          <div><span style={{ color: C.steelStrong, fontWeight: 600 }}>Velocidad: </span>{fam.velocidad}</div>
+          <div><span style={{ color: C.steelStrong, fontWeight: 600 }}>Sentidos: </span>{fam.sentidos}</div>
+          <div><span style={{ color: C.steelStrong, fontWeight: 600 }}>Idiomas: </span>{fam.idiomas}</div>
+          <div>
+            <span style={{ color: C.steelStrong, fontWeight: 600 }}>Características: </span>
+            FUE {fam.abilities.fue} · DES {fam.abilities.des} · CON {fam.abilities.con} · INT {fam.abilities.int} · SAB {fam.abilities.sab} · CAR {fam.abilities.car}
+          </div>
+          <div><span style={{ color: C.steelStrong, fontWeight: 600 }}>Habilidades: </span>{fam.habilidades}</div>
+        </div>
+
+        {fam.rasgos.map((r, i) => (
+          <div key={i} className="vg-row" style={{ padding: "9px 0" }}>
+            <span style={{ fontSize: 12, fontWeight: 600, color: C.steelStrong }}>{r.n}: </span>
+            <span style={{ fontSize: 12.5, color: C.muted, lineHeight: 1.6 }}>{r.d}</span>
+          </div>
+        ))}
+
+        {fam.acciones.map((a) => <Accion key={a.id} a={a} />)}
+
+        <div style={{ marginTop: 14 }}>
+          <VSecLabel>Cómo funciona un familiar</VSecLabel>
+          <VDivider />
+          {REGLAS_FAMILIAR.map((r, i) => (
+            <div key={i} className="vg-row" style={{ padding: "9px 0" }}>
+              <span style={{ fontSize: 12, fontWeight: 600, color: C.steelStrong }}>{r.n}: </span>
+              <span style={{ fontSize: 12.5, color: C.muted, lineHeight: 1.6 }}>{r.d}</span>
+            </div>
+          ))}
+        </div>
       </>)}
 
       <VSecLabel>Rasgos de clase y raza</VSecLabel>

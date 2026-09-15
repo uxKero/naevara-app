@@ -10,6 +10,7 @@ import {
   ALL_SKILLS, skillTotal, skillAbility, skillES, skillDesc,
 } from "@/lib/srd";
 import { computeEffects, buildRiders, buildSubclassActions } from "@/lib/features";
+import { familiarPorId, accionesFamiliarCombate } from "@/lib/familiar";
 import { claseES, razaES, featureES, rasgoES, rasgoDescES } from "@/lib/traducciones";
 import { CombatAction, GRUPOS } from "@/lib/combatData";
 import CombatRoller from "@/components/CombatRoller";
@@ -86,6 +87,9 @@ export default function CharacterCombatPage() {
 
     buildRiders(cls.index, ch.level, derived.abilityMods).forEach((r) => list.push(r));
     buildSubclassActions(cls.index, ch.subclassName, ch.level, derived.spellSaveDC, derived.abilityMods).forEach((r) => list.push(r));
+    // Pacto de la Cadena: los ataques del familiar se tiran desde acá
+    const fam = familiarPorId(ch.familiar);
+    if (fam) accionesFamiliarCombate(fam).forEach((a) => list.push(a));
     return list;
   }, [ch, srd, derived, cls, effects]);
 
