@@ -665,8 +665,12 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
 }) {
   const [nuevaUrl, setNuevaUrl] = useState("");
   const [verTodas, setVerTodas] = useState(false);
-  const LIMITE = 8; // preview corto; el resto se despliega con "Ver galería completa"
-  const visibles = verTodas ? imagenes : imagenes.slice(0, LIMITE);
+  // Preview corto: las más NUEVAS primero. La galería está en orden narrativo,
+  // así que las primeras son las de la Sesión 1 y lo recién agregado quedaba
+  // enterrado al final de noventa y pico de imágenes. Desplegada mantiene el
+  // orden narrativo, que es como se lee la crónica.
+  const LIMITE = 8;
+  const visibles = verTodas ? imagenes : imagenes.slice(-LIMITE).reverse();
   const globalIdx = (img: VImagen) => todas.findIndex((t) => t.url === img.url);
 
   const agregar = () => {
@@ -683,7 +687,7 @@ function Galeria({ titulo, imagenes, todas, portada, update, onOpen, tipoMundo }
 
   return (
     <section>
-      <VSecLabel>{titulo} ({imagenes.length})</VSecLabel>
+      <VSecLabel>{titulo} ({imagenes.length}){verTodas ? "" : " · lo último"}</VSecLabel>
       <VDivider />
       <div className="vg-gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 10 }}>
         {visibles.map((img, i) => {
