@@ -13,6 +13,7 @@ import { computeEffects, buildRiders, buildSubclassActions } from "@/lib/feature
 import { familiarPorId, accionesFamiliarCombate } from "@/lib/familiar";
 import { claseES, razaES, featureES, rasgoES, rasgoDescES } from "@/lib/traducciones";
 import { CombatAction, GRUPOS } from "@/lib/combatData";
+import { construirTurno } from "@/lib/turno";
 import CombatRoller from "@/components/CombatRoller";
 
 interface TrackerState {
@@ -29,7 +30,7 @@ export default function CharacterCombatPage() {
   const [roller, setRoller] = useState<CombatAction | null>(null);
   const [tr, setTr] = useState<TrackerState | null>(null);
   const [err, setErr] = useState("");
-  const [tab, setTab] = useState<"combate" | "stats" | "ref">("combate");
+  const [tab, setTab] = useState<"turno" | "combate" | "stats" | "ref">("turno");
 
   useEffect(() => {
     fetch(`/api/characters/${id}`).then((r) => r.json()).then((d) => {
@@ -95,6 +96,12 @@ export default function CharacterCombatPage() {
 
   // niveles de espacio disponibles
   const slotLevels = useMemo(() => (derived ? Object.entries(derived.slots).filter(([, n]) => n > 0).map(([l]) => Number(l)).sort((a, b) => a - b) : []), [derived]);
+
+  // El flujo de un combate, armado con los números de esta hoja
+  const plan = useMemo(
+    () => (ch && derived && cls && actions.length ? construirTurno(actions, derived, { nivel: ch.level, clase: cls.index, concentraUna: true }) : null),
+    [ch, derived, cls, actions]
+  );
 
   function lanzar(a: CombatAction, slotLvl: number) {
     setTr((s) => {
@@ -207,7 +214,7 @@ export default function CharacterCombatPage() {
 
         {/* ══ TABS INTERNOS ══ */}
         <div className="cmb-tabs" style={{ display: "flex", gap: 6, margin: "0 0 14px", borderBottom: "1px solid var(--border)" }}>
-          {([["combate", "⚔ Combate"], ["stats", "📊 Mis números"], ["ref", "📖 Referencia"]] as const).map(([id, label]) => (
+          {([["turno", "🎯 Mi turno"], ["combate", "⚔ Combate"], ["stats", "📊 Mis números"], ["ref", "📖 Referencia"]] as const).map(([id, label]) => (
             <button key={id} onClick={() => setTab(id)} style={{
               padding: "9px 16px", fontSize: 13, fontWeight: tab === id ? 700 : 500, cursor: "pointer",
               background: "transparent", border: "none", color: tab === id ? "var(--accent-strong)" : "var(--text-muted)",
@@ -215,6 +222,41 @@ export default function CharacterCombatPage() {
             }}>{label}</button>
           ))}
         </div>
+
+        {tab === "turno" && plan && (<>
+        <div style={{ ...cardS, borderColor: "var(--accent-border)", borderLeft: "3px solid var(--accent)", marginTop: 4 }}>
+          <div style={{ fontSize: 10, color: "var(--text-faint)", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 6 }}>El combate, de punta a punta</div>
+          <p style={{ fontSize: 13.5, color: "var(--text-main)", lineHeight: 1.6, margin: 0 }}>{plan.resumen}</p>
+        </div>
+
+        {plan.avisos.length > 0 && (
+          <div style={{ ...cardS, marginTop: 10, borderColor: "rgba(216,192,138,0.35)", background: "rgba(216,192,138,0.06)" }}>
+            <ul style={{ margin: 0, paddingLeft: 16 }}>
+              {plan.avisos.map((n, i) => <li key={i} style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 4, lineHeight: 1.5 }}>{n}</li>)}
+            </ul>
+          </div>
+        )}
+
+        <FaseTurno n="0" titulo="Antes de que empiece" desc="Fuera de la iniciativa, cuando todavía podés elegir." pasos={plan.antes} />
+        <FaseTurno n="1" titulo="Arranca" desc="El Master dice iniciativa y ya no se negocia nada." pasos={[plan.iniciativa]} />
+        <FaseTurno n="2" titulo="Tu primer turno" desc="Una acción, una acción adicional y tu movimiento. En ese orden conviene." pasos={plan.abre} />
+        <FaseTurno n="3" titulo="Los turnos que siguen" desc="El loop. Lo mismo hasta que algo cambie." pasos={plan.sostiene} />
+        <FaseTurno n="!" titulo="Cuando se complica" desc="Lo que casi siempre se olvida en la mesa." pasos={plan.aprietos} />
+
+        <Sec>Qué número se supera, y quién lo tira</Sec>
+        <div style={grid(280)}>
+          {plan.superar.map((s, i) => (
+            <div key={i} style={cardS}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "var(--accent-strong)", marginBottom: 5 }}>{s.titulo}</div>
+              <p style={{ fontSize: 12, color: "var(--text-muted)", lineHeight: 1.55, margin: 0 }}>{s.texto}</p>
+            </div>
+          ))}
+        </div>
+
+        <p style={{ fontSize: 10, color: "var(--text-faint)", marginTop: 24, lineHeight: 1.5 }}>
+          Este flujo se arma con las acciones y los números de esta hoja. Si subís de nivel o cambiás hechizos, cambia solo.
+        </p>
+        </>)}
 
         {tab === "stats" && (<>
         {/* Vitales */}
@@ -409,6 +451,42 @@ const mini: React.CSSProperties = { fontSize: 10, padding: "3px 8px", borderRadi
 const grid = (min: number): React.CSSProperties => ({ display: "grid", gridTemplateColumns: `repeat(auto-fill, minmax(${min}px, 1fr))`, gap: 10 });
 
 function Sec({ children }: { children: ReactNode }) { return <h2 className="sec-label" style={{ fontSize: 13, margin: "26px 0 10px" }}>{children}</h2>; }
+
+// ── Una fase del combate, con sus pasos ──
+function FaseTurno({ n, titulo, desc, pasos }: { n: string; titulo: string; desc: string; pasos: { titulo: string; que: string; porque?: string; tirada?: string; ojo?: string }[] }) {
+  if (!pasos.length) return null;
+  return (
+    <section style={{ marginTop: 24 }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap" }}>
+        <span style={{ fontSize: 12, fontWeight: 800, color: "var(--accent-strong)", background: "var(--accent-bg)", border: "1px solid var(--accent-border)", borderRadius: 7, padding: "2px 9px", fontFamily: "monospace" }}>{n}</span>
+        <h2 className="sec-label" style={{ fontSize: 14, margin: 0 }}>{titulo}</h2>
+        <span style={{ fontSize: 11, color: "var(--text-faint)" }}>{desc}</span>
+      </div>
+      <div className="arcane-divider" style={{ margin: "4px 0 14px" }} />
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {pasos.map((p, i) => (
+          <div key={i} style={{ ...cardS, display: "flex", flexDirection: "column", gap: 7 }}>
+            <h3 style={{ fontSize: 14.5, fontWeight: 700, color: "#fff", margin: 0 }}>{p.titulo}</h3>
+            <p style={{ fontSize: 12.5, color: "var(--text-main)", lineHeight: 1.55, margin: 0 }}>{p.que}</p>
+            {p.tirada && (
+              <div style={{ fontSize: 12, fontFamily: "monospace", color: "#64B5F6", background: "rgba(100,181,246,0.08)", border: "1px solid rgba(100,181,246,0.3)", borderRadius: 8, padding: "7px 10px", lineHeight: 1.5 }}>
+                🎲 {p.tirada}
+              </div>
+            )}
+            {p.porque && (
+              <p style={{ fontSize: 12, color: "var(--text-muted)", lineHeight: 1.55, margin: 0, borderLeft: "2px solid var(--border)", paddingLeft: 10 }}>
+                <strong style={{ color: "var(--text-faint)" }}>Por qué: </strong>{p.porque}
+              </p>
+            )}
+            {p.ojo && (
+              <p style={{ fontSize: 12, color: "var(--gold)", lineHeight: 1.5, margin: 0 }}>⚠ {p.ojo}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 function Vit({ label, v, big }: { label: string; v: ReactNode; big?: boolean }) {
   return <div style={{ ...cardS, borderColor: big ? "var(--accent-border)" : "var(--border)" }}><div style={{ fontSize: 10, color: "var(--text-faint)", textTransform: "uppercase" }}>{label}</div><div style={{ fontSize: big ? 24 : 20, fontWeight: 800, color: big ? "var(--accent-strong)" : "#fff" }}>{v}</div></div>;
 }

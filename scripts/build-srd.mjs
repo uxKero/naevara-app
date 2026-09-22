@@ -339,6 +339,26 @@ const EXTRA_SPELLS = [
     desc: "You curse a creature you can see within range. Until the spell ends, the target takes an extra 1d6 necrotic damage whenever you hit it with an attack, and it has disadvantage on ability checks made with one ability you choose when casting. If the target drops to 0 hit points before the spell ends, you can use a bonus action on a later turn to move the curse to a new creature. A remove curse cast on the target ends the spell early.",
     higher_level: "With a spell slot of 3rd or 4th level, you can maintain concentration for up to 8 hours; with a slot of 5th level or higher, up to 24 hours.",
   },
+  {
+    index: "armor-of-agathys",
+    name: "Armor of Agathys",
+    level: 1,
+    school: "Abjuration",
+    casting_time: "1 action",
+    range: "Self",
+    duration: "1 hour",
+    concentration: false,
+    ritual: false,
+    components: ["V", "S", "M"],
+    classes: ["warlock"],
+    attack_type: null,
+    save: null,
+    area: null,
+    damage: null,
+    heal: { 1: "5", 2: "10", 3: "15", 4: "20", 5: "25" },
+    desc: "A protective frost surrounds you and you gain temporary hit points. While those temporary hit points last, a creature that hits you with a melee attack takes cold damage.",
+    higher_level: "Both the temporary hit points and the cold damage increase by 5 for each slot level above 1st.",
+  },
 ];
 for (const s of EXTRA_SPELLS) {
   if (!spells.some((x) => x.index === s.index)) spells.push(s);
