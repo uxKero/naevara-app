@@ -397,21 +397,33 @@ export function spellToAction(spell: SrdSpell, derived: Derived, charLevel: numb
   else if (esTruco) grupo = danos.length ? "loop" : "utilidad";
   else grupo = "accion";
 
+  // Brujo: los espacios de pacto son todos del nivel más alto que tenga, así
+  // que el hechizo sale siempre a ese nivel y los números se dan ya resueltos.
+  const niveles = Object.entries(derived.slots).filter(([, n]) => n > 0).map(([l]) => Number(l));
+  const nivelEspacio = niveles.length === 1 ? Math.max(spell.level, niveles[0]) : spell.level;
+  let queHaceFinal = queHace;
+  if (spell.index === "armor-of-agathys" && spell.heal) {
+    const n = spell.heal[String(nivelEspacio)] ?? spell.heal["1"];
+    queHaceFinal =
+      `Con tu espacio de nivel ${nivelEspacio} ganás ${n} puntos de vida temporales. Mientras te quede al menos 1, cada criatura que te pegue cuerpo a cuerpo recibe ${n} de daño de frío, entero, todas las veces que te pegue. ` +
+      `No se suman: son ${n} temporales y ${n} de frío por golpe. Se termina cuando los temporales llegan a 0 o a la hora. No pide concentración.`;
+  }
+
   const descEs = hechizoDescES(spell.index);
   return {
     id: spell.index,
     nombre: hechizoES(spell.index, spell.name),
     grupo,
-    coste: esTruco ? "Truco · gratis e ilimitado" : `Espacio de nivel ${spell.level}`,
+    coste: esTruco ? "Truco · gratis e ilimitado" : `Espacio de nivel ${nivelEspacio}`,
     usaEspacio: !esTruco,
     accion,
     alcance: rangeES(spell.range),
-    queHace,
+    queHace: queHaceFinal,
     tirada,
     danos: danos.length ? danos : undefined,
     concentracion: spell.concentration,
     duracion: duracionES(spell.duration),
-    ojo: descEs ? `Descripción: ${descEs}` : undefined,
+    ojo: queHaceFinal !== queHace ? `Descripción: ${queHaceFinal}` : descEs ? `Descripción: ${descEs}` : undefined,
   };
 }
 
