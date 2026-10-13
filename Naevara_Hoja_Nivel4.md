@@ -8,6 +8,7 @@ Guía para pasar a papel la hoja de Naevara, la hermana de Vaegrant, que toma la
 - **Clase: Brujo 4.** Deja el Gran Antiguo y el Pacto del Tomo de la Naevara anterior.
 - **Pacto de la Cadena con Spinel**, el pseudodragón de Vaegrant. Spinel se queda con ella.
 - **Patrón: Archifey** (el mismo que Vaegrant), para heredar su progresión tal cual. *Si con el Master le dan otro patrón, solo cambia el bloque "Rasgos del patrón".*
+- **Carisma 19 de partida:** es el que ganó Vaegrant en la campaña, y Naevara lo hereda tal cual.
 - **Mejora de nivel 4:** +1 Carisma (19 → 20) y +1 Constitución (14 → 15).
 
 > **Ojo con el +1 a Constitución:** pasar de 14 a 15 no cambia ningún número hoy, porque el modificador sigue en +2. Lo mismo pasaría con Destreza 16 → 17. Recomiendo Constitución igual: en el nivel 8 (próxima mejora) con otro +1 llega a 16 y ahí sí suma vida y ayuda a no perder la concentración de Hex. Si preferís que el número se note antes en tu armadura, elegí Destreza.
@@ -183,7 +184,7 @@ El de la hoja de Vaegrant, más lo que el Master defina que hereda de él: armad
 
 Comparé la foto con las reglas. Lo que encontré:
 
-1. **Carisma 19 tiene modificador +4, no 3.** En la foto el óvalo dice 3 (quedó del 17). Con el 20 del nivel 4 pasa a **+5**, y por eso suben Engaño, Persuasión, Interpretación, Intimidación y la salvación de Carisma.
+1. **Carisma 19 tiene modificador +4, no 3.** El 19 está bien (es una mejora que ganó Vaegrant en la campaña), pero el óvalo de abajo sigue diciendo 3, que era el del 17. Con el 20 del nivel 4 pasa a **+5**, y por eso suben Engaño, Persuasión, Interpretación, Intimidación y la salvación de Carisma.
 2. **Salvación de Sabiduría:** el circulito está marcado pero el número dice 0. Va **+2** (0 de modificador + 2 de competencia). Ya estaba anotado como pendiente en el perfil de Vaegrant.
 3. **Medicina:** Ermitaña la da con competencia. Marcá el circulito y poné **+2**, no 0.
 4. **Percepción:** en 0. Con la elección de Semielfa que propongo va **+2**.
