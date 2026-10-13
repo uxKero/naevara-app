@@ -27,7 +27,8 @@ Guía para pasar a papel la hoja de Naevara, la hermana de Vaegrant, que toma la
 | Ataque de conjuro | +6 | **+7** | Sube con el Carisma |
 | Daño de Eldritch Blast | 1d10 + 4 | **1d10 + 5** | *Agonizing Blast* suma el Carisma |
 | Salvación de Carisma | +6 | **+7** | Sube con el Carisma |
-| Engaño, Persuasión, Interpretación, Intimidación | +1 cada una | **+1 cada una** | Sube con el Carisma |
+| Engaño | +6 | **+7** | Sube con el Carisma |
+| Persuasión, Interpretación, Intimidación | +4 | **+5** | Sube con el Carisma |
 | Trucos conocidos | 2 (+3 del Tomo) | **3** (+3 del Tomo) | Tabla de la Bruja |
 | Hechizos conocidos | 4 | **5** | Tabla de la Bruja |
 | Espacios de conjuro | 2 de nivel 2 | 2 de nivel 2 | No cambia (en nivel 5 pasan a nivel 3) |
