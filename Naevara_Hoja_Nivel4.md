@@ -8,7 +8,7 @@ Guía para pasar a papel la hoja de Naevara, la hermana de Vaegrant, que toma la
 - **Clase: Bruja 4 · Patrón: el Gran Antiguo · Pacto del Tomo.** El Gran Antiguo viene del Reino Lejano, de donde sale el vacío (y los ilícidos). El Tomo le devuelve su Libro de las Sombras.
 - **Características:** las de Vaegrant, incluido el **Carisma 19 que ganó en la campaña**.
 - **Mejora de nivel 4:** +1 Carisma (19 → 20) y +1 Constitución (14 → 15).
-- **Cristal del vacío** incrustado en el cuerpo (dato de la historia; ver sección 11).
+- **Cristal del vacío** incrustado en el cuerpo (dato de la historia; ver sección 12).
 - **Familiar:** por ahora no (queda pendiente con el Master; ver sección 8).
 
 > **Sobre el +1 a Constitución:** de 14 a 15 no cambia ningún número todavía, porque el modificador sigue en +2. Con el próximo +1 (nivel 8) llega a 16 y ahí suma vida y ayuda a no perder la concentración de Hex.
@@ -177,7 +177,7 @@ Ojo: *Hex* usa concentración. Si le pegan, tira salvación de Constitución (+2
 - **Pacto del Tomo** (nivel 3): el Libro de las Sombras, con 3 trucos de cualquier clase. Si lo pierde, hace uno nuevo en un ritual de 1 hora durante un descanso.
 - **Mejora de característica** (nivel 4): +1 Carisma, +1 Constitución.
 
-**Cristal del vacío:** lo que defina el Master (ver sección 11).
+**Cristal del vacío:** lo que defina el Master (ver sección 12).
 
 **Familiar (pendiente):** si el Master lo permite, cambiás *Grasp of Hadar* por *Book of Ancient Secrets*. Esa invocación suma dos rituales al libro: *Find Familiar* (recomendado: búho; vuela, ve en la oscuridad y se escapa sin recibir golpes) y *Comprehend Languages*.
 
@@ -185,12 +185,39 @@ Ojo: *Hex* usa concentración. Si le pegan, tira salvación de Constitución (+2
 
 ## 9. Competencias e idiomas
 
-- **Idiomas:** Común, Élfico y **Profundo** (el idioma extra de Semielfa). El Profundo es el idioma de las criaturas del Reino Lejano, incluidos los ilícidos del Plano del Vacío: le va a servir.
+- **Idiomas (4):** Común, Élfico, **Profundo** (el extra de Semielfa) y **Primordial** (el extra de Ermitaña).
+  - El Profundo es el idioma de las criaturas del Reino Lejano, incluidos los ilícidos del Plano del Vacío.
+  - El Primordial es el idioma de los elementales. Si el vacío es uno de los cinco elementos, es el idioma de lo que lleva incrustado.
 - **Armas:** simples (incluye dagas).
 - **Armadura:** ligera.
 - **Herramientas:** kit de herborista (Ermitaña).
 
-## 10. Equipo
+## 10. Trasfondo: Ermitaña
+
+Se mantiene **Ermitaña**: encaja con la historia de los dos hermanos y su rasgo especial es perfecto para el cristal.
+
+**Lo que da (ya está repartido en la hoja):**
+- Habilidades: Medicina y Religión.
+- Herramienta: kit de herborista.
+- Un idioma a elección (Primordial).
+- **Rasgo: Descubrimiento.** En su aislamiento, la ermitaña descubrió algo único y poderoso: un secreto del mundo, una verdad sobre los dioses o los planos. **Proponele al Master que su Descubrimiento sea el cristal del vacío**: cómo lo encontró, o qué entendió sobre él antes de que se le incrustara. Va en el recuadro "Rasgos y atributos".
+
+**Los 4 recuadros de personalidad (arriba a la derecha de la hoja):**
+
+| Recuadro | Propuesta |
+|---|---|
+| Rasgos de personalidad | "Hablo poco y escucho el doble. Cuando el cristal late, me quedo en silencio hasta entender por qué." |
+| Ideales | *Conocimiento.* "Lo que no se entiende, se teme. Lo que se entiende, se puede proteger." |
+| Vínculos | "Mi hermano se quedó en Hellgate. Lo que él empezó, yo lo termino." |
+| Defectos | "Guardo lo que el cristal me muestra, incluso cuando el grupo debería saberlo." |
+
+*Son una base: cambialos para que suenen a vos.*
+
+**Si quisieras otro trasfondo** (y lo que cambia en la hoja):
+- **Atormentada** (*Haunted One*, de *Curse of Strahd*). Dos habilidades entre Arcanos, Investigación, Religión y Supervivencia, y dos idiomas exóticos (Profundo, Abisal...). Su rasgo: la gente común siente lo oscuro que carga y la ayuda igual. Muy de vacío, pero se pierden Medicina y el kit de herborista.
+- **Sabia.** Arcanos e Historia y dos idiomas. Su rasgo: sabe dónde buscar cualquier información. Como Arcanos ya lo da la Bruja, habría que cambiar esa elección por otra (Intimidación o Investigación).
+
+## 11. Equipo
 
 - Armadura de cuero
 - Dagas
@@ -201,7 +228,7 @@ Ojo: *Hex* usa concentración. Si le pegan, tira salvación de Constitución (+2
 
 ---
 
-## 11. El cristal del vacío (propuestas para el Master)
+## 12. El cristal del vacío (propuestas para el Master)
 
 En la campaña, el vacío es uno de los cinco elementos (con fuego, agua, tierra y aire). Su alma, Ginnungagap, está guardada en Waterdeep, y el Claro Lunar de la fortaleza del volcán abre al Plano del Vacío. La idea es que el cristal **crezca con la historia**:
 
@@ -211,7 +238,7 @@ En la campaña, el vacío es uno de los cinco elementos (con fuego, agua, tierra
 
 ---
 
-## 12. Lo que viene en nivel 5
+## 13. Lo que viene en nivel 5
 
 - Competencia +3: CD 16 y ataque +8.
 - Eldritch Blast dispara **2 rayos** (unos 21 de daño por turno, 28 con Hex).
@@ -227,12 +254,14 @@ En la campaña, el vacío es uno de los cinco elementos (con fuego, agua, tierra
 2. **Salvación de Sabiduría:** está marcada pero dice 0. Va **+2**.
 3. **Medicina:** la da Ermitaña. Circulito marcado y **+2**.
 4. **Dado de golpe:** dice "1D8" desde el nivel 1. Va un dado por nivel.
-5. Al lado de Perspicacia hay algo escrito a mano que no llegué a leer. Si es una competencia o un idioma que dio el Master, pasalo al recuadro de competencias.
-6. **Lo que está bien:** CA 14, iniciativa +3, bonificador +2, daga +5 (1d4+3).
+5. **Idiomas:** la hoja de Vaegrant tiene solo Común y Élfico, pero Alto Elfo y Ermitaño le dan **un idioma extra cada uno**. Le faltan dos.
+6. Al lado de Perspicacia hay algo escrito a mano que no llegué a leer. Si es una competencia o un idioma que dio el Master, pasalo al recuadro de competencias.
+7. **Lo que está bien:** CA 14, iniciativa +3, bonificador +2, daga +5 (1d4+3).
 
 ## Pendientes para hablar con el Master
 
-- Qué hace mecánicamente el cristal del vacío (sección 11).
+- Qué hace mecánicamente el cristal del vacío (sección 12).
 - Si puede tener familiar (sección 8).
 - Que acepte las opciones de libros extra: *Sword Burst* (Guía del aventurero de la Costa de la Espada), *Toll the Dead* y *Grasp of Hadar* (Xanathar), *Mind Sliver* (Tasha).
 - Equipo y oro que hereda de Vaegrant.
+- Que su Descubrimiento de Ermitaña sea el cristal (sección 10).
