@@ -10,6 +10,7 @@ import EditableText from "@/components/EditableText";
 import AIModal from "@/components/AIModal";
 import ImageLightbox from "@/components/ImageLightbox";
 import AddSessionModal from "@/components/AddSessionModal";
+import CombateSesion from "./CombateSesion";
 import type { SessionEntry } from "@/types/character";
 import { Swords, Flame, ArrowLeft, ScrollText, Download, User, Users, Map as MapIcon, Globe, BookOpen, CalendarDays, MoreHorizontal, Save, Ship } from "lucide-react";
 import { descargarImagen } from "@/lib/descargar";
@@ -1640,6 +1641,14 @@ function TabSesiones({ data, initialSession }: { data: VaegrantData; initialSess
         </h2>
         <VQuote>{s.resumen}</VQuote>
 
+        {s.combate && (
+          <>
+            <VSecLabel>La batalla, paso a paso</VSecLabel>
+            <VDivider />
+            <CombateSesion combate={s.combate} />
+          </>
+        )}
+
         {s.capitulos.map((c, i) => (
           <div key={i} style={{ marginTop: 26 }}>
             <VTitle size={21}>{c.titulo}</VTitle>
@@ -1671,6 +1680,18 @@ function TabSesiones({ data, initialSession }: { data: VaegrantData; initialSess
                 <p style={{ ...pStyle, fontSize: 12.5, margin: 0, color: C.faint }}>{d}</p>
               </div>
             ))}
+          </>
+        )}
+
+        {s.fueraDePersonaje && s.fueraDePersonaje.length > 0 && (
+          <>
+            <VSecLabel>Fuera de personaje · los personajes no lo saben</VSecLabel>
+            <VDivider />
+            <div style={{ background: C.subtle, borderRadius: R + 1, padding: "6px 16px", marginTop: 4 }}>
+              {s.fueraDePersonaje.map((d, i) => (
+                <p key={i} style={{ ...pStyle, fontSize: 14, margin: "10px 0", color: C.muted }}>{d}</p>
+              ))}
+            </div>
           </>
         )}
 

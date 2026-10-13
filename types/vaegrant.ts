@@ -58,6 +58,52 @@ export interface VSesionCronica {
   capitulos: VCapituloSesion[];
   nombres: { nombre: string; rol: string }[]; // PNJ, facciones y grupos que aparecieron
   dudas: string[]; // nombres o hechos pendientes de confirmar en mesa
+  fueraDePersonaje?: string[]; // lo que el Master contó off-role: los personajes no lo saben
+  combate?: VCombate;
+}
+
+// ── Combate paso a paso ──────────────────────────────────────────
+// Una batalla en dos frentes sincronizados: un recorrido (el carro por la
+// mina) y un campo (la explanada). Cada paso mueve el recorrido, cambia el
+// estado de las piezas del campo y cuenta qué pasó de cada lado.
+
+export interface VPiezaCampo {
+  id: string;
+  nombre: string;
+  bando: "grupo" | "enemigo" | "neutral";
+  x: number; // 0 a 100
+  y: number; // 0 a 62
+  r: number; // radio de la pieza
+  forma?: "tropa" | "gigante" | "artefacto" | "vortice";
+}
+
+export interface VTramoRecorrido {
+  id: string;
+  nombre: string;
+  x: number;
+  y: number;
+}
+
+export interface VPasoCombate {
+  titulo: string;
+  adentro: string;
+  afuera: string;
+  tramo: string; // id del tramo donde está el carro
+  carro: number | null; // estado del carro; null = destruido
+  carroMax: number;
+  gigante: number; // estado del grandote, de 100
+  presentes: string[]; // piezas del campo en pie en este paso
+  caidas?: string[]; // piezas que caen en este paso (se ven tachadas)
+  enlace?: string; // cuando algo de adentro cambia la batalla de afuera
+  imagen?: { url: string; titulo: string }; // el momento del paso, ilustrado
+}
+
+export interface VCombate {
+  titulo: string;
+  campo: { nombre: string; boca: { x: number; y: number } };
+  piezas: VPiezaCampo[];
+  recorrido: VTramoRecorrido[];
+  pasos: VPasoCombate[];
 }
 
 // ── Mapa de campaña ──────────────────────────────────────────────
