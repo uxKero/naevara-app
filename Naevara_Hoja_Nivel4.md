@@ -15,6 +15,30 @@ Guía para pasar a papel la hoja de Naevara, la hermana de Vaegrant, que toma la
 
 ---
 
+## Qué cambia del nivel 3 al 4 (resumen)
+
+| Qué | Nivel 3 | Nivel 4 | ¿Por qué? |
+|---|---|---|---|
+| Puntos de golpe | 25 | **32** | +1d8 + Constitución. Podés tirar el d8 en vez de usar el promedio (5), si tu mesa lo hace así. |
+| Dados de golpe | 3d8 | **4d8** | Uno por nivel. En un descanso largo recuperás la mitad (2). |
+| Carisma | 19 (+4) | **20 (+5)** | Mejora de nivel 4 |
+| Constitución | 14 | **15** (sigue +2) | Mejora de nivel 4 |
+| CD de conjuros | 14 | **15** | Sube con el Carisma |
+| Ataque de conjuro | +6 | **+7** | Sube con el Carisma |
+| Daño de Eldritch Blast | 1d10 + 4 | **1d10 + 5** | *Agonizing Blast* suma el Carisma |
+| Salvación de Carisma | +6 | **+7** | Sube con el Carisma |
+| Engaño, Persuasión, Interpretación, Intimidación | +1 cada una | **+1 cada una** | Sube con el Carisma |
+| Trucos conocidos | 2 (+3 del Tomo) | **3** (+3 del Tomo) | Tabla de la Bruja |
+| Hechizos conocidos | 4 | **5** | Tabla de la Bruja |
+| Espacios de conjuro | 2 de nivel 2 | 2 de nivel 2 | No cambia (en nivel 5 pasan a nivel 3) |
+| Invocaciones | 2 | 2 | No cambia (la 3.ª llega en nivel 5) |
+| Bonificador de competencia | +2 | +2 | No cambia (+3 en nivel 5) |
+| Daño de los trucos | 1 dado | 1 dado | No cambia (2 dados en nivel 5) |
+
+**Reglas de cambio al subir de nivel:** cada vez que sube de nivel, la Bruja puede **cambiar 1 hechizo conocido** por otro de su lista y **1 invocación** por otra. Sirve para corregir una elección que no te convenció.
+
+---
+
 ## 1. Encabezado
 
 | Casillero | Qué escribir |
